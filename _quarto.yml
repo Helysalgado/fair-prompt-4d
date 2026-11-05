@@ -12,10 +12,10 @@ lang: es
 
 website:
   title: "Antes del prompt"
-  # Descomentar al publicar en GitHub Pages:
-  # site-url: https://helysalgado.github.io/fair-prompt-4d/
-  # repo-url: https://github.com/Helysalgado/fair-prompt-4d
-  # repo-actions: [edit, issue]
+  site-url: https://helysalgado.github.io/fair-prompt-4d/
+  repo-url: https://github.com/Helysalgado/fair-prompt-4d
+  repo-branch: main
+  repo-actions: [edit, issue]
   reader-mode: true
   page-navigation: true
   page-footer:
