@@ -1,0 +1,23 @@
+EXCEL SIMULADO DE EXPRESIÓN GÉNICA · VERSIÓN EN TEXTO
+Usa esta versión solo si tu asistente de IA no permite adjuntar archivos: copia todo y pégalo en el chat.
+Mismo contenido que expresion_genica_caso_simulado.xlsx (dos hojas), con columnas separadas por tabuladores. Las celdas de datos vacías se indican como [vacía]. Datos ficticios.
+
+=== Hoja: Expresion_genica ===
+DATOS DE EXPRESIÓN GÉNICA · EJEMPLO SIMULADO			
+Datos ficticios para una actividad docente. No corresponden a resultados experimentales reales.			
+Gen	Control	Estrés A (prom.)	Estrés B
+recA	125	310	180
+rpoS	85	245	290
+b0014	200	420	[vacía]
+katG	45	170	115
+dnaK	190	390	375
+
+=== Hoja: Notas_experimento ===
+NOTAS EXPERIMENTALES PARCIALES		
+Campo	Registro disponible	Observación
+Nota suelta	Datos del experimento de marzo	
+Organismo	E. coli (sin cepa confirmada)	
+Proceso	Valores procesados	
+Condiciones	Control, Estrés A, Estrés B	
+Réplicas	Sin registro en este archivo	
+Responsable	Por confirmar	

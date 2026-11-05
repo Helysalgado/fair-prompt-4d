@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Lecturas primarias y materiales reutilizables">
+
+<title>Fuentes, materiales y continuidad – Antes del prompt</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../contenido/tarjeta-practica.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c06d6e174cfa7b6d09782cdbecc7f54e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Antes del prompt</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../contenido/00-preparacion.html"> 
+<span class="menu-text">Antes del taller</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fundamentos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Fundamentos</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fundamentos">    
+        <li>
+    <a class="dropdown-item" href="../contenido/01-contexto.html">
+ <span class="dropdown-text">Sentido y objetivos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/02-ejemplos.html">
+ <span class="dropdown-text">Tres situaciones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/03-metodo.html">
+ <span class="dropdown-text">Seis etapas y 4D</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/03b-estructura-prompt.html">
+ <span class="dropdown-text">Del problema al prompt</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-taller-fair" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Taller FAIR</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-taller-fair">    
+        <li>
+    <a class="dropdown-item" href="../contenido/04-caso-fair.html">
+ <span class="dropdown-text">Caso integrador</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/05-practica.html">
+ <span class="dropdown-text">Práctica guiada</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/06-verificacion.html">
+ <span class="dropdown-text">Verificación independiente</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/07-bitacora.html">
+ <span class="dropdown-text">Bitácora</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/tarjeta-practica.html">
+ <span class="dropdown-text">Tarjeta de práctica (imprimible)</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../contenido/08-referencias.html"> 
+<span class="menu-text">Fuentes</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo lector">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/08-referencias.html">Fuentes y continuidad</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inicio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/00-preparacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0 — Antes del taller</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Fundamentos</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/01-contexto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1 — Sentido y objetivos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/02-ejemplos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2 — Tres situaciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/03-metodo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3 — Seis etapas y 4D</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/03b-estructura-prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3b — Del problema al prompt</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Taller FAIR</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/04-caso-fair.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4 — Caso integrador</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/05-practica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5 — Práctica guiada</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/06-verificacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6 — Verificación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/07-bitacora.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7 — Bitácora</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/tarjeta-practica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tarjeta de práctica</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/08-referencias.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Fuentes y continuidad</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#bibliografía-comentada" id="toc-bibliografía-comentada" class="nav-link active" data-scroll-target="#bibliografía-comentada">Bibliografía comentada</a>
+  <ul class="collapse">
+  <li><a href="#fundamentos-metodológicos-y-de-uso-de-ia" id="toc-fundamentos-metodológicos-y-de-uso-de-ia" class="nav-link" data-scroll-target="#fundamentos-metodológicos-y-de-uso-de-ia">Fundamentos metodológicos y de uso de IA</a></li>
+  <li><a href="#fair-y-gestión-de-datos-científicos" id="toc-fair-y-gestión-de-datos-científicos" class="nav-link" data-scroll-target="#fair-y-gestión-de-datos-científicos">FAIR y gestión de datos científicos</a></li>
+  <li><a href="#contexto-y-continuidad-formativa" id="toc-contexto-y-continuidad-formativa" class="nav-link" data-scroll-target="#contexto-y-continuidad-formativa">Contexto y continuidad formativa</a></li>
+  <li><a href="#especificación-y-revisión-en-ingeniería-de-software-analogía-metodológica" id="toc-especificación-y-revisión-en-ingeniería-de-software-analogía-metodológica" class="nav-link" data-scroll-target="#especificación-y-revisión-en-ingeniería-de-software-analogía-metodológica">Especificación y revisión en ingeniería de software (analogía metodológica)</a></li>
+  </ul></li>
+  <li><a href="#materiales" id="toc-materiales" class="nav-link" data-scroll-target="#materiales">Materiales</a></li>
+  <li><a href="#para-continuar-aprendiendo" id="toc-para-continuar-aprendiendo" class="nav-link" data-scroll-target="#para-continuar-aprendiendo">Para continuar aprendiendo</a></li>
+  <li><a href="#cómo-citar-este-material" id="toc-cómo-citar-este-material" class="nav-link" data-scroll-target="#cómo-citar-este-material">Cómo citar este material</a></li>
+  <li><a href="#estado-del-material" id="toc-estado-del-material" class="nav-link" data-scroll-target="#estado-del-material">Estado del material</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Fuentes, materiales y continuidad</h1>
+</div>
+
+<div>
+  <div class="description">
+    Lecturas primarias y materiales reutilizables
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="etiqueta-pagina profundizar">
+<p>Para profundizar · consulta</p>
+</div>
+<div class="en-un-minuto">
+<ul>
+<li>Las fuentes que respaldan cada parte del enfoque, con <strong>lo que aportan y sus límites</strong>.</li>
+<li>Materiales descargables y <strong>cómo citar</strong> este taller.</li>
+<li>Para profundizar en prompting: el curso <em>Prompting científico con IA</em>.</li>
+</ul>
+</div>
+<section id="bibliografía-comentada" class="level2">
+<h2 class="anchored" data-anchor-id="bibliografía-comentada">Bibliografía comentada</h2>
+<p>Las referencias se identifican en el texto con claves <strong>[R#]</strong>. Se distinguen <strong>fundamentos conceptuales</strong>, <strong>referencias aplicadas</strong> y <strong>recursos contextuales</strong>. Los ejemplos de aula son construcciones didácticas; no deben atribuirse a estas fuentes como demostraciones empíricas.</p>
+<section id="fundamentos-metodológicos-y-de-uso-de-ia" class="level3">
+<h3 class="anchored" data-anchor-id="fundamentos-metodológicos-y-de-uso-de-ia">Fundamentos metodológicos y de uso de IA</h3>
+<ul>
+<li><strong>[R1] Dakan, R. (Ringling College of Art and Design) y Feller, J. (University College Cork).</strong> <em>AI Fluency Framework</em>; cursos desarrollados con Anthropic. https://aifluencyframework.org/ . Consultado el 2 de noviembre de 2026. Define <strong>Delegation, Description, Discernment y Diligence</strong>. <strong>Aporta:</strong> fundamento para decidir, comunicar, evaluar y actuar responsablemente con IA. <strong>No define</strong> nuestra secuencia de seis pasos.</li>
+<li><strong>[R2] Association of College and Research Libraries (ACRL).</strong> (2016; revisiones posteriores). <em>Framework for Information Literacy for Higher Education</em>. https://www.ala.org/acrl/standards/ilframework . En particular <em>Research as Inquiry</em> y <em>Searching as Strategic Exploration</em>: una búsqueda iterativa que requiere ampliar vocabulario, valorar fuentes y reformular necesidades. <strong>Aporta:</strong> base para las etapas 1 y 2.</li>
+<li><strong>[R3] Anthropic / CodePath.</strong> <em>AI Fluency for Builders</em>. https://academy.claude.com/courses/ai-fluency-for-builders . Consultado el 2 de noviembre de 2026. Incluye descomposición de problemas, identificación del papel de la IA, especificación y pruebas de aceptación. <strong>Aporta:</strong> inspiración para las etapas 3–5; es un curso destinado a <em>builders</em>, no un protocolo validado específicamente para investigación científica.</li>
+<li><strong>[R4] Autio, C., Schwartz, R., Dunietz, J., Jain, S., Stanley, M., Tabassi, E., Hall, P. y Roberts, K.</strong> (2024). <em>Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile</em>. NIST AI 600-1. https://doi.org/10.6028/NIST.AI.600-1 . <strong>Aporta:</strong> fundamento de la evaluación crítica de errores, contenido no sustentado y riesgos de IA generativa; no sustituye la evaluación científica de fuentes.</li>
+</ul>
+</section>
+<section id="fair-y-gestión-de-datos-científicos" class="level3">
+<h3 class="anchored" data-anchor-id="fair-y-gestión-de-datos-científicos">FAIR y gestión de datos científicos</h3>
+<ul>
+<li><strong>[R5] Wilkinson, M. D., et al.</strong> (2016). <em>The FAIR Guiding Principles for scientific data management and stewardship</em>. <em>Scientific Data</em>, <strong>3</strong>, 160018. https://doi.org/10.1038/sdata.2016.18 . <strong>Aporta:</strong> definición primaria de Findable, Accessible, Interoperable y Reusable, con foco en acceso y reutilización por personas y máquinas.</li>
+<li><strong>[R6] ELIXIR RDMkit.</strong> <em>Your tasks: Documentation and metadata</em>. https://rdmkit.elixir-europe.org/metadata_management . Consultado el 2 de noviembre de 2026. <strong>Aporta:</strong> orientación para documentar el origen, los métodos, las características y el contexto necesarios para comprender y reutilizar los datos.</li>
+<li><strong>[R7] GO FAIR Foundation.</strong> <em>FAIR Principles</em>. https://www.gofair.foundation/fair-principles . Consultado el 2 de noviembre de 2026. <strong>Aporta:</strong> consulta pedagógica complementaria de los principios; conviene cotejar afirmaciones con [R5]. <strong>Precaución:</strong> el principio A1.1 («el protocolo es abierto») se refiere al protocolo de acceso, no a que los datos sean abiertos.</li>
+<li><strong>[R13] Mons, B., Neylon, C., Velterop, J., Dumontier, M., da Silva Santos, L. O. B. y Wilkinson, M. D.</strong> (2017). <em>Cloudy, increasingly FAIR; revisiting the FAIR Data guiding principles for the European Open Science Cloud</em>. <em>Information Services &amp; Use</em>, <strong>37</strong>, 49–56. https://doi.org/10.3233/ISU-170824 . <strong>Aporta:</strong> aclaración explícita, en la sección «FAIR is not equal to Open», de que la «A» significa accesible bajo condiciones bien definidas y de que ningún principio exige que los datos sean abiertos o gratuitos.</li>
+</ul>
+</section>
+<section id="contexto-y-continuidad-formativa" class="level3">
+<h3 class="anchored" data-anchor-id="contexto-y-continuidad-formativa">Contexto y continuidad formativa</h3>
+<ul>
+<li><strong>[R8] Taller ELIXIR-México 2026.</strong> Programa del evento (16–27 de noviembre de 2026, CCG-UNAM). https://laboratorio-de-biologia-computacional.github.io/taller-elixir-mexico-2026/ . Consultado el 2 de noviembre de 2026. En el programa, este taller corresponde a la sesión «Instrucciones para modelos de lenguaje en tareas científicas». <strong>Aporta:</strong> contexto del público y posible complementariedad temática.</li>
+<li><strong>[R9] Salgado Osorio, H.</strong> <em>Prompting científico con inteligencia artificial</em> (material docente en línea). https://helysalgado.github.io/prompting-cientifico/ . Consultado el 2 de noviembre de 2026. <strong>Aporta:</strong> continuidad formativa; el taller actual es introductorio y no resume ni sustituye el curso.</li>
+<li><strong>[R10] Wilson, G., Bryan, J., Cranston, K., Kitzes, J., Nederbragt, L. y Teal, T. K.</strong> (2017). <em>Good Enough Practices in Scientific Computing</em>. <em>PLOS Computational Biology</em>, <strong>13</strong>(6), e1005510. https://doi.org/10.1371/journal.pcbi.1005510 . <strong>Aporta:</strong> contexto de buenas prácticas de organización, documentación y trazabilidad; la práctica en aula no exige programación.</li>
+</ul>
+</section>
+<section id="especificación-y-revisión-en-ingeniería-de-software-analogía-metodológica" class="level3">
+<h3 class="anchored" data-anchor-id="especificación-y-revisión-en-ingeniería-de-software-analogía-metodológica">Especificación y revisión en ingeniería de software (analogía metodológica)</h3>
+<ul>
+<li><strong>[R11] Gupta, A.</strong> (10 de junio de 2026). <em>Spec-Driven Development: A Spec-First Approach to AI-Native Engineering</em>. Microsoft for Developers. https://developer.microsoft.com/blog/spec-driven-development-ai-native-engineering/ . Consultado el 2 de noviembre de 2026. <strong>Aporta:</strong> conservar intención, requisitos, restricciones y criterios de aceptación durante la implementación y validación. <strong>Precaución:</strong> descripción de una práctica de ingeniería, no evidencia de mejora generalizable ni un estándar para investigación científica.</li>
+<li><strong>[R12] Fowler, M.</strong> (21 de mayo de 2026). <em>Agentic Engineering</em>. martinfowler.com. https://martinfowler.com/bliki/AgenticEngineering.html . Consultado el 2 de noviembre de 2026. <strong>Aporta:</strong> distinción entre delegar implementación a agentes y conservar revisión y responsabilidad humana. <strong>Precaución:</strong> reflexión profesional, no estudio causal sobre resultados científicos.</li>
+</ul>
+</section>
+</section>
+<section id="materiales" class="level2">
+<h2 class="anchored" data-anchor-id="materiales">Materiales</h2>
+<p><strong>Para descargar</strong></p>
+<ul>
+<li><a href="../descargas/expresion_genica_caso_simulado.xlsx">Excel simulado para participantes</a>.</li>
+<li><a href="../descargas/bitacora-plantilla.docx">Plantilla de bitácora en Word (.docx)</a> · <a href="../descargas/bitacora-plantilla.md">en Markdown (.md)</a>.</li>
+<li><a href="../descargas/expresion_genica_caso_simulado.txt">Versión en texto del Excel</a>, para asistentes que no aceptan archivos.</li>
+</ul>
+<p><strong>En este sitio</strong></p>
+<ul>
+<li><a href="../contenido/05-practica.html">Práctica paso a paso</a>.</li>
+<li><a href="../contenido/07-bitacora.html">Bitácora</a>.</li>
+<li><a href="../contenido/tarjeta-practica.html">Tarjeta de práctica</a>, para imprimir.</li>
+<li><a href="../contenido/00-preparacion.html">Antes del taller</a>: requisitos y prueba de 2 minutos.</li>
+</ul>
+</section>
+<section id="para-continuar-aprendiendo" class="level2">
+<h2 class="anchored" data-anchor-id="para-continuar-aprendiendo">Para continuar aprendiendo</h2>
+<p>Este taller se enfoca en decisiones y verificación, no en automatización o técnicas avanzadas. Para profundizar en prompting científico, consulta <a href="https://helysalgado.github.io/prompting-cientifico/">Prompting científico con inteligencia artificial</a>.</p>
+</section>
+<section id="cómo-citar-este-material" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-citar-este-material">Cómo citar este material</h2>
+<p><strong>Este sitio:</strong> Salgado, H. (2026). <em>Antes del prompt: pensar, delegar y verificar con IA en la investigación científica</em> [material didáctico]. Centro de Ciencias Genómicas, UNAM. Licencia CC BY 4.0.</p>
+<p><strong>Fórmula breve para presentaciones:</strong> «Metodología didáctica de seis etapas desarrollada para este taller, inspirada en AI Fluency 4D (Dakan y Feller), alfabetización informacional (ACRL) y prácticas de especificación, verificación y documentación científica». Citar [R1], [R2], [R3] y [R6]; para la analogía con ingeniería de software, añadir [R11] y [R12].</p>
+</section>
+<section id="estado-del-material" class="level2">
+<h2 class="anchored" data-anchor-id="estado-del-material">Estado del material</h2>
+<p>Se ha realizado una prueba de interacción con IA de los prompts P0, P1, P5 y P6 usando un Excel didáctico. <strong>No se ha documentado aún un piloto con participantes ni una evaluación formal de resultados de aprendizaje.</strong></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+// Añade cabecera (etiqueta + contexto) y botón «Copiar» a cada .prompt
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("div.prompt").forEach(function (box) {
+    var label = box.getAttribute("data-label") || "Prompt";
+    var meta = box.getAttribute("data-meta") || "";
+    var head = document.createElement("div");
+    head.className = "prompt-header";
+    head.innerHTML = '<span class="prompt-chip"></span><span class="prompt-meta"></span>';
+    head.querySelector(".prompt-chip").textContent = label;
+    head.querySelector(".prompt-meta").textContent = meta;
+    if (box.getAttribute("data-copy") !== "no" && navigator.clipboard) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "prompt-copy";
+      btn.textContent = "Copiar";
+      btn.setAttribute("aria-label", "Copiar el texto de " + label);
+      btn.addEventListener("click", function () {
+        var text = Array.from(box.querySelectorAll(":scope > p, :scope > ul, :scope > ol"))
+          .map(function (el) { return el.innerText.trim(); }).join("\n\n");
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = "Copiado ✓"; btn.classList.add("copiado");
+          setTimeout(function () { btn.textContent = "Copiar"; btn.classList.remove("copiado"); }, 1800);
+        });
+      });
+      head.appendChild(btn);
+    }
+    box.insertBefore(head, box.firstChild);
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../contenido/tarjeta-practica.html" class="pagination-link" aria-label="Tarjeta de práctica">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Tarjeta de práctica</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Heladia Salgado · CCG-UNAM</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Material didáctico · datos simulados · uso de IA documentado</p>
+</div>
+    <div class="nav-footer-right">
+<p><a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

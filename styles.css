@@ -1,0 +1,81 @@
+/* Ajustes mínimos sobre el tema cosmo — mismo criterio que el sitio de Introducción a la Bioinformática */
+
+.content-block,
+main.content {
+  max-width: 52rem;
+}
+
+/* Lectura cómoda en el cuerpo */
+main.content p,
+main.content li {
+  line-height: 1.65;
+}
+
+/* Código y prompts: que no desborden en móvil */
+pre {
+  font-size: 0.9em;
+}
+
+/*
+ * Tablas: Pandoc a veces asigna anchos absurdos vía <colgroup>.
+ * Anulamos esos anchos y dejamos que el contenido reparta el espacio.
+ */
+main.content table {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: auto;
+  table-layout: auto;
+}
+
+main.content table colgroup col {
+  width: auto !important;
+}
+
+main.content table th,
+main.content table td {
+  vertical-align: top;
+  text-align: left;
+}
+
+/* Tablas anchas (p. ej. diagnóstico de la bitácora): desplazamiento horizontal en móvil */
+main.content .cell-output-display,
+main.content table {
+  overflow-x: auto;
+}
+
+/* Bitácora: celdas vacías con altura suficiente para ver dónde escribir */
+main.content table td:empty::after {
+  content: "\00a0";
+}
+main.content table td {
+  min-width: 6rem;
+}
+
+/* Retroalimentación colapsable */
+details {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.35rem;
+  background: #fafbfc;
+}
+
+details > summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #1a5276;
+}
+
+details[open] {
+  background: #fff;
+}
+
+/* Figuras y diagramas SVG */
+main.content p > img,
+main.content figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto 0.35rem;
+}
