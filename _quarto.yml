@@ -1,0 +1,108 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - contenido/*.qmd
+  resources:
+    - descargas/**
+    - recursos/**
+
+lang: es
+
+website:
+  title: "Antes del prompt"
+  # Descomentar al publicar en GitHub Pages:
+  # site-url: https://helysalgado.github.io/fair-prompt-4d/
+  # repo-url: https://github.com/Helysalgado/fair-prompt-4d
+  # repo-actions: [edit, issue]
+  reader-mode: true
+  page-navigation: true
+  page-footer:
+    left: "Heladia Salgado · CCG-UNAM"
+    center: "Material didáctico · datos simulados · uso de IA documentado"
+    right: "[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es)"
+  navbar:
+    background: primary
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: contenido/00-preparacion.qmd
+        text: Antes del taller
+      - text: Fundamentos
+        menu:
+          - href: contenido/01-contexto.qmd
+            text: "Sentido y objetivos"
+          - href: contenido/02-ejemplos.qmd
+            text: "Tres situaciones"
+          - href: contenido/03-metodo.qmd
+            text: "Seis etapas y 4D"
+          - href: contenido/03b-estructura-prompt.qmd
+            text: "Del problema al prompt"
+      - text: Taller FAIR
+        menu:
+          - href: contenido/04-caso-fair.qmd
+            text: "Caso integrador"
+          - href: contenido/05-practica.qmd
+            text: "Práctica guiada"
+          - href: contenido/06-verificacion.qmd
+            text: "Verificación independiente"
+          - href: contenido/07-bitacora.qmd
+            text: "Bitácora"
+          - href: contenido/tarjeta-practica.qmd
+            text: "Tarjeta de práctica (imprimible)"
+    right:
+      - href: contenido/08-referencias.qmd
+        text: Fuentes
+  sidebar:
+    style: docked
+    search: true
+    collapse-level: 1
+    contents:
+      - href: index.qmd
+        text: Inicio
+      - href: contenido/00-preparacion.qmd
+        text: "0 — Antes del taller"
+      - section: "Fundamentos"
+        contents:
+          - href: contenido/01-contexto.qmd
+            text: "1 — Sentido y objetivos"
+          - href: contenido/02-ejemplos.qmd
+            text: "2 — Tres situaciones"
+          - href: contenido/03-metodo.qmd
+            text: "3 — Seis etapas y 4D"
+          - href: contenido/03b-estructura-prompt.qmd
+            text: "3b — Del problema al prompt"
+      - section: "Taller FAIR"
+        contents:
+          - href: contenido/04-caso-fair.qmd
+            text: "4 — Caso integrador"
+          - href: contenido/05-practica.qmd
+            text: "5 — Práctica guiada"
+          - href: contenido/06-verificacion.qmd
+            text: "6 — Verificación"
+          - href: contenido/07-bitacora.qmd
+            text: "7 — Bitácora"
+          - href: contenido/tarjeta-practica.qmd
+            text: "Tarjeta de práctica"
+      - href: contenido/08-referencias.qmd
+        text: "Fuentes y continuidad"
+
+format:
+  html:
+    theme:
+      - cosmo
+      - tema.scss
+    css: styles.css
+    include-after-body: _prompt-copy.html
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    toc-title: "En esta página"
+    number-sections: false
+    link-external-newwindow: true
+    code-copy: true
+    code-overflow: wrap
+
+execute:
+  freeze: auto

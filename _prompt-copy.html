@@ -1,0 +1,31 @@
+<script>
+// Añade cabecera (etiqueta + contexto) y botón «Copiar» a cada .prompt
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("div.prompt").forEach(function (box) {
+    var label = box.getAttribute("data-label") || "Prompt";
+    var meta = box.getAttribute("data-meta") || "";
+    var head = document.createElement("div");
+    head.className = "prompt-header";
+    head.innerHTML = '<span class="prompt-chip"></span><span class="prompt-meta"></span>';
+    head.querySelector(".prompt-chip").textContent = label;
+    head.querySelector(".prompt-meta").textContent = meta;
+    if (box.getAttribute("data-copy") !== "no" && navigator.clipboard) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "prompt-copy";
+      btn.textContent = "Copiar";
+      btn.setAttribute("aria-label", "Copiar el texto de " + label);
+      btn.addEventListener("click", function () {
+        var text = Array.from(box.querySelectorAll(":scope > p, :scope > ul, :scope > ol"))
+          .map(function (el) { return el.innerText.trim(); }).join("\n\n");
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = "Copiado ✓"; btn.classList.add("copiado");
+          setTimeout(function () { btn.textContent = "Copiar"; btn.classList.remove("copiado"); }, 1800);
+        });
+      });
+      head.appendChild(btn);
+    }
+    box.insertBefore(head, box.firstChild);
+  });
+});
+</script>

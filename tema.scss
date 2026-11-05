@@ -1,0 +1,229 @@
+/*-- scss:defaults --*/
+// Paleta compartida con los diagramas de recursos/
+$navy:   #123b69;
+$azul:   #1f5f9e;
+$dorado: #c49b43;
+$crema:  #fff8e8;
+$pizarra:#53677a;
+$niebla: #f4f7fb;
+$linea:  #d9e2ec;
+$oxido:  #b4532a;
+$verde:  #2e7d6b;
+
+$primary: $azul;
+$navbar-bg: $navy;
+$navbar-fg: #ffffff;
+$navbar-hl: #f3d9a4;
+$body-color: #1d2b3a;
+$link-color: $azul;
+$headings-color: $navy;
+$border-radius: .5rem;
+
+$font-family-sans-serif: "Source Sans 3", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$headings-font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+$font-size-root: 17px;
+
+// Recuadros (callouts) en la misma familia de color
+$callout-color-note:      $azul;
+$callout-color-tip:       $verde;
+$callout-color-important: $navy;
+$callout-color-warning:   $dorado;
+$callout-color-caution:   $oxido;
+
+/*-- scss:rules --*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap');
+
+// ---------- Títulos ----------
+#title-block-header .title { font-weight: 700; letter-spacing: -.01em; }
+#title-block-header .subtitle { font-family: $font-family-sans-serif; color: $pizarra; }
+#title-block-header .description { color: $pizarra; font-style: italic; }
+main.content h2 {
+  font-weight: 700;
+  border-bottom: 1px solid $linea;
+  padding-bottom: .35rem;
+  margin-top: 2.4rem;
+}
+main.content h3 { font-weight: 600; margin-top: 1.8rem; }
+main.content strong { color: darken($body-color, 5%); }
+
+// ---------- Recuadros ----------
+div.callout {
+  border-radius: $border-radius;
+  border-left-width: 5px !important;
+  box-shadow: 0 1px 2px rgba(18, 59, 105, .06);
+}
+div.callout .callout-header { font-weight: 600; }
+
+// ---------- Frase destacada ----------
+.destacado {
+  font-family: $headings-font-family;
+  font-size: 1.35rem;
+  line-height: 1.45;
+  color: $navy;
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1.1rem 1.5rem;
+  max-width: 40rem;
+  border-top: 2px solid $dorado;
+  border-bottom: 2px solid $dorado;
+  p { margin: 0; }
+}
+
+// ---------- Tarjeta de prompt ----------
+.prompt {
+  position: relative;
+  margin: 1.4rem 0;
+  border: 1px solid $linea;
+  border-left: 5px solid $dorado;
+  border-radius: $border-radius;
+  background: $crema;
+  box-shadow: 0 1px 3px rgba(18, 59, 105, .07);
+  overflow: hidden;
+  > p, > ul, > ol { padding: 0 1.15rem; }
+  > p:first-of-type { margin-top: .9rem; }
+  > p:last-child { margin-bottom: 1rem; }
+}
+.prompt-header {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .45rem .6rem .45rem 1.15rem;
+  background: rgba($dorado, .14);
+  border-bottom: 1px solid rgba($dorado, .35);
+  font-size: .85rem;
+}
+.prompt-chip {
+  display: inline-block;
+  background: $dorado;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: .05rem .7rem;
+  letter-spacing: .02em;
+}
+.prompt-meta { color: $pizarra; flex: 1; }
+.prompt-copy {
+  border: 1px solid rgba($navy, .25);
+  background: #fff;
+  color: $navy;
+  border-radius: .35rem;
+  font-size: .8rem;
+  padding: .15rem .6rem;
+  cursor: pointer;
+  &:hover { background: $navy; color: #fff; }
+  &.copiado { background: $verde; border-color: $verde; color: #fff; }
+}
+// Versión estructurada (03b): cada componente en su renglón
+.prompt.estructurado > p {
+  margin-bottom: .45rem;
+  > strong:first-child { color: $navy; }
+}
+
+// ---------- Respuesta simulada de la IA ----------
+.respuesta-ia {
+  margin: 1.2rem 0;
+  border: 1px dashed #9fb3c8;
+  border-radius: $border-radius;
+  background: $niebla;
+  padding: 0 1.15rem .2rem;
+  font-style: italic;
+  color: #2c3e50;
+  &::before {
+    content: "🤖  " attr(data-label);
+    display: block;
+    font-style: normal;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: $pizarra;
+    margin: .7rem 0 .4rem;
+  }
+  p:last-child { margin-bottom: .8rem; }
+  &.incorrecta {
+    border-color: rgba($oxido, .55);
+    background: #fdf4f0;
+    &::before { color: $oxido; }
+  }
+}
+
+// ---------- Tablas ----------
+main.content table {
+  font-size: .95rem;
+  border: 1px solid $linea;
+  border-radius: $border-radius;
+  thead th {
+    background: #eaf0f7;
+    color: $navy;
+    font-weight: 700;
+    border-bottom: 2px solid $linea;
+  }
+  tbody tr:nth-child(even) { background: #fafcfe; }
+}
+
+// ---------- Citas sueltas (si quedan) ----------
+main.content blockquote {
+  border-left: 4px solid $azul;
+  background: $niebla;
+  color: $body-color;
+}
+
+// ---------- Figuras ----------
+.quarto-figure figcaption, figcaption {
+  text-align: center;
+  color: $pizarra;
+  font-size: .9rem;
+}
+
+// ---------- Etiqueta de página (Antes / Durante / Profundizar) ----------
+.etiqueta-pagina {
+  display: inline-block;
+  margin: .2rem 0 1rem;
+  padding: .2rem .8rem;
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  p { margin: 0; display: inline; }
+  &::before { margin-right: .4rem; }
+  &.antes { background: #e6eef7; color: $navy; &::before { content: "◷"; } }
+  &.durante { background: rgba($dorado, .18); color: darken($dorado, 25%); &::before { content: "●"; } }
+  &.profundizar { background: #e7f2ef; color: $verde; &::before { content: "＋"; } }
+}
+
+// ---------- En 1 minuto ----------
+.en-un-minuto {
+  background: #fff;
+  border: 1px solid $linea;
+  border-top: 4px solid $navy;
+  border-radius: $border-radius;
+  padding: .9rem 1.2rem .4rem;
+  margin: 0 0 2rem;
+  box-shadow: 0 1px 3px rgba(18, 59, 105, .06);
+  &::before {
+    content: "En 1 minuto";
+    display: block;
+    font-family: $headings-font-family;
+    font-weight: 700;
+    color: $navy;
+    font-size: 1.05rem;
+    margin-bottom: .4rem;
+  }
+  ul { padding-left: 1.2rem; margin-bottom: .5rem; }
+  li { margin-bottom: .3rem; }
+}
+
+// ---------- Autoevaluación (casillas) ----------
+.autoevaluacion ul { list-style: none; padding-left: .2rem; }
+.autoevaluacion li::before { content: "☐"; color: $navy; margin-right: .5rem; }
+
+// ---------- Impresión (tarjeta de práctica y cualquier página) ----------
+@media print {
+  #quarto-header, #quarto-sidebar, #quarto-margin-sidebar, .nav-footer, .page-navigation,
+  .prompt-copy, .etiqueta-pagina, #quarto-search { display: none !important; }
+  body { font-size: 10.5pt; }
+  main.content { max-width: 100% !important; margin: 0 !important; }
+  .prompt, .respuesta-ia, .callout, table { break-inside: avoid; box-shadow: none !important; }
+  a { color: inherit; text-decoration: none; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
