@@ -1,0 +1,48 @@
+---
+title: "Antes del prompt"
+subtitle: "Pensar, delegar y verificar con IA en la investigación científica"
+description: "Taller práctico de dos horas · seis etapas · AI Fluency 4D"
+toc: false
+author:
+  - name: "Heladia Salgado"
+    affiliations:
+      - name: "Centro de Ciencias Genómicas, UNAM"
+---
+
+::: {.destacado}
+La IA puede hacerlo. ¿Tú sabes qué hizo, por qué lo hizo y cómo comprobarlo?
+:::
+
+Este taller propone una ruta de seis etapas para trabajar con asistentes de IA sin perder el criterio científico. Partimos de necesidades ambiguas, aprendemos el vocabulario necesario, delimitamos una tarea, decidimos qué delegar, contrastamos los resultados y documentamos decisiones.
+
+**Sesión del programa ELIXIR-México 2026:** «Instrucciones para modelos de lenguaje en tareas científicas (*prompting*; ponencia y taller)».
+
+**Duración:** 120 minutos. **Modalidad:** taller práctico presencial o híbrido. **Necesitas:** una computadora y una cuenta en un asistente de IA que permita adjuntar archivos; los detalles y una prueba de 2 minutos están en [Antes del taller](contenido/00-preparacion.qmd). No se necesitan conocimientos de programación.
+
+::: {.callout-important}
+## Resultado esperado
+No vamos a certificar que un dataset cumple FAIR ni a depositarlo en un repositorio. El producto es un **diagnóstico documental preliminar y verificable**, con preguntas pendientes y una bitácora que permita reconstruir el proceso.
+:::
+
+## Por dónde comenzar
+
+**Antes del taller**
+
+1. Prepara tu cuenta de IA y haz la [prueba de 2 minutos](contenido/00-preparacion.qmd).
+2. Si puedes, lee [el sentido y los objetivos](contenido/01-contexto.qmd), [las seis etapas y el 4D](contenido/03-metodo.qmd) y [el caso integrador](contenido/04-caso-fair.qmd) (unos 15 minutos).
+
+**Durante el taller**
+
+3. Revisa [los tres casos problemáticos](contenido/02-ejemplos.qmd).
+4. Aprende a pasar [del problema al prompt](contenido/03b-estructura-prompt.qmd).
+5. Descarga el [Excel simulado](descargas/expresion_genica_caso_simulado.xlsx) y sigue [la práctica guiada](contenido/05-practica.qmd).
+6. Realiza [la verificación independiente](contenido/06-verificacion.qmd) y completa [la bitácora](contenido/07-bitacora.qmd).
+
+**Para profundizar:** [fuentes, materiales y continuidad](contenido/08-referencias.qmd).
+
+::: {.callout-warning}
+## Datos simulados
+Los números y las condiciones del Excel son **deliberadamente ficticios**. No constituyen resultados experimentales publicables.
+:::
+
+![Las seis etapas del taller](recursos/metodologia-seis-etapas.svg){fig-alt="Diagrama de las seis etapas iterativas de trabajo con IA"}

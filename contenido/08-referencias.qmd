@@ -1,0 +1,73 @@
+---
+title: "Fuentes, materiales y continuidad"
+description: "Lecturas primarias y materiales reutilizables"
+---
+
+::: {.etiqueta-pagina .profundizar}
+Para profundizar · consulta
+:::
+
+::: {.en-un-minuto}
+- Las fuentes que respaldan cada parte del enfoque, con **lo que aportan y sus límites**.
+- Materiales descargables y **cómo citar** este taller.
+- Para profundizar en prompting: el curso *Prompting científico con IA*.
+:::
+
+## Bibliografía comentada
+
+Las referencias se identifican en el texto con claves **[R#]**. Se distinguen **fundamentos conceptuales**, **referencias aplicadas** y **recursos contextuales**. Los ejemplos de aula son construcciones didácticas; no deben atribuirse a estas fuentes como demostraciones empíricas.
+
+### Fundamentos metodológicos y de uso de IA
+
+- **[R1] Dakan, R. (Ringling College of Art and Design) y Feller, J. (University College Cork).** *AI Fluency Framework*; cursos desarrollados con Anthropic. https://aifluencyframework.org/ . Consultado el 2 de noviembre de 2026. Define **Delegation, Description, Discernment y Diligence**. **Aporta:** fundamento para decidir, comunicar, evaluar y actuar responsablemente con IA. **No define** nuestra secuencia de seis pasos.
+- **[R2] Association of College and Research Libraries (ACRL).** (2016; revisiones posteriores). *Framework for Information Literacy for Higher Education*. https://www.ala.org/acrl/standards/ilframework . En particular *Research as Inquiry* y *Searching as Strategic Exploration*: una búsqueda iterativa que requiere ampliar vocabulario, valorar fuentes y reformular necesidades. **Aporta:** base para las etapas 1 y 2.
+- **[R3] Anthropic / CodePath.** *AI Fluency for Builders*. https://academy.claude.com/courses/ai-fluency-for-builders . Consultado el 2 de noviembre de 2026. Incluye descomposición de problemas, identificación del papel de la IA, especificación y pruebas de aceptación. **Aporta:** inspiración para las etapas 3–5; es un curso destinado a *builders*, no un protocolo validado específicamente para investigación científica.
+- **[R4] Autio, C., Schwartz, R., Dunietz, J., Jain, S., Stanley, M., Tabassi, E., Hall, P. y Roberts, K.** (2024). *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile*. NIST AI 600-1. https://doi.org/10.6028/NIST.AI.600-1 . **Aporta:** fundamento de la evaluación crítica de errores, contenido no sustentado y riesgos de IA generativa; no sustituye la evaluación científica de fuentes.
+
+### FAIR y gestión de datos científicos
+
+- **[R5] Wilkinson, M. D., et al.** (2016). *The FAIR Guiding Principles for scientific data management and stewardship*. *Scientific Data*, **3**, 160018. https://doi.org/10.1038/sdata.2016.18 . **Aporta:** definición primaria de Findable, Accessible, Interoperable y Reusable, con foco en acceso y reutilización por personas y máquinas.
+- **[R6] ELIXIR RDMkit.** *Your tasks: Documentation and metadata*. https://rdmkit.elixir-europe.org/metadata_management . Consultado el 2 de noviembre de 2026. **Aporta:** orientación para documentar el origen, los métodos, las características y el contexto necesarios para comprender y reutilizar los datos.
+- **[R7] GO FAIR Foundation.** *FAIR Principles*. https://www.gofair.foundation/fair-principles . Consultado el 2 de noviembre de 2026. **Aporta:** consulta pedagógica complementaria de los principios; conviene cotejar afirmaciones con [R5]. **Precaución:** el principio A1.1 («el protocolo es abierto») se refiere al protocolo de acceso, no a que los datos sean abiertos.
+- **[R13] Mons, B., Neylon, C., Velterop, J., Dumontier, M., da Silva Santos, L. O. B. y Wilkinson, M. D.** (2017). *Cloudy, increasingly FAIR; revisiting the FAIR Data guiding principles for the European Open Science Cloud*. *Information Services & Use*, **37**, 49–56. https://doi.org/10.3233/ISU-170824 . **Aporta:** aclaración explícita, en la sección «FAIR is not equal to Open», de que la «A» significa accesible bajo condiciones bien definidas y de que ningún principio exige que los datos sean abiertos o gratuitos.
+
+### Contexto y continuidad formativa
+
+- **[R8] Taller ELIXIR-México 2026.** Programa del evento (16–27 de noviembre de 2026, CCG-UNAM). https://laboratorio-de-biologia-computacional.github.io/taller-elixir-mexico-2026/ . Consultado el 2 de noviembre de 2026. En el programa, este taller corresponde a la sesión «Instrucciones para modelos de lenguaje en tareas científicas». **Aporta:** contexto del público y posible complementariedad temática.
+- **[R9] Salgado Osorio, H.** *Prompting científico con inteligencia artificial* (material docente en línea). https://helysalgado.github.io/prompting-cientifico/ . Consultado el 2 de noviembre de 2026. **Aporta:** continuidad formativa; el taller actual es introductorio y no resume ni sustituye el curso.
+- **[R10] Wilson, G., Bryan, J., Cranston, K., Kitzes, J., Nederbragt, L. y Teal, T. K.** (2017). *Good Enough Practices in Scientific Computing*. *PLOS Computational Biology*, **13**(6), e1005510. https://doi.org/10.1371/journal.pcbi.1005510 . **Aporta:** contexto de buenas prácticas de organización, documentación y trazabilidad; la práctica en aula no exige programación.
+
+### Especificación y revisión en ingeniería de software (analogía metodológica)
+
+- **[R11] Gupta, A.** (10 de junio de 2026). *Spec-Driven Development: A Spec-First Approach to AI-Native Engineering*. Microsoft for Developers. https://developer.microsoft.com/blog/spec-driven-development-ai-native-engineering/ . Consultado el 2 de noviembre de 2026. **Aporta:** conservar intención, requisitos, restricciones y criterios de aceptación durante la implementación y validación. **Precaución:** descripción de una práctica de ingeniería, no evidencia de mejora generalizable ni un estándar para investigación científica.
+- **[R12] Fowler, M.** (21 de mayo de 2026). *Agentic Engineering*. martinfowler.com. https://martinfowler.com/bliki/AgenticEngineering.html . Consultado el 2 de noviembre de 2026. **Aporta:** distinción entre delegar implementación a agentes y conservar revisión y responsabilidad humana. **Precaución:** reflexión profesional, no estudio causal sobre resultados científicos.
+
+
+## Materiales
+
+**Para descargar**
+
+- [Excel simulado para participantes](../descargas/expresion_genica_caso_simulado.xlsx).
+- [Plantilla de bitácora en Word (.docx)](../descargas/bitacora-plantilla.docx) · [en Markdown (.md)](../descargas/bitacora-plantilla.md).
+- [Versión en texto del Excel](../descargas/expresion_genica_caso_simulado.txt), para asistentes que no aceptan archivos.
+
+**En este sitio**
+
+- [Práctica paso a paso](05-practica.qmd).
+- [Bitácora](07-bitacora.qmd).
+- [Tarjeta de práctica](tarjeta-practica.qmd), para imprimir.
+- [Antes del taller](00-preparacion.qmd): requisitos y prueba de 2 minutos.
+
+## Para continuar aprendiendo
+
+Este taller se enfoca en decisiones y verificación, no en automatización o técnicas avanzadas. Para profundizar en prompting científico, consulta [Prompting científico con inteligencia artificial](https://helysalgado.github.io/prompting-cientifico/).
+
+## Cómo citar este material
+
+**Este sitio:** Salgado, H. (2026). *Antes del prompt: pensar, delegar y verificar con IA en la investigación científica* [material didáctico]. Centro de Ciencias Genómicas, UNAM. Licencia CC BY 4.0.
+
+**Fórmula breve para presentaciones:** «Metodología didáctica de seis etapas desarrollada para este taller, inspirada en AI Fluency 4D (Dakan y Feller), alfabetización informacional (ACRL) y prácticas de especificación, verificación y documentación científica». Citar [R1], [R2], [R3] y [R6]; para la analogía con ingeniería de software, añadir [R11] y [R12].
+
+## Estado del material
+
+Se ha realizado una prueba de interacción con IA de los prompts P0, P1, P5 y P6 usando un Excel didáctico. **No se ha documentado aún un piloto con participantes ni una evaluación formal de resultados de aprendizaje.**

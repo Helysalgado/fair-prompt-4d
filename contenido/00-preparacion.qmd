@@ -1,0 +1,65 @@
+---
+title: "Antes del taller"
+description: "Requisitos, prueba de tu asistente de IA y lectura previa"
+---
+
+::: {.etiqueta-pagina .antes}
+Antes del taller · 10 min + prueba de 2 min
+:::
+
+::: {.en-un-minuto}
+- Necesitas **una cuenta en un asistente de IA que permita adjuntar archivos** y mantener una conversación larga en un mismo chat.
+- **Pruébala antes del taller** con el Excel simulado: toma dos minutos y evita perder la práctica.
+- Si puedes, lee [Sentido y objetivos](01-contexto.qmd) y [Seis etapas y 4D](03-metodo.qmd) (unos 15 minutos).
+:::
+
+## Lista de comprobación
+
+| ✓ | Requisito | Detalle |
+|---|---|---|
+| ☐ | **Computadora** | Portátil o de escritorio. Un celular complica la práctica: hay que leer respuestas largas y alternar entre ventanas. |
+| ☐ | **Cuenta en un asistente de IA** | Por ejemplo ChatGPT, Claude, Gemini o Copilot. Cualquiera sirve si **permite adjuntar un archivo Excel** y mantener **un solo chat** con varias preguntas. Crea la cuenta antes del taller: la verificación por correo o teléfono puede tardar. |
+| ☐ | **Programa para abrir el Excel** | Excel, LibreOffice Calc o Google Sheets. |
+| ☐ | **Dónde escribir tu bitácora** | Google Docs (requiere cuenta de Google), Word o un editor de texto. Hay [plantillas descargables](07-bitacora.qmd). |
+| ☐ | **Archivos del taller** | [Excel simulado](../descargas/expresion_genica_caso_simulado.xlsx) · [versión en texto](../descargas/expresion_genica_caso_simulado.txt) · [plantilla de bitácora](../descargas/bitacora-plantilla.docx) · [tarjeta de práctica](tarjeta-practica.qmd), para imprimir. |
+
+Los planes gratuitos de los asistentes cambian con frecuencia (límite de mensajes, de archivos adjuntos o de longitud de la conversación). Por eso no recomendamos uno en particular: **comprueba el tuyo con la prueba siguiente**.
+
+## Prueba de 2 minutos
+
+1. Abre un chat nuevo en tu asistente.
+2. Adjunta el [Excel simulado](../descargas/expresion_genica_caso_simulado.xlsx).
+3. Escribe:
+
+::: {.prompt data-label="Prueba" data-meta="chat de prueba · adjunta el Excel"}
+¿Cuántas hojas tiene este archivo y cómo se llaman? Responde solo con eso.
+:::
+
+**Si responde que hay dos hojas, `Expresion_genica` y `Notas_experimento`, tu cuenta sirve.** No sigas conversando en ese chat: en el taller empezarás uno nuevo.
+
+::: {.callout-warning}
+## Plan B · si tu asistente no permite adjuntar archivos
+Descarga la [versión en texto del Excel](../descargas/expresion_genica_caso_simulado.txt), copia todo su contenido y pégalo al inicio de tu primer mensaje. Tiene las mismas dos hojas; las celdas vacías aparecen como `[vacía]`. Anota en tu bitácora que trabajaste con la versión en texto.
+:::
+
+## Privacidad y uso responsable
+
+- **No subas datos reales, confidenciales o personales**, ni en el taller ni en la prueba. Usaremos solo datos simulados.
+- Revisa en la configuración de tu asistente si **tus conversaciones se usan para entrenar el modelo** y desactívalo si lo prefieres.
+- Si tu institución tiene una **política sobre el uso de IA**, tenla presente: el taller no la sustituye.
+
+## Si participas en línea
+
+- Ten a la mano el enlace de la videollamada y, en otra ventana, tu asistente de IA y tu bitácora. Dos pantallas ayudan, pero no son necesarias.
+- Las actividades en pareja se harán en **salas separadas** de la videollamada. Si no se forman salas, comparte tu texto en el chat de la reunión y comenta el de otra persona.
+- Para la revisión entre pares, comparte tu bitácora con **permiso de comentario** (en Google Docs: *Compartir → Comentador*).
+
+## Lectura previa recomendada
+
+| Página | Qué aporta | Lectura |
+|---|---|---|
+| [Sentido y objetivos](01-contexto.qmd) | Por qué importa saber qué delegar y cómo verificar | 5 min |
+| [Seis etapas y 4D](03-metodo.qmd) | El método que seguiremos y el marco de competencias | 5 min |
+| [Caso integrador](04-caso-fair.qmd) | El Excel con el que trabajaremos | 3 min |
+
+No es obligatoria: el taller empieza con un resumen. Pero si llegas con estas páginas leídas, tendrás más tiempo para la práctica.
