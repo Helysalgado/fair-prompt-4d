@@ -1,0 +1,18 @@
+# <tipo>(<ámbito opcional>): <resumen en imperativo, minúsculas, sin punto, ≤ 72 caracteres>
+#
+# Tipos:
+#   feat     contenido o función nueva (página, actividad, diagrama, descarga)
+#   fix      corrección de un error (dato, enlace roto, ruta, render)
+#   docs     README, guías y documentación del repositorio
+#   style    apariencia: tema, CSS, tipografía (sin cambiar contenido)
+#   refactor reorganizar sin cambiar lo que ve quien participa
+#   chore    configuración, .gitignore, herramientas
+#   ci       publicación automática (GitHub Actions)
+#   revert   deshacer un commit anterior
+#
+# Ámbitos sugeridos: contenido, practica, bitacora, recursos, descargas,
+#                    tema, sitio, referencias
+#
+# Cuerpo (opcional): QUÉ cambió y POR QUÉ, no cómo. Líneas de ≤ 72 caracteres.
+#
+# Pie (opcional): BREAKING CHANGE: ..., Refs: #12, Co-Authored-By: ...

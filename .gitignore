@@ -1,0 +1,15 @@
+# Salida de Quarto (se publica con `quarto publish gh-pages`, no se versiona)
+/_site/
+/.quarto/
+*_files/
+/.luarc.json
+
+# Material docente privado: NUNCA versionar
+privado-docente/
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*~
