@@ -4,9 +4,11 @@ project:
   render:
     - index.qmd
     - contenido/*.qmd
+    - contenido/interactivos/explorador-fair.qmd
   resources:
     - descargas/**
     - recursos/**
+    - interactivos/**
 
 lang: es
 

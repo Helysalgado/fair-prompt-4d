@@ -1,0 +1,48 @@
+---
+title: "Explorador FAIR"
+description: "Explora un Excel simulado, distingue observaciones de interpretaciones y formula preguntas antes de consultar una IA"
+---
+
+::: {.etiqueta-pagina .durante}
+Durante el taller · actividad de 10 min
+:::
+
+::: {.en-un-minuto}
+- Recorre un Excel simulado y anota solo lo que el archivo permite ver.
+- Distingue una observación de una interpretación.
+- Formula preguntas antes de consultar una IA.
+:::
+
+Esta actividad dura unos **10 minutos**. El objetivo es explorar el Excel simulado del caso, distinguir lo que observas de lo que interpretas y formular preguntas antes de pedir ayuda a una IA.
+
+Los datos son ficticios. Completar la actividad **no certifica** que un conjunto de datos cumpla los principios FAIR ni califica tus respuestas.
+
+## Cómo participar
+
+1. Recorre las cinco secciones: Observar, Interpretar, Preguntar, Sintetizar y Reporte.
+2. Selecciona celdas con el puntero o con el teclado y anota lo que puedes señalar en el archivo.
+3. Si aún no sabes qué afirmar, escribe «No sé» y consulta las pistas.
+4. Escribe tus preguntas y descarga el reporte en Markdown al terminar.
+
+[Abrir el Explorador en una pestaña independiente](../../interactivos/explorador_fair.html){target="_blank"} · [Descargar el Excel simulado](../../descargas/expresion_genica_caso_simulado.xlsx)
+
+## Herramienta
+
+```{=html}
+<iframe class="explorador-frame" src="../../interactivos/explorador_fair.html" title="Explorador FAIR: actividad para observar el Excel simulado"></iframe>
+<style>
+.explorador-frame {
+  display: block;
+  width: 100%;
+  height: 92vh;
+  min-height: 640px;
+  margin-top: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+}
+@media (max-width: 768px) {
+  .explorador-frame { height: 85vh; min-height: 520px; }
+}
+</style>
+```

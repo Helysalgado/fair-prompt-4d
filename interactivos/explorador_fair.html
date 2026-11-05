@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorador FAIR — ¿Qué puedes saber realmente observando estos datos?</title>
+  <style>
+    /* UNAM Inspired Visual Palette & Theme Design Tokens */
+    :root {
+      --unam-blue: #00314F;
+      --unam-blue-hover: #002238;
+      --unam-gold: #C9A227;
+      --unam-gold-light: #fef9c3;
+      
+      --background: #F3F4F6;
+      --surface: #FFFFFF;
+      --border-color: #E5E7EB;
+      --border-dark: #CBD5E1;
+
+      --text-primary: #1F2937;
+      --text-secondary: #64748B;
+      --text-muted: #9CA3AF;
+
+      --info-bg: #DCEAF2;
+      --info-text: #00314F;
+      --info-border: #BAE6FD;
+
+      --success-bg: #E8F3EA;
+      --success-text: #24613A;
+      --success-border: #BBF7D0;
+
+      --warning-bg: #FFF3D6;
+      --warning-text: #835C10;
+      --warning-border: #FDE68A;
+
+      --focus-ring: #0284C7;
+      --radius: 8px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+      --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--background);
+      color: var(--text-primary);
+      line-height: 1.5;
+      padding: 1.25rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Accessibility utilities */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--focus-ring);
+      outline-offset: 2px;
+    }
+
+    /* Header Component */
+    header {
+      background: var(--surface);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      border-top: 5px solid var(--unam-gold);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.25rem;
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      color: var(--unam-blue);
+      margin-bottom: 0.2rem;
+      font-weight: 700;
+    }
+
+    header p.subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .meta-tag {
+      display: inline-block;
+      background: var(--info-bg);
+      color: var(--info-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid var(--info-border);
+    }
+
+    /* Navigation Header Component */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      background: var(--surface);
+      padding: 0.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-btn {
+      flex: 1;
+      min-width: 130px;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 0.875rem;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .nav-btn:hover {
+      background: var(--background);
+      color: var(--text-primary);
+    }
+
+    .nav-btn.active {
+      background: var(--unam-blue);
+      color: white;
+      border-color: var(--unam-blue);
+    }
+
+    .nav-btn .badge {
+      background: rgba(0, 0, 0, 0.12);
+      padding: 0.15rem 0.4rem;
+      border-radius: 10px;
+      font-size: 0.75rem;
+    }
+
+    .nav-btn.active .badge {
+      background: var(--unam-gold);
+      color: #000;
+      font-weight: 700;
+    }
+
+    /* Main Section Containers */
+    main {
+      min-height: 520px;
+    }
+
+    .station {
+      display: none;
+      background: var(--surface);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .station.active {
+      display: block;
+    }
+
+    .station-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--background);
+    }
+
+    .station-title {
+      font-size: 1.25rem;
+      color: var(--unam-blue);
+      font-weight: 700;
+    }
+
+    .station-desc {
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    /* Interactive Spreadsheet Grid */
+    .sheet-tabs {
+      display: flex;
+      gap: 0.25rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 0.75rem;
+    }
+
+    .sheet-tab {
+      padding: 0.5rem 1rem;
+      background: #E2E8F0;
+      border: 1px solid var(--border-color);
+      border-bottom: none;
+      border-radius: 6px 6px 0 0;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .sheet-tab.active {
+      background: var(--surface);
+      color: var(--unam-blue);
+      border-top: 3px solid var(--unam-blue);
+      margin-bottom: -1px;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      border: 1px solid var(--border-dark);
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      background: #FFF;
+    }
+
+    table.excel-grid {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      font-size: 0.875rem;
+    }
+
+    table.excel-grid th, table.excel-grid td {
+      border: 1px solid #CBD5E1;
+      padding: 0.45rem 0.65rem;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    table.excel-grid th {
+      background-color: #F1F5F9;
+      color: #475569;
+      font-weight: 700;
+      text-align: center;
+      user-select: none;
+    }
+
+    table.excel-grid td {
+      padding: 0;
+      position: relative;
+    }
+
+    .cell-btn {
+      display: block;
+      width: 100%;
+      min-height: 2.25rem;
+      margin: 0;
+      padding: 0.45rem 0.65rem;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .cell-btn.header-cell {
+      font-weight: 700;
+    }
+
+    .cell-btn:hover {
+      background-color: var(--info-bg);
+    }
+
+    .cell-btn.selected {
+      outline: 2px solid var(--unam-blue);
+      background-color: #E0F2FE;
+      font-weight: 600;
+    }
+
+    .cell-btn:focus-visible {
+      outline: 3px solid var(--unam-gold);
+      outline-offset: -3px;
+      box-shadow: inset 0 0 0 2px #fff;
+    }
+
+    table.excel-grid td.empty-cell {
+      background-color: #FAFAFA;
+    }
+
+    /* Cell Inspector Component */
+    .inspector-panel {
+      background: var(--info-bg);
+      border: 1px solid var(--info-border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--info-text);
+    }
+
+    .inspector-panel strong {
+      color: var(--unam-blue);
+    }
+
+    /* Cards and Form Inputs */
+    .card-box {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      background: #FAFAFA;
+    }
+
+    .card-box h3, .card-box h4 {
+      color: var(--unam-blue);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+    }
+
+    .help-text {
+      font-size: 0.825rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
+    }
+
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--border-dark);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      background-color: var(--surface);
+      transition: border-color 0.2s;
+    }
+
+    input[type="text"]:focus, textarea:focus, select:focus {
+      border-color: var(--unam-blue);
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 75px;
+    }
+
+    /* Buttons Component */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1.1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+      gap: 0.4rem;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--unam-blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--unam-blue-hover);
+    }
+
+    .btn-secondary {
+      background: var(--unam-gold);
+      color: #000;
+    }
+
+    .btn-secondary:hover {
+      background: #b38e1f;
+    }
+
+    .btn-outline {
+      background: var(--surface);
+      border-color: var(--border-dark);
+      color: var(--text-primary);
+    }
+
+    .btn-outline:hover {
+      background: #F1F5F9;
+    }
+
+    .btn-sm {
+      padding: 0.35rem 0.65rem;
+      font-size: 0.8rem;
+    }
+
+    .btn:disabled,
+    .btn:disabled:hover {
+      opacity: 0.45;
+      cursor: not-allowed;
+      background: var(--surface);
+    }
+
+    /* Feedback & Hint Boxes */
+    .hint-container {
+      margin-top: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: var(--warning-bg);
+      border: 1px solid var(--warning-border);
+      border-radius: 6px;
+      color: var(--warning-text);
+      font-size: 0.875rem;
+    }
+
+    .explanation-box {
+      margin-top: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: var(--success-bg);
+      border: 1px solid var(--success-border);
+      border-radius: 6px;
+      color: var(--success-text);
+      font-size: 0.875rem;
+    }
+
+    /* Radio / Selection groups */
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin: 0.5rem 0;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+
+    /* Station 5: Report Layout */
+    .report-card {
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .report-section {
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .report-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .report-section h3 {
+      font-size: 1rem;
+      color: var(--unam-blue);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .report-content {
+      background: var(--background);
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      border-left: 3px solid var(--unam-blue);
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      white-space: pre-wrap;
+    }
+
+    .report-content.empty {
+      color: var(--text-muted);
+      font-style: italic;
+      border-left-color: var(--border-dark);
+    }
+
+    /* Chart Component Styles (Section 5 Report) */
+    .chart-box {
+      background: #FAFAFA;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .chart-box h4 {
+      color: var(--unam-blue);
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .chart-box p.chart-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .chart-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .chart-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .chart-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .chart-bar-bg {
+      background: #E2E8F0;
+      height: 22px;
+      border-radius: 4px;
+      overflow: hidden;
+      width: 100%;
+      display: flex;
+    }
+
+    .chart-bar-fill {
+      height: 100%;
+      transition: width 0.4s ease-in-out;
+      display: flex;
+      align-items: center;
+      padding-left: 0.5rem;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .bar-cat1 { background-color: var(--unam-blue); }
+    .bar-cat2 { background-color: var(--unam-gold); color: #000; }
+    .bar-cat3 { background-color: #64748B; }
+
+    .chart-disclaimer {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      border-top: 1px dashed var(--border-dark);
+      padding-top: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    /* Footer Controls */
+    footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.825rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-notice {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-danger {
+      background: #EF4444;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #DC2626;
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 0.75rem; }
+      .nav-btn { flex: 1 1 100%; }
+      .station-header { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Explorador FAIR</h1>
+    <p class="subtitle">¿Qué puedes saber realmente observando estos datos?</p>
+    <div>
+      <span class="meta-tag">Taller: Antes del prompt</span>
+      <span class="meta-tag" style="background:#F1F5F9; color:#475569; border-color:#CBD5E1; margin-left: 0.25rem;">Caso: Expresión génica simulada</span>
+    </div>
+  </header>
+
+  <!-- Navigation Bar (5 Sections) -->
+  <nav aria-label="Secciones del taller">
+    <button class="nav-btn active" id="btn-st1" onclick="switchStation(1)">
+      <span>1. Observar</span>
+      <span class="badge" id="badge-st1">Iniciada</span>
+    </button>
+    <button class="nav-btn" id="btn-st2" onclick="switchStation(2)">
+      <span>2. Interpretar</span>
+      <span class="badge" id="badge-st2">0 explorados</span>
+    </button>
+    <button class="nav-btn" id="btn-st3" onclick="switchStation(3)">
+      <span>3. Preguntar</span>
+      <span class="badge" id="badge-st3">0/3</span>
+    </button>
+    <button class="nav-btn" id="btn-st4" onclick="switchStation(4)">
+      <span>4. Sintetizar</span>
+      <span class="badge" id="badge-st4">Borrador</span>
+    </button>
+    <button class="nav-btn" id="btn-st5" onclick="switchStation(5)">
+      <span>5. Reporte</span>
+      <span class="badge" style="background:var(--unam-gold); color:#000;">Ver</span>
+    </button>
+  </nav>
+
+  <!-- Main Content Areas -->
+  <main>
+
+    <!-- SECTION 1: OBSERVAR EL ARCHIVO -->
+    <section id="station-1" class="station active" aria-labelledby="st1-heading">
+      <div class="station-header">
+        <h2 id="st1-heading" class="station-title">Estación 1 — Observar el archivo</h2>
+        <span style="font-size: 0.85rem; color: var(--text-secondary);">Sección 1 de 5</span>
+      </div>
+      <p class="station-desc">
+        Explore libremente la estructura de las hojas del libro simulado. Seleccione cualquier celda para inspeccionar su coordenada y contenido literal.
+      </p>
+
+      <!-- Spreadsheet Viewer -->
+      <div class="sheet-tabs" role="tablist" aria-label="Hojas en Observar">
+        <button type="button" class="sheet-tab active" id="tab-sheet1" role="tab" aria-selected="true" aria-controls="obs-panel-sheet1" onclick="showSheet(1, 'sheet1')">Expresion_genica</button>
+        <button type="button" class="sheet-tab" id="tab-sheet2" role="tab" aria-selected="false" aria-controls="obs-panel-sheet2" onclick="showSheet(1, 'sheet2')">Notas_experimento</button>
+      </div>
+      <div id="obs-panel-sheet1" class="table-container" role="tabpanel" aria-labelledby="tab-sheet1"></div>
+      <div id="obs-panel-sheet2" class="table-container" role="tabpanel" aria-labelledby="tab-sheet2" hidden></div>
+
+      <!-- Inspector Panel -->
+      <div class="inspector-panel" aria-live="polite" id="cell-inspector">
+        <div>
+          <span>Celda seleccionada: <strong id="insp-coord">Ninguna</strong></span>
+          <span style="margin-left: 1rem;">Hoja: <strong id="insp-sheet">-</strong></span>
+        </div>
+        <div>
+          <span>Contenido literal: <strong id="insp-val">(seleccione una celda para inspeccionar)</strong></span>
+        </div>
+      </div>
+
+      <!-- Guided Activity A & B -->
+      <div class="card-box">
+        <h3>Propósito de la exploración</h3>
+        <div class="form-group">
+          <label for="st1-need">¿Qué necesitas lograr con estos datos?</label>
+          <textarea id="st1-need" placeholder="Describe, con tus palabras, qué te piden hacer con este archivo." oninput="saveData()"></textarea>
+        </div>
+      </div>
+
+      <div class="card-box">
+        <h3>Actividad A — Explorar e Identificar</h3>
+        <div class="form-group">
+          <label for="st1-obs">¿Qué información puedes reconocer directamente en este archivo?</label>
+          <p class="help-text">Anota lo que ves, sin completar lo que el archivo no dice.</p>
+          <textarea id="st1-obs" placeholder="Escribe aquí lo que puedes señalar en el archivo." oninput="saveData()"></textarea>
+        </div>
+      </div>
+
+      <div class="card-box">
+        <h3>Actividad B — Estructura básica del archivo</h3>
+        
+        <div class="form-group">
+          <label for="st1-q1">1. ¿Cuántas hojas de trabajo contiene este archivo?</label>
+          <select id="st1-q1" onchange="evaluateSt1Q1()">
+            <option value="">-- Seleccionar --</option>
+            <option value="1">1 hoja</option>
+            <option value="2">2 hojas</option>
+            <option value="3">3 hojas</option>
+          </select>
+          <div id="st1-q1-feedback"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="st1-q2">2. ¿Qué representa cada fila (5 a 9) en la hoja "Expresion_genica"?</label>
+          <select id="st1-q2" onchange="evaluateSt1Q2()">
+            <option value="">-- Seleccionar --</option>
+            <option value="muestras">Diferentes muestras</option>
+            <option value="genes">Mediciones de expresión para un gen o identificador</option>
+            <option value="fechas">Lotes temporales</option>
+          </select>
+          <div id="st1-q2-feedback"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="st1-q3">3. Cierre: ¿Qué podrías describir con seguridad si únicamente tuvieras este archivo?</label>
+          <textarea id="st1-q3" placeholder="Escribe solo lo que el archivo permite afirmar." oninput="saveData()"></textarea>
+        </div>
+      </div>
+
+      <div style="text-align: right;">
+        <button class="btn btn-primary" onclick="switchStation(2)">Avanzar a Estación 2 &rarr;</button>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERPRETAR CON EVIDENCIA (DYNAMIC PICKER) -->
+    <section id="station-2" class="station" aria-labelledby="st2-heading">
+      <div class="station-header">
+        <h2 id="st2-heading" class="station-title">Estación 2 — Interpretar con evidencia</h2>
+        <span style="font-size: 0.85rem; color: var(--text-secondary);">Sección 2 de 5</span>
+      </div>
+      <p class="station-desc">
+        Explora el archivo y selecciona un elemento de cualquiera de las hojas que te genere alguna duda sobre su interpretación. Distingue entre lo observable, lo interpretable y lo que requiere confirmación.
+      </p>
+
+      <!-- Selection instruction area -->
+      <div class="card-box" style="background:#FFF3D6; border-color:#FDE68A;">
+        <strong style="color:#835C10;">Instrucciones:</strong> Cambia de hoja si lo deseas y selecciona cualquier celda en la tabla para analizar sus límites de interpretación.
+      </div>
+
+      <!-- Sheet Tabs within Station 2 for dual-sheet switching -->
+      <div class="sheet-tabs" role="tablist" aria-label="Hojas en Interpretar">
+        <button type="button" class="sheet-tab active" id="st2-tab-sheet1" role="tab" aria-selected="true" aria-controls="int-panel-sheet1" onclick="showSheet(2, 'sheet1')">Expresion_genica</button>
+        <button type="button" class="sheet-tab" id="st2-tab-sheet2" role="tab" aria-selected="false" aria-controls="int-panel-sheet2" onclick="showSheet(2, 'sheet2')">Notas_experimento</button>
+      </div>
+      <div id="int-panel-sheet1" class="table-container" role="tabpanel" aria-labelledby="st2-tab-sheet1"></div>
+      <div id="int-panel-sheet2" class="table-container" role="tabpanel" aria-labelledby="st2-tab-sheet2" hidden></div>
+
+      <!-- Active Cell Interpretation Form -->
+      <div class="card-box" id="st2-analysis-box">
+        <h4>Análisis del elemento seleccionado: <span id="st2-cell-label" style="color:var(--unam-gold); font-weight:bold;">Ninguno</span></h4>
+        <p class="help-text" id="st2-cell-value-display">Selecciona una celda con el puntero o con el teclado.</p>
+        
+        <div id="st2-form-fields" style="display:none; margin-top:1rem;">
+          <div class="form-group">
+            <label for="st2-obs-text">¿Qué puedes afirmar directamente sobre este elemento usando únicamente el archivo?</label>
+            <p class="help-text">Escribe un primer intento. Si aún no sabes qué afirmar, puedes anotar «No sé».</p>
+            <textarea id="st2-obs-text" placeholder="Qué puedes señalar en esta celda, o «No sé»." oninput="saveSt2Current()"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="st2-cat">Clasificación de tu afirmación:</label>
+            <select id="st2-cat" onchange="saveSt2Current()">
+              <option value="">-- Seleccionar --</option>
+              <option value="Lo observo directamente en el archivo">Lo observo directamente en el archivo</option>
+              <option value="Es una interpretación o hipótesis plausible">Es una interpretación o hipótesis plausible</option>
+              <option value="Necesito más información para afirmarlo">Necesito más información para afirmarlo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="st2-rev-text">Interpretación revisada (después de consultar o reflexionar):</label>
+            <textarea id="st2-rev-text" placeholder="Si modificaste tu punto de vista, anótalo aquí..." oninput="saveSt2Current()"></textarea>
+          </div>
+
+          <!-- Progressive Hints & Pedagogical feedback based on selection -->
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem;">
+            <button type="button" class="btn btn-outline btn-sm" id="btn-hint1" onclick="toggleSt2Hint(1)">Pista 1</button>
+            <button type="button" class="btn btn-outline btn-sm" id="btn-hint2" onclick="toggleSt2Hint(2)" disabled>Pista 2</button>
+            <button type="button" class="btn btn-outline btn-sm" id="btn-exp" onclick="toggleSt2Exp()" disabled>Ver explicación contextual</button>
+          </div>
+
+          <div id="st2-hint1" class="hint-container" style="display:none;"></div>
+          <div id="st2-hint2" class="hint-container" style="display:none;"></div>
+          <div id="st2-exp" class="explanation-box" style="display:none;"></div>
+        </div>
+      </div>
+
+      <!-- List of explored elements in Station 2 -->
+      <div class="card-box">
+        <h3>Elementos analizados con registro (<span id="st2-count">0</span>)</h3>
+        <div id="st2-explored-list" style="font-size:0.9rem; color:var(--text-secondary);">
+          Aún no has guardado observaciones para ningún elemento.
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:1rem;">
+        <button class="btn btn-outline" onclick="switchStation(1)">&larr; Volver a Estación 1</button>
+        <button class="btn btn-primary" onclick="switchStation(3)">Avanzar a Estación 3 &rarr;</button>
+      </div>
+    </section>
+
+    <!-- SECTION 3: FORMULAR PREGUNTAS -->
+    <section id="station-3" class="station" aria-labelledby="st3-heading">
+      <div class="station-header">
+        <h2 id="st3-heading" class="station-title">Estación 3 — Formular preguntas</h2>
+        <span style="font-size: 0.85rem; color: var(--text-secondary);">Sección 3 de 5</span>
+      </div>
+      <p class="station-desc">
+        Transforme sus incertidumbres en preguntas útiles dirigidas a la persona responsable del experimento o a fuentes documentales antes de interactuar con una IA.
+      </p>
+
+      <!-- Question 1 -->
+      <div class="card-box">
+        <h4>Pregunta Prioritaria 1</h4>
+        <div class="form-group">
+          <label for="st3-q1-elem">Elemento del archivo relacionado:</label>
+          <input type="text" id="st3-q1-elem" placeholder="Celda, encabezado o nota del archivo" oninput="saveData()">
+        </div>
+        <div class="form-group">
+          <label for="st3-q1-text">Pregunta formulada:</label>
+          <textarea id="st3-q1-text" placeholder="Escriba la pregunta concreta..." oninput="saveData()"></textarea>
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label for="st3-q1-target">¿A quién o dónde dirigirla?</label>
+            <input type="text" id="st3-q1-target" placeholder="Persona, documento o fuente" oninput="saveData()">
+          </div>
+          <div class="form-group">
+            <label for="st3-q1-why">¿Por qué es importante?</label>
+            <input type="text" id="st3-q1-why" placeholder="Qué decisión depende de esa respuesta" oninput="saveData()">
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="card-box">
+        <h4>Pregunta Prioritaria 2</h4>
+        <div class="form-group">
+          <label for="st3-q2-elem">Elemento del archivo relacionado:</label>
+          <input type="text" id="st3-q2-elem" placeholder="Otro elemento del archivo" oninput="saveData()">
+        </div>
+        <div class="form-group">
+          <label for="st3-q2-text">Pregunta formulada:</label>
+          <textarea id="st3-q2-text" placeholder="Escriba la pregunta concreta..." oninput="saveData()"></textarea>
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label for="st3-q2-target">¿A quién o dónde dirigirla?</label>
+            <input type="text" id="st3-q2-target" placeholder="Persona, documento o fuente" oninput="saveData()">
+          </div>
+          <div class="form-group">
+            <label for="st3-q2-why">¿Por qué es importante?</label>
+            <input type="text" id="st3-q2-why" placeholder="Qué decisión depende de esa respuesta" oninput="saveData()">
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="card-box">
+        <h4>Pregunta Prioritaria 3</h4>
+        <div class="form-group">
+          <label for="st3-q3-elem">Elemento del archivo relacionado:</label>
+          <input type="text" id="st3-q3-elem" placeholder="Un tercer elemento, si lo hay" oninput="saveData()">
+        </div>
+        <div class="form-group">
+          <label for="st3-q3-text">Pregunta formulada:</label>
+          <textarea id="st3-q3-text" placeholder="Escriba la pregunta concreta..." oninput="saveData()"></textarea>
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label for="st3-q3-target">¿A quién o dónde dirigirla?</label>
+            <input type="text" id="st3-q3-target" placeholder="Persona, documento o fuente" oninput="saveData()">
+          </div>
+          <div class="form-group">
+            <label for="st3-q3-why">¿Por qué es importante?</label>
+            <input type="text" id="st3-q3-why" placeholder="Qué decisión depende de esa respuesta" oninput="saveData()">
+          </div>
+        </div>
+      </div>
+
+      <div class="card-box" style="background: var(--info-bg); border-color: var(--info-border);">
+        <h4 style="color: var(--unam-blue);">Reflexión sobre el rol de la IA</h4>
+        <div class="form-group">
+          <label for="st3-ai-refl">¿Cuáles de tus dudas podría ayudarte a explorar una IA y cuáles requerirían información obligatoria de quien realizó el experimento?</label>
+          <textarea id="st3-ai-refl" placeholder="Qué podrías explorar con una IA y qué solo puede confirmar quien hizo el trabajo." oninput="saveData()"></textarea>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:1rem;">
+        <button class="btn btn-outline" onclick="switchStation(2)">&larr; Volver a Estación 2</button>
+        <button class="btn btn-primary" onclick="switchStation(4)">Avanzar a Estación 4 &rarr;</button>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SINTETIZAR -->
+    <section id="station-4" class="station" aria-labelledby="st4-heading">
+      <div class="station-header">
+        <h2 id="st4-heading" class="station-title">Estación 4 — Sintetizar</h2>
+        <span style="font-size: 0.85rem; color: var(--text-secondary);">Sección 4 de 5</span>
+      </div>
+      <p class="station-desc">
+        Revise sus reflexiones personales antes de consultar el Reporte final. Consolide su cambio de perspectiva y sus decisiones pendientes.
+      </p>
+
+      <div class="card-box">
+        <h3>Reflexión de cierre del pensamiento científico</h3>
+        <div class="form-group">
+          <label for="st4-final-refl">Antes de pedirle ayuda a una IA, ¿qué cambió en tu comprensión del problema?</label>
+          <textarea id="st4-final-refl" placeholder="Sintetice cómo la observación rigurosa del dataset modifica sus expectativas frente a un modelo de IA..." oninput="saveData()"></textarea>
+        </div>
+
+        <div class="form-group" style="margin-top:1.25rem;">
+          <label for="st4-pending">¿Qué información o decisiones siguen pendientes después de tu exploración?</label>
+          <p class="help-text">Indique qué datos específicos faltan antes de poder reutilizar o compartir formalmente este conjunto de datos.</p>
+          <textarea id="st4-pending" placeholder="Anota lo que todavía no puedes afirmar solo con este archivo." oninput="saveData()"></textarea>
+        </div>
+      </div>
+
+      <div class="card-box" style="background:#E8F3EA; border-color:#BBF7D0;">
+        <h4 style="color:#24613A;">Siguiente paso pedagógico:</h4>
+        <p style="font-size:0.9rem; color:#24613A;">
+          Ahora estás listo para revisar tu expediente consolidado en la sección <strong>Reporte</strong> y exportar tu trabajo en formato Markdown.
+        </p>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:1rem;">
+        <button class="btn btn-outline" onclick="switchStation(3)">&larr; Volver a Estación 3</button>
+        <button class="btn btn-secondary" onclick="switchStation(5)">Ver mi Reporte final &rarr;</button>
+      </div>
+    </section>
+
+    <!-- SECTION 5: REPORTE FINAL INDEPENDIENTE -->
+    <section id="station-5" class="station" aria-labelledby="st5-heading">
+      <div class="station-header">
+        <h2 id="st5-heading" class="station-title">Reporte de Exploración</h2>
+        <span style="font-size: 0.85rem; color: var(--text-secondary);">Sección 5 de 5</span>
+      </div>
+      <p class="subtitle" style="margin-bottom: 1.25rem;">
+        Mi exploración del dataset: observaciones, interpretaciones y preguntas pendientes
+      </p>
+
+      <!-- Dynamic Chart Component -->
+      <div class="chart-box" id="report-chart-container">
+        <h4>¿Cómo clasifiqué los elementos que exploré?</h4>
+        <p class="chart-subtitle" id="chart-total-label">Total de elementos clasificados: 0</p>
+        
+        <div id="chart-content">
+          <!-- Rendered via renderChart() JS -->
+        </div>
+
+        <p id="chart-summary" class="help-text"></p>
+        <p class="chart-disclaimer">
+          «Esta visualización describe tus clasificaciones durante la exploración. Los porcentajes son aproximados. No determina si son correctas ni evalúa el cumplimiento FAIR».
+        </p>
+      </div>
+
+      <div class="report-card" id="report-view">
+        
+        <div class="report-section">
+          <h3>1. Mi necesidad</h3>
+          <div id="rep-sec-1" class="report-content">Sin respuesta</div>
+        </div>
+
+        <div class="report-section">
+          <h3>2. Lo que observé en el archivo</h3>
+          <div id="rep-sec-2" class="report-content">Sin respuesta</div>
+        </div>
+
+        <div class="report-section">
+          <h3>3. Mis interpretaciones y revisiones</h3>
+          <div id="rep-sec-3" class="report-content">Sin respuesta</div>
+        </div>
+
+        <div class="report-section">
+          <h3>4. Mis incertidumbres prioritarias</h3>
+          <div id="rep-sec-4" class="report-content">Sin respuesta</div>
+        </div>
+
+        <div class="report-section">
+          <h3>5. Mis preguntas para continuar</h3>
+          <div id="rep-sec-5" class="report-content">Sin respuesta</div>
+        </div>
+
+        <div class="report-section">
+          <h3>6. Qué podría hacer con IA</h3>
+          <div id="rep-sec-6" class="report-content">Sin respuesta</div>
+        </div>
+
+        <div class="report-section">
+          <h3>7. Aspectos que siguen pendientes</h3>
+          <div id="rep-sec-7" class="report-content">Sin respuesta</div>
+        </div>
+
+        <div class="report-section">
+          <h3>8. Mi reflexión final</h3>
+          <div id="rep-sec-8" class="report-content">Sin respuesta</div>
+        </div>
+
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <button class="btn btn-outline" onclick="switchStation(4)">&larr; Regresar a Sintetizar</button>
+        <button class="btn btn-primary" onclick="downloadMarkdown()">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          Descargar reporte (.md)
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Controls -->
+  <footer>
+    <div class="footer-notice">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <span>Tus respuestas se guardan únicamente en este navegador. Puedes descargar tu registro o reiniciar la actividad.</span>
+    </div>
+    <button class="btn btn-danger btn-sm" onclick="resetActivity()">Reiniciar actividad</button>
+  </footer>
+
+  <!-- JavaScript App Logic -->
+  <script>
+    /**
+     * Reporte: la gráfica describe clasificaciones escritas por la persona.
+     * No asigna puntaje ni certifica FAIR. Los porcentajes son aproximados.
+     */
+    window.__fairErrors = [];
+    window.addEventListener('error', function (event) {
+      window.__fairErrors.push(event.message);
+    });
+
+    const STORAGE_KEY = 'explorador_fair_unam_v3';
+    const CATS = [
+      'Lo observo directamente en el archivo',
+      'Es una interpretación o hipótesis plausible',
+      'Necesito más información para afirmarlo'
+    ];
+    const Q1_LABELS = { '1': '1 hoja', '2': '2 hojas', '3': '3 hojas' };
+    const Q2_LABELS = {
+      muestras: 'Diferentes muestras',
+      genes: 'Mediciones de expresión para un gen o identificador',
+      fechas: 'Lotes temporales'
+    };
+
+    const SHEETS = {
+      sheet1: {
+        name: 'Expresion_genica',
+        columns: ['A', 'B', 'C', 'D'],
+        rows: [
+          { n: 1, cells: [{ coord: 'A1', text: 'DATOS DE EXPRESIÓN GÉNICA · EJEMPLO SIMULADO', colspan: 4 }] },
+          { n: 2, cells: [{ coord: 'A2', text: 'Datos ficticios para una actividad docente. No corresponden a resultados experimentales reales.', colspan: 4 }] },
+          { n: 3, cells: [{ coord: 'A3', text: '', colspan: 4, emptyRow: true }] },
+          { n: 4, cells: [
+            { coord: 'A4', text: 'Gen', header: true },
+            { coord: 'B4', text: 'Control', header: true },
+            { coord: 'C4', text: 'Estrés A (prom.)', header: true },
+            { coord: 'D4', text: 'Estrés B', header: true }
+          ]},
+          { n: 5, cells: [
+            { coord: 'A5', text: 'recA' }, { coord: 'B5', text: '125' },
+            { coord: 'C5', text: '310' }, { coord: 'D5', text: '180' }
+          ]},
+          { n: 6, cells: [
+            { coord: 'A6', text: 'rpoS' }, { coord: 'B6', text: '85' },
+            { coord: 'C6', text: '245' }, { coord: 'D6', text: '290' }
+          ]},
+          { n: 7, cells: [
+            { coord: 'A7', text: 'b0014' }, { coord: 'B7', text: '200' },
+            { coord: 'C7', text: '420' }, { coord: 'D7', text: '' }
+          ]},
+          { n: 8, cells: [
+            { coord: 'A8', text: 'katG' }, { coord: 'B8', text: '45' },
+            { coord: 'C8', text: '170' }, { coord: 'D8', text: '115' }
+          ]},
+          { n: 9, cells: [
+            { coord: 'A9', text: 'dnaK' }, { coord: 'B9', text: '190' },
+            { coord: 'C9', text: '390' }, { coord: 'D9', text: '375' }
+          ]}
+        ]
+      },
+      sheet2: {
+        name: 'Notas_experimento',
+        columns: ['A', 'B', 'C'],
+        rows: [
+          { n: 1, cells: [{ coord: 'A1', text: 'NOTAS EXPERIMENTALES PARCIALES', colspan: 3 }] },
+          { n: 2, cells: [{ coord: 'A2', text: '', colspan: 3, emptyRow: true }] },
+          { n: 3, cells: [{ coord: 'A3', text: '', colspan: 3, emptyRow: true }] },
+          { n: 4, cells: [
+            { coord: 'A4', text: 'Campo', header: true },
+            { coord: 'B4', text: 'Registro disponible', header: true },
+            { coord: 'C4', text: 'Observación', header: true }
+          ]},
+          { n: 5, cells: [
+            { coord: 'A5', text: 'Nota suelta' },
+            { coord: 'B5', text: 'Datos del experimento de marzo' },
+            { coord: 'C5', text: '' }
+          ]},
+          { n: 6, cells: [
+            { coord: 'A6', text: 'Organismo' },
+            { coord: 'B6', text: 'E. coli (sin cepa confirmada)' },
+            { coord: 'C6', text: '' }
+          ]},
+          { n: 7, cells: [
+            { coord: 'A7', text: 'Proceso' },
+            { coord: 'B7', text: 'Valores procesados' },
+            { coord: 'C7', text: '' }
+          ]},
+          { n: 8, cells: [
+            { coord: 'A8', text: 'Condiciones' },
+            { coord: 'B8', text: 'Control, Estrés A, Estrés B' },
+            { coord: 'C8', text: '' }
+          ]},
+          { n: 9, cells: [
+            { coord: 'A9', text: 'Réplicas' },
+            { coord: 'B9', text: 'Sin registro en este archivo' },
+            { coord: 'C9', text: '' }
+          ]},
+          { n: 10, cells: [
+            { coord: 'A10', text: 'Responsable' },
+            { coord: 'B10', text: 'Por confirmar' },
+            { coord: 'C10', text: '' }
+          ]}
+        ]
+      }
+    };
+
+    const CELL_PEDAGOGY = {
+      'sheet1-C4': {
+        h1: 'Compara este encabezado con los de las otras columnas. ¿Hay alguna palabra abreviada?',
+        h2: 'Busca en el archivo si aparece el cálculo, la cantidad de valores o la unidad de ese encabezado.',
+        exp: 'La abreviatura «prom.» puede sugerir un promedio, pero el archivo no escribe el método ni cuántos valores se usaron.'
+      },
+      'sheet1-D7': {
+        h1: 'Mira si en esta celda hay un número, un cero, un guion o ningún carácter.',
+        h2: 'Compara esta celda con otras de la misma columna.',
+        exp: 'La celda no contiene un valor. Una celda vacía no dice, por sí sola, que el valor sea cero ni por qué falta.'
+      },
+      'sheet2-B7': {
+        h1: 'Lee la frase tal como está escrita. ¿Dice qué se hizo, con qué o en qué unidades?',
+        h2: 'Busca en las otras notas si ese procedimiento aparece descrito.',
+        exp: '«Valores procesados» dice que hubo un procesamiento, pero no describe el procedimiento ni las unidades.'
+      },
+      'sheet2-B9': {
+        h1: 'Distingue lo que esta nota afirma de lo que pudo haber ocurrido en el experimento.',
+        h2: 'Separa lo que la frase dice sobre este archivo de lo que no dice sobre el experimento.',
+        exp: '«Sin registro en este archivo» habla de lo que este documento no contiene. No demuestra qué ocurrió en el experimento.'
+      }
+    };
+
+    const GENERIC_PEDAGOGY = {
+      h1: 'Revisa si lo que vas a afirmar está escrito en la celda o es algo que estás suponiendo.',
+      h2: 'Compara esta celda con el resto del archivo y anota qué no aparece escrito.',
+      exp: 'Fundamenta la afirmación en el texto visible. Si el archivo no lo dice, sigue siendo una incertidumbre.'
+    };
+
+    let appState = defaultState();
+
+    function defaultState() {
+      return {
+        activeStation: 1,
+        sheets: { st1: 'sheet1', st2: 'sheet1' },
+        selection: { st1: null, st2: null },
+        st1: { need: '', obs: '', q1: '', q2: '', q3: '' },
+        st2: { currentKey: null, items: {} },
+        st3: {
+          q1: { elem: '', text: '', target: '', why: '' },
+          q2: { elem: '', text: '', target: '', why: '' },
+          q3: { elem: '', text: '', target: '', why: '' },
+          aiRefl: ''
+        },
+        st4: { finalRefl: '', pending: '' }
+      };
+    }
+
+    function blankQuestion() {
+      return { elem: '', text: '', target: '', why: '' };
+    }
+
+    function getCell(sheet, coord) {
+      const book = SHEETS[sheet];
+      if (!book) return null;
+      for (let r = 0; r < book.rows.length; r++) {
+        const cells = book.rows[r].cells;
+        for (let c = 0; c < cells.length; c++) {
+          if (cells[c].coord === coord) return cells[c];
+        }
+      }
+      return null;
+    }
+
+    function sheetKeyOk(value) {
+      return value === 'sheet1' || value === 'sheet2';
+    }
+
+    function parseItemKey(key) {
+      const cut = key.indexOf('-');
+      if (cut < 0) return null;
+      return { sheet: key.slice(0, cut), coord: key.slice(cut + 1) };
+    }
+
+    function literalLabel(cell) {
+      if (!cell) return '[vacía]';
+      if (cell.emptyRow) return '[Fila vacía]';
+      if (cell.text === '') return '[vacía]';
+      return cell.text;
+    }
+
+    function display(value) {
+      if (typeof value !== 'string') return 'Sin respuesta';
+      const trimmed = value.trim();
+      return trimmed ? trimmed : 'Sin respuesta';
+    }
+
+    function hasAttempt(item) {
+      if (!item) return false;
+      return !!((item.obs && item.obs.trim()) || (item.cat && item.cat.trim()));
+    }
+
+    function knownCat(value) {
+      return CATS.indexOf(value) !== -1;
+    }
+
+    function normalizeSelection(sel) {
+      if (!sel || typeof sel !== 'object') return null;
+      if (!sheetKeyOk(sel.sheet) || typeof sel.coord !== 'string') return null;
+      if (!getCell(sel.sheet, sel.coord)) return null;
+      return { sheet: sel.sheet, coord: sel.coord };
+    }
+
+    function normalizeQuestion(src) {
+      const q = blankQuestion();
+      if (!src || typeof src !== 'object') return q;
+      ['elem', 'text', 'target', 'why'].forEach(function (field) {
+        if (typeof src[field] === 'string') q[field] = src[field];
+      });
+      return q;
+    }
+
+    function normalizeState(raw) {
+      const base = defaultState();
+      if (!raw || typeof raw !== 'object') return base;
+
+      const station = Number(raw.activeStation);
+      if (station >= 1 && station <= 5) base.activeStation = station;
+
+      if (raw.sheets && typeof raw.sheets === 'object') {
+        if (sheetKeyOk(raw.sheets.st1)) base.sheets.st1 = raw.sheets.st1;
+        if (sheetKeyOk(raw.sheets.st2)) base.sheets.st2 = raw.sheets.st2;
+      } else {
+        if (sheetKeyOk(raw.activeSheet)) base.sheets.st1 = raw.activeSheet;
+        if (sheetKeyOk(raw.st2Sheet)) base.sheets.st2 = raw.st2Sheet;
+      }
+
+      if (raw.selection && typeof raw.selection === 'object') {
+        base.selection.st1 = normalizeSelection(raw.selection.st1);
+        base.selection.st2 = normalizeSelection(raw.selection.st2);
+      } else if (raw.selectedCell) {
+        const migrated = normalizeSelection(raw.selectedCell);
+        base.selection.st1 = migrated;
+        base.selection.st2 = migrated;
+      }
+
+      if (raw.st1 && typeof raw.st1 === 'object') {
+        ['need', 'obs', 'q1', 'q2', 'q3'].forEach(function (field) {
+          if (typeof raw.st1[field] === 'string') base.st1[field] = raw.st1[field];
+        });
+      }
+
+      if (raw.st2 && raw.st2.items && typeof raw.st2.items === 'object') {
+        Object.keys(raw.st2.items).forEach(function (key) {
+          const parsed = parseItemKey(key);
+          const src = raw.st2.items[key];
+          if (!parsed || !getCell(parsed.sheet, parsed.coord) || !src || typeof src !== 'object') return;
+          const cell = getCell(parsed.sheet, parsed.coord);
+          base.st2.items[key] = {
+            sheet: SHEETS[parsed.sheet].name,
+            coord: parsed.coord,
+            val: cell.text,
+            obs: typeof src.obs === 'string' ? src.obs : '',
+            cat: typeof src.cat === 'string' ? src.cat : '',
+            rev: typeof src.rev === 'string' ? src.rev : '',
+            hintsUsed: Array.isArray(src.hintsUsed) ? src.hintsUsed.filter(function (hint) {
+              return hint === 'Pista 1' || hint === 'Pista 2';
+            }) : []
+          };
+        });
+      }
+      if (raw.st2 && typeof raw.st2.currentKey === 'string' && base.st2.items[raw.st2.currentKey]) {
+        base.st2.currentKey = raw.st2.currentKey;
+      }
+
+      if (raw.st3 && typeof raw.st3 === 'object') {
+        base.st3.q1 = normalizeQuestion(raw.st3.q1);
+        base.st3.q2 = normalizeQuestion(raw.st3.q2);
+        base.st3.q3 = normalizeQuestion(raw.st3.q3);
+        if (typeof raw.st3.aiRefl === 'string') base.st3.aiRefl = raw.st3.aiRefl;
+      }
+      if (raw.st4 && typeof raw.st4 === 'object') {
+        if (typeof raw.st4.finalRefl === 'string') base.st4.finalRefl = raw.st4.finalRefl;
+        if (typeof raw.st4.pending === 'string') base.st4.pending = raw.st4.pending;
+      }
+      return base;
+    }
+
+    function buttonId(station, sheet, coord) {
+      return (station === 1 ? 'obs' : 'int') + '-' + sheet + '-' + coord;
+    }
+
+    function renderGrids() {
+      [['obs', 1], ['int', 2]].forEach(function (pair) {
+        const prefix = pair[0];
+        const station = pair[1];
+        ['sheet1', 'sheet2'].forEach(function (sheetId) {
+          const mount = document.getElementById(prefix + '-panel-' + sheetId);
+          mount.replaceChildren(buildTable(station, sheetId));
+        });
+      });
+    }
+
+    function buildTable(station, sheetId) {
+      const book = SHEETS[sheetId];
+      const table = document.createElement('table');
+      table.className = 'excel-grid';
+      table.id = (station === 1 ? 'obs' : 'int') + '-table-' + sheetId;
+      const thead = document.createElement('thead');
+      const headRow = document.createElement('tr');
+      const corner = document.createElement('th');
+      corner.scope = 'col';
+      corner.textContent = '';
+      headRow.appendChild(corner);
+      book.columns.forEach(function (col) {
+        const th = document.createElement('th');
+        th.scope = 'col';
+        th.textContent = col;
+        headRow.appendChild(th);
+      });
+      thead.appendChild(headRow);
+      table.appendChild(thead);
+
+      const tbody = document.createElement('tbody');
+      book.rows.forEach(function (row) {
+        const tr = document.createElement('tr');
+        const rh = document.createElement('th');
+        rh.scope = 'row';
+        rh.textContent = String(row.n);
+        tr.appendChild(rh);
+        row.cells.forEach(function (cell) {
+          const td = document.createElement('td');
+          if (cell.colspan) td.colSpan = cell.colspan;
+          if (cell.text === '' || cell.emptyRow) td.className = 'empty-cell';
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'cell-btn' + (cell.header ? ' header-cell' : '');
+          btn.id = buttonId(station, sheetId, cell.coord);
+          btn.setAttribute('aria-pressed', 'false');
+          btn.setAttribute('aria-label', 'Hoja ' + book.name + ', celda ' + cell.coord + ', ' + (cell.emptyRow ? 'fila vacía' : (cell.text === '' ? 'vacía' : cell.text)));
+          btn.textContent = cell.emptyRow ? '[Fila vacía]' : cell.text;
+          function activateCell() {
+            selectCell(station, sheetId, cell.coord);
+          }
+          btn.addEventListener('click', activateCell);
+          btn.addEventListener('keydown', function (event) {
+            if (event.key !== 'Enter' && event.key !== ' ') return;
+            event.preventDefault();
+            activateCell();
+          });
+          td.appendChild(btn);
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      return table;
+    }
+
+    function fieldValue(id) {
+      const el = document.getElementById(id);
+      return el ? el.value : '';
+    }
+
+    function setField(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.value = value || '';
+    }
+
+    function saveData() {
+      appState.st1.need = fieldValue('st1-need');
+      appState.st1.obs = fieldValue('st1-obs');
+      appState.st1.q1 = fieldValue('st1-q1');
+      appState.st1.q2 = fieldValue('st1-q2');
+      appState.st1.q3 = fieldValue('st1-q3');
+      ['q1', 'q2', 'q3'].forEach(function (q) {
+        appState.st3[q].elem = fieldValue('st3-' + q + '-elem');
+        appState.st3[q].text = fieldValue('st3-' + q + '-text');
+        appState.st3[q].target = fieldValue('st3-' + q + '-target');
+        appState.st3[q].why = fieldValue('st3-' + q + '-why');
+      });
+      appState.st3.aiRefl = fieldValue('st3-ai-refl');
+      appState.st4.finalRefl = fieldValue('st4-final-refl');
+      appState.st4.pending = fieldValue('st4-pending');
+      updateBadges();
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+      } catch (err) {
+        window.__fairErrors.push(String(err));
+      }
+    }
+
+    function loadData() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) return;
+      try {
+        appState = normalizeState(JSON.parse(saved));
+      } catch (err) {
+        window.__fairErrors.push(String(err));
+        localStorage.removeItem(STORAGE_KEY);
+        appState = defaultState();
+      }
+    }
+
+    function fillForms() {
+      setField('st1-need', appState.st1.need);
+      setField('st1-obs', appState.st1.obs);
+      setField('st1-q1', appState.st1.q1);
+      setField('st1-q2', appState.st1.q2);
+      setField('st1-q3', appState.st1.q3);
+      ['q1', 'q2', 'q3'].forEach(function (q) {
+        setField('st3-' + q + '-elem', appState.st3[q].elem);
+        setField('st3-' + q + '-text', appState.st3[q].text);
+        setField('st3-' + q + '-target', appState.st3[q].target);
+        setField('st3-' + q + '-why', appState.st3[q].why);
+      });
+      setField('st3-ai-refl', appState.st3.aiRefl);
+      setField('st4-final-refl', appState.st4.finalRefl);
+      setField('st4-pending', appState.st4.pending);
+    }
+
+    function renderState() {
+      fillForms();
+      showSheet(1, appState.sheets.st1, false);
+      showSheet(2, appState.sheets.st2, false);
+      syncInspector();
+      if (appState.selection.st2) presentSt2(appState.selection.st2.sheet, appState.selection.st2.coord);
+      else clearSt2();
+      applyHighlights();
+      renderSt2ExploredList();
+      paintSt1Feedback();
+      updateBadges();
+      renderReport();
+      applyStation(appState.activeStation);
+    }
+
+    function applyStation(num) {
+      document.querySelectorAll('.station').forEach(function (el) { el.classList.remove('active'); });
+      document.querySelectorAll('.nav-btn').forEach(function (el) { el.classList.remove('active'); });
+      const station = document.getElementById('station-' + num);
+      const btn = document.getElementById('btn-st' + num);
+      if (station) station.classList.add('active');
+      if (btn) btn.classList.add('active');
+    }
+
+    function switchStation(num, shouldSave) {
+      num = Number(num);
+      if (num < 1 || num > 5) num = 1;
+      appState.activeStation = num;
+      if (shouldSave !== false) saveData();
+      applyStation(num);
+      if (num === 5) renderReport();
+    }
+
+    function showSheet(station, sheetId, shouldSave) {
+      if (!sheetKeyOk(sheetId)) sheetId = 'sheet1';
+      const stateKey = station === 1 ? 'st1' : 'st2';
+      appState.sheets[stateKey] = sheetId;
+      const prefix = station === 1 ? 'obs' : 'int';
+      const tabPrefix = station === 1 ? 'tab' : 'st2-tab';
+      ['sheet1', 'sheet2'].forEach(function (id) {
+        const panel = document.getElementById(prefix + '-panel-' + id);
+        const tab = document.getElementById(tabPrefix + '-' + id);
+        const on = id === sheetId;
+        panel.hidden = !on;
+        tab.classList.toggle('active', on);
+        tab.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      if (shouldSave !== false) saveData();
+    }
+
+    function selectCell(station, sheet, coord) {
+      if (!getCell(sheet, coord)) return;
+      appState.selection[station === 1 ? 'st1' : 'st2'] = { sheet: sheet, coord: coord };
+      if (station === 1) syncInspector();
+      else presentSt2(sheet, coord);
+      applyHighlights();
+      saveData();
+    }
+
+    function applyHighlights() {
+      document.querySelectorAll('.cell-btn').forEach(function (btn) {
+        btn.classList.remove('selected');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+      [1, 2].forEach(function (station) {
+        const sel = appState.selection['st' + station];
+        if (!sel) return;
+        const btn = document.getElementById(buttonId(station, sel.sheet, sel.coord));
+        if (!btn) return;
+        btn.classList.add('selected');
+        btn.setAttribute('aria-pressed', 'true');
+      });
+    }
+
+    function syncInspector() {
+      const sel = appState.selection.st1;
+      const coord = document.getElementById('insp-coord');
+      const sheet = document.getElementById('insp-sheet');
+      const value = document.getElementById('insp-val');
+      if (!sel) {
+        coord.textContent = 'Ninguna';
+        sheet.textContent = '-';
+        value.textContent = '(seleccione una celda para inspeccionar)';
+        return;
+      }
+      const cell = getCell(sel.sheet, sel.coord);
+      coord.textContent = sel.coord;
+      sheet.textContent = SHEETS[sel.sheet].name;
+      value.textContent = literalLabel(cell);
+    }
+
+    function pedagogyFor(sheet, coord) {
+      return CELL_PEDAGOGY[sheet + '-' + coord] || GENERIC_PEDAGOGY;
+    }
+
+    function hideHintPanels() {
+      ['st2-hint1', 'st2-hint2', 'st2-exp'].forEach(function (id) {
+        document.getElementById(id).style.display = 'none';
+      });
+    }
+
+    function updateHintButtons(item) {
+      const openedFirst = !!(item && item.hintsUsed.indexOf('Pista 1') !== -1);
+      document.getElementById('btn-hint1').disabled = false;
+      document.getElementById('btn-hint2').disabled = !openedFirst;
+      document.getElementById('btn-exp').disabled = !hasAttempt(item);
+    }
+
+    function clearSt2() {
+      appState.st2.currentKey = null;
+      document.getElementById('st2-cell-label').textContent = 'Ninguno';
+      document.getElementById('st2-cell-value-display').textContent = 'Selecciona una celda con el puntero o con el teclado.';
+      document.getElementById('st2-form-fields').style.display = 'none';
+      setField('st2-obs-text', '');
+      setField('st2-cat', '');
+      setField('st2-rev-text', '');
+      hideHintPanels();
+      document.getElementById('btn-hint1').disabled = true;
+      document.getElementById('btn-hint2').disabled = true;
+      document.getElementById('btn-exp').disabled = true;
+    }
+
+    function presentSt2(sheet, coord) {
+      const cell = getCell(sheet, coord);
+      const key = sheet + '-' + coord;
+      const item = appState.st2.items[key];
+      appState.st2.currentKey = key;
+      document.getElementById('st2-cell-label').textContent = SHEETS[sheet].name + ' (' + coord + ')';
+      document.getElementById('st2-cell-value-display').textContent = 'Contenido: "' + literalLabel(cell) + '"';
+      document.getElementById('st2-form-fields').style.display = 'block';
+      setField('st2-obs-text', item ? item.obs : '');
+      setField('st2-cat', item && knownCat(item.cat) ? item.cat : '');
+      setField('st2-rev-text', item ? item.rev : '');
+      const ped = pedagogyFor(sheet, coord);
+      document.getElementById('st2-hint1').textContent = 'Pista 1. ' + ped.h1;
+      document.getElementById('st2-hint2').textContent = 'Pista 2. ' + ped.h2;
+      document.getElementById('st2-exp').textContent = 'Explicación. ' + ped.exp;
+      hideHintPanels();
+      if (item && item.hintsUsed.indexOf('Pista 1') !== -1) {
+        document.getElementById('st2-hint1').style.display = 'block';
+      }
+      if (item && item.hintsUsed.indexOf('Pista 2') !== -1) {
+        document.getElementById('st2-hint2').style.display = 'block';
+      }
+      updateHintButtons(item);
+    }
+
+    function ensureItem(sheet, coord) {
+      const key = sheet + '-' + coord;
+      const cell = getCell(sheet, coord);
+      if (!appState.st2.items[key]) {
+        appState.st2.items[key] = {
+          sheet: SHEETS[sheet].name,
+          coord: coord,
+          val: cell.text,
+          obs: '',
+          cat: '',
+          rev: '',
+          hintsUsed: []
+        };
+      }
+      appState.st2.items[key].val = cell.text;
+      appState.st2.items[key].sheet = SHEETS[sheet].name;
+      return appState.st2.items[key];
+    }
+
+    function saveSt2Current() {
+      const sel = appState.selection.st2;
+      if (!sel) return;
+      const item = ensureItem(sel.sheet, sel.coord);
+      item.obs = fieldValue('st2-obs-text');
+      item.cat = fieldValue('st2-cat');
+      item.rev = fieldValue('st2-rev-text');
+      if (!hasAttempt(item)) document.getElementById('st2-exp').style.display = 'none';
+      updateHintButtons(item);
+      renderSt2ExploredList();
+      saveData();
+    }
+
+    function toggleSt2Hint(num) {
+      const sel = appState.selection.st2;
+      if (!sel) return;
+      const item = ensureItem(sel.sheet, sel.coord);
+      if (num === 2 && item.hintsUsed.indexOf('Pista 1') === -1) return;
+      const el = document.getElementById('st2-hint' + num);
+      const opening = el.style.display === 'none';
+      el.style.display = opening ? 'block' : 'none';
+      if (opening) {
+        const label = 'Pista ' + num;
+        if (item.hintsUsed.indexOf(label) === -1) item.hintsUsed.push(label);
+        updateHintButtons(item);
+        saveData();
+      }
+    }
+
+    function toggleSt2Exp() {
+      const sel = appState.selection.st2;
+      if (!sel) return;
+      const item = appState.st2.items[sel.sheet + '-' + sel.coord];
+      if (!hasAttempt(item)) return;
+      const el = document.getElementById('st2-exp');
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function analyzedItems() {
+      return Object.keys(appState.st2.items).filter(function (key) {
+        return hasAttempt(appState.st2.items[key]);
+      }).map(function (key) {
+        const item = appState.st2.items[key];
+        const parsed = parseItemKey(key);
+        const cell = parsed ? getCell(parsed.sheet, parsed.coord) : null;
+        return {
+          sheet: item.sheet,
+          coord: item.coord,
+          contentLabel: literalLabel(cell),
+          obs: item.obs,
+          cat: item.cat,
+          rev: item.rev,
+          hintsUsed: item.hintsUsed.slice()
+        };
+      });
+    }
+
+    function renderSt2ExploredList() {
+      const host = document.getElementById('st2-explored-list');
+      const items = analyzedItems();
+      document.getElementById('st2-count').textContent = String(items.length);
+      host.replaceChildren();
+      if (!items.length) {
+        host.textContent = 'Aún no has guardado observaciones ni clasificaciones para ningún elemento.';
+        return;
+      }
+      const ul = document.createElement('ul');
+      items.forEach(function (item) {
+        const li = document.createElement('li');
+        const hints = item.hintsUsed.length ? ' (' + item.hintsUsed.join(', ') + ')' : '';
+        li.textContent = item.sheet + ' (' + item.coord + '): ' + (item.cat || 'Sin clasificación') + hints;
+        ul.appendChild(li);
+      });
+      host.appendChild(ul);
+    }
+
+    function paintSt1Feedback() {
+      const q1 = fieldValue('st1-q1');
+      const fb1 = document.getElementById('st1-q1-feedback');
+      if (!q1) fb1.textContent = '';
+      else if (q1 === '2') fb1.textContent = 'En el archivo puedes identificar dos hojas: Expresion_genica y Notas_experimento.';
+      else fb1.textContent = 'Vuelve a revisar las pestañas de las hojas en esta estación.';
+
+      const q2 = fieldValue('st1-q2');
+      const fb2 = document.getElementById('st1-q2-feedback');
+      if (!q2) fb2.textContent = '';
+      else if (q2 === 'genes') fb2.textContent = 'La columna A tiene el encabezado Gen y, debajo, un identificador en cada fila.';
+      else fb2.textContent = 'La opción elegida no coincide con el encabezado de la columna A. Vuelve a mirar esa columna y las filas 5 a 9.';
+    }
+
+    function evaluateSt1Q1() {
+      paintSt1Feedback();
+      saveData();
+    }
+
+    function evaluateSt1Q2() {
+      paintSt1Feedback();
+      saveData();
+    }
+
+    function updateBadges() {
+      const explored = analyzedItems().length;
+      document.getElementById('badge-st2').textContent = explored === 1 ? '1 explorado' : explored + ' explorados';
+      let count = 0;
+      ['q1', 'q2', 'q3'].forEach(function (q) {
+        if (appState.st3[q].text && appState.st3[q].text.trim()) count += 1;
+      });
+      document.getElementById('badge-st3').textContent = count + '/3';
+    }
+
+    function classificationCounts() {
+      const counts = { c1: 0, c2: 0, c3: 0 };
+      Object.keys(appState.st2.items).forEach(function (key) {
+        const cat = appState.st2.items[key].cat;
+        if (cat === CATS[0]) counts.c1 += 1;
+        else if (cat === CATS[1]) counts.c2 += 1;
+        else if (cat === CATS[2]) counts.c3 += 1;
+      });
+      return { counts: counts, total: counts.c1 + counts.c2 + counts.c3 };
+    }
+
+    function approximatePercents(counts, total) {
+      const values = [counts.c1, counts.c2, counts.c3];
+      if (!total) return [0, 0, 0];
+      const exact = values.map(function (value) { return (value / total) * 100; });
+      const floors = exact.map(function (value) { return Math.floor(value); });
+      let left = 100 - floors.reduce(function (sum, value) { return sum + value; }, 0);
+      const order = exact.map(function (value, index) {
+        return { index: index, frac: value - Math.floor(value) };
+      }).sort(function (a, b) {
+        return b.frac - a.frac || a.index - b.index;
+      });
+      for (let n = 0; n < left; n++) floors[order[n].index] += 1;
+      return floors;
+    }
+
+    function formatItem(item) {
+      return [
+        'Elemento: ' + item.sheet + ' (' + item.coord + ')',
+        'Contenido: ' + item.contentLabel,
+        'Observación: ' + display(item.obs),
+        'Clasificación: ' + display(item.cat),
+        'Pistas consultadas: ' + (item.hintsUsed.length ? item.hintsUsed.join(', ') : 'Ninguna'),
+        'Revisión: ' + display(item.rev)
+      ].join('\n');
+    }
+
+    function questionBlock(q) {
+      return [
+        'Elemento: ' + q.elem,
+        'Pregunta: ' + q.text,
+        'Destinatario: ' + q.target,
+        'Importancia: ' + q.why
+      ].join('\n');
+    }
+
+    function buildReportModel() {
+      const counted = classificationCounts();
+      const percents = approximatePercents(counted.counts, counted.total);
+      const questions = ['q1', 'q2', 'q3'].map(function (q) {
+        const src = appState.st3[q];
+        return {
+          elem: display(src.elem),
+          text: display(src.text),
+          target: display(src.target),
+          why: display(src.why)
+        };
+      });
+      return {
+        need: display(appState.st1.need),
+        observation: display(appState.st1.obs),
+        structureSheets: Q1_LABELS[appState.st1.q1] || 'Sin respuesta',
+        structureRows: Q2_LABELS[appState.st1.q2] || 'Sin respuesta',
+        conclusion: display(appState.st1.q3),
+        interpretations: analyzedItems(),
+        questions: questions,
+        ai: display(appState.st3.aiRefl),
+        pending: display(appState.st4.pending),
+        finalRefl: display(appState.st4.finalRefl),
+        chart: {
+          total: counted.total,
+          rows: CATS.map(function (label, index) {
+            return {
+              label: label,
+              count: [counted.counts.c1, counted.counts.c2, counted.counts.c3][index],
+              percent: percents[index]
+            };
+          })
+        }
+      };
+    }
+
+    function reportSections(model) {
+      const chart = ['Total de elementos clasificados: ' + model.chart.total].concat(model.chart.rows.map(function (row) {
+        return row.label + ': ' + row.count + ' (' + row.percent + '% aprox.)';
+      })).join('\n');
+      return {
+        chart: chart,
+        need: model.need,
+        observations: [
+          'Observación libre: ' + model.observation,
+          'Hojas reconocidas: ' + model.structureSheets,
+          'Filas reconocidas: ' + model.structureRows,
+          'Conclusión preliminar: ' + model.conclusion
+        ].join('\n'),
+        interpretations: model.interpretations.length ? model.interpretations.map(formatItem).join('\n\n') : 'Sin respuesta',
+        uncertainties: model.questions.map(function (q, index) {
+          return (index + 1) + '. Pregunta: ' + q.text + '\n   Importancia: ' + q.why;
+        }).join('\n'),
+        questions: model.questions.map(questionBlock).join('\n\n'),
+        ai: model.ai,
+        pending: model.pending,
+        finalRefl: model.finalRefl
+      };
+    }
+
+    function renderChart(model) {
+      document.getElementById('chart-total-label').textContent = 'Total de elementos clasificados: ' + model.chart.total;
+      const target = document.getElementById('chart-content');
+      target.replaceChildren();
+      if (!model.chart.total) {
+        const empty = document.createElement('div');
+        empty.style.cssText = 'text-align:center; padding:1.5rem; color:var(--text-muted); font-style:italic;';
+        empty.textContent = 'Aún no has registrado clasificaciones en la Estación 2. Los elementos que clasifiques aparecerán graficados aquí.';
+        target.appendChild(empty);
+        return;
+      }
+      const bars = document.createElement('div');
+      bars.className = 'chart-bars';
+      bars.setAttribute('role', 'img');
+      bars.setAttribute('aria-label', reportSections(model).chart.replace(/\n/g, '. '));
+      model.chart.rows.forEach(function (row, index) {
+        const wrap = document.createElement('div');
+        wrap.className = 'chart-row';
+        const label = document.createElement('div');
+        label.className = 'chart-label';
+        const name = document.createElement('span');
+        name.textContent = row.label;
+        const qty = document.createElement('span');
+        qty.textContent = row.count + ' (' + row.percent + '% aprox.)';
+        label.appendChild(name);
+        label.appendChild(qty);
+        const bg = document.createElement('div');
+        bg.className = 'chart-bar-bg';
+        const fill = document.createElement('div');
+        fill.className = 'chart-bar-fill bar-cat' + (index + 1);
+        fill.style.width = row.percent + '%';
+        bg.appendChild(fill);
+        wrap.appendChild(label);
+        wrap.appendChild(bg);
+        bars.appendChild(wrap);
+      });
+      target.appendChild(bars);
+    }
+
+    function renderReport() {
+      const model = buildReportModel();
+      const sections = reportSections(model);
+      renderChart(model);
+      document.getElementById('chart-summary').textContent = sections.chart;
+      document.getElementById('rep-sec-1').textContent = sections.need;
+      document.getElementById('rep-sec-2').textContent = sections.observations;
+      document.getElementById('rep-sec-3').textContent = sections.interpretations;
+      document.getElementById('rep-sec-4').textContent = sections.uncertainties;
+      document.getElementById('rep-sec-5').textContent = sections.questions;
+      document.getElementById('rep-sec-6').textContent = sections.ai;
+      document.getElementById('rep-sec-7').textContent = sections.pending;
+      document.getElementById('rep-sec-8').textContent = sections.finalRefl;
+    }
+
+    function markdownDocument() {
+      const sections = reportSections(buildReportModel());
+      return [
+        '# Explorador FAIR — Reporte de exploración',
+        '',
+        '**Taller:** Antes del prompt',
+        '**Caso:** Expresión génica simulada',
+        '**Fecha:** ' + new Date().toLocaleDateString('es-MX'),
+        '',
+        '## Resumen gráfico de clasificaciones',
+        sections.chart,
+        '',
+        '> Esta visualización describe tus clasificaciones durante la exploración. Los porcentajes son aproximados. No determina si son correctas ni evalúa el cumplimiento FAIR.',
+        '',
+        '## 1. Mi necesidad',
+        sections.need,
+        '',
+        '## 2. Observaciones',
+        sections.observations,
+        '',
+        '## 3. Interpretaciones y revisiones',
+        sections.interpretations,
+        '',
+        '## 4. Incertidumbres prioritarias',
+        sections.uncertainties,
+        '',
+        '## 5. Preguntas para continuar',
+        sections.questions,
+        '',
+        '## 6. Qué podría hacer con IA',
+        sections.ai,
+        '',
+        '## 7. Aspectos pendientes',
+        sections.pending,
+        '',
+        '## 8. Reflexión final',
+        sections.finalRefl,
+        ''
+      ].join('\n');
+    }
+
+    function downloadMarkdown() {
+      saveData();
+      const blob = new Blob([markdownDocument()], { type: 'text/markdown;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'explorador-fair-reporte.md';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+
+    function resetActivity() {
+      if (!window.confirm('¿Está seguro de que desea reiniciar toda la actividad? Se borrarán sus respuestas guardadas.')) return;
+      localStorage.removeItem(STORAGE_KEY);
+      appState = defaultState();
+      renderGrids();
+      renderState();
+    }
+
+    window.onload = function () {
+      renderGrids();
+      loadData();
+      renderState();
+    };
+
+  </script>
+</body>
+</html>
