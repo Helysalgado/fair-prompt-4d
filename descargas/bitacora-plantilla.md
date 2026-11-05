@@ -1,0 +1,101 @@
+# Bitácora · Antes del prompt
+
+Taller «Antes del prompt». Copia esta plantilla y complétala durante la práctica. Datos simulados: no incluyas información real o confidencial.
+
+## Datos generales
+
+| Campo | Tu respuesta |
+|---|---|
+| Identificador o alias | |
+| Fecha | |
+| Herramienta/modelo (si se conoce) | |
+
+## 1 · Necesidad inicial (P0)
+
+| Pregunta | Tu respuesta |
+|---|---|
+| ¿Qué querías resolver? | |
+| ¿Qué entregó o propuso la IA? | |
+| ¿Parecía listo para usarse? ¿Por qué? | |
+
+## 2 · Lo que necesito aprender (P1)
+
+| # | Concepto prioritario | Pregunta para quien hizo el experimento |
+|---|---|---|
+| 1 | | |
+| 2 | | |
+| 3 | | |
+| 4 | | |
+| 5 | | |
+
+## 3 · Especificación propia (antes de P5)
+
+| Campo | Tu decisión |
+|---|---|
+| Resultado buscado | |
+| Alcance (4 asuntos) | |
+| Exclusiones (qué queda fuera y por qué) | |
+| Evidencia aceptable | |
+| Qué delego a la IA | |
+| Qué confirmo yo | |
+| Límites para la IA | |
+| Criterio de aceptación | |
+
+## 4 · Colaboración AI Fluency 4D
+
+| Dimensión | Mi decisión / evidencia |
+|---|---|
+| Delegation · ¿qué delego a la IA? | |
+| Description · ¿cómo expliqué tarea, entradas y restricciones? | |
+| Discernment · ¿cómo decido si sirve? | |
+| Diligence · ¿qué conservo, documento y asumo? | |
+| Componentes del prompt que aportaron claridad | |
+
+## 5 · Diagnóstico y revisión (P5–P6)
+
+| Asunto | Observado (hoja/celda) | Inferencia o incertidumbre | Quién debe confirmarlo | Próxima acción |
+|---|---|---|---|---|
+| Unidades | | | | |
+| Condiciones | | | | |
+| Réplicas | | | | |
+| Celda vacía | | | | |
+
+| Pregunta | Tu respuesta |
+|---|---|
+| Una afirmación corregida por P6 | |
+| ¿La autorrevisión consultó realmente una fuente externa? (Sí / No / No consta) y evidencia | |
+
+## 5b · Verificación humana independiente obligatoria
+
+| Campo | Tu respuesta |
+|---|---|
+| Afirmación precisa | |
+| Fuente primaria abierta y revisada (título y URL) | |
+| Sección, fragmento o localización | |
+| Fecha de consulta | |
+| La fuente respalda / contradice / no permite decidir | |
+| Mi argumento (no basta con el DOI) | |
+| Estado: revisado directamente / pendiente por falta de acceso | |
+| Límites de la comprobación | |
+
+## 6 · Registro y revisión por pares
+
+| Campo | Tu respuesta |
+|---|---|
+| ¿Qué no sabemos aún del experimento? | |
+| ¿Cuál es el siguiente paso responsable? | |
+| Revisor/a o alias | |
+| ¿Puede reconstruir el proceso? (Sí / Parcialmente / No) | |
+| Observación concreta | |
+| Pregunta de revisión | |
+
+## Transferencia a un problema real
+
+| Campo | Tu respuesta |
+|---|---|
+| Mi tarea científica | |
+| Qué delegaría y cómo lo verificaría | |
+
+## Declaración de uso de IA
+
+Se usó IA para ___; verifiqué personalmente ___; quedan pendientes ___.
