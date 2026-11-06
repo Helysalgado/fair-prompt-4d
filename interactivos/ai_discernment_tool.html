@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discernimiento en IA: ¿Qué puedo aceptar de una respuesta?</title>
+    <style>
+        /* Modern, responsive CSS variables & system styling (Self-contained, no external CDNs) */
+        :root {
+            --color-unam-blue: #00314F;
+            --color-unam-gold: #C9A227;
+            --color-unam-light-gold: #FDF8E7;
+            --color-unam-dark-blue: #001E32;
+            --color-bg-gray: #F8FAFC;
+            --color-text-main: #1E293B;
+            --color-text-muted: #64748B;
+            --color-border: #E2E8F0;
+            --color-card-bg: #FFFFFF;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-bg-gray);
+            color: var(--color-text-main);
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Layout header */
+        header {
+            background-color: var(--color-unam-blue);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-bottom: 4px solid var(--color-unam-gold);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            max-w: 1200px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        @media (min-width: 640px) {
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        .header-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--color-unam-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .header-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-top: 0.1rem;
+        }
+        .header-sub {
+            font-size: 0.85rem;
+            color: #CBD5E1;
+        }
+
+        /* Navigation Tabs */
+        nav {
+            background: white;
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            overflow-x: auto;
+        }
+        .tab-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.85rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border: none;
+            background: transparent;
+            color: var(--color-text-muted);
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            white-space: nowrap;
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+            transition: all 0.2s;
+        }
+        .tab-btn:hover {
+            color: var(--color-unam-blue);
+            background-color: #F1F5F9;
+        }
+        .tab-btn.active {
+            color: var(--color-unam-blue);
+            border-bottom-color: var(--color-unam-blue);
+            background-color: #F0F7FF;
+        }
+        .tab-num {
+            width: 1.35rem;
+            height: 1.35rem;
+            border-radius: 50%;
+            background-color: #CBD5E1;
+            color: #334155;
+            font-size: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tab-btn.active .tab-num {
+            background-color: var(--color-unam-blue);
+            color: white;
+        }
+        button:focus-visible {
+            outline: 2px solid var(--color-unam-gold);
+            outline-offset: 2px;
+        }
+
+        /* Main Container */
+        main {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+            flex: 1;
+        }
+
+        .tab-content { display: none; flex-direction: column; gap: 1.5rem; }
+        .tab-content.active { display: flex; }
+
+        /* General UI Components */
+        .card {
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .banner {
+            background-color: #EFF6FF;
+            border-left: 4px solid var(--color-unam-blue);
+            padding: 0.85rem 1rem;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-size: 0.85rem;
+            color: #1E3A8A;
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+        .banner-icon {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--color-unam-blue);
+        }
+
+        /* Grid layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+        @media (min-width: 850px) {
+            .grid-2 { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* FASTA Viewer */
+        .fasta-box {
+            background-color: #0F172A;
+            color: #38BDF8;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            user-select: all;
+        }
+        .fasta-head { color: #94A3B8; font-weight: bold; }
+        .fasta-seq { color: #34D399; letter-spacing: 1px; word-break: break-all; }
+        .fasta-meta { color: #64748B; font-size: 0.725rem; font-family: var(--font-sans); font-style: italic; }
+
+        /* Form Controls */
+        label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 0.35rem;
+        }
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 0.55rem 0.75rem;
+            font-size: 0.85rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            background-color: #FFFFFF;
+            font-family: inherit;
+            color: var(--color-text-main);
+            transition: border-color 0.15s;
+        }
+        input[type="text"]:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--color-unam-blue);
+            box-shadow: 0 0 0 3px rgba(0, 49, 79, 0.1);
+        }
+        textarea { resize: vertical; }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1.1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .btn-primary {
+            background-color: var(--color-unam-blue);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: var(--color-unam-dark-blue);
+        }
+        .btn-secondary {
+            background-color: white;
+            border-color: var(--color-border);
+            color: #334155;
+        }
+        .btn-secondary:hover {
+            background-color: #F8FAFC;
+        }
+        .btn-gold {
+            background-color: var(--color-unam-gold);
+            color: var(--color-unam-blue);
+            font-weight: 700;
+        }
+        .btn-gold:hover {
+            background-color: #B5901F;
+            color: white;
+        }
+        .btn-danger {
+            background-color: rgba(185, 28, 28, 0.1);
+            color: #B91C1C;
+            border-color: rgba(185, 28, 28, 0.2);
+        }
+        .btn-danger:hover {
+            background-color: rgba(185, 28, 28, 0.2);
+        }
+        .btn-sm {
+            padding: 0.35rem 0.65rem;
+            font-size: 0.75rem;
+        }
+
+        /* Statement Cards */
+        .statement-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 1.1rem;
+            background-color: white;
+        }
+        .statement-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        .statement-badge {
+            background-color: var(--color-unam-blue);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 0.2rem 0.55rem;
+            border-radius: var(--radius-md);
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+        .statement-text {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #0F172A;
+        }
+
+        /* Help / Hint Accordion */
+        .hint-box {
+            background-color: #FAF5E6;
+            border: 1px solid #F3E8C4;
+            border-radius: var(--radius-md);
+            padding: 0.75rem;
+            font-size: 0.8rem;
+            color: #78350F;
+        }
+        .hint-box summary {
+            font-weight: 700;
+            cursor: pointer;
+            color: #92400E;
+            user-select: none;
+        }
+
+        /* Report Preview */
+        .markdown-output {
+            background-color: #0F172A;
+            color: #F1F5F9;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            white-space: pre-wrap;
+            word-break: break-word;
+            line-height: 1.6;
+            border: 1px solid #1E293B;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(2px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 50;
+        }
+        .modal-overlay.hidden { display: none; }
+        .modal-box {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: #0F172A;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--radius-md);
+            font-size: 0.8rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 60;
+            border: 1px solid #334155;
+            transition: opacity 0.2s;
+        }
+        .toast.hidden { display: none; }
+
+        footer {
+            background: white;
+            border-top: 1px solid var(--color-border);
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div>
+                <div class="header-tag">Taller v2.2 • AI Fluency 4D: Discernment</div>
+                <h1 class="header-title">¿Qué puedo aceptar de una respuesta de IA?</h1>
+                <p class="header-sub">Verificación de evidencia en el análisis científico de secuencias</p>
+            </div>
+            <div>
+                <button type="button" onclick="confirmReset()" class="btn btn-danger btn-sm" title="Reiniciar ejercicio">
+                    Reiniciar avance
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav aria-label="Estaciones de trabajo">
+        <div class="nav-container">
+            <button type="button" onclick="switchTab('examine')" id="tab-btn-examine" class="tab-btn active" aria-pressed="true">
+                <span class="tab-num">1</span>
+                <span>1. Examinar</span>
+            </button>
+            <button type="button" onclick="switchTab('contrast')" id="tab-btn-contrast" class="tab-btn" aria-pressed="false">
+                <span class="tab-num">2</span>
+                <span>2. Contrastar</span>
+            </button>
+            <button type="button" onclick="switchTab('decide')" id="tab-btn-decide" class="tab-btn" aria-pressed="false">
+                <span class="tab-num">3</span>
+                <span>3. Decidir</span>
+            </button>
+            <button type="button" onclick="switchTab('report')" id="tab-btn-report" class="tab-btn" aria-pressed="false">
+                <span class="tab-num">4</span>
+                <span>4. Reporte</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Disclaimer Banner -->
+        <div class="banner">
+            <span class="banner-icon">ℹ</span>
+            <div>
+                <strong>Simulación Didáctica:</strong> La respuesta de IA en este ejercicio es mayoritariamente útil y correcta, con algunas afirmaciones que requieren verificación o contexto adicional. El objetivo es ejercitar su criterio crítico sin buscar únicamente errores deliberados.
+            </div>
+        </div>
+
+        <!-- STATION 1: EXAMINAR -->
+        <section id="station-examine" class="tab-content active">
+            <div class="grid-2">
+                <!-- FASTA Box -->
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-border);">
+                        <h2 style="font-size: 0.95rem; font-weight:700; color:var(--color-unam-blue);">Evidencia Primaria (FASTA)</h2>
+                    </div>
+                    <p style="font-size:0.775rem; color:var(--color-text-muted); margin-bottom:0.75rem;">Secuencias simuladas de ADN para conteo manual directo:</p>
+                    <div class="fasta-box" id="fasta-container">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- AI Response Box -->
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-border);">
+                        <h2 style="font-size: 0.95rem; font-weight:700; color:var(--color-unam-blue);">Respuesta simulada de IA</h2>
+                        <span style="font-size:0.75rem; background:#FEF3C7; color:#92400E; padding:0.15rem 0.5rem; border-radius:4px; font-weight:600;">Asistente de IA</span>
+                    </div>
+                    <div style="background:#F8FAFC; border:1px solid var(--color-border); padding:1rem; border-radius:var(--radius-md); font-size:0.85rem;">
+                        <p style="font-weight:600; margin-bottom:0.75rem;">«Tras analizar el archivo FASTA proporcionado, observo lo siguiente:»</p>
+                        <ol style="padding-left: 1.25rem; display:flex; flex-direction:column; gap:0.6rem;" id="ai-response-list">
+                            <!-- Statements loaded dynamically -->
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- First Reflection -->
+            <div class="card">
+                <h3 style="font-size:0.9rem; font-weight:700; color:var(--color-unam-blue); margin-bottom:0.5rem;">Exploración Inicial</h3>
+                <label for="initial-reflection">
+                    Al leer la respuesta de la IA por primera vez, ¿qué afirmaciones te parecen confiables a simple vista y cuáles requerirían comprobación antes de ser aceptadas?
+                </label>
+                <textarea id="initial-reflection" rows="3" oninput="saveInitialReflection(this.value)" placeholder="Escribe aquí tu primera impresión breve..."></textarea>
+                <div style="display:flex; justify-content:flex-end; margin-top:0.85rem;">
+                    <button type="button" onclick="switchTab('contrast')" class="btn btn-primary">
+                        <span>Avanzar a Estación 2: Contrastar</span> →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATION 2: CONTRASTAR -->
+        <section id="station-contrast" class="tab-content">
+            <div class="card" style="display:flex; flex-direction:column; gap:0.25rem;">
+                <h2 style="font-size:0.95rem; font-weight:700; color:var(--color-unam-blue);">Estación 2: Contrastar la respuesta con la evidencia</h2>
+                <p style="font-size:0.8rem; color:var(--color-text-muted);">Evalúa cada afirmación individualmente frente a los datos del FASTA o la lógica del experimento.</p>
+            </div>
+
+            <div id="statements-contrast-container" style="display:flex; flex-direction:column; gap:1rem;">
+                <!-- Generated dynamically -->
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem;">
+                <button type="button" onclick="switchTab('examine')" class="btn btn-secondary">← Regresar a Examinar</button>
+                <button type="button" onclick="switchTab('decide')" class="btn btn-primary">Avanzar a Estación 3: Decidir →</button>
+            </div>
+        </section>
+
+        <!-- STATION 3: DECIDIR -->
+        <section id="station-decide" class="tab-content">
+            <div class="card" style="display:flex; flex-direction:column; gap:0.25rem;">
+                <h2 style="font-size:0.95rem; font-weight:700; color:var(--color-unam-blue);">Estación 3: Toma de Decisiones y Rigor</h2>
+                <p style="font-size:0.8rem; color:var(--color-text-muted);">Decide la acción específica para cada afirmación y reflexiona sobre el nivel de comprobación necesario.</p>
+            </div>
+
+            <div id="statements-decide-container" style="display:flex; flex-direction:column; gap:1rem;">
+                <!-- Generated dynamically -->
+            </div>
+
+            <div class="card" style="display:flex; flex-direction:column; gap:1rem;">
+                <h3 style="font-size:0.9rem; font-weight:700; color:var(--color-unam-blue); border-bottom:1px solid var(--color-border); padding-bottom:0.5rem;">Reflexión sobre el Rigor Científico</h3>
+
+                <div>
+                    <label for="meta-q1">1. Contexto de publicación: ¿Cambiaría alguna de tus decisiones si el resultado se fuera a incluir en un artículo científico o en una presentación formal?</label>
+                    <textarea id="meta-q1" rows="2" oninput="saveMetaReflection('q1', this.value)" placeholder="Explica brevemente si modificarías tu nivel de exigencia..."></textarea>
+                </div>
+
+                <div>
+                    <label for="meta-q2">2. Verificación e iteración: ¿Pedirle a la propia IA que revise o vuelva a calcular su respuesta equivale a una verificación independiente?</label>
+                    <textarea id="meta-q2" rows="2" oninput="saveMetaReflection('q2', this.value)" placeholder="Considera la diferencia entre autorrevisión del modelo y verificación externa..."></textarea>
+                </div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem;">
+                <button type="button" onclick="switchTab('contrast')" class="btn btn-secondary">← Regresar a Contrastar</button>
+                <button type="button" onclick="switchTab('report')" class="btn btn-primary">Generar Reporte Final →</button>
+            </div>
+        </section>
+
+        <!-- STATION 4: REPORTE -->
+        <section id="station-report" class="tab-content">
+            <div class="card" style="display:flex; flex-direction:column; gap:1rem;">
+                <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                    <h2 style="font-size:0.95rem; font-weight:700; color:var(--color-unam-blue);">Estación 4: Reporte Consolidado de Discernimiento</h2>
+                    <p style="font-size:0.8rem; color:var(--color-text-muted);">Sustento transparente de tus decisiones de verificación.</p>
+                </div>
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                    <button type="button" onclick="copyMarkdownReport()" class="btn btn-secondary btn-sm">
+                        📋 Copiar Markdown
+                    </button>
+                    <button type="button" onclick="downloadMarkdownReport()" class="btn btn-gold btn-sm">
+                        💾 Descargar (.md)
+                    </button>
+                </div>
+            </div>
+
+            <div class="markdown-output" id="markdown-preview">
+                <!-- Generated dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Reset Confirmation Modal -->
+    <div id="reset-modal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <h3 style="font-size:1rem; font-weight:700; color:#0F172A; margin-bottom:0.5rem;">¿Reiniciar el ejercicio?</h3>
+            <p style="font-size:0.8rem; color:var(--color-text-muted); margin-bottom:1.25rem;">Se borrarán todas las clasificaciones, justificaciones y reflexiones registradas en este navegador.</p>
+            <div style="display:flex; justify-content:flex-end; gap:0.5rem;">
+                <button type="button" onclick="closeResetModal()" class="btn btn-secondary btn-sm">Cancelar</button>
+                <button type="button" onclick="executeReset()" class="btn btn-danger btn-sm" style="background:#DC2626; color:white;">Sí, reiniciar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast-msg" class="toast hidden">
+        <span id="toast-text">Notificación</span>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Taller: «Antes del prompt: pensar, delegar y verificar con IA en la investigación científica» • AI Fluency 4D
+    </footer>
+
+    <!-- Script Application Logic -->
+    <script>
+        /**
+         * Raw FASTA Sequences. Exact lengths, base counts, and GC percentages are computed
+         * dynamically via verifyCountsProgrammatically() to guarantee 100% scientific consistency:
+         * - Seq_01: 30 bp | A:9, T:7, C:6, G:8  | GC: 46.7%
+         * - Seq_02: 24 bp | A:6, T:6, C:6, G:6  | GC: 50.0%
+         * - Seq_03: 36 bp | A:12, T:8, C:7, G:9 | GC: 44.4%
+         */
+        const FASTA_DATA = [
+            {
+                id: "Seq_01",
+                header: ">Seq_01 | muestra_control_A",
+                sequence: "ATGACGATCGATCGATCGATCGATCGAGTA"
+            },
+            {
+                id: "Seq_02",
+                header: ">Seq_02 | muestra_tratamiento_B",
+                sequence: "ATCGATCGATCGATCGATCGATCG"
+            },
+            {
+                id: "Seq_03",
+                header: ">Seq_03 | muestra_tratamiento_C",
+                sequence: "ATGACGATCGATCGATCGATCGATCGATCGAAGTAA"
+            }
+        ];
+
+        // Helper to retrieve computed FASTA record safely
+        function getSeqStats(id) {
+            return FASTA_DATA.find(item => item.id === id);
+        }
+
+        /**
+         * 5 AI Statements with Dynamic Formative Feedback tied strictly to computed FASTA data
+         */
+        const STATEMENTS = [
+            {
+                id: "s1",
+                num: 1,
+                text: "El archivo contiene tres secuencias de ADN.",
+                hintQuestion: "¿Puedes comprobar esta afirmación contando directamente los encabezados que inician con '>' en el archivo FASTA?",
+                getValidationDetails: function(userChoice) {
+                    const totalSeqs = FASTA_DATA.length;
+                    const headersList = FASTA_DATA.map(s => s.header.split(' ')[0]).join(', ');
+                    if (userChoice === "respaldada") {
+                        return {
+                            status: "consistent",
+                            title: "Clasificación consistente con la evidencia",
+                            text: `Correcto. El archivo FASTA contiene exactamente ${totalSeqs} encabezados (${headersList}). Es un dato estructural comprobable directamente en el archivo.`
+                        };
+                    }
+                    return {
+                        status: "review",
+                        title: "Clasificación que conviene revisar",
+                        text: `Esta afirmación puede verificarse directamente contando los encabezados del FASTA (${totalSeqs} secuencias: ${headersList}). No requiere metadatos externos ni es una interpretación.`
+                    };
+                },
+                getDecisionGuidance: function(userClass, userAction) {
+                    if (userAction === "aceptar") {
+                        return "Orientación basada en evidencia: El conteo de secuencias (3 registros) es verificable directamente en el FASTA, por lo que aceptarlo tras comprobarlo es adecuado.";
+                    }
+                    return "Orientación basada en evidencia: El número de secuencias es un dato comprobable directamente en el archivo FASTA (3 secuencias). Si decides no aceptarlo directamente, asegúrate de registrar el motivo.";
+                }
+            },
+            {
+                id: "s2",
+                num: 2,
+                text: "La secuencia Seq_01 contiene 30 nucleótidos.",
+                hintQuestion: "¿Qué operación de conteo directo puedes realizar sobre la cadena de letras de Seq_01?",
+                getValidationDetails: function(userChoice) {
+                    const s1 = getSeqStats("Seq_01");
+                    const breakdown = `${s1.counts.A} (A) + ${s1.counts.T} (T) + ${s1.counts.C} (C) + ${s1.counts.G} (G) = ${s1.length} nucleótidos`;
+                    if (userChoice === "respaldada") {
+                        return {
+                            status: "consistent",
+                            title: "Clasificación consistente con la evidencia",
+                            text: `Correcto. Al contar las bases de Seq_01 se obtiene: ${breakdown}. La cifra reportada por la IA coincide con el dato real.`
+                        };
+                    }
+                    return {
+                        status: "review",
+                        title: "Clasificación que conviene revisar",
+                        text: `Puedes verificar la longitud contando directamente las letras de Seq_01 (${breakdown}). La afirmación expresa un conteo exacto y comprobable.`
+                    };
+                },
+                getDecisionGuidance: function(userClass, userAction) {
+                    const s1 = getSeqStats("Seq_01");
+                    if (userAction === "aceptar") {
+                        return `Orientación basada en evidencia: Seq_01 tiene efectivamente ${s1.length} nucleótidos. Aceptar el dato después de haberlo verificado manualmente es una decisión sólida.`;
+                    }
+                    return `Orientación basada en evidencia: La longitud de Seq_01 (${s1.length} nucleótidos) está respaldada por el FASTA. Considera si realmente se requiere corregir o consultar información adicional para este dato puntual.`;
+                }
+            },
+            {
+                id: "s3",
+                num: 3,
+                text: "La secuencia Seq_02 presenta un contenido GC del 50 %.",
+                hintQuestion: "¿Cómo se obtiene el porcentaje GC a partir del conteo de bases C y G respecto al total de nucleótidos de Seq_02?",
+                getValidationDetails: function(userChoice) {
+                    const s2 = getSeqStats("Seq_02");
+                    const gcSum = s2.counts.C + s2.counts.G;
+                    const calcStr = `Seq_02 tiene ${s2.length} nucleótidos (${s2.counts.A} A, ${s2.counts.T} T, ${s2.counts.C} C, ${s2.counts.G} G). Fórmula: %GC = ((C + G) / Total) × 100 = ((${s2.counts.C} + ${s2.counts.G}) / ${s2.length}) × 100 = (${gcSum} / ${s2.length}) × 100 = ${s2.gc} %`;
+                    if (userChoice === "respaldada") {
+                        return {
+                            status: "consistent",
+                            title: "Clasificación consistente con la evidencia",
+                            text: `Correcto. ${calcStr}. El porcentaje indicado por la IA es exacto.`
+                        };
+                    }
+                    return {
+                        status: "review",
+                        title: "Clasificación que conviene revisar",
+                        text: `Revisa el cálculo con los datos de Seq_02: ${calcStr}. Es un resultado cuantitativo comprobable directamente con la secuencia.`
+                    };
+                },
+                getDecisionGuidance: function(userClass, userAction) {
+                    const s2 = getSeqStats("Seq_02");
+                    if (userAction === "aceptar") {
+                        return `Orientación basada en evidencia: El contenido GC de Seq_02 es exactamente ${s2.gc} % (${s2.counts.C + s2.counts.G}/${s2.length}). Aceptar el resultado tras comprobar el cálculo es apropiado.`;
+                    }
+                    return `Orientación basada en evidencia: El cálculo de GC para Seq_02 (${s2.gc} %) es exacto según los datos del FASTA. Evalúa si hace falta otra acción más allá de aceptar el cálculo verificado.`;
+                }
+            },
+            {
+                id: "s4",
+                num: 4,
+                text: "Seq_03 es la secuencia más larga del archivo. Podría ser útil comparar su composición de nucleótidos con las otras secuencias.",
+                hintQuestion: "¿La afirmación contiene una sola idea o combina un dato comprobable con una recomendación metodológica?",
+                getValidationDetails: function(userChoice) {
+                    const s1 = getSeqStats("Seq_01");
+                    const s2 = getSeqStats("Seq_02");
+                    const s3 = getSeqStats("Seq_03");
+                    const lengthsInfo = `Seq_03 (${s3.length} bp: ${s3.counts.A} A, ${s3.counts.T} T, ${s3.counts.C} C, ${s3.counts.G} G; GC ${s3.gc} %) frente a Seq_01 (${s1.length} bp; GC ${s1.gc} %) y Seq_02 (${s2.length} bp; GC ${s2.gc} %)`;
+
+                    if (userChoice === "sugerencia") {
+                        return {
+                            status: "consistent",
+                            title: "Clasificación consistente con la evidencia",
+                            text: `Buen análisis. La primera oración es un hecho comprobable (${lengthsInfo}), mientras que la segunda plantea una propuesta metodológica razonable que no es un resultado observado.`
+                        };
+                    }
+                    if (userChoice === "respaldada") {
+                        return {
+                            status: "partial",
+                            title: "Clasificación parcialmente adecuada",
+                            text: `Es parcialmente adecuada: la primera parte sí está respaldada (${lengthsInfo}), pero la segunda parte («Podría ser útil...») es una sugerencia de análisis, no un dato observado en el archivo.`
+                        };
+                    }
+                    return {
+                        status: "review",
+                        title: "Clasificación que conviene revisar",
+                        text: `Esta afirmación tiene dos partes: un dato real comprobable (${lengthsInfo}) y una recomendación analítica. Considera distinguir el hecho verificado de la sugerencia.`
+                    };
+                },
+                getDecisionGuidance: function(userClass, userAction) {
+                    if (userAction === "aceptar") {
+                        return "Orientación basada en evidencia: La mayor longitud de Seq_03 (36 bp) es un hecho comprobable; en cambio, la recomendación de comparar composiciones puede tomarse como una sugerencia útil, pero no como un hallazgo ya demostrado.";
+                    }
+                    if (userAction === "consultar_fuente" || userAction === "pendiente") {
+                        return "Orientación basada en evidencia: Distinguir el dato comprobado (Seq_03 = 36 bp) de la sugerencia metodológica permite decidir si conviene realizar esa comparación según los objetivos del estudio.";
+                    }
+                    return "Orientación basada en evidencia: Recuerda que la afirmación mezcla un dato exacto (Seq_03 tiene 36 bp, más que Seq_01 con 30 bp y Seq_02 con 24 bp) con una sugerencia de análisis que no requiere corregirse como error, sino valorarse metodológicamente.";
+                }
+            },
+            {
+                id: "s5",
+                num: 5,
+                text: "Las diferencias de longitud podrían estar relacionadas con las condiciones experimentales.",
+                hintQuestion: "¿Las cadenas de nucleótidos por sí solas revelan la causa experimental de su longitud o se requiere información externa del estudio?",
+                getValidationDetails: function(userChoice) {
+                    const s1 = getSeqStats("Seq_01");
+                    const s2 = getSeqStats("Seq_02");
+                    const s3 = getSeqStats("Seq_03");
+                    const lengthsSummary = `Seq_01 (${s1.length} bp), Seq_02 (${s2.length} bp) y Seq_03 (${s3.length} bp)`;
+
+                    if (userChoice === "hipotesis" || userChoice === "requiere_info") {
+                        return {
+                            status: "consistent",
+                            title: "Clasificación consistente con la evidencia",
+                            text: `Muy bien. El FASTA muestra diferencias de longitud (${lengthsSummary}), pero no contiene información sobre el diseño experimental, protocolos o causas biológicas. Confirmarlo requiere metadatos o consultar al responsable.`
+                        };
+                    }
+                    if (userChoice === "respaldada") {
+                        return {
+                            status: "review",
+                            title: "Clasificación que conviene revisar",
+                            text: `Cuidado: el FASTA solo demuestra que existen longitudes distintas (${lengthsSummary}), pero no prueba que se deban a las condiciones experimentales. Esa relación es una interpretación no demostrada.`
+                        };
+                    }
+                    return {
+                        status: "review",
+                        title: "Clasificación que conviene revisar",
+                        text: `Las secuencias (${lengthsSummary}) muestran longitudes diferentes, pero el archivo no aporta evidencia sobre el origen o las condiciones del experimento. Se trata de una hipótesis o requiere información externa.`
+                    };
+                },
+                getDecisionGuidance: function(userClass, userAction) {
+                    if (userAction === "aceptar") {
+                        return "Orientación basada en evidencia: Precaución. Aunque hayas clasificado la afirmación como respaldada o válida, el archivo FASTA no contiene evidencia sobre las condiciones experimentales. Aceptar esta interpretación como un hecho comprobado sería injustificado sin metadatos adicionales.";
+                    }
+                    if (userAction === "consultar_responsable" || userAction === "consultar_fuente" || userAction === "pendiente") {
+                        return "Orientación basada en evidencia: Decisión rigurosa. Dado que el FASTA no explica el origen de las diferencias de longitud, consultar al responsable, revisar el protocolo o dejar el punto pendiente evita asumir una hipótesis como hecho.";
+                    }
+                    return "Orientación basada en evidencia: La diferencia de longitud existe en los datos, pero su relación con las condiciones experimentales no está demostrada ni refutada en el FASTA; no puede corregirse sin información del experimento.";
+                }
+            }
+        ];
+
+        // Classification categories
+        const CLASSIFICATION_OPTIONS = [
+            { id: "respaldada", label: "Observada y respaldada por el FASTA" },
+            { id: "sugerencia", label: "Contiene una sugerencia o recomendación" },
+            { id: "hipotesis", label: "Explicación / Hipótesis no demostrada" },
+            { id: "requiere_info", label: "Requiere información / Metadatos externos" },
+            { id: "contradicha", label: "Contradicha por los datos" }
+        ];
+
+        // Action categories
+        const ACTION_OPTIONS = [
+            { id: "aceptar", label: "Aceptar directamente" },
+            { id: "corregir", label: "Corregir dato" },
+            { id: "consultar_fuente", label: "Consultar fuente / Protocolo" },
+            { id: "consultar_responsable", label: "Consultar al responsable del experimento" },
+            { id: "pendiente", label: "Dejar pendiente por falta de datos" }
+        ];
+
+        const STORAGE_KEY = 'unam_ai_discernment_v2.2_verified';
+
+        // Application State
+        let appState = {
+            version: "v2.2_verified",
+            initialReflection: "",
+            statements: {},
+            meta: { q1: "", q2: "" }
+        };
+
+        // Initialize empty state structure
+        function initEmptyState() {
+            appState.statements = {};
+            STATEMENTS.forEach(s => {
+                appState.statements[s.id] = {
+                    initialClassification: "",
+                    classification: "",
+                    evidenceFragment: "",
+                    justification: "",
+                    action: "",
+                    actionReason: "",
+                    hintRequested: false,
+                    validated: false,
+                    decisionReviewed: false
+                };
+            });
+        }
+        initEmptyState();
+
+        // Safe HTML escaping
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // DOM Ready Initializer
+        window.addEventListener('DOMContentLoaded', () => {
+            verifyCountsProgrammatically();
+            loadLocalStorage();
+            renderFasta();
+            renderAIStatements();
+            renderStationContrast();
+            renderStationDecide();
+            updateReportView();
+        });
+
+        // Verify nucleotide counts programmatically directly from sequence strings
+        function verifyCountsProgrammatically() {
+            FASTA_DATA.forEach(item => {
+                const seq = item.sequence.toUpperCase().trim();
+                let a = 0, t = 0, c = 0, g = 0;
+                for (let char of seq) {
+                    if (char === 'A') a++;
+                    else if (char === 'T') t++;
+                    else if (char === 'C') c++;
+                    else if (char === 'G') g++;
+                }
+                item.length = seq.length;
+                item.counts = { A: a, T: t, C: c, G: g };
+                const rawGc = (c + g) / seq.length * 100;
+                // Format cleanly: integer if exact (e.g., 50), 1 decimal otherwise (e.g., 46.7)
+                item.gc = Number.isInteger(rawGc) ? rawGc : Number(rawGc.toFixed(1));
+            });
+        }
+
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+            const content = document.getElementById(`station-${tabId}`);
+            if (content) content.classList.add('active');
+
+            const btn = document.getElementById(`tab-btn-${tabId}`);
+            if (btn) {
+                btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
+            }
+            document.querySelectorAll('.tab-btn').forEach(tabButton => {
+                if (tabButton !== btn) tabButton.setAttribute('aria-pressed', 'false');
+            });
+
+            if (tabId === 'report') {
+                updateReportView();
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Render FASTA panel in Station 1 WITHOUT anticipating lengths, counts, or GC%
+        function renderFasta() {
+            const container = document.getElementById('fasta-container');
+            container.innerHTML = FASTA_DATA.map(item => `
+                <div>
+                    <div class="fasta-head">${escapeHtml(item.header)}</div>
+                    <div class="fasta-seq">${escapeHtml(item.sequence)}</div>
+                </div>
+            `).join('');
+        }
+
+        // Render AI Statements in Station 1
+        function renderAIStatements() {
+            const container = document.getElementById('ai-response-list');
+            container.innerHTML = STATEMENTS.map(s => `
+                <li>
+                    <span>${escapeHtml(s.text)}</span>
+                </li>
+            `).join('');
+        }
+
+        // Render Station 2 Cards
+        function renderStationContrast() {
+            const container = document.getElementById('statements-contrast-container');
+            container.innerHTML = STATEMENTS.map(s => {
+                const stData = appState.statements[s.id] || {};
+                
+                return `
+                <div class="statement-card">
+                    <div class="statement-header">
+                        <span class="statement-badge">Afirmación ${s.num}</span>
+                        <div class="statement-text">${escapeHtml(s.text)}</div>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem;">
+                        <div>
+                            <label for="class-${s.id}">¿Cómo clasificas esta afirmación?</label>
+                            <select id="class-${s.id}" onchange="handleClassificationChange('${s.id}', this.value)">
+                                <option value="">-- Selecciona una opción --</option>
+                                ${CLASSIFICATION_OPTIONS.map(opt => `
+                                    <option value="${opt.id}" ${stData.classification === opt.id ? 'selected' : ''}>${escapeHtml(opt.label)}</option>
+                                `).join('')}
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="evidence-${s.id}">Dato o fragmento de evidencia (opcional):</label>
+                            <input id="evidence-${s.id}" type="text" oninput="updateStatementField('${s.id}', 'evidenceFragment', this.value)" value="${escapeHtml(stData.evidenceFragment || '')}" placeholder="Ej: Conteo manual de Seq_01..." />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="just-${s.id}">Breve explicación de tu análisis:</label>
+                        <textarea id="just-${s.id}" oninput="updateStatementField('${s.id}', 'justification', this.value)" rows="2" placeholder="¿Por qué la clasificaste así? (Breve)">${escapeHtml(stData.justification || '')}</textarea>
+                    </div>
+
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-top:0.25rem;">
+                        <button type="button" onclick="toggleHint('${s.id}')" class="btn btn-secondary btn-sm" style="background:#FFFBEB; border-color:#FCD34D; color:#92400E;">
+                            💡 ${stData.hintRequested ? 'Ocultar pista' : 'Necesito una pista'}
+                        </button>
+
+                        <button type="button" onclick="validateStatement('${s.id}')" class="btn btn-primary btn-sm" ${!stData.classification ? 'disabled style="opacity:0.5; cursor:not-allowed;"' : ''}>
+                            🔍 Validar mi respuesta
+                        </button>
+                    </div>
+
+                    <!-- Hint Block -->
+                    ${stData.hintRequested ? `
+                        <div class="hint-box" style="margin-top:0.5rem;">
+                            <strong>💡 Pista orientadora:</strong> ${escapeHtml(s.hintQuestion)}
+                        </div>
+                    ` : ''}
+
+                    <!-- Validation Feedback Block -->
+                    ${(stData.validated && stData.classification) ? renderValidationFeedback(s, stData.classification) : ''}
+                </div>
+            `}).join('');
+        }
+
+        // Render validation feedback box dynamically
+        function renderValidationFeedback(statement, userChoice) {
+            if (!userChoice) return '';
+            
+            const fbDetail = statement.getValidationDetails(userChoice);
+            
+            let bg = "#F0FDF4", border = "#86EFAC", titleColor = "#166534";
+            if (fbDetail.status === "review") {
+                bg = "#FEF2F2"; border = "#FCA5A5"; titleColor = "#991B1B";
+            } else if (fbDetail.status === "partial") {
+                bg = "#FEFCE8"; border = "#FDE047"; titleColor = "#854D0E";
+            }
+
+            return `
+                <div style="background-color:${bg}; border:1px solid ${border}; border-radius:var(--radius-md); padding:0.85rem; margin-top:0.5rem; font-size:0.825rem; color:#1E293B;">
+                    <div style="font-weight:700; color:${titleColor}; margin-bottom:0.35rem; display:flex; align-items:center; gap:0.4rem;">
+                        <span>${fbDetail.status === 'consistent' ? '✅' : (fbDetail.status === 'partial' ? '⚠️' : '🔍')}</span>
+                        <span>${escapeHtml(fbDetail.title)}</span>
+                    </div>
+                    <p style="line-height:1.45;">${escapeHtml(fbDetail.text)}</p>
+                    <div style="font-size:0.75rem; color:var(--color-text-muted); margin-top:0.5rem; font-style:italic;">
+                        * Puedes revisar tu clasificación y volver a presionar «Validar mi respuesta». Esta guía evalúa únicamente tu clasificación frente a los datos del caso, no el texto libre que hayas redactado.
+                    </div>
+                </div>
+            `;
+        }
+
+        function toggleHint(id) {
+            if (!appState.statements[id]) appState.statements[id] = {};
+            appState.statements[id].hintRequested = !appState.statements[id].hintRequested;
+            saveLocalStorage();
+            renderStationContrast();
+        }
+
+        function handleClassificationChange(id, value) {
+            if (!appState.statements[id]) appState.statements[id] = {};
+            if (!appState.statements[id].initialClassification && value) {
+                appState.statements[id].initialClassification = value;
+            }
+            appState.statements[id].classification = value;
+            // Always invalidate previous validations and decision reviews when classification changes
+            appState.statements[id].validated = false;
+            appState.statements[id].decisionReviewed = false;
+            saveLocalStorage();
+            renderStationContrast();
+            renderStationDecide();
+        }
+
+        function validateStatement(id) {
+            if (!appState.statements[id] || !appState.statements[id].classification) return;
+            appState.statements[id].validated = true;
+            saveLocalStorage();
+            renderStationContrast();
+        }
+
+        // Render Station 3 Cards with Evidence-based Decision Guidance
+        function renderStationDecide() {
+            const container = document.getElementById('statements-decide-container');
+            container.innerHTML = STATEMENTS.map(s => {
+                const stData = appState.statements[s.id] || {};
+                const currentAction = stData.action || "";
+                const currentClass = stData.classification || "";
+
+                return `
+                <div class="statement-card">
+                    <div class="statement-header">
+                        <span class="statement-badge">Afirmación ${s.num}</span>
+                        <div>
+                            <div class="statement-text">${escapeHtml(s.text)}</div>
+                            <div style="font-size:0.75rem; color:var(--color-text-muted); margin-top:0.2rem;">
+                                Clasificada como: <strong>${getClassificationLabel(currentClass)}</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem;">
+                        <div>
+                            <label for="action-${s.id}">¿Qué harías con esta afirmación?</label>
+                            <select id="action-${s.id}" onchange="handleActionChange('${s.id}', this.value)">
+                                <option value="">-- Selecciona una acción --</option>
+                                ${ACTION_OPTIONS.map(opt => `
+                                    <option value="${opt.id}" ${currentAction === opt.id ? 'selected' : ''}>${escapeHtml(opt.label)}</option>
+                                `).join('')}
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="reason-${s.id}">Motivo de la acción:</label>
+                            <input id="reason-${s.id}" type="text" oninput="updateStatementField('${s.id}', 'actionReason', this.value)" value="${escapeHtml(stData.actionReason || '')}" placeholder="Ej: Se comprobó el conteo en el FASTA..." />
+                        </div>
+                    </div>
+
+                    <div style="display:flex; justify-content:flex-end; margin-top:0.25rem;">
+                        <button type="button" onclick="reviewDecision('${s.id}')" class="btn btn-primary btn-sm" ${!currentAction ? 'disabled style="opacity:0.5; cursor:not-allowed;"' : ''}>
+                            🔎 Revisar mi decisión
+                        </button>
+                    </div>
+
+                    <!-- Evidence-Grounded Action Guidance (shown only after pressing 'Revisar mi decisión') -->
+                    ${(stData.decisionReviewed && currentAction) ? renderActionEvidenceGuidance(s, currentClass, currentAction) : ''}
+                </div>
+            `}).join('');
+        }
+
+        function handleActionChange(id, value) {
+            if (!appState.statements[id]) appState.statements[id] = {};
+            appState.statements[id].action = value;
+            // Hide previous decision guidance until explicitly requested again
+            appState.statements[id].decisionReviewed = false;
+            saveLocalStorage();
+            renderStationDecide();
+        }
+
+        function reviewDecision(id) {
+            if (!appState.statements[id] || !appState.statements[id].action) return;
+            appState.statements[id].decisionReviewed = true;
+            saveLocalStorage();
+            renderStationDecide();
+        }
+
+        function renderActionEvidenceGuidance(statement, classId, actionId) {
+            const guideText = statement.getDecisionGuidance(classId, actionId);
+            return `
+                <div style="font-size:0.775rem; background:#F8FAFC; border-left:3px solid var(--color-unam-blue); padding:0.55rem 0.75rem; border-radius:0 var(--radius-md) var(--radius-md) 0; color:#334155;">
+                    <div>💡 <strong>${escapeHtml(guideText)}</strong></div>
+                    <div style="font-size:0.7rem; color:var(--color-text-muted); margin-top:0.25rem;">
+                        Nota: Esta orientación considera la acción elegida y la evidencia del caso; no evalúa automáticamente el texto escrito en el motivo.
+                    </div>
+                </div>
+            `;
+        }
+
+        function getClassificationLabel(id) {
+            const opt = CLASSIFICATION_OPTIONS.find(o => o.id === id);
+            return opt ? opt.label : 'Sin clasificar';
+        }
+
+        function getActionLabel(id) {
+            const opt = ACTION_OPTIONS.find(o => o.id === id);
+            return opt ? opt.label : 'Sin decisión';
+        }
+
+        function updateStatementField(id, field, value) {
+            if (!appState.statements[id]) appState.statements[id] = {};
+            appState.statements[id][field] = value;
+            saveLocalStorage();
+            if (field === 'classification' || field === 'action') {
+                renderStationDecide();
+            }
+        }
+
+        function saveInitialReflection(val) {
+            appState.initialReflection = val;
+            saveLocalStorage();
+        }
+
+        function saveMetaReflection(key, val) {
+            appState.meta[key] = val;
+            saveLocalStorage();
+        }
+
+        function saveLocalStorage() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+            } catch (e) {
+                console.warn('Error al guardar localState', e);
+            }
+        }
+
+        // Strict validation when loading from localStorage
+        function loadLocalStorage() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (!saved) return;
+                const parsed = JSON.parse(saved);
+                if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+                    return;
+                }
+
+                const validClassIds = new Set(["", ...CLASSIFICATION_OPTIONS.map(o => o.id)]);
+                const validActionIds = new Set(["", ...ACTION_OPTIONS.map(o => o.id)]);
+
+                if (typeof parsed.initialReflection === 'string') {
+                    appState.initialReflection = parsed.initialReflection;
+                }
+                if (parsed.meta && typeof parsed.meta === 'object') {
+                    if (typeof parsed.meta.q1 === 'string') appState.meta.q1 = parsed.meta.q1;
+                    if (typeof parsed.meta.q2 === 'string') appState.meta.q2 = parsed.meta.q2;
+                }
+
+                if (parsed.statements && typeof parsed.statements === 'object') {
+                    STATEMENTS.forEach(s => {
+                        const savedSt = parsed.statements[s.id];
+                        if (savedSt && typeof savedSt === 'object') {
+                            const initClass = validClassIds.has(savedSt.initialClassification) ? savedSt.initialClassification : "";
+                            const currClass = validClassIds.has(savedSt.classification) ? savedSt.classification : "";
+                            const currAction = validActionIds.has(savedSt.action) ? savedSt.action : "";
+
+                            appState.statements[s.id] = {
+                                initialClassification: initClass,
+                                classification: currClass,
+                                evidenceFragment: typeof savedSt.evidenceFragment === 'string' ? savedSt.evidenceFragment : "",
+                                justification: typeof savedSt.justification === 'string' ? savedSt.justification : "",
+                                action: currAction,
+                                actionReason: typeof savedSt.actionReason === 'string' ? savedSt.actionReason : "",
+                                hintRequested: savedSt.hintRequested === true,
+                                validated: savedSt.validated === true && currClass !== "",
+                                decisionReviewed: savedSt.decisionReviewed === true && currAction !== ""
+                            };
+                        }
+                    });
+                }
+
+                document.getElementById('initial-reflection').value = appState.initialReflection;
+                document.getElementById('meta-q1').value = appState.meta.q1;
+                document.getElementById('meta-q2').value = appState.meta.q2;
+            } catch (e) {
+                console.warn('Error al cargar localState', e);
+            }
+        }
+
+        // Generate Markdown content with transparent disclaimers
+        function generateMarkdown() {
+            const dateStr = new Date().toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' });
+            
+            let md = `# Reporte de Discernimiento Crítico sobre Resultados de IA\n`;
+            md += `**Taller:** Antes del prompt: pensar, delegar y verificar con IA en la investigación científica (v2.2)\n`;
+            md += `**Módulo:** AI Fluency 4D - Competencia: Discernment\n`;
+            md += `**Fecha de registro:** ${dateStr}\n\n`;
+            md += `---\n\n`;
+
+            md += `## 1. Exploración Inicial\n`;
+            md += `${appState.initialReflection ? appState.initialReflection : '*Sin registro*'}\n\n`;
+
+            md += `## 2. Análisis y Decisión de Afirmaciones\n\n`;
+
+            STATEMENTS.forEach(s => {
+                const st = appState.statements[s.id] || {};
+                md += `### Afirmación ${s.num}: "${s.text}"\n`;
+                if (st.initialClassification && st.initialClassification !== st.classification) {
+                    md += `- **Clasificación inicial:** ${getClassificationLabel(st.initialClassification)}\n`;
+                }
+                md += `- **Clasificación actual:** ${getClassificationLabel(st.classification)}\n`;
+                md += `- **Pista solicitada:** ${st.hintRequested ? 'Sí' : 'No'}\n`;
+                md += `- **Retroalimentación de validación consultada:** ${st.validated ? 'Sí' : 'No'}\n`;
+                md += `- **Evidencia/Dato registrado por el participante:** ${st.evidenceFragment || 'N/A'}\n`;
+                md += `- **Explicación breve del participante:** ${st.justification || 'Sin registro'}\n`;
+                md += `- **Acción elegida:** ${getActionLabel(st.action)}\n`;
+                md += `- **Orientación de decisión consultada:** ${st.decisionReviewed ? 'Sí' : 'No'}\n`;
+                md += `- **Motivo de la acción:** ${st.actionReason || 'Sin registro'}\n\n`;
+            });
+
+            md += `## 3. Reflexión sobre el Rigor Científico\n\n`;
+            md += `### Contexto de publicación formal:\n`;
+            md += `${appState.meta.q1 ? appState.meta.q1 : '*Sin registro*'}\n\n`;
+            md += `### Validez de la autorevisión de la IA:\n`;
+            md += `${appState.meta.q2 ? appState.meta.q2 : '*Sin registro*'}\n\n`;
+
+            md += `---\n`;
+            md += `*Nota: La retroalimentación mostrada en la aplicación es únicamente una guía didáctica contrastada con los datos simulados del ejercicio. No sustituye una verificación científica independiente ni evalúa automáticamente la redacción de las justificaciones escritas por el participante.*`;
+
+            return md;
+        }
+
+        function updateReportView() {
+            const md = generateMarkdown();
+            document.getElementById('markdown-preview').textContent = md;
+        }
+
+        function copyMarkdownReport() {
+            const md = generateMarkdown();
+            const preview = document.getElementById('markdown-preview');
+            if (navigator.clipboard && window.isSecureContext && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(md).then(function () {
+                    showToast("Reporte copiado al portapapeles");
+                }).catch(function () {
+                    fallbackCopyReport(md, preview);
+                });
+                return;
+            }
+            fallbackCopyReport(md, preview);
+        }
+
+        function fallbackCopyReport(md, preview) {
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = md;
+            tempTextArea.setAttribute('readonly', '');
+            tempTextArea.style.position = 'fixed';
+            tempTextArea.style.top = '0';
+            tempTextArea.style.left = '0';
+            document.body.appendChild(tempTextArea);
+            tempTextArea.focus();
+            tempTextArea.select();
+            let success = false;
+            try {
+                success = document.execCommand('copy');
+            } catch (err) {
+                success = false;
+            }
+            document.body.removeChild(tempTextArea);
+
+            if (success) {
+                showToast("Reporte copiado al portapapeles");
+            } else if (preview) {
+                const selection = window.getSelection();
+                const range = document.createRange();
+                range.selectNodeContents(preview);
+                selection.removeAllRanges();
+                selection.addRange(range);
+                showToast("No se pudo copiar automáticamente. El reporte está seleccionado: cópialo con Cmd+C.");
+            } else {
+                showToast("No se pudo copiar automáticamente. Selecciona el reporte y cópialo manualmente.");
+            }
+        }
+
+        function downloadMarkdownReport() {
+            const md = generateMarkdown();
+            const blob = new Blob([md], { type: 'text/markdown;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Discernimiento_IA_${new Date().toISOString().slice(0,10)}.md`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast("Descarga de reporte iniciada (.md)");
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast-msg');
+            const toastText = document.getElementById('toast-text');
+            toastText.textContent = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+
+        function confirmReset() {
+            document.getElementById('reset-modal').classList.remove('hidden');
+        }
+
+        function closeResetModal() {
+            document.getElementById('reset-modal').classList.add('hidden');
+        }
+
+        function executeReset() {
+            localStorage.removeItem(STORAGE_KEY);
+            initEmptyState();
+            appState.initialReflection = "";
+            appState.meta = { q1: "", q2: "" };
+            
+            document.getElementById('initial-reflection').value = '';
+            document.getElementById('meta-q1').value = '';
+            document.getElementById('meta-q2').value = '';
+            
+            renderStationContrast();
+            renderStationDecide();
+            closeResetModal();
+            switchTab('examine');
+            showToast("Avance borrado exitosamente");
+        }
+    </script>
+</body>
+</html>

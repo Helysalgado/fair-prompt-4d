@@ -191,7 +191,7 @@ main.content blockquote {
   &.profundizar { background: #e7f2ef; color: $verde; &::before { content: "＋"; } }
 }
 
-// ---------- En 1 minuto ----------
+// ---------- Resumen de la página ----------
 .en-un-minuto {
   background: #fff;
   border: 1px solid $linea;
@@ -200,15 +200,6 @@ main.content blockquote {
   padding: .9rem 1.2rem .4rem;
   margin: 0 0 2rem;
   box-shadow: 0 1px 3px rgba(18, 59, 105, .06);
-  &::before {
-    content: "En 1 minuto";
-    display: block;
-    font-family: $headings-font-family;
-    font-weight: 700;
-    color: $navy;
-    font-size: 1.05rem;
-    margin-bottom: .4rem;
-  }
   ul { padding-left: 1.2rem; margin-bottom: .5rem; }
   li { margin-bottom: .3rem; }
 }

@@ -23,7 +23,7 @@ Elige solo uno de los dos casos. Puedes guardar hasta tres versiones. El enlace 
 
 1. Elige un caso y la tarea que vas a delegar.
 2. Construye el prompt. Si quieres probarlo, cópialo y pégalo en una conversación nueva de ChatGPT.
-3. Guarda las versiones, anota lo que observes y descarga el reporte.
+3. Guarda las versiones, anota lo que observes y descarga el reporte. El archivo se llama `reporte_del_prompt_caso_A.md` o `reporte_del_prompt_caso_B.md`, según el caso.
 
 [Abrir la actividad en una pestaña independiente](../../interactivos/de_la_solicitud_al_prompt.html){target="_blank"}
 

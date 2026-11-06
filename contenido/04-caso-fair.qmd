@@ -4,7 +4,7 @@ description: "Qué dice y qué no dice una tabla pequeña de expresión génica"
 ---
 
 ::: {.etiqueta-pagina .antes}
-Antes o durante el taller · lectura de 3 min
+Antes o durante el taller
 :::
 
 ::: {.en-un-minuto}
@@ -57,4 +57,6 @@ La existencia de un CSV o de un README no prueba conformidad FAIR. Una fuente ex
 
 Una tabla de diagnóstico limitada a cuatro asuntos (unidades, condiciones, réplicas y celda faltante), tres preguntas prioritarias, una comprobación documental externa y una bitácora de decisiones.
 
-Los identificadores, el procesamiento, la cepa y la responsabilidad quedan **fuera del alcance de P5** por tiempo, no porque sean menos importantes. Regístralos como *exclusiones* en la [bitácora](07-bitacora.qmd).
+Los identificadores, el procesamiento, la cepa y la responsabilidad quedan **fuera del alcance de P5** por el límite de esta práctica, no porque sean menos importantes. Regístralos como exclusiones en la [Bitácora mínima 4D](07-bitacora.qmd).
+
+Para mirar la hoja sin salir del navegador puedes abrir el [Explorador FAIR](../interactivos/explorador_fair.html){target="_blank"}. El diagnóstico se elabora en tu asistente.

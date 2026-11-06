@@ -1,0 +1,56 @@
+---
+title: "¿Qué puedo aceptar de una respuesta de IA?"
+description: "Contrasta una respuesta simulada con un FASTA y decide qué puedes aceptar, corregir o dejar pendiente"
+---
+
+::: {.etiqueta-pagina .durante}
+Durante el taller
+:::
+
+::: {.en-un-minuto}
+- Examina el FASTA y la respuesta simulada.
+- Contrasta cada afirmación con los datos.
+- Decide qué aceptar, corregir o dejar pendiente.
+:::
+
+**¿Qué puedo aceptar de una respuesta de IA?**
+
+Practica *Discernment*, una competencia del marco AI Fluency 4D: distinguir qué parte de una respuesta puede aceptarse, qué debe corregirse y qué sigue pendiente porque el archivo no lo demuestra.
+
+La respuesta simulada es material de trabajo. No es un modelo que debas reproducir. Las secuencias son ficticias.
+
+## Cómo participar
+
+1. En **Examinar**, lee el FASTA y la respuesta. Anota tu primera impresión.
+2. En **Contrastar**, clasifica cada afirmación. Las pistas son opcionales. Valida solo cuando quieras contrastar tu clasificación con los datos.
+3. En **Decidir**, elige una acción y, si lo deseas, revisa esa decisión.
+4. En **Reporte**, copia o descarga el Markdown. El archivo se llama `Discernimiento_IA_AAAA-MM-DD.md`.
+
+Puedes regresar a una estación anterior sin perder lo escrito.
+
+[Abrir la actividad en una pestaña independiente](../../interactivos/ai_discernment_tool.html){target="_blank"}
+
+## Herramienta
+
+```{=html}
+<iframe class="explorador-frame" src="../../interactivos/ai_discernment_tool.html" title="¿Qué puedo aceptar de una respuesta de IA?: actividad para contrastar afirmaciones con un FASTA" allow="clipboard-write"></iframe>
+<style>
+.explorador-frame {
+  display: block;
+  width: 100%;
+  height: 92vh;
+  min-height: 640px;
+  margin-top: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+}
+@media (max-width: 768px) {
+  .explorador-frame { height: 85vh; min-height: 520px; }
+}
+</style>
+```
+
+## Al cerrar
+
+Antes de usar una respuesta parecida en un trabajo real, distingue lo que pudiste contar en el archivo de lo que todavía depende de información que el archivo no contiene.

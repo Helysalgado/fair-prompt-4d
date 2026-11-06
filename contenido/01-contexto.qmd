@@ -4,7 +4,7 @@ description: "Por qué importa comprender qué delegar y cómo verificar"
 ---
 
 ::: {.etiqueta-pagina .antes}
-Antes del taller · lectura de 5 min
+Antes del taller
 :::
 
 ::: {.en-un-minuto}
@@ -73,7 +73,7 @@ Desarrollar habilidades para transformar necesidades cotidianas de investigació
 
 ## Alcance y decisiones pedagógicas
 
-| Sí se enseña | No se enseña en estas dos horas |
+| Sí se enseña | No se enseña en este taller |
 |---|---|
 | Pensar y preguntar con ayuda de IA desde el principio | Una técnica avanzada o exhaustiva de ingeniería de prompts |
 | Descubrir vocabulario que falta y contrastar conceptos | Un curso completo de fundamentos de LLM |

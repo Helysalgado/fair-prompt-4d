@@ -4,7 +4,7 @@ description: "Elige un caso y distingue qué decisiones faltan por aclarar antes
 ---
 
 ::: {.etiqueta-pagina .durante}
-Durante el taller · actividad de 5–8 min
+Durante el taller
 :::
 
 ::: {.en-un-minuto}
@@ -13,7 +13,7 @@ Durante el taller · actividad de 5–8 min
 - Reformula la solicitud sin construir todavía un prompt completo.
 :::
 
-Esta actividad dura unos **5–8 minutos**. El objetivo es reconocer que una solicitud puede entenderse y, aun así, admitir interpretaciones distintas, y señalar qué decisiones conviene aclarar antes de delegarla a una IA.
+El objetivo es reconocer que una solicitud puede entenderse y, aun así, admitir interpretaciones distintas, y señalar qué decisiones conviene aclarar antes de delegarla a una IA.
 
 Elige **solo uno** de los dos casos: analizar secuencias FASTA o desarrollar una herramienta web. Los casos son independientes.
 
@@ -23,7 +23,7 @@ No es un examen de vocabulario ni una actividad para redactar un prompt completo
 
 1. Elige un caso y trabaja únicamente ese.
 2. Recorre la actividad en la herramienta.
-3. Si quieres conservar lo trabajado, descarga el reporte en Markdown.
+3. Si quieres conservar lo trabajado, descarga el reporte en Markdown. El archivo se llama `reporte_que_falta_por_definir_caso_A.md` o `reporte_que_falta_por_definir_caso_B.md`, según el caso.
 
 [Abrir la actividad en una pestaña independiente](../../interactivos/que_falta_por_definir.html){target="_blank"}
 

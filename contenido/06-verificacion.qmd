@@ -4,7 +4,7 @@ description: "La autorrevisión de la IA no sustituye abrir y leer la fuente"
 ---
 
 ::: {.etiqueta-pagina .durante}
-Durante el taller · lectura de 2 min
+Durante el taller
 :::
 
 ::: {.en-un-minuto}
@@ -40,4 +40,4 @@ Aplica los mismos pasos a la respuesta simulada del [ejemplo 2](02-ejemplos.qmd#
 
 ## Registro de la verificación
 
-Anota tu comprobación en la sección [5b · Verificación humana independiente obligatoria](07-bitacora.qmd#verificacion-humana) de la bitácora: afirmación, fuente, localización, fecha, evaluación propia y límites.
+Anota la comprobación en la estación Discernment de la [Bitácora mínima 4D](07-bitacora.qmd): la afirmación, cómo la contrastaste, la evidencia y el estado. Si no abriste la fuente, deja el estado en pendiente.

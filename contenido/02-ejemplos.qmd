@@ -4,7 +4,7 @@ description: "Ambigüedad, citas reales con afirmaciones no respaldadas y metada
 ---
 
 ::: {.etiqueta-pagina .durante}
-Durante el taller · lectura de 4 min
+Durante el taller
 :::
 
 ::: {.en-un-minuto}
@@ -34,7 +34,7 @@ Durante el taller · lectura de 4 min
 Algunos problemas no se resuelven con un prompt más largo, sino aprendiendo conceptos, aportando datos, delimitando expectativas o contrastando evidencia.
 :::
 
-## Tres ejemplos para discutir
+## Tres ejemplos para analizar
 
 Los términos *Description*, *Discernment* y *Diligence* corresponden a las competencias del [marco AI Fluency 4D](03-metodo.qmd#ai-fluency-4d-marco-de-competencias), que se presenta en la página siguiente; la cuarta, *Delegation*, se trabaja en la práctica.
 

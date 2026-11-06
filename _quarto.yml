@@ -7,6 +7,7 @@ project:
     - contenido/interactivos/explorador-fair.qmd
     - contenido/interactivos/que-falta-por-definir.qmd
     - contenido/interactivos/de-la-solicitud-al-prompt.qmd
+    - contenido/interactivos/que-puedo-aceptar.qmd
   resources:
     - descargas/**
     - recursos/**
@@ -33,31 +34,42 @@ website:
         text: Inicio
       - href: contenido/00-preparacion.qmd
         text: Antes del taller
-      - text: Fundamentos
+      - text: Comprender el problema
         menu:
           - href: contenido/01-contexto.qmd
-            text: "Sentido y objetivos"
+            text: "1 — Sentido y objetivos"
           - href: contenido/02-ejemplos.qmd
-            text: "Tres situaciones"
+            text: "2 — Tres situaciones"
           - href: contenido/03-metodo.qmd
-            text: "Seis etapas y 4D"
+            text: "3 — Seis etapas y 4D"
+          - href: contenido/interactivos/que-falta-por-definir.qmd
+            text: "4 — ¿Qué falta por definir?"
+      - text: Construir una solicitud
+        menu:
           - href: contenido/03b-estructura-prompt.qmd
-            text: "Del problema al prompt"
-      - text: Taller FAIR
+            text: "5 — Del problema al prompt"
+          - href: contenido/interactivos/de-la-solicitud-al-prompt.qmd
+            text: "6 — De la solicitud al prompt"
+      - text: Evaluar respuestas
+        menu:
+          - href: contenido/interactivos/que-puedo-aceptar.qmd
+            text: "7 — ¿Qué puedo aceptar?"
+      - text: Caso científico
         menu:
           - href: contenido/04-caso-fair.qmd
-            text: "Caso integrador"
+            text: "8 — Caso integrador FAIR"
           - href: contenido/05-practica.qmd
-            text: "Práctica guiada"
+            text: "9 — Práctica guiada con Excel"
           - href: contenido/06-verificacion.qmd
-            text: "Verificación independiente"
+            text: "10 — Verificación independiente"
           - href: contenido/07-bitacora.qmd
-            text: "Bitácora"
+            text: "11 — Bitácora mínima 4D"
+      - text: Recursos
+        menu:
           - href: contenido/tarjeta-practica.qmd
-            text: "Tarjeta de práctica (imprimible)"
-    right:
-      - href: contenido/08-referencias.qmd
-        text: Fuentes
+            text: "Tarjeta de práctica"
+          - href: contenido/08-referencias.qmd
+            text: "Fuentes y continuidad"
   sidebar:
     style: docked
     search: true
@@ -66,8 +78,8 @@ website:
       - href: index.qmd
         text: Inicio
       - href: contenido/00-preparacion.qmd
-        text: "0 — Antes del taller"
-      - section: "Fundamentos"
+        text: "Antes del taller"
+      - section: "Comprender el problema"
         contents:
           - href: contenido/01-contexto.qmd
             text: "1 — Sentido y objetivos"
@@ -75,22 +87,34 @@ website:
             text: "2 — Tres situaciones"
           - href: contenido/03-metodo.qmd
             text: "3 — Seis etapas y 4D"
+          - href: contenido/interactivos/que-falta-por-definir.qmd
+            text: "4 — ¿Qué falta por definir?"
+      - section: "Construir una solicitud"
+        contents:
           - href: contenido/03b-estructura-prompt.qmd
-            text: "3b — Del problema al prompt"
-      - section: "Taller FAIR"
+            text: "5 — Del problema al prompt"
+          - href: contenido/interactivos/de-la-solicitud-al-prompt.qmd
+            text: "6 — De la solicitud al prompt"
+      - section: "Evaluar respuestas de IA"
+        contents:
+          - href: contenido/interactivos/que-puedo-aceptar.qmd
+            text: "7 — ¿Qué puedo aceptar?"
+      - section: "Aplicar a un caso científico"
         contents:
           - href: contenido/04-caso-fair.qmd
-            text: "4 — Caso integrador"
+            text: "8 — Caso integrador FAIR"
           - href: contenido/05-practica.qmd
-            text: "5 — Práctica guiada"
+            text: "9 — Práctica guiada con Excel"
           - href: contenido/06-verificacion.qmd
-            text: "6 — Verificación"
+            text: "10 — Verificación independiente"
           - href: contenido/07-bitacora.qmd
-            text: "7 — Bitácora"
+            text: "11 — Bitácora mínima 4D"
+      - section: "Recursos y continuidad"
+        contents:
           - href: contenido/tarjeta-practica.qmd
             text: "Tarjeta de práctica"
-      - href: contenido/08-referencias.qmd
-        text: "Fuentes y continuidad"
+          - href: contenido/08-referencias.qmd
+            text: "Fuentes y continuidad"
 
 format:
   html:

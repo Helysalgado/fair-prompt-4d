@@ -48,15 +48,15 @@ Las referencias se identifican en el texto con claves **[R#]**. Se distinguen **
 **Para descargar**
 
 - [Excel simulado para participantes](../descargas/expresion_genica_caso_simulado.xlsx).
-- [Plantilla de bitácora en Word (.docx)](../descargas/bitacora-plantilla.docx) · [en Markdown (.md)](../descargas/bitacora-plantilla.md).
+- [Plantilla extensa de la versión anterior, en Word (.docx)](../descargas/bitacora-plantilla.docx) · [en Markdown (.md)](../descargas/bitacora-plantilla.md). Recurso opcional.
 - [Versión en texto del Excel](../descargas/expresion_genica_caso_simulado.txt), para asistentes que no aceptan archivos.
 
 **En este sitio**
 
 - [Práctica paso a paso](05-practica.qmd).
-- [Bitácora](07-bitacora.qmd).
+- [Bitácora mínima 4D](07-bitacora.qmd).
 - [Tarjeta de práctica](tarjeta-practica.qmd), para imprimir.
-- [Antes del taller](00-preparacion.qmd): requisitos y prueba de 2 minutos.
+- [Antes del taller](00-preparacion.qmd): requisitos y prueba del asistente.
 
 ## Para continuar aprendiendo
 

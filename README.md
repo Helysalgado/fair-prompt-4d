@@ -15,9 +15,11 @@ El taller forma parte del programa ELIXIR-México 2026 como sesión «Instruccio
 | Bloque | Páginas |
 |---|---|
 | Antes del taller | `00-preparacion` (requisitos y prueba de 2 minutos) |
-| Fundamentos | `01-contexto` · `02-ejemplos` · `03-metodo` · `03b-estructura-prompt` |
-| Taller FAIR | `04-caso-fair` · `05-practica` · `06-verificacion` · `07-bitacora` · `tarjeta-practica` |
-| Para profundizar | `08-referencias` |
+| Comprender el problema | `01-contexto` · `02-ejemplos` · `03-metodo` · `que-falta-por-definir` |
+| Construir una solicitud | `03b-estructura-prompt` · `de-la-solicitud-al-prompt` |
+| Evaluar respuestas | `que-puedo-aceptar` |
+| Caso científico | `04-caso-fair` · `05-practica` · `06-verificacion` · `07-bitacora` |
+| Recursos | `tarjeta-practica` · `08-referencias` |
 
 ## Estructura del repositorio
 
@@ -26,7 +28,8 @@ index.qmd              portada
 contenido/             páginas del taller (.qmd)
 contenido/_prompts/    P0, P1, P5 y P6: única copia, incluida con {{< include >}}
 recursos/              diagramas SVG
-descargas/             Excel simulado, versión en texto y plantillas de bitácora
+descargas/             Excel simulado, versión en texto y plantilla extensa opcional
+interactivos/          aplicaciones HTML del recorrido
 _quarto.yml            configuración del sitio y navegación
 tema.scss, styles.css  tema visual
 _prompt-copy.html      botón «Copiar» de las tarjetas de prompt

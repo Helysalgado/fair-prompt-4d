@@ -4,7 +4,7 @@ description: "Rol, contexto, objetivo, tarea, salida, restricciones y verificaci
 ---
 
 ::: {.etiqueta-pagina .durante}
-Durante el taller · lectura de 6 min · actividad de 5–7 min
+Durante el taller
 :::
 
 ::: {.en-un-minuto}
@@ -83,20 +83,20 @@ Imagina que ya proporcionaste el Excel y una tarea breve: «Revisa los datos y d
 
 Estos son **efectos esperados que debemos observar**, no resultados garantizados. Las respuestas pueden variar entre ejecuciones y modelos.
 
-## Actividad breve · 5–7 minutos
+## Actividad
 
 **Propósito:** reconocer cómo una instrucción hace visible la intención científica y facilita evaluar el trabajo de la IA. **No necesitas ejecutar siete prompts**.
 
 1. Relee P0 e identifica los elementos que ya contiene, aunque no tengan etiquetas.
-2. En parejas (*en línea:* en sala separada o por el chat de la reunión), escribe una versión mejorada con **objetivo + tarea + salida + una restricción + un criterio de verificación**. Decide si necesitas añadir un rol; justifica por qué.
+2. Escribe una versión mejorada con **objetivo + tarea + salida + una restricción + un criterio de verificación**. Decide si necesitas añadir un rol; justifica por qué.
 3. Subraya qué información proviene del Excel y cuál debe obtenerse de una persona o una fuente primaria.
-4. Compara tu texto con la versión B. Probarlo en un chat nuevo queda para el final de la práctica, [si sobra tiempo](05-practica.qmd#si-sobra-tiempo).
-5. En tu [bitácora](07-bitacora.qmd) anota **una decisión de Description**, una de **Delegation** y un criterio de **Discernment**.
+4. Compara tu texto con la versión B. Probarlo en un chat nuevo queda como [ampliación opcional](05-practica.qmd#ampliación-opcional) al final de la práctica.
+5. Conserva **una decisión de Description**, una de **Delegation** y un criterio de **Discernment** para llevarlos después a la [Bitácora mínima 4D](07-bitacora.qmd).
 
-**Pregunta para discutir:** si un prompt solicita «una tabla con citas», ¿qué responsabilidad científica conserva la persona que la utilizará?
+**Pregunta para responder por escrito:** si un prompt solicita «una tabla con citas», ¿qué responsabilidad científica conserva la persona que la utilizará?
 
 ::: {.callout-note collapse="true"}
-## Respuesta orientadora (ábrela después de discutir)
+## Respuesta orientadora (ábrela después de responder)
 Comprobar la correspondencia entre cada afirmación, su evidencia y la fuente efectiva, y mantener la responsabilidad sobre los datos y su publicación.
 :::
 
@@ -118,4 +118,4 @@ Comprobar la correspondencia entre cada afirmación, su evidencia y la fuente ef
 | **Discernment** | ¿Puedo revisar la evidencia y detectar afirmaciones injustificadas? |
 | **Diligence** | ¿Conservo datos originales, registro decisiones y no presento como verificado lo pendiente? |
 
-Continúa con el [caso FAIR](04-caso-fair.qmd) y la [práctica guiada](05-practica.qmd). Las técnicas de prompting se tratan con más detalle en el curso [*Prompting científico con inteligencia artificial*](https://helysalgado.github.io/prompting-cientifico/) [R9]: aquí nos concentramos en **especificar bien una necesidad científica y comprobar la respuesta**.
+Continúa con [De la solicitud al prompt](interactivos/de-la-solicitud-al-prompt.qmd) para aplicar estos componentes. Después recorrerás [¿Qué puedo aceptar?](interactivos/que-puedo-aceptar.qmd) y, al llegar al caso, la [práctica guiada](05-practica.qmd). Las técnicas de prompting se tratan con más detalle en el curso [*Prompting científico con inteligencia artificial*](https://helysalgado.github.io/prompting-cientifico/) [R9]: aquí nos concentramos en **especificar bien una necesidad científica y comprobar la respuesta**.

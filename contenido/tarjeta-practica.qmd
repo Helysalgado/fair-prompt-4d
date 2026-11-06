@@ -1,6 +1,6 @@
 ---
 title: "Tarjeta de práctica"
-description: "Todo lo que necesitas durante los 120 minutos: tenla a la mano o imprímela (una hoja por ambos lados)"
+description: "Prompts, etiquetas y verificación de la práctica de cierre, en una sola hoja"
 toc: false
 ---
 
@@ -8,16 +8,15 @@ toc: false
 Durante el taller · tenla abierta en otra pestaña o imprímela
 :::
 
-**Un solo chat** para P0, P1, P5 y P6. **Datos simulados:** [Excel](../descargas/expresion_genica_caso_simulado.xlsx) · [versión en texto](../descargas/expresion_genica_caso_simulado.txt) · [bitácora (.docx)](../descargas/bitacora-plantilla.docx).
+**Un solo chat** para P0, P1, P5 y P6. **Datos simulados:** [Excel](../descargas/expresion_genica_caso_simulado.xlsx) · [versión en texto](../descargas/expresion_genica_caso_simulado.txt) · [Bitácora mínima 4D](07-bitacora.qmd).
 
-| Min | Qué haces | Dónde |
+| Paso | Qué haces | Dónde |
 |---|---|---|
-| 0–20 | Apertura: tres ejemplos y seis etapas | [Ejemplos](02-ejemplos.qmd) |
-| 20–40 | **P0** y **P1**; anota qué hizo la IA; puesta en común | Bitácora 1–2 |
-| 40–60 | Actividad de prompt (5–7 min) y **tu especificación**, sin IA | [03b](03b-estructura-prompt.qmd) · Bitácora 3–4 |
-| 60–90 | **P5**, **P6** y **tu verificación con la fuente** | [Verificación](06-verificacion.qmd) · Bitácora 5–5b |
-| 90–110 | Bitácora y revisión entre pares | Bitácora 6 |
-| 110–120 | Problema propio y encuesta | Bitácora: transferencia |
+| 1 | **P0** y anota qué hizo la IA | Chat |
+| 2 | **P1** | Chat |
+| 3 | **Tu especificación**, sin pedir a la IA que decida | [03b](03b-estructura-prompt.qmd) |
+| 4 | **P5**, **P6** y **tu verificación con la fuente** | [Verificación](06-verificacion.qmd) |
+| 5 | Bitácora mínima 4D y problema propio | [Bitácora](07-bitacora.qmd) |
 
 ## Prompts
 
@@ -25,7 +24,7 @@ Durante el taller · tenla abierta en otra pestaña o imprímela
 
 {{< include _prompts/p1.md >}}
 
-**Entre P1 y P5 escribes tú** (bitácora 3): resultado buscado · alcance (unidades, condiciones, réplicas, celda vacía) · exclusiones · evidencia aceptable · qué delegas · qué confirmas tú · límites · criterio de aceptación.
+**Entre P1 y P5 escribes tú:** resultado buscado · alcance (unidades, condiciones, réplicas, celda vacía) · exclusiones · evidencia aceptable · qué delegas · qué confirmas tú · límites · criterio de aceptación.
 
 {{< include _prompts/p5.md >}}
 
