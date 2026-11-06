@@ -1,0 +1,49 @@
+---
+title: "¿Qué falta por definir?"
+description: "Elige un caso y distingue qué decisiones faltan por aclarar antes de delegar una solicitud a una IA"
+---
+
+::: {.etiqueta-pagina .durante}
+Durante el taller · actividad de 5–8 min
+:::
+
+::: {.en-un-minuto}
+- Elige solamente uno de los dos casos.
+- Identifica decisiones que conviene aclarar antes de delegar la tarea.
+- Reformula la solicitud sin construir todavía un prompt completo.
+:::
+
+Esta actividad dura unos **5–8 minutos**. El objetivo es reconocer que una solicitud puede entenderse y, aun así, admitir interpretaciones distintas, y señalar qué decisiones conviene aclarar antes de delegarla a una IA.
+
+Elige **solo uno** de los dos casos: analizar secuencias FASTA o desarrollar una herramienta web. Los casos son independientes.
+
+No es un examen de vocabulario ni una actividad para redactar un prompt completo. Completarla no califica tus respuestas.
+
+## Cómo participar
+
+1. Elige un caso y trabaja únicamente ese.
+2. Recorre la actividad en la herramienta.
+3. Si quieres conservar lo trabajado, descarga el reporte en Markdown.
+
+[Abrir la actividad en una pestaña independiente](../../interactivos/que_falta_por_definir.html){target="_blank"}
+
+## Herramienta
+
+```{=html}
+<iframe class="explorador-frame" src="../../interactivos/que_falta_por_definir.html" title="¿Qué falta por definir?: actividad para precisar una solicitud antes de delegarla"></iframe>
+<style>
+.explorador-frame {
+  display: block;
+  width: 100%;
+  height: 92vh;
+  min-height: 640px;
+  margin-top: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+}
+@media (max-width: 768px) {
+  .explorador-frame { height: 85vh; min-height: 520px; }
+}
+</style>
+```

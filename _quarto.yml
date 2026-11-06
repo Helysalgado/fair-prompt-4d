@@ -5,6 +5,8 @@ project:
     - index.qmd
     - contenido/*.qmd
     - contenido/interactivos/explorador-fair.qmd
+    - contenido/interactivos/que-falta-por-definir.qmd
+    - contenido/interactivos/de-la-solicitud-al-prompt.qmd
   resources:
     - descargas/**
     - recursos/**

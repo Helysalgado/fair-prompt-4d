@@ -1,0 +1,49 @@
+---
+title: "De la solicitud al prompt"
+description: "Elige qué tarea delegar a una IA, construye versiones de tus instrucciones y compara el efecto de los cambios"
+---
+
+::: {.etiqueta-pagina .durante}
+Durante el taller
+:::
+
+::: {.en-un-minuto}
+- Elige uno de los dos casos.
+- Decide qué tarea vas a delegar.
+- Construye hasta tres versiones y descarga el reporte.
+:::
+
+**De la solicitud al prompt**
+
+En esta actividad elegirás qué tarea delegar a una IA, construirás distintas versiones de tus instrucciones y podrás probarlas en ChatGPT para observar cómo cambia la respuesta.
+
+Elige solo uno de los dos casos. Puedes guardar hasta tres versiones. El enlace a ChatGPT abre una pestaña nueva y no envía el texto del prompt. Para conservar lo trabajado, descarga el reporte en Markdown.
+
+## Cómo participar
+
+1. Elige un caso y la tarea que vas a delegar.
+2. Construye el prompt. Si quieres probarlo, cópialo y pégalo en una conversación nueva de ChatGPT.
+3. Guarda las versiones, anota lo que observes y descarga el reporte.
+
+[Abrir la actividad en una pestaña independiente](../../interactivos/de_la_solicitud_al_prompt.html){target="_blank"}
+
+## Herramienta
+
+```{=html}
+<iframe class="explorador-frame" src="../../interactivos/de_la_solicitud_al_prompt.html" title="De la solicitud al prompt: laboratorio para construir y comparar instrucciones" allow="clipboard-write"></iframe>
+<style>
+.explorador-frame {
+  display: block;
+  width: 100%;
+  height: 92vh;
+  min-height: 640px;
+  margin-top: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+}
+@media (max-width: 768px) {
+  .explorador-frame { height: 85vh; min-height: 520px; }
+}
+</style>
+```

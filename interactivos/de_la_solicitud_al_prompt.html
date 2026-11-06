@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De la solicitud al prompt - Laboratorio de construcción y prueba</title>
+    <style>
+        :root {
+            --primary: #00314F;
+            --primary-hover: #002238;
+            --secondary: #C9A227;
+            --secondary-hover: #b59120;
+            --bg-light: #F3F4F6;
+            --card-bg: #FFFFFF;
+            --text-main: #1F2937;
+            --text-muted: #4B5563;
+            --border: #E5E7EB;
+            --focus-ring: rgba(201, 162, 39, 0.4);
+            --danger: #DC2626;
+            --danger-bg: #FEE2E2;
+            --info-bg: #EFF6FF;
+            --info-border: #93C5FD;
+            --info-text: #1E40AF;
+            --warning-bg: #FFFBEB;
+            --warning-border: #FCD34D;
+            --warning-text: #92400E;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 1rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px 8px 0 0;
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        header p {
+            color: #E5E7EB;
+            font-size: 0.95rem;
+        }
+
+        /* Nav & Tabs */
+        nav {
+            display: flex;
+            background-color: white;
+            border-left: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 140px;
+            padding: 0.85rem 0.75rem;
+            border: none;
+            background: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+            background-color: #F9FAFB;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--secondary);
+            background-color: white;
+        }
+
+        .tab-btn:focus-visible {
+            outline: 2px solid var(--secondary);
+            outline-offset: -2px;
+        }
+
+        main {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 1.5rem;
+            min-height: 480px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Banner & Alert Boxes */
+        .instruction-box {
+            background-color: #F8FAFC;
+            border-left: 4px solid var(--primary);
+            padding: 0.85rem 1rem;
+            margin-bottom: 1.25rem;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .case-header-banner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--info-bg);
+            border: 1px solid var(--info-border);
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .case-title-tag {
+            font-weight: 700;
+            color: var(--info-text);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .case-selector-pills {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .pill-btn {
+            padding: 0.35rem 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 20px;
+            border: 1px solid var(--info-border);
+            background-color: white;
+            color: var(--info-text);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .pill-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Card Elements */
+        .retrieved-card {
+            background-color: #FAFAFA;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .retrieved-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .retrieved-card-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--primary);
+        }
+
+        .retrieved-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+
+        /* Form Components */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .label-hint {
+            display: block;
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            background-color: white;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 85px;
+        }
+
+        textarea:focus, input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--focus-ring);
+        }
+
+        /* Delegation Radio Group */
+        .delegation-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-top: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background-color: white;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .radio-option:hover {
+            border-color: var(--primary);
+            background-color: #F9FAFB;
+        }
+
+        .radio-option input[type="radio"] {
+            margin-top: 0.2rem;
+            accent-color: var(--primary);
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .radio-option span {
+            font-size: 0.92rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        /* Split Screen Construction Layout */
+        .builder-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 840px) {
+            .builder-grid {
+                grid-template-columns: 1.1fr 0.9fr;
+                align-items: start;
+            }
+            .sticky-prompt-panel {
+                position: sticky;
+                top: 1rem;
+            }
+        }
+
+        .prompt-preview-card {
+            background-color: #F8FAFC;
+            border: 2px solid #CBD5E1;
+            border-radius: 8px;
+            padding: 1.25rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+
+        .prompt-preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .prompt-preview-title {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .prompt-box {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.88rem;
+            color: var(--text-main);
+            white-space: pre-wrap;
+            min-height: 200px;
+            max-height: 400px;
+            overflow-y: auto;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        /* Saved Versions Cards */
+        .version-card {
+            background-color: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .version-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid var(--bg-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .version-badge {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .version-components-list {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+        }
+
+        .component-tag {
+            font-size: 0.75rem;
+            padding: 0.15rem 0.5rem;
+            background-color: #E2E8F0;
+            color: #334155;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.65rem 1.1rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            gap: 0.4rem;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: #F0F4F8;
+        }
+
+        .btn-gold {
+            background-color: var(--secondary);
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--secondary-hover);
+        }
+
+        .btn-green {
+            background-color: #10B981;
+            color: white;
+        }
+
+        .btn-green:hover {
+            background-color: #059669;
+        }
+
+        .btn-danger {
+            background-color: white;
+            color: var(--danger);
+            border: 1px solid var(--danger);
+        }
+
+        .btn-danger:hover {
+            background-color: var(--danger-bg);
+        }
+
+        .btn-sm {
+            padding: 0.35rem 0.75rem;
+            font-size: 0.8rem;
+        }
+
+        .btn:focus-visible {
+            outline: 2px solid var(--secondary);
+            outline-offset: 2px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 4px;
+            background-color: #DBEAFE;
+            color: #1E40AF;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            padding: 0.75rem 1.25rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            display: none;
+            z-index: 1000;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .toast.show {
+            display: block;
+            animation: fadeIn 0.2s ease;
+        }
+
+        .copy-fallback {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 49, 79, 0.45);
+            z-index: 1100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .copy-fallback[hidden] {
+            display: none;
+        }
+
+        .copy-fallback-card {
+            background: var(--card-bg);
+            color: var(--text-main);
+            width: 100%;
+            max-width: 36rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--secondary);
+            padding: 1.25rem;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+        }
+
+        .copy-fallback-card h2 {
+            font-size: 1.05rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .copy-fallback-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .copy-fallback-card textarea {
+            width: 100%;
+            min-height: 8rem;
+            margin: 0.75rem 0;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .markdown-preview {
+            white-space: pre-wrap;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            background-color: #1E293B;
+            color: #E2E8F0;
+            padding: 1.25rem;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            max-height: 500px;
+            overflow-y: auto;
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 0.5rem;
+            }
+            header {
+                padding: 1rem;
+            }
+            header h1 {
+                font-size: 1.2rem;
+            }
+            main {
+                padding: 1rem;
+            }
+            .tab-btn {
+                padding: 0.6rem 0.4rem;
+                font-size: 0.78rem;
+                min-width: auto;
+            }
+            .btn-group {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+            .case-header-banner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>De la solicitud al prompt</h1>
+        <p>Laboratorio de construcción, prueba y comparación de instrucciones para IA</p>
+    </header>
+
+    <nav role="tablist" aria-label="Pasos del laboratorio">
+        <button role="tab" aria-selected="true" aria-controls="tab-1" id="btn-tab-1" class="tab-btn active" onclick="switchTab(1)">1. ¿Qué voy a delegar?</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-2" id="btn-tab-2" class="tab-btn" onclick="switchTab(2)">2. Construir y probar</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-3" id="btn-tab-3" class="tab-btn" onclick="switchTab(3)">3. Comparar y reflexionar</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-4" id="btn-tab-4" class="tab-btn" onclick="switchTab(4)">4. Reporte</button>
+    </nav>
+
+    <main>
+        <!-- Banner de Selección de Caso Activo -->
+        <div id="case-header-banner" class="case-header-banner">
+            <div class="case-title-tag">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                <span id="active-case-name">Caso A</span>
+            </div>
+            <div id="case-selector-container" class="case-selector-pills">
+                <button type="button" class="pill-btn" id="pill-case-A" onclick="switchCase('A')">Caso A: FASTA</button>
+                <button type="button" class="pill-btn" id="pill-case-B" onclick="switchCase('B')">Caso B: App Web</button>
+            </div>
+        </div>
+
+        <!-- Pestaña 1: ¿Qué voy a delegar? -->
+        <section id="tab-1" class="tab-content active" role="tabpanel" aria-labelledby="btn-tab-1">
+            <h2>1. ¿Qué voy a delegar?</h2>
+
+            <!-- Tarjeta de Solicitud de Partida Fija -->
+            <div class="retrieved-card">
+                <div class="retrieved-card-header">
+                    <span class="retrieved-card-title">Solicitud de partida</span>
+                    <span class="badge">Referencia del taller</span>
+                </div>
+                <div>
+                    <p id="starting-request-text" class="retrieved-text"></p>
+                </div>
+                <span class="label-hint" style="margin-top: 0.5rem;">Esta solicitud expresa la necesidad general. Tu tarea es decidir qué pedirle a la IA y cómo comunicarlo con precisión.</span>
+            </div>
+
+            <!-- Elección de la tarea a delegar -->
+            <div class="form-group" style="margin-top: 1.5rem;">
+                <label>¿Qué quieres que haga la IA con esta solicitud?</label>
+                <span class="label-hint">Una misma necesidad puede dar lugar a tareas diferentes. Elige qué tipo de ayuda necesitas antes de escribir tus instrucciones.</span>
+                
+                <div id="delegation-radio-group" class="delegation-options">
+                    <!-- Opciones inyectadas dinámicamente según el caso -->
+                </div>
+
+                <!-- Campo adicional si se selecciona 'Otra tarea' -->
+                <div id="custom-task-container" style="display: none; margin-top: 0.75rem;">
+                    <label for="input-custom-task" style="font-size: 0.85rem; font-weight: 500;">Describe la otra tarea que deseas delegar:</label>
+                    <input type="text" id="input-custom-task" placeholder="Ej. Explicar los fundamentos teóricos del análisis..." oninput="onCustomTaskInput(this.value)">
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary" onclick="switchTab(2)">Continuar: Construir y probar &rarr;</button>
+            </div>
+        </section>
+
+        <!-- Pestaña 2: Construir y probar (Consolidada) -->
+        <section id="tab-2" class="tab-content" role="tabpanel" aria-labelledby="btn-tab-2">
+            <h2>2. Construir y probar mi prompt</h2>
+
+            <div class="instruction-box">
+                Comienza con estas instrucciones básicas. Puedes copiarlas y probarlas en ChatGPT antes de agregar más detalles, observando cómo evoluciona la respuesta al refinar las instrucciones.
+            </div>
+
+            <div class="builder-grid">
+                <!-- Columna Izquierda: Formulario de Componentes -->
+                <div>
+                    <!-- Recordatorio de Punto de partida -->
+                    <div style="background-color: #F0F4F8; border-radius: 6px; padding: 0.85rem 1rem; margin-bottom: 1.25rem; border: 1px solid #D9E2EC;">
+                        <span style="font-size: 0.78rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px;">Punto de partida (Tarea seleccionada):</span>
+                        <p id="selected-task-summary" style="font-size: 0.95rem; font-weight: 600; color: var(--text-main); margin-top: 0.2rem;"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-task-refinement">Precisa o detalla la tarea (opcional)</label>
+                        <span class="label-hint">Si necesitas acotar o detallar la acción específica a realizar:</span>
+                        <input type="text" id="input-task-refinement" placeholder="Ej. Generar código en Python usando Biopython..." oninput="updateCurrentCaseState('taskRefinement', this.value)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-context">Contexto y objetivo</label>
+                        <span class="label-hint">¿Qué información adicional necesita conocer la IA para comprender tu situación?</span>
+                        <textarea id="input-context" placeholder="Explica el contexto científico, audiencia o datos disponibles..." oninput="updateCurrentCaseState('contextGoal', this.value)"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-limits">Condiciones y límites</label>
+                        <span class="label-hint">¿Qué debe respetar, qué no debe suponer y qué debería preguntarte si falta información esencial?</span>
+                        <textarea id="input-limits" placeholder="Define restricciones, lo que NO debe inventar o qué consultar primero..." oninput="updateCurrentCaseState('limitsConditions', this.value)"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-output">Resultado esperado y verificación</label>
+                        <span class="label-hint">¿Qué resultado necesitas, cómo debe presentarlo y cómo podrías comprobarlo?</span>
+                        <textarea id="input-output" placeholder="Especifica formato de entrega (tabla, funciones comentadas) y métodos de validación..." oninput="updateCurrentCaseState('outputVerification', this.value)"></textarea>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Vista previa en tiempo real y acciones de prueba -->
+                <div class="sticky-prompt-panel">
+                    <div class="prompt-preview-card">
+                        <div class="prompt-preview-header">
+                            <span class="prompt-preview-title">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                                Tu prompt para probar
+                            </span>
+                            <span class="badge" id="live-version-badge">Borrador actual</span>
+                        </div>
+
+                        <div id="live-prompt-box" class="prompt-box"></div>
+
+                        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <button type="button" class="btn btn-gold" style="flex: 1;" onclick="copyLivePromptToClipboard()">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                    Copiar prompt
+                                </button>
+                                <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" class="btn btn-green" style="flex: 1;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    Abrir ChatGPT
+                                </a>
+                            </div>
+
+                            <button type="button" class="btn btn-primary" onclick="saveCurrentVersion()">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                                Guardar esta versión (<span id="saved-count-indicator">0</span>/3)
+                            </button>
+                        </div>
+                        
+                        <span class="label-hint" style="margin-top: 0.75rem; text-align: center; display: block; font-size: 0.8rem;">
+                            Copia tu prompt, abre ChatGPT y pégalo en una conversación nueva para probar.
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group" style="margin-top: 1.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="switchTab(1)">&larr; Volver a Delegación</button>
+                <button type="button" class="btn btn-primary" onclick="switchTab(3)">Ir a Comparar y reflexionar &rarr;</button>
+            </div>
+        </section>
+
+        <!-- Pestaña 3: Comparar y reflexionar -->
+        <section id="tab-3" class="tab-content" role="tabpanel" aria-labelledby="btn-tab-3">
+            <h2>3. Comparar y reflexionar sobre los resultados</h2>
+
+            <div class="instruction-box">
+                Revisa las versiones de tu prompt guardadas durante las pruebas. Observa cómo influyeron los componentes agregados en la respuesta de la IA. Dos versiones son suficientes para reflexionar; una tercera es opcional.
+            </div>
+
+            <!-- Contenedor dinámico de versiones guardadas -->
+            <div id="saved-versions-container">
+                <!-- Se inyectan tarjetas de Versión 1, 2, 3 aquí -->
+            </div>
+
+            <!-- Cuadro de Reflexión Comparativa -->
+            <div style="background-color: #FAF5FF; border: 1px solid #E9D5FF; border-radius: 8px; padding: 1.25rem; margin-top: 1.5rem;">
+                <h3 style="font-size: 1rem; color: #6B21A8; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    Reflexión sobre el efecto de las instrucciones
+                </h3>
+
+                <div class="form-group">
+                    <label for="input-reflection-1" style="color: #581C87;">1. ¿Qué diferencias observaste entre las respuestas y cuáles podrían relacionarse con los cambios en tus instrucciones?</label>
+                    <textarea id="input-reflection-1" placeholder="Describe brevemente cómo influyó el contexto, las condiciones o el resultado solicitado..." oninput="updateCurrentCaseState('reflection1', this.value)"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="input-reflection-2" style="color: #581C87;">2. ¿Qué ambigüedades permanecen o qué necesitarías aclarar antes de utilizar el resultado?</label>
+                    <textarea id="input-reflection-2" placeholder="Decisiones o supuestos implícitos que la IA aún tuvo que asumir..." oninput="updateCurrentCaseState('reflection2', this.value)"></textarea>
+                </div>
+
+                <div style="background-color: #FFFBEB; border-left: 3px solid #F59E0B; padding: 0.65rem 0.85rem; border-radius: 4px; font-size: 0.82rem; color: #92400E; margin-top: 0.5rem;">
+                    <strong>Nota metodológica:</strong> Las respuestas de una IA pueden variar incluso con el mismo prompt. Esta comparación permite explorar posibles efectos de tus instrucciones, pero no demuestra por sí sola una relación causal.
+                </div>
+            </div>
+
+            <div class="btn-group" style="margin-top: 1.5rem;">
+                <button type="button" class="btn btn-secondary" onclick="switchTab(2)">&larr; Volver a Construir y probar</button>
+                <button type="button" class="btn btn-primary" onclick="switchTab(4)">Ver Reporte Final &rarr;</button>
+            </div>
+        </section>
+
+        <!-- Pestaña 4: Reporte -->
+        <section id="tab-4" class="tab-content" role="tabpanel" aria-labelledby="btn-tab-4">
+            <h2>4. Reporte de Construcción y Prueba</h2>
+
+            <div class="instruction-box">
+                Resumen de tu proceso de construcción, versiones guardadas y reflexiones sobre las respuestas obtenidas. Puedes descargarlo en formato Markdown.
+            </div>
+
+            <div class="btn-group" style="margin-bottom: 1.25rem;">
+                <button type="button" class="btn btn-gold" onclick="downloadMarkdown()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Descargar Reporte (Markdown)
+                </button>
+            </div>
+
+            <div class="markdown-preview" id="report-view"></div>
+        </section>
+    </main>
+
+    <footer>
+        <span>Taller: Antes del prompt: pensar, delegar y verificar con IA</span>
+        <button type="button" class="btn btn-danger btn-sm" onclick="confirmReset()">Reiniciar actividad</button>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Mensaje</div>
+
+    <div id="copy-fallback" class="copy-fallback" hidden>
+        <div class="copy-fallback-card" role="dialog" aria-modal="true" aria-labelledby="copy-fallback-title">
+            <h2 id="copy-fallback-title">No se pudo copiar automáticamente</h2>
+            <p>El navegador bloqueó el acceso al portapapeles. El texto está en este recuadro: selecciónalo y cópialo con el menú del navegador o con Cmd+C.</p>
+            <textarea id="copy-fallback-text" readonly></textarea>
+            <button type="button" class="btn btn-primary" id="copy-fallback-close">Cerrar</button>
+        </div>
+    </div>
+
+    <script>
+        // Key Storage Key
+        const STORAGE_KEY_LAB = 'de_la_solicitud_al_prompt_lab_v1';
+
+        // Exact Fixed Starting Requests
+        const STARTING_REQUESTS = {
+            A: "Necesito analizar un archivo FASTA con varias secuencias de ADN para conocer la frecuencia de los nucleótidos. Quiero obtener resultados por secuencia y poder compararlos.",
+            B: "Necesito desarrollar una aplicación web que permita introducir secuencias de ADN en formato FASTA, realizar análisis básicos y descargar los resultados. La aplicación debe ser sencilla de utilizar y ayudar a identificar entradas incorrectas."
+        };
+
+        // Task Options
+        const TASK_OPTIONS_CASE_A = [
+            { id: 'explicar', text: 'Explicarme cómo realizar el análisis.' },
+            { id: 'script', text: 'Escribir un script para realizarlo.' },
+            { id: 'analizar', text: 'Analizar los datos que le proporcione.' },
+            { id: 'revisar', text: 'Revisar los resultados que ya obtuve.' },
+            { id: 'otra', text: 'Otra tarea.' }
+        ];
+
+        const TASK_OPTIONS_CASE_B = [
+            { id: 'requisitos', text: 'Ayudarme a definir los requisitos de la aplicación.' },
+            { id: 'prototipo', text: 'Diseñar un prototipo de la interfaz.' },
+            { id: 'codigo', text: 'Escribir el código de la aplicación.' },
+            { id: 'revisar_app', text: 'Revisar o mejorar una implementación existente.' },
+            { id: 'otra', text: 'Otra tarea.' }
+        ];
+
+        // Empty Schema per Case State
+        function createEmptyCaseState() {
+            return {
+                taskOptionId: '',
+                customTaskText: '',
+                taskRefinement: '',
+                contextGoal: '',
+                limitsConditions: '',
+                outputVerification: '',
+                savedVersions: [], // max 3: { id, number, promptText, components:[], observation: '' }
+                reflection1: '',
+                reflection2: ''
+            };
+        }
+
+        // Global State
+        let appState = {
+            currentCase: 'A',
+            cases: {
+                A: createEmptyCaseState(),
+                B: createEmptyCaseState()
+            },
+            activeTab: 1
+        };
+
+        const elements = {};
+
+        window.addEventListener('DOMContentLoaded', () => {
+            cacheElements();
+            document.getElementById('copy-fallback-close').addEventListener('click', hideCopyFallback);
+            initAppState();
+            renderUI();
+        });
+
+        function cacheElements() {
+            elements.activeCaseName = document.getElementById('active-case-name');
+            elements.pillCaseA = document.getElementById('pill-case-A');
+            elements.pillCaseB = document.getElementById('pill-case-B');
+            elements.startingRequestText = document.getElementById('starting-request-text');
+            elements.delegationRadioGroup = document.getElementById('delegation-radio-group');
+            elements.customTaskContainer = document.getElementById('custom-task-container');
+            elements.inputCustomTask = document.getElementById('input-custom-task');
+            elements.selectedTaskSummary = document.getElementById('selected-task-summary');
+            elements.inputTaskRefinement = document.getElementById('input-task-refinement');
+            elements.inputContext = document.getElementById('input-context');
+            elements.inputLimits = document.getElementById('input-limits');
+            elements.inputOutput = document.getElementById('input-output');
+            elements.livePromptBox = document.getElementById('live-prompt-box');
+            elements.savedCountIndicator = document.getElementById('saved-count-indicator');
+            elements.savedVersionsContainer = document.getElementById('saved-versions-container');
+            elements.inputReflection1 = document.getElementById('input-reflection-1');
+            elements.inputReflection2 = document.getElementById('input-reflection-2');
+            elements.reportView = document.getElementById('report-view');
+            elements.toast = document.getElementById('toast');
+        }
+
+        function getCurrentState() {
+            if (!appState.cases[appState.currentCase]) {
+                appState.cases[appState.currentCase] = createEmptyCaseState();
+            }
+            return appState.cases[appState.currentCase];
+        }
+
+        function updateCurrentCaseState(prop, value) {
+            const cs = getCurrentState();
+            cs[prop] = value;
+            saveState();
+
+            if (['taskRefinement', 'contextGoal', 'limitsConditions', 'outputVerification'].includes(prop)) {
+                renderLivePrompt();
+            }
+        }
+
+        function normalizeText(value) {
+            return typeof value === 'string' ? value : '';
+        }
+
+        function normalizeTab(value) {
+            const tab = Number(value);
+            if (Number.isInteger(tab) && tab >= 1 && tab <= 4) return tab;
+            return 1;
+        }
+
+        function normalizeTaskId(value, caseKey) {
+            const options = caseKey === 'A' ? TASK_OPTIONS_CASE_A : TASK_OPTIONS_CASE_B;
+            const ids = options.map(function (option) { return option.id; });
+            return typeof value === 'string' && ids.indexOf(value) !== -1 ? value : '';
+        }
+
+        function normalizeVersions(value) {
+            if (!Array.isArray(value)) return [];
+            const kept = [];
+            const seen = {};
+            value.forEach(function (item, index) {
+                if (kept.length >= 3) return;
+                if (!item || typeof item !== 'object' || Array.isArray(item)) return;
+                if (typeof item.promptText !== 'string') return;
+                let id = typeof item.id === 'string' && item.id.trim() ? item.id : 'v_restored_' + index;
+                if (seen[id]) id = id + '_' + index;
+                seen[id] = true;
+                kept.push({
+                    id: id,
+                    number: kept.length + 1,
+                    promptText: item.promptText,
+                    components: Array.isArray(item.components)
+                        ? item.components.filter(function (component) { return typeof component === 'string'; })
+                        : [],
+                    observation: normalizeText(item.observation)
+                });
+            });
+            return kept;
+        }
+
+        function normalizeCaseState(source, caseKey) {
+            const record = source && typeof source === 'object' && !Array.isArray(source) ? source : {};
+            return {
+                taskOptionId: normalizeTaskId(record.taskOptionId, caseKey),
+                customTaskText: normalizeText(record.customTaskText),
+                taskRefinement: normalizeText(record.taskRefinement),
+                contextGoal: normalizeText(record.contextGoal),
+                limitsConditions: normalizeText(record.limitsConditions),
+                outputVerification: normalizeText(record.outputVerification),
+                savedVersions: normalizeVersions(record.savedVersions),
+                reflection1: normalizeText(record.reflection1),
+                reflection2: normalizeText(record.reflection2)
+            };
+        }
+
+        function initAppState() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY_LAB);
+                if (!saved) return;
+                const parsed = JSON.parse(saved);
+                if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return;
+                const cases = parsed.cases && typeof parsed.cases === 'object' && !Array.isArray(parsed.cases) ? parsed.cases : {};
+                appState = {
+                    currentCase: parsed.currentCase === 'B' ? 'B' : 'A',
+                    activeTab: normalizeTab(parsed.activeTab),
+                    cases: {
+                        A: normalizeCaseState(cases.A, 'A'),
+                        B: normalizeCaseState(cases.B, 'B')
+                    }
+                };
+            } catch (e) {
+                console.warn('Error al restaurar estado, usando estado inicial', e);
+            }
+        }
+
+        function saveState() {
+            try {
+                localStorage.setItem(STORAGE_KEY_LAB, JSON.stringify(appState));
+            } catch (e) {}
+        }
+
+        function renderUI() {
+            const cs = getCurrentState();
+
+            // Case switcher
+            elements.activeCaseName.textContent = appState.currentCase === 'A' ? 'Caso A: FASTA' : 'Caso B: Aplicación Web';
+            elements.pillCaseA.classList.toggle('active', appState.currentCase === 'A');
+            elements.pillCaseB.classList.toggle('active', appState.currentCase === 'B');
+
+            // Tab 1
+            elements.startingRequestText.textContent = STARTING_REQUESTS[appState.currentCase];
+            renderDelegationOptions();
+
+            // Tab 2
+            const taskText = getSelectedTaskText();
+            elements.selectedTaskSummary.textContent = taskText || 'Ninguna tarea seleccionada aún.';
+            elements.inputTaskRefinement.value = cs.taskRefinement || '';
+            elements.inputContext.value = cs.contextGoal || '';
+            elements.inputLimits.value = cs.limitsConditions || '';
+            elements.inputOutput.value = cs.outputVerification || '';
+            
+            renderLivePrompt();
+
+            // Tab 3
+            renderSavedVersions();
+            elements.inputReflection1.value = cs.reflection1 || '';
+            elements.inputReflection2.value = cs.reflection2 || '';
+
+            switchTab(appState.activeTab || 1);
+        }
+
+        function renderDelegationOptions() {
+            const cs = getCurrentState();
+            const options = appState.currentCase === 'A' ? TASK_OPTIONS_CASE_A : TASK_OPTIONS_CASE_B;
+            
+            elements.delegationRadioGroup.replaceChildren();
+            
+            options.forEach(opt => {
+                const label = document.createElement('label');
+                label.className = 'radio-option';
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.name = 'delegation-option';
+                input.value = opt.id;
+                input.checked = cs.taskOptionId === opt.id;
+                input.addEventListener('change', function () {
+                    selectDelegationOption(opt.id);
+                });
+                const span = document.createElement('span');
+                span.textContent = opt.text;
+                label.append(input, span);
+                elements.delegationRadioGroup.appendChild(label);
+            });
+
+            if (cs.taskOptionId === 'otra') {
+                elements.customTaskContainer.style.display = 'block';
+                elements.inputCustomTask.value = cs.customTaskText || '';
+            } else {
+                elements.customTaskContainer.style.display = 'none';
+            }
+        }
+
+        function selectDelegationOption(optionId) {
+            const cs = getCurrentState();
+            cs.taskOptionId = optionId;
+            if (optionId !== 'otra') {
+                cs.customTaskText = '';
+            }
+            saveState();
+            renderUI();
+        }
+
+        function onCustomTaskInput(value) {
+            const cs = getCurrentState();
+            cs.customTaskText = value;
+            saveState();
+            elements.selectedTaskSummary.textContent = getSelectedTaskText();
+            renderLivePrompt();
+        }
+
+        function getSelectedTaskText() {
+            const cs = getCurrentState();
+            if (!cs.taskOptionId) return '';
+            if (cs.taskOptionId === 'otra') {
+                return cs.customTaskText.trim() ? cs.customTaskText.trim() : 'Otra tarea (sin describir)';
+            }
+            const options = appState.currentCase === 'A' ? TASK_OPTIONS_CASE_A : TASK_OPTIONS_CASE_B;
+            const found = options.find(o => o.id === cs.taskOptionId);
+            return found ? found.text : '';
+        }
+
+        // Live Prompt Assembly
+        function generateLivePromptText() {
+            const cs = getCurrentState();
+            const parts = [];
+
+            // 1. Starting Request (No header label, just clean text)
+            parts.push(STARTING_REQUESTS[appState.currentCase]);
+
+            // 2. Task (Clean 'Tarea:' header without brackets or duplicates)
+            const mainTask = getSelectedTaskText();
+            const refinement = cs.taskRefinement ? cs.taskRefinement.trim() : '';
+            
+            if (mainTask || refinement) {
+                let taskText = 'Tarea:\n';
+                if (mainTask && refinement) {
+                    taskText += `${mainTask} (${refinement})`;
+                } else if (mainTask) {
+                    taskText += mainTask;
+                } else {
+                    taskText += refinement;
+                }
+                parts.push(taskText);
+            }
+
+            // 3. Context
+            if (cs.contextGoal && cs.contextGoal.trim()) {
+                parts.push(`Contexto y objetivo:\n${cs.contextGoal.trim()}`);
+            }
+
+            // 4. Limits
+            if (cs.limitsConditions && cs.limitsConditions.trim()) {
+                parts.push(`Condiciones y límites:\n${cs.limitsConditions.trim()}`);
+            }
+
+            // 5. Output
+            if (cs.outputVerification && cs.outputVerification.trim()) {
+                parts.push(`Resultado esperado y verificación:\n${cs.outputVerification.trim()}`);
+            }
+
+            return parts.join('\n\n');
+        }
+
+        function renderLivePrompt() {
+            const promptText = generateLivePromptText();
+            elements.livePromptBox.textContent = promptText;
+            
+            const cs = getCurrentState();
+            elements.savedCountIndicator.textContent = cs.savedVersions ? cs.savedVersions.length : 0;
+        }
+
+        // Tab Navigation
+        function switchTab(tabNumber) {
+            appState.activeTab = tabNumber;
+            saveState();
+
+            document.querySelectorAll('.tab-btn').forEach((btn, index) => {
+                const isActive = (index + 1) === tabNumber;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+
+            document.querySelectorAll('.tab-content').forEach((content, index) => {
+                content.classList.toggle('active', (index + 1) === tabNumber);
+            });
+
+            if (tabNumber === 4) {
+                renderReport();
+            }
+        }
+
+        // Case Switcher
+        function switchCase(caseKey) {
+            if (appState.currentCase === caseKey) return;
+            appState.currentCase = caseKey;
+            appState.activeTab = 1;
+            saveState();
+            renderUI();
+            showToast(`Cambiado a Caso ${caseKey}`);
+        }
+
+        // Version Management
+        function saveCurrentVersion() {
+            const cs = getCurrentState();
+            if (!cs.savedVersions) cs.savedVersions = [];
+
+            if (cs.savedVersions.length >= 3) {
+                showToast('Límite de 3 versiones alcanzado. Puedes borrar una para guardar otra.');
+                return;
+            }
+
+            const currentPrompt = generateLivePromptText();
+            const versionNumber = cs.savedVersions.length + 1;
+
+            const usedComponents = [];
+            if (getSelectedTaskText() || cs.taskRefinement) usedComponents.push('Tarea');
+            if (cs.contextGoal && cs.contextGoal.trim()) usedComponents.push('Contexto');
+            if (cs.limitsConditions && cs.limitsConditions.trim()) usedComponents.push('Condiciones');
+            if (cs.outputVerification && cs.outputVerification.trim()) usedComponents.push('Resultado');
+
+            const versionObj = {
+                id: 'v_' + Date.now(),
+                number: versionNumber,
+                promptText: currentPrompt,
+                components: usedComponents,
+                observation: ''
+            };
+
+            cs.savedVersions.push(versionObj);
+            saveState();
+            renderLivePrompt();
+            renderSavedVersions();
+            showToast(`Versión ${versionNumber} guardada exitosamente`);
+        }
+
+        function deleteVersion(versionId) {
+            if (!confirm('¿Deseas eliminar esta versión guardada?')) return;
+            const cs = getCurrentState();
+            cs.savedVersions = cs.savedVersions.filter(v => v.id !== versionId);
+            // Re-number remaining versions
+            cs.savedVersions.forEach((v, index) => v.number = index + 1);
+            saveState();
+            renderLivePrompt();
+            renderSavedVersions();
+            showToast('Versión eliminada');
+        }
+
+        function updateVersionObservation(versionId, text) {
+            const cs = getCurrentState();
+            const v = cs.savedVersions.find(item => item.id === versionId);
+            if (v) {
+                v.observation = text;
+                saveState();
+            }
+        }
+
+        function renderSavedVersions() {
+            const cs = getCurrentState();
+            const container = elements.savedVersionsContainer;
+            container.replaceChildren();
+
+            if (!cs.savedVersions || cs.savedVersions.length === 0) {
+                const empty = document.createElement('div');
+                empty.style.cssText = 'text-align: center; padding: 2rem; border: 2px dashed var(--border); border-radius: 8px; color: var(--text-muted);';
+                const lead = document.createElement('p');
+                lead.style.fontWeight = '600';
+                lead.textContent = 'No has guardado ninguna versión aún.';
+                const hint = document.createElement('p');
+                hint.style.cssText = 'font-size: 0.85rem; margin-top: 0.25rem;';
+                hint.textContent = 'Ve a la pestaña 2. Construir y probar y haz clic en «Guardar esta versión».';
+                empty.append(lead, hint);
+                container.appendChild(empty);
+                return;
+            }
+
+            cs.savedVersions.forEach(function (version) {
+                const card = document.createElement('div');
+                card.className = 'version-card';
+
+                const header = document.createElement('div');
+                header.className = 'version-header';
+                const badge = document.createElement('span');
+                badge.className = 'version-badge';
+                badge.textContent = 'Versión ' + version.number;
+                const actions = document.createElement('div');
+                actions.style.cssText = 'display: flex; gap: 0.5rem; align-items: center;';
+
+                const copyBtn = document.createElement('button');
+                copyBtn.type = 'button';
+                copyBtn.className = 'btn btn-secondary btn-sm';
+                copyBtn.textContent = 'Copiar prompt';
+                copyBtn.addEventListener('click', function () {
+                    copyTextToClipboard(version.promptText, 'Versión ' + version.number + ' copiada');
+                });
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.type = 'button';
+                deleteBtn.className = 'btn btn-danger btn-sm';
+                deleteBtn.textContent = 'Eliminar';
+                deleteBtn.addEventListener('click', function () {
+                    deleteVersion(version.id);
+                });
+
+                actions.append(copyBtn, deleteBtn);
+                header.append(badge, actions);
+
+                const tags = document.createElement('div');
+                tags.className = 'version-components-list';
+                const componentNames = version.components.length ? version.components : ['Solo solicitud base'];
+                componentNames.forEach(function (name) {
+                    const tag = document.createElement('span');
+                    tag.className = 'component-tag';
+                    tag.textContent = version.components.length ? '+ ' + name : name;
+                    tags.appendChild(tag);
+                });
+
+                const promptBox = document.createElement('div');
+                promptBox.className = 'prompt-box';
+                promptBox.style.cssText = 'min-height: 80px; max-height: 160px; font-size: 0.82rem; margin-bottom: 0.75rem;';
+                promptBox.textContent = version.promptText;
+
+                const formGroup = document.createElement('div');
+                formGroup.className = 'form-group';
+                formGroup.style.marginBottom = '0';
+                const label = document.createElement('label');
+                const fieldId = 'obs-' + version.id;
+                label.htmlFor = fieldId;
+                label.style.cssText = 'font-size: 0.85rem; color: var(--primary);';
+                label.textContent = '¿Qué observaste en la respuesta de ChatGPT?';
+                const textarea = document.createElement('textarea');
+                textarea.id = fieldId;
+                textarea.placeholder = 'Escribe tus observaciones breves sobre esta prueba...';
+                textarea.style.minHeight = '60px';
+                textarea.value = version.observation || '';
+                textarea.addEventListener('input', function () {
+                    updateVersionObservation(version.id, textarea.value);
+                });
+                formGroup.append(label, textarea);
+
+                card.append(header, tags, promptBox, formGroup);
+                container.appendChild(card);
+            });
+        }
+
+        // Report & Markdown Generation
+        function generateMarkdownReport() {
+            const cs = getCurrentState();
+            const caseLabel = appState.currentCase === 'A' ? 'Caso A: Análisis FASTA' : 'Caso B: Aplicación Web';
+            
+            let md = `# Reporte de Laboratorio: De la solicitud al prompt\n\n`;
+            md += `**Caso de estudio:** ${caseLabel}\n`;
+            md += `**Fecha:** ${new Date().toLocaleDateString()}\n\n`;
+
+            md += `--- \n\n`;
+            md += `## 1. Solicitud de partida del taller\n\n`;
+            md += `Este texto pertenece al caso del taller. No fue escrito por el participante.\n\n`;
+            md += markdownFence(STARTING_REQUESTS[appState.currentCase]) + `\n\n`;
+
+            md += `## 2. Decisión del participante\n\n`;
+            md += `**Tarea elegida:** ${getSelectedTaskText() || 'No especificada'}\n`;
+            if (cs.taskRefinement) {
+                md += `**Precisión de la tarea:** ${cs.taskRefinement}\n`;
+            }
+            md += `\n`;
+
+            md += `## 3. Instrucciones añadidas por el participante\n\n`;
+            md += `- **Contexto y objetivo:** ${cs.contextGoal || 'Sin especificar'}\n`;
+            md += `- **Condiciones y límites:** ${cs.limitsConditions || 'Sin especificar'}\n`;
+            md += `- **Resultado y verificación:** ${cs.outputVerification || 'Sin especificar'}\n\n`;
+
+            md += `## 4. Versiones guardadas por el participante\n\n`;
+            md += `Guardar una versión conserva el prompt. No indica que se haya probado en ChatGPT.\n\n`;
+
+            if (!cs.savedVersions || cs.savedVersions.length === 0) {
+                md += `*No se guardaron versiones durante la sesión.*\n\n`;
+            } else {
+                cs.savedVersions.forEach(v => {
+                    const observation = typeof v.observation === 'string' && v.observation
+                        ? v.observation
+                        : 'Sin observación registrada.';
+                    md += `### Versión ${v.number}\n`;
+                    md += `**Componentes:** ${v.components.join(', ') || 'Solicitud base'}\n\n`;
+                    md += markdownFence(v.promptText) + `\n\n`;
+                    md += `**Observación del participante:** ${observation}\n\n`;
+                });
+            }
+
+            md += `## 5. Reflexión comparativa\n\n`;
+            md += `**1. Diferencias observadas entre respuestas:**\n${cs.reflection1 || 'Sin respuesta.'}\n\n`;
+            md += `**2. Ambigüedades que permanecen o aclaraciones pendientes:**\n${cs.reflection2 || 'Sin respuesta.'}\n\n`;
+
+            md += `---\n*Taller: Antes del prompt: pensar, delegar y verificar con IA en la investigación científica*\n`;
+
+            return md;
+        }
+
+        function renderReport() {
+            elements.reportView.textContent = generateMarkdownReport();
+        }
+
+        function downloadMarkdown() {
+            const mdContent = generateMarkdownReport();
+            const blob = new Blob([mdContent], { type: 'text/markdown;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `reporte_del_prompt_caso_${appState.currentCase}.md`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast('Reporte descargado en Markdown');
+        }
+
+        // Clipboard Helpers
+        function copyLivePromptToClipboard() {
+            copyTextToClipboard(generateLivePromptText(), 'Prompt copiado al portapapeles');
+        }
+
+        function copyTextToClipboard(text, successMsg) {
+            const exactText = typeof text === 'string' ? text : '';
+            if (!exactText) {
+                showToast('No hay texto para copiar.');
+                return;
+            }
+            if (navigator.clipboard && window.isSecureContext && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(exactText).then(function () {
+                    showToast(successMsg);
+                }).catch(function () {
+                    fallbackCopyTextToClipboard(exactText, successMsg);
+                });
+                return;
+            }
+            fallbackCopyTextToClipboard(exactText, successMsg);
+        }
+
+        function fallbackCopyTextToClipboard(text, successMsg) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.setAttribute('readonly', '');
+            textArea.style.position = 'fixed';
+            textArea.style.top = '0';
+            textArea.style.left = '0';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            let copied = false;
+            try {
+                copied = document.execCommand('copy');
+            } catch (err) {
+                copied = false;
+            }
+            document.body.removeChild(textArea);
+            if (copied) {
+                showToast(successMsg);
+            } else {
+                showCopyFallback(text);
+            }
+        }
+
+        function showCopyFallback(text) {
+            const panel = document.getElementById('copy-fallback');
+            const field = document.getElementById('copy-fallback-text');
+            field.value = text;
+            panel.hidden = false;
+            field.focus();
+            field.select();
+        }
+
+        function hideCopyFallback() {
+            document.getElementById('copy-fallback').hidden = true;
+        }
+
+        function markdownFence(text) {
+            const body = typeof text === 'string' ? text : '';
+            const runs = body.match(/`+/g) || [];
+            const longest = runs.reduce(function (max, run) { return Math.max(max, run.length); }, 0);
+            const fence = '`'.repeat(Math.max(3, longest + 1));
+            return fence + '\n' + body + '\n' + fence;
+        }
+
+        // Reset Activity
+        function confirmReset() {
+            if (confirm('¿Estás seguro de que deseas reiniciar la actividad? Se borrarán todos los datos guardados para AMBOS casos.')) {
+                try {
+                    localStorage.removeItem(STORAGE_KEY_LAB);
+                } catch (e) {}
+                appState = {
+                    currentCase: 'A',
+                    cases: {
+                        A: createEmptyCaseState(),
+                        B: createEmptyCaseState()
+                    },
+                    activeTab: 1
+                };
+                renderUI();
+                showToast('Actividad reiniciada');
+            }
+        }
+
+        // Helpers
+        function showToast(message) {
+            elements.toast.textContent = message;
+            elements.toast.classList.add('show');
+            setTimeout(() => {
+                elements.toast.classList.remove('show');
+            }, 2500);
+        }
+
+    </script>
+</body>
+</html>
