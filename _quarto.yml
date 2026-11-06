@@ -54,7 +54,7 @@ website:
         menu:
           - href: contenido/interactivos/que-puedo-aceptar.qmd
             text: "7 — ¿Qué puedo aceptar?"
-      - text: Caso científico
+      - text: Caso de estudio
         menu:
           - href: contenido/04-caso-fair.qmd
             text: "8 — Caso integrador FAIR"
@@ -99,7 +99,7 @@ website:
         contents:
           - href: contenido/interactivos/que-puedo-aceptar.qmd
             text: "7 — ¿Qué puedo aceptar?"
-      - section: "Aplicar a un caso científico"
+      - section: "Aplicar a un caso de estudio"
         contents:
           - href: contenido/04-caso-fair.qmd
             text: "8 — Caso integrador FAIR"

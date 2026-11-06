@@ -4,7 +4,7 @@ description: "Por qué importa comprender qué delegar y cómo verificar"
 ---
 
 ::: {.etiqueta-pagina .antes}
-Antes del taller
+Antes o durante el taller
 :::
 
 ::: {.en-un-minuto}

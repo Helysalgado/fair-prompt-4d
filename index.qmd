@@ -33,11 +33,11 @@ No vamos a certificar que un dataset cumple FAIR ni a depositarlo en un reposito
 
 **Durante el taller**
 
-3. Recorre [el sentido](contenido/01-contexto.qmd), [las tres situaciones](contenido/02-ejemplos.qmd) y [las seis etapas](contenido/03-metodo.qmd). Practica en [¿Qué falta por definir?](contenido/interactivos/que-falta-por-definir.qmd).
-4. Aprende a pasar [del problema al prompt](contenido/03b-estructura-prompt.qmd) y construye una instrucción en [De la solicitud al prompt](contenido/interactivos/de-la-solicitud-al-prompt.qmd).
-5. Evalúa una respuesta en [¿Qué puedo aceptar?](contenido/interactivos/que-puedo-aceptar.qmd).
-6. Con el [Excel simulado](descargas/expresion_genica_caso_simulado.xlsx), haz el [caso](contenido/04-caso-fair.qmd), la [práctica guiada](contenido/05-practica.qmd) y la [verificación independiente](contenido/06-verificacion.qmd).
-7. Cierra en la [Bitácora mínima 4D](contenido/07-bitacora.qmd).
+3. **Comprender el problema.** Reconocerás que una solicitud que parece clara admite varias interpretaciones e identificarás qué decisiones y qué vocabulario faltan antes de delegarla. Recorre [el sentido](contenido/01-contexto.qmd), [las tres situaciones](contenido/02-ejemplos.qmd) y [las seis etapas](contenido/03-metodo.qmd), y practica en [¿Qué falta por definir?](contenido/interactivos/que-falta-por-definir.qmd).
+4. **Construir una solicitud.** Delimitarás el resultado que necesitas, decidirás qué encargas a la IA y qué te reservas, y lo traducirás en instrucciones claras. Aprende a pasar [del problema al prompt](contenido/03b-estructura-prompt.qmd) y construye una instrucción en [De la solicitud al prompt](contenido/interactivos/de-la-solicitud-al-prompt.qmd).
+5. **Evaluar respuestas.** Distinguirás lo que una respuesta de IA demuestra con los datos de lo que solo suena convincente, y decidirás qué aceptar, qué corregir y qué dejar pendiente. Practica en [¿Qué puedo aceptar?](contenido/interactivos/que-puedo-aceptar.qmd).
+6. **Caso de estudio.** Aplicarás lo anterior a un Excel simulado de expresión génica: elaborarás un diagnóstico FAIR preliminar en tu asistente y comprobarás por tu cuenta una afirmación en la fuente primaria. Con el [Excel simulado](descargas/expresion_genica_caso_simulado.xlsx), haz el [caso](contenido/04-caso-fair.qmd), la [práctica guiada](contenido/05-practica.qmd) y la [verificación independiente](contenido/06-verificacion.qmd).
+7. **Registro.** Documentarás qué delegaste, qué comprobaste y qué queda pendiente, de modo que otra persona pueda entender y revisar tu proceso. Cierra en la [Bitácora mínima 4D](contenido/07-bitacora.qmd).
 
 **Para profundizar:** [fuentes, materiales y continuidad](contenido/08-referencias.qmd).
 
@@ -45,5 +45,3 @@ No vamos a certificar que un dataset cumple FAIR ni a depositarlo en un reposito
 ## Datos simulados
 Los números y las condiciones del Excel son **deliberadamente ficticios**. No constituyen resultados experimentales publicables.
 :::
-
-![Las seis etapas del taller](recursos/metodologia-seis-etapas.svg){fig-alt="Diagrama de las seis etapas iterativas de trabajo con IA"}

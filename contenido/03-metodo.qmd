@@ -4,7 +4,7 @@ description: "Una ruta iterativa para pensar, delegar, contrastar y documentar"
 ---
 
 ::: {.etiqueta-pagina .antes}
-Antes del taller
+Antes o durante el taller
 :::
 
 ::: {.en-un-minuto}
