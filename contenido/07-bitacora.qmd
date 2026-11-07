@@ -1,52 +1,48 @@
 ---
 title: "Bitácora mínima 4D"
-description: "Registra una decisión, una comprobación y una incertidumbre, y descarga el Markdown"
+description: "Revisa tu registro, completa los pendientes y guarda el archivo"
 ---
 
 ::: {.etiqueta-pagina .durante}
-Durante el taller · registro individual
+Durante el taller · cierre
 :::
 
 ::: {.en-un-minuto}
-- Recupera una decisión, una comprobación y una incertidumbre del diagnóstico FAIR.
-- Recorre las cuatro competencias y descarga el Markdown.
-- Ese archivo, junto con el diagnóstico del chat, cierra la sesión.
+- La bitácora es un archivo Markdown que llenas durante la práctica, un paso a la vez.
+- Al terminar, revisa que permita reconstruir qué pediste, qué comprobaste y qué queda pendiente.
+- Ese archivo, junto con el diagnóstico del chat, es el producto de la sesión.
 :::
 
-La bitácora ordena el cierre con cuatro competencias del marco [AI Fluency 4D](03-metodo.qmd#ai-fluency-4d-marco-de-competencias):
+## La plantilla
 
-- **Delegation:** qué encargaste a la IA y qué decisión mantuviste.
-- **Description:** qué contexto y qué instrucciones fijaste.
-- **Discernment:** qué afirmación contrastaste y con qué evidencia.
-- **Diligence:** qué queda abierto y quién debe confirmarlo.
+Si todavía no la tienes, [descarga la plantilla](../descargas/bitacora-minima-4d.md){download="bitacora-minima-4d.md"} y ábrela en cualquier editor de texto (Bloc de notas, TextEdit, VS Code u otro). Empieza con tus datos y el problema del caso, y sigue con una sección por cada paso de la [práctica guiada](05-practica.qmd):
 
-Recupera una decisión, una comprobación y una incertidumbre de tu diagnóstico FAIR. No necesitas repetir el análisis ni copiar toda tu conversación con IA.
+| Sección | Competencia 4D | Qué registras |
+|---|---|---|
+| Paso 1 · Necesidad | **Discernment** (discernimiento) | Qué hizo la IA con el encargo abierto |
+| Paso 2 · Vocabulario | **Discernment** (discernimiento) | Tu lista y lo que la IA añadió o dio por hecho |
+| Paso 3 · Especificación | **Delegation** (delegación) y **Description** (descripción) | Lo que le dijiste a la IA y lo que te guardaste para evaluar |
+| Paso 4 · Colaboración y verificación | **Discernment** (discernimiento) y **Diligence** (diligencia) | Si aceptas el diagnóstico y tu verificación con la fuente |
+| Paso 5 · Registro | **Diligence** (diligencia) | Pendientes, quién debe confirmarlos y exclusiones |
+| Cierre | | Un problema propio y qué harás distinto |
 
-En la estación **Diligence y reporte**, pulsa **Descargar .md**. Ese archivo es el segundo producto de la sesión. También puedes copiar el Markdown. Si usas un equipo compartido, descarga el archivo y después pulsa **Reiniciar**.
+## Antes de terminar, revisa
 
-Las respuestas se guardan en este navegador. Completar la bitácora no certifica que un conjunto de datos cumpla los principios FAIR.
+::: {.autoevaluacion}
+- Escribiste tu nombre, la fecha y el asistente que usaste.
+- El paso 1 dice **qué hizo la IA con P0**, antes de que la orientaras.
+- La especificación del paso 3 la escribiste **tú**, antes de P5.
+- Ninguna afirmación dice **«verificado»** sin una fuente que abriste, con pasaje y fecha.
+- Cada pendiente tiene a alguien que debe confirmarlo.
+- Otra persona podría reconstruir qué pediste, qué comprobaste y qué sigue pendiente.
+:::
 
-[Abrir la bitácora en una pestaña independiente](../interactivos/bitacora_minima_4d.html){target="_blank"}
+## Guarda el archivo
 
-```{=html}
-<iframe class="explorador-frame" src="../interactivos/bitacora_minima_4d.html" title="Bitácora mínima 4D: registro de una decisión, una comprobación y una incertidumbre" allow="clipboard-write"></iframe>
-<style>
-.explorador-frame {
-  display: block;
-  width: 100%;
-  height: 92vh;
-  min-height: 640px;
-  margin-top: 0.5rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  background: #fff;
-}
-@media (max-width: 768px) {
-  .explorador-frame { height: 85vh; min-height: 520px; }
-}
-</style>
-```
+El archivo es tuyo: no hace falta entregarlo ni compartirlo durante el taller. Guárdalo con un nombre que reconozcas, por ejemplo `bitacora-fair-AAAA-MM-DD.md`. Puedes usarlo como modelo para documentar tu próximo trabajo con IA.
 
-## Plantilla de la versión anterior
+Completar la bitácora no certifica que un conjunto de datos cumpla los principios FAIR.
 
-La plantilla extensa de la versión anterior sigue disponible en [Word](../descargas/bitacora-plantilla.docx) y en [Markdown](../descargas/bitacora-plantilla.md). Es un recurso opcional para ampliar el registro después de la sesión. El producto de esta sesión es el Markdown de la aplicación.
+## Versión ampliada (opcional)
+
+Si después de la sesión quieres un registro más detallado, la plantilla extensa está en [Word](../descargas/bitacora-plantilla.docx) y en [Markdown](../descargas/bitacora-plantilla.md).

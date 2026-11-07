@@ -1,6 +1,6 @@
 ---
 title: "Del problema al prompt: cómo construir instrucciones claras"
-description: "Rol, contexto, objetivo, tarea, salida, restricciones y verificación; efectos esperados y ejercicio FAIR"
+description: "Rol, contexto, objetivo, tarea, salida, restricciones y verificación; efectos esperados y un ejemplo resuelto con el caso FAIR"
 ---
 
 ::: {.etiqueta-pagina .durante}
@@ -15,9 +15,7 @@ Durante el taller
 
 ## ¿Por qué hablar de prompting en este taller?
 
-En la [etapa 3](03-metodo.qmd) decidimos qué resultado necesitamos. En la etapa 4 decidimos cómo colaborar con la IA. **La estructura del prompt es el puente entre ambas**: convierte una necesidad definida en un encargo concreto. No constituye una séptima etapa ni pretende sustituir un curso especializado de prompting científico.
-
-No existe una plantilla universal obligatoria, ni todos sus elementos tienen que aparecer en cualquier consulta. Esta es una **herramienta pedagógica flexible**, útil cuando una tarea científica tiene incertidumbres, datos propios o consecuencias de publicación.
+En [¿Qué falta por definir?](interactivos/que-falta-por-definir.qmd) reformulaste una solicitud y anotaste lo que faltaba decidir ([etapas 1 a 3](03-metodo.qmd)). Ahora toca traducirla en instrucciones para la IA (etapa 4). **La estructura del prompt es el puente entre la especificación y la colaboración**: convierte una necesidad definida en un encargo concreto. No existe una plantilla universal obligatoria, ni todos sus elementos tienen que aparecer en cualquier consulta. Esta es una **herramienta pedagógica flexible**, útil cuando una tarea científica tiene incertidumbres, datos propios o consecuencias de publicación.
 
 ## Siete componentes y su efecto esperado
 
@@ -40,7 +38,7 @@ En muchas tareas importan más **objetivo, contexto, tarea y verificación** (cr
 
 ## Un mismo caso: dos solicitudes
 
-Trabajaremos con el [Excel simulado de expresión génica](../descargas/expresion_genica_caso_simulado.xlsx). Tiene dos hojas (los datos y unas notas experimentales parciales), cinco filas de genes, tres columnas de condiciones y una celda vacía; **no hay suficiente información para establecer las unidades, el método, las réplicas ni las condiciones experimentales exactas**.
+Como ejemplo resuelto usamos el [Excel simulado de expresión génica](../descargas/expresion_genica_caso_simulado.xlsx) del [caso de estudio](04-caso-fair.qmd), con el que trabajarás al final del taller. Tiene dos hojas (los datos y unas notas experimentales parciales), cinco filas de genes, tres columnas de condiciones y una celda vacía; **no hay suficiente información para establecer las unidades, el método, las réplicas ni las condiciones experimentales exactas**.
 
 ### A. Solicitud abierta (P0)
 
@@ -51,6 +49,9 @@ Tengo este Excel de expresión génica de cinco filas y tres condiciones. Voy a 
 Es una consulta auténtica y razonable. La IA puede ofrecer una respuesta útil, pero debe decidir por su cuenta si explicar conceptos, pedir detalles, proponer un plan o producir archivos.
 
 ### B. Solicitud delimitada
+
+::: {.panel-tabset}
+## Con etiquetas
 
 ::: {.prompt .estructurado data-label="Versión B" data-meta="solicitud delimitada"}
 **Rol (opcional):** Ayúdame desde la perspectiva de gestión de datos científicos.
@@ -68,37 +69,29 @@ Es una consulta auténtica y razonable. La IA puede ofrecer una respuesta útil,
 **Verificación:** Separa lo observado de las inferencias y de lo que requiere consulta externa. Indica qué habría que verificar y dónde; no declares una verificación que no realizaste.
 :::
 
-La segunda versión **no es una respuesta al problema**: es una mejor delimitación del encargo. Esperamos una salida más fácil de revisar, **no necesariamente más verdadera**. Comparar dos ejecuciones ilustra diferencias, pero no es una prueba controlada de causalidad.
+## De corrido
 
-## Cómo aislar los efectos de algunos componentes
-
-Imagina que ya proporcionaste el Excel y una tarea breve: «Revisa los datos y dime qué falta».
-
-| Cambio en la instrucción | Cambio que buscarías al comparar las respuestas |
-|---|---|
-| Añadir **objetivo** («necesito un diagnóstico preliminar, no archivos para publicar») | ¿La IA evita entregar un supuesto paquete de publicación? |
-| Añadir **salida** («tabla de cuatro asuntos con evidencia») | ¿Se vuelve más sencillo revisar cada afirmación? |
-| Añadir **restricciones** («no inventes unidades ni réplicas») | ¿Distingue lo conocido de lo pendiente? |
-| Añadir **verificación** («indica celdas y fuentes aún no consultadas») | ¿Es más claro qué observó y qué habría que contrastar externamente? |
-
-Estos son **efectos esperados que debemos observar**, no resultados garantizados. Las respuestas pueden variar entre ejecuciones y modelos.
-
-## Actividad
-
-**Propósito:** reconocer cómo una instrucción hace visible la intención científica y facilita evaluar el trabajo de la IA. **No necesitas ejecutar siete prompts**.
-
-1. Relee P0 e identifica los elementos que ya contiene, aunque no tengan etiquetas.
-2. Escribe una versión mejorada con **objetivo + tarea + salida + una restricción + un criterio de verificación**. Decide si necesitas añadir un rol; justifica por qué.
-3. Subraya qué información proviene del Excel y cuál debe obtenerse de una persona o una fuente primaria.
-4. Compara tu texto con la versión B. Probarlo en un chat nuevo queda como [ampliación opcional](05-practica.qmd#ampliación-opcional) al final de la práctica.
-5. Conserva **una decisión de Description**, una de **Delegation** y un criterio de **Discernment** para llevarlos después a la [Bitácora mínima 4D](07-bitacora.qmd).
-
-**Pregunta para responder por escrito:** si un prompt solicita «una tabla con citas», ¿qué responsabilidad científica conserva la persona que la utilizará?
-
-::: {.callout-note collapse="true"}
-## Respuesta orientadora (ábrela después de responder)
-Comprobar la correspondencia entre cada afirmación, su evidencia y la fuente efectiva, y mantener la responsabilidad sobre los datos y su publicación.
+::: {.prompt data-label="Versión B" data-meta="la misma solicitud, sin etiquetas"}
+Ayúdame, desde la perspectiva de gestión de datos científicos, a revisar un Excel simulado de expresión génica con cinco filas de genes y tres condiciones, destinado a un ejercicio sobre FAIR. Antes de preparar un depósito o afirmar cumplimiento FAIR, necesito identificar la información que falta. Revisa encabezados, valores y notas, e identifica las incertidumbres sobre unidades, condiciones, réplicas y la celda vacía. Entrégame una tabla con el asunto, la evidencia localizable en hoja y celda, la información por confirmar, la siguiente acción y el responsable propuesto. No inventes unidades, tratamientos, cepa, métodos, réplicas ni el significado de «prom.»; no sustituyas celdas vacías por cero ni modifiques los datos. Separa lo observado de las inferencias y de lo que requiere consulta externa, e indica qué habría que verificar y dónde, sin declarar una verificación que no realizaste.
 :::
+:::
+
+Las etiquetas no son obligatorias: la IA entiende igual la versión de corrido. Sirven para comprobar que no falta ningún componente; úsalas mientras aprendes o cuando el encargo es largo.
+
+La segunda versión **no es una respuesta al problema**: es una mejor delimitación del encargo. Esperamos una salida más fácil de revisar, **no necesariamente más verdadera**.
+
+## Qué cambia al añadir cada componente
+
+Imagina que ya proporcionaste el Excel y una tarea breve: «Revisa los datos y dime qué falta». Esto es lo que suele cambiar al añadir algunos componentes:
+
+| Si añades… | Sin él, es frecuente que la IA… | Con él, deberías notar que… |
+|---|---|---|
+| **Objetivo** («necesito un diagnóstico preliminar, no archivos para publicar») | proponga README, CSV y metadatos como si fueras a publicar | se limita a un diagnóstico preliminar |
+| **Salida** («tabla de cuatro asuntos con evidencia») | responda en párrafos difíciles de revisar | entrega una tabla en la que cada afirmación se revisa por separado |
+| **Restricciones** («no inventes unidades ni réplicas») | complete unidades o réplicas «razonables» | marca esos datos como pendientes |
+| **Verificación** («indica celdas y fuentes aún no consultadas») | mezcle lo observado con lo supuesto | separa lo observado, lo inferido y lo que falta consultar |
+
+Son patrones frecuentes, no resultados garantizados. Una misma instrucción puede dar respuestas distintas cada vez, así que comparar dos versiones muestra diferencias, pero no prueba que las causó el cambio en el prompt.
 
 ## Errores frecuentes
 
@@ -111,11 +104,58 @@ Comprobar la correspondencia entre cada afirmación, su evidencia y la fuente ef
 
 ## Conexión con AI Fluency 4D
 
-| Competencia | Pregunta práctica en este ejercicio |
-|---|---|
-| **Delegation** | ¿Qué puede hacer la IA y qué información debe confirmar la investigadora? |
-| **Description** | ¿Expresé contexto, objetivo, tarea, salida y límites de forma suficiente? |
-| **Discernment** | ¿Puedo revisar la evidencia y detectar afirmaciones injustificadas? |
-| **Diligence** | ¿Conservo datos originales, registro decisiones y no presento como verificado lo pendiente? |
+Escribir un prompt es sobre todo **Description (descripción)**, pero las otras tres competencias también intervienen: decides qué delegas, anticipas cómo revisarás la respuesta y te haces responsable de lo que uses. Estas preguntas sirven para revisar tu prompt antes de enviarlo.
 
-Continúa con [De la solicitud al prompt](interactivos/de-la-solicitud-al-prompt.qmd) para aplicar estos componentes. Después recorrerás [¿Qué puedo aceptar?](interactivos/que-puedo-aceptar.qmd) y, al llegar al caso, la [práctica guiada](05-practica.qmd). Las técnicas de prompting se tratan con más detalle en el curso [*Prompting científico con inteligencia artificial*](https://helysalgado.github.io/prompting-cientifico/) [R9]: aquí nos concentramos en **especificar bien una necesidad científica y comprobar la respuesta**.
+| Competencia | Pregunta práctica al escribir un prompt |
+|---|---|
+| **Delegation** (delegación) | ¿Qué puede hacer la IA y qué información debo confirmar yo o la persona responsable de los datos? |
+| **Description** (descripción) | ¿Expresé contexto, objetivo, tarea, salida y límites de forma suficiente? |
+| **Discernment** (discernimiento) | ¿Puedo revisar la evidencia y detectar afirmaciones injustificadas? |
+| **Diligence** (diligencia) | ¿Conservo datos originales, registro decisiones y no presento como verificado lo pendiente? |
+
+## Para pensar
+
+Cuatro situaciones frecuentes al trabajar con IA. Piensa tu respuesta antes de abrir la orientación.
+
+**1. La tabla con citas.** Si un prompt pide «una tabla con citas», ¿qué responsabilidad científica conserva la persona que la utilizará?
+
+::: {.callout-note collapse="true"}
+## Respuesta orientadora
+Comprobar la correspondencia entre cada afirmación, su evidencia y la fuente efectiva, y mantener la responsabilidad sobre los datos y su publicación.
+:::
+
+**2. Extraer datos de artículos.** Le pides a la IA que extraiga de veinte artículos el organismo, la condición experimental y los genes reportados, y te entrega una tabla completa. ¿Cómo sabes si puedes usarla?
+
+::: {.callout-note collapse="true"}
+## Respuesta orientadora
+Una tabla completa no garantiza una extracción correcta: la IA puede rellenar campos que el artículo no reporta, mezclar datos de dos artículos o quedarse con lo que dice el resumen. Pide desde el prompt que indique la sección o el pasaje de donde sale cada dato y que escriba «no reportado» en lugar de inferir. Después revisa una muestra de filas contra el texto original.
+:::
+
+**3. Mejorar la redacción.** Pides «mejora la redacción de este párrafo». ¿Qué revisas antes de aceptar el cambio?
+
+::: {.callout-note collapse="true"}
+## Respuesta orientadora
+Que no haya cambiado lo que afirmas. Un «sugiere» puede convertirse en «demuestra», o puede desaparecer una limitación. Compara afirmación por afirmación, no solo el estilo.
+:::
+
+**4. El script que corre.** La IA te da un script que se ejecuta sin errores. ¿Ya está listo?
+
+::: {.callout-note collapse="true"}
+## Respuesta orientadora
+Que corra no significa que calcule lo correcto. Pruébalo con un caso pequeño cuyo resultado conozcas y revisa casos límite, como valores vacíos o caracteres inesperados.
+:::
+
+## De los siete componentes a la herramienta
+
+Practicarás estos componentes en [De la solicitud al prompt](interactivos/de-la-solicitud-al-prompt.qmd). La herramienta los agrupa en cuatro bloques:
+
+| Bloque en la herramienta | Componentes de esta página |
+|---|---|
+| Tarea | Tarea |
+| Contexto y objetivo | Contexto, objetivo |
+| Condiciones y límites | Restricciones |
+| Resultado esperado y verificación | Salida, verificación |
+
+El rol no aparece porque es opcional: si lo necesitas, inclúyelo en «Contexto y objetivo».
+
+Después recorrerás [¿Qué puedo aceptar?](interactivos/que-puedo-aceptar.qmd) y, al llegar al caso, la [práctica guiada](05-practica.qmd). Las técnicas de prompting se tratan con más detalle en el curso [*Prompting científico con inteligencia artificial*](https://helysalgado.github.io/prompting-cientifico/) [[R9](08-referencias.qmd#r9)]: aquí nos concentramos en **especificar bien una necesidad científica y comprobar la respuesta**.

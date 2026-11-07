@@ -37,7 +37,7 @@ website:
       - text: Comprender el problema
         menu:
           - href: contenido/01-contexto.qmd
-            text: "1 — Sentido y objetivos"
+            text: "1 — Introducción"
           - href: contenido/02-ejemplos.qmd
             text: "2 — Tres situaciones"
           - href: contenido/03-metodo.qmd
@@ -57,13 +57,9 @@ website:
       - text: Caso de estudio
         menu:
           - href: contenido/04-caso-fair.qmd
-            text: "8 — Caso integrador FAIR"
+            text: "8 — Caso de estudio FAIR"
           - href: contenido/05-practica.qmd
-            text: "9 — Práctica guiada con Excel"
-          - href: contenido/06-verificacion.qmd
-            text: "10 — Verificación independiente"
-          - href: contenido/07-bitacora.qmd
-            text: "11 — Bitácora mínima 4D"
+            text: "9 — Práctica guiada con IA"
       - text: Recursos
         menu:
           - href: contenido/tarjeta-practica.qmd
@@ -82,7 +78,7 @@ website:
       - section: "Comprender el problema"
         contents:
           - href: contenido/01-contexto.qmd
-            text: "1 — Sentido y objetivos"
+            text: "1 — Introducción"
           - href: contenido/02-ejemplos.qmd
             text: "2 — Tres situaciones"
           - href: contenido/03-metodo.qmd
@@ -102,13 +98,9 @@ website:
       - section: "Aplicar a un caso de estudio"
         contents:
           - href: contenido/04-caso-fair.qmd
-            text: "8 — Caso integrador FAIR"
+            text: "8 — Caso de estudio FAIR"
           - href: contenido/05-practica.qmd
-            text: "9 — Práctica guiada con Excel"
-          - href: contenido/06-verificacion.qmd
-            text: "10 — Verificación independiente"
-          - href: contenido/07-bitacora.qmd
-            text: "11 — Bitácora mínima 4D"
+            text: "9 — Práctica guiada con IA"
       - section: "Recursos y continuidad"
         contents:
           - href: contenido/tarjeta-practica.qmd

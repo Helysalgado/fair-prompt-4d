@@ -8,22 +8,36 @@ Durante el taller
 :::
 
 ::: {.en-un-minuto}
-- Elige uno de los dos casos.
-- Decide qué tarea vas a delegar.
-- Construye hasta tres versiones y descarga el reporte.
+- Eliges un caso y decides qué tarea vas a delegar.
+- Construyes el prompt por bloques, lo pruebas en tu asistente de IA y guardas hasta tres versiones.
+- Comparas las respuestas y descargas el reporte.
 :::
 
-**De la solicitud al prompt**
+## Para qué sirve
 
-En esta actividad elegirás qué tarea delegar a una IA, construirás distintas versiones de tus instrucciones y podrás probarlas en ChatGPT para observar cómo cambia la respuesta.
+Aquí aplicas lo que viste en [Del problema al prompt](../03b-estructura-prompt.qmd): traducir una necesidad en instrucciones concretas (etapa 4, Colaboración) y observar cómo cambia la respuesta al añadir componentes. Practicas sobre todo **Description (descripción)** al escribir el prompt y **Discernment (discernimiento)** al comparar las respuestas.
 
-Elige solo uno de los dos casos. Puedes guardar hasta tres versiones. El enlace a ChatGPT abre una pestaña nueva y no envía el texto del prompt. Para conservar lo trabajado, descarga el reporte en Markdown.
+## Los dos casos
+
+Son los mismos de [¿Qué falta por definir?](que-falta-por-definir.qmd), pero la solicitud de partida ya es más precisa. Si hiciste esa actividad, conviene elegir el mismo caso. Elige **solo uno**.
+
+| Caso | Solicitud de partida |
+|---|---|
+| **A. Analizar secuencias FASTA** | «Necesito analizar un archivo FASTA con varias secuencias de ADN para conocer la frecuencia de los nucleótidos. Quiero obtener resultados por secuencia y poder compararlos». |
+| **B. Desarrollar una herramienta web** | «Necesito desarrollar una aplicación web que permita introducir secuencias de ADN en formato FASTA, realizar análisis básicos y descargar los resultados. La aplicación debe ser sencilla de utilizar y ayudar a identificar entradas incorrectas». |
+
+Para probar tus versiones, ten abierto en otra pestaña el asistente de IA que preparaste en [Antes del taller](../00-preparacion.qmd). Cualquiera sirve. Probarlas es opcional, pero sin respuestas no hay nada que comparar en el paso 3.
 
 ## Cómo participar
 
-1. Elige un caso y la tarea que vas a delegar.
-2. Construye el prompt. Si quieres probarlo, cópialo y pégalo en una conversación nueva de ChatGPT.
-3. Guarda las versiones, anota lo que observes y descarga el reporte. El archivo se llama `reporte_del_prompt_caso_A.md` o `reporte_del_prompt_caso_B.md`, según el caso.
+La herramienta tiene cuatro pasos:
+
+1. **¿Qué voy a delegar?** Elige el tipo de ayuda que pedirás. En el caso A, por ejemplo: que la IA te explique cómo hacer el análisis, escriba un script, analice los datos o revise resultados que ya tienes. Una misma necesidad puede dar lugar a tareas distintas.
+2. **Construir y probar.** Parte de la instrucción básica y añade bloques: precisar la tarea, contexto y objetivo, condiciones y límites, resultado esperado y verificación. En [Del problema al prompt](../03b-estructura-prompt.qmd#de-los-siete-componentes-a-la-herramienta) está la equivalencia con los siete componentes. Copia el prompt, pégalo en una conversación nueva de tu asistente y guarda la versión. Puedes guardar hasta tres.
+3. **Comparar y reflexionar.** Anota qué observaste en cada respuesta y qué diferencias podrían deberse a tus cambios. Dos versiones bastan; la tercera es opcional.
+4. **Reporte.** Revisa el resumen y descarga el Markdown: `reporte_del_prompt_caso_A.md` o `reporte_del_prompt_caso_B.md`. Podrás consultarlo en la [práctica guiada](../05-practica.qmd).
+
+Guardar una versión no significa haberla probado; el reporte lo indica así. Los casos son ficticios: no pegues en el asistente datos reales o confidenciales. Lo que escribes se guarda en este navegador; **Reiniciar actividad** borra los dos casos.
 
 [Abrir la actividad en una pestaña independiente](../../interactivos/de_la_solicitud_al_prompt.html){target="_blank"}
 

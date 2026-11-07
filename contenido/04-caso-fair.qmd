@@ -1,6 +1,6 @@
 ---
-title: "Caso integrador: un Excel de expresión génica"
-description: "Qué dice y qué no dice una tabla pequeña de expresión génica"
+title: "Caso de estudio: un Excel que debe «seguir FAIR»"
+description: "Qué se pide, qué dicen los datos y qué resultado vas a producir, antes de pedir ayuda a la IA"
 ---
 
 ::: {.etiqueta-pagina .antes}
@@ -9,21 +9,40 @@ Antes o durante el taller
 
 ::: {.en-un-minuto}
 - Una investigadora debe preparar un Excel de expresión génica «siguiendo FAIR», pero faltan datos de contexto.
-- La tarea es **distinguir lo que el archivo muestra de lo que hay que confirmar**, sin inventar.
-- El producto es un diagnóstico de cuatro asuntos.
+- Antes de pedir ayuda a la IA, **mira el archivo por tu cuenta** y anota lo que no puedes saber con él.
+- El producto es un diagnóstico de lo que falta saber sobre **unidades, condiciones, réplicas y la celda vacía**.
 :::
 
-## Escenario
+## El encargo
 
-Una investigadora prepara un artículo y recibe una solicitud: «Los datos de expresión génica deben seguir los principios FAIR». Tiene una tabla pequeña con cinco filas de genes y tres columnas de condiciones, pero le faltan datos esenciales de contexto experimental.
+Ya conoces este archivo: en el [ejemplo 3](02-ejemplos.qmd) una IA le inventaba metadatos, y en [Del problema al prompt](03b-estructura-prompt.qmd) sirvió para comparar dos solicitudes. Ahora lo trabajas tú.
 
-**Nuestra tarea no es fabricar metadatos para completar una tabla.** Es reconocer qué información está disponible, cuál falta, quién podría confirmarla y qué principios o documentación externa ayudan a organizar el trabajo.
+Una investigadora prepara un artículo y recibe esta solicitud:
+
+::: {.prompt data-label="Encargo" data-meta="lo que recibe la investigadora" data-copy="no"}
+Los datos de expresión génica deben seguir los principios FAIR.
+:::
+
+Tiene una tabla pequeña con cinco filas de genes y tres columnas de condiciones, pero le faltan datos esenciales de contexto experimental.
+
+«Seguir FAIR» suena a una sola tarea, pero no lo es. Antes de empezar conviene preguntarse:
+
+- ¿Qué significa, en concreto, que estos datos «sigan FAIR»? Lo vemos más abajo, aplicado al archivo.
+- ¿Quién lo pide y qué espera recibir: un depósito en un repositorio, una tabla documentada, una declaración de disponibilidad de datos?
+- ¿Qué se puede hacer con la información que ya hay y qué depende de otras personas?
+
+**La tarea no es fabricar metadatos para completar la tabla.** Es reconocer qué información está disponible, cuál falta y quién podría confirmarla.
+
+## Los datos: qué dice y qué no dice el archivo
 
 Descarga el [Excel simulado](../descargas/expresion_genica_caso_simulado.xlsx). Tiene dos hojas: los datos y unas notas experimentales parciales. Una nota visible indica que los datos son ficticios. Si tu asistente no acepta archivos, usa la [versión en texto](../descargas/expresion_genica_caso_simulado.txt).
 
 ![Las dos hojas del Excel simulado](../recursos/vista-excel.svg){fig-alt="Vista de las dos hojas del Excel. Hoja 1, Expresion_genica: título, nota de datos ficticios y una tabla con columnas Gen, Control, Estrés A (prom.) y Estrés B para recA 125, 310, 180; rpoS 85, 245, 290; b0014 200, 420 y celda vacía; katG 45, 170, 115; dnaK 190, 390, 375. Hoja 2, Notas_experimento: nota suelta, datos del experimento de marzo; organismo, E. coli sin cepa confirmada; proceso, valores procesados; condiciones, Control, Estrés A, Estrés B; réplicas, sin registro en este archivo; responsable, por confirmar."}
 
-## Qué observar sin inventar
+Antes de seguir leyendo, mira el archivo por tu cuenta, en Excel o en el [Explorador FAIR](../interactivos/explorador_fair.html){target="_blank"}, que muestra las dos hojas en el navegador. **Anota tres cosas que no puedes saber solo con este archivo.** Después abre la caja y compara. Guarda tu lista: en la práctica la contrastarás con lo que diga la IA.
+
+::: {.callout-note collapse="true"}
+## Compara con tu lista (ábrela después de anotar la tuya)
 
 | Elemento | Pregunta que debes hacerte |
 |---|---|
@@ -35,28 +54,41 @@ Descarga el [Excel simulado](../descargas/expresion_genica_caso_simulado.xlsx). 
 | Organismo «E. coli (sin cepa confirmada)» | ¿Qué cepa y qué genoma de referencia corresponden a los datos? |
 | «Datos del experimento de marzo» y responsable «por confirmar» | ¿De qué año son y quién puede confirmar la información? |
 
-::: {.callout-note}
-## Sobre la identidad génica
-No asumas equivalencias entre `b0014` y otro símbolo génico sin confirmar cepa, ensamblaje y anotación. La coincidencia biológica sugerente no es una comprobación documental.
-:::
+**Sobre la identidad génica.** En la anotación de *E. coli* K-12, `b0014` es el identificador de locus de *dnaK*. La tabla tiene los dos, con valores distintos (200 y 190 en Control). ¿Es el mismo gen medido dos veces, o dos genes en otra anotación? Sin la cepa y la referencia genómica, el archivo no permite saberlo: una coincidencia sugerente no es una comprobación documental.
 
 ![Lo observable en el archivo frente a lo que requiere confirmación](../recursos/datos-y-metadatos.svg){fig-alt="Dos paneles. Observable: cinco filas con identificadores de gen, tres columnas de condiciones, una celda vacía, una hoja de notas parciales y el aviso de datos ficticios. Requiere confirmación: unidades y técnica, significado de Estrés A, Estrés B y prom., réplicas, cepa y procesamiento, sistema de identificadores y motivo de la celda vacía. Regla: no convertir la ausencia de metadatos en hechos inventados."}
+:::
 
-## FAIR como contexto, no como certificado
+## Qué pide FAIR, aplicado a este archivo
 
-Según Wilkinson et al. (2016) [R5], los principios FAIR plantean cuatro preguntas:
+FAIR es el vocabulario clave del encargo. Lo que sigue es una descripción breve para orientarte: en la [práctica guiada](05-practica.qmd), con P1, le pedirás a la IA que te explique con más detalle los conceptos que necesitas, y podrás contrastar su explicación con esta. En otras sesiones del programa FAIR se estudia a fondo; aquí lo aplicamos a un caso concreto.
 
-- **F — Findable:** ¿cómo se descubrirían y citarían los datos?
-- **A — Accessible:** ¿qué protocolos y condiciones regulan el acceso? FAIR no significa necesariamente acceso abierto irrestricto.
-- **I — Interoperable:** ¿son interpretables los identificadores, términos, variables y formatos?
-- **R — Reusable:** ¿se conoce suficiente sobre procedencia, método, contexto y licencias para reutilizarlos?
+**Qué es.** FAIR son cuatro principios para que los datos científicos sean *Findable* (localizables), *Accessible* (accesibles), *Interoperable* (interoperables) y *Reusable* (reutilizables). Wilkinson et al. (2016) [[R5](08-referencias.qmd#r5)] los propusieron pensando en las personas y también en los programas: que una computadora pueda encontrar y usar los datos con poca intervención humana.
 
-La existencia de un CSV o de un README no prueba conformidad FAIR. Una fuente externa puede explicar un estándar; **no puede reconstruir tratamientos y réplicas que faltan en los registros experimentales**.
+**Por qué se pide.** Revistas y agencias de financiamiento piden cada vez más que los datos de una publicación se compartan siguiendo estos principios, para que otras personas puedan comprobar los resultados o reutilizar los datos.
 
-## Producto esperado
+**Qué se espera de un archivo.** En la práctica, que otra persona, sin preguntarle nada a la investigadora, pueda encontrar los datos, obtenerlos, entender qué significa cada columna y saber en qué condiciones puede reutilizarlos. FAIR no es un sí o un no: un conjunto de datos puede ser más o menos FAIR, y ningún formato por sí solo lo garantiza.
 
-Una tabla de diagnóstico limitada a cuatro asuntos (unidades, condiciones, réplicas y celda faltante), tres preguntas prioritarias, una comprobación documental externa y una bitácora de decisiones.
+Las cuatro letras se pueden leer como cuatro preguntas:
 
-Los identificadores, el procesamiento, la cepa y la responsabilidad quedan **fuera del alcance de P5** por el límite de esta práctica, no porque sean menos importantes. Regístralos como exclusiones en la [Bitácora mínima 4D](07-bitacora.qmd).
+| Principio | Pregunta | En este Excel |
+|---|---|---|
+| **F — Findable** (localizable) | ¿Cómo encontraría y citaría alguien estos datos? | Es un archivo suelto, sin identificador ni descripción que permita encontrarlo o citarlo. |
+| **A — Accessible** (accesible) | Una vez encontrados, ¿cómo se obtienen y quién puede consultarlos? | No se indica dónde se depositará ni quién podrá consultarlo. |
+| **I — Interoperable** (interoperable) | ¿Otras personas y programas pueden interpretar los identificadores, los términos y las columnas? | `b0014` y `dnaK` podrían usar sistemas distintos; «Estrés A» y «prom.» no tienen definición. |
+| **R — Reusable** (reutilizable) | ¿Se sabe lo suficiente sobre su origen, el método y la licencia para volver a usarlos? | Faltan unidades, réplicas, procesamiento documentado y licencia. |
 
-Para mirar la hoja sin salir del navegador puedes abrir el [Explorador FAIR](../interactivos/explorador_fair.html){target="_blank"}. El diagnóstico se elabora en tu asistente.
+Aquí usamos FAIR para **ordenar lo que falta**, no para declarar que el archivo cumple. Convertir el Excel a CSV o añadirle un archivo README no lo vuelve FAIR por sí solo: lo que importa es que contengan la información que falta. Y esa información, como los tratamientos o las réplicas, solo puede darla quien hizo el experimento; ninguna fuente externa, ni la IA, puede reconstruirla.
+
+## Qué vas a producir
+
+La sesión cierra con dos productos:
+
+- Un **diagnóstico** elaborado en tu asistente, limitado a cuatro asuntos: las unidades de los valores, la definición de las condiciones, las réplicas y la celda vacía. Incluye tres preguntas prioritarias para la persona responsable del experimento.
+- Tu **[Bitácora mínima 4D](07-bitacora.qmd)**, un archivo Markdown que completas paso a paso durante la práctica, donde registras también la comprobación con una fuente primaria que harás tú.
+
+Los identificadores, el procesamiento, la cepa y la persona responsable quedan **fuera del alcance del diagnóstico** por el tiempo de la práctica, no porque sean menos importantes. Regístralos como exclusiones en la bitácora.
+
+## Cómo se trabaja
+
+En la [práctica guiada](05-practica.qmd) recorrerás las seis etapas del [método](03-metodo.qmd) con la IA, en un solo chat, y ejercitarás las cuatro competencias 4D. La práctica incluye la verificación con una fuente primaria y termina con tu [Bitácora mínima 4D](07-bitacora.qmd). Lleva contigo la lista que anotaste.

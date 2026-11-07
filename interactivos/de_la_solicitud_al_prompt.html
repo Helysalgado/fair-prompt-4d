@@ -682,7 +682,7 @@
             <h2>2. Construir y probar mi prompt</h2>
 
             <div class="instruction-box">
-                Comienza con estas instrucciones básicas. Puedes copiarlas y probarlas en ChatGPT antes de agregar más detalles, observando cómo evoluciona la respuesta al refinar las instrucciones.
+                Comienza con estas instrucciones básicas. Puedes copiarlas y probarlas en tu asistente de IA antes de agregar más detalles, observando cómo evoluciona la respuesta al refinar las instrucciones.
             </div>
 
             <div class="builder-grid">
@@ -738,10 +738,6 @@
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                                     Copiar prompt
                                 </button>
-                                <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" class="btn btn-green" style="flex: 1;">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                    Abrir ChatGPT
-                                </a>
                             </div>
 
                             <button type="button" class="btn btn-primary" onclick="saveCurrentVersion()">
@@ -751,7 +747,7 @@
                         </div>
                         
                         <span class="label-hint" style="margin-top: 0.75rem; text-align: center; display: block; font-size: 0.8rem;">
-                            Copia tu prompt, abre ChatGPT y pégalo en una conversación nueva para probar.
+                            Copia tu prompt y pégalo en una conversación nueva de tu asistente de IA para probarlo.
                         </span>
                     </div>
                 </div>
@@ -824,7 +820,7 @@
     </main>
 
     <footer>
-        <span>Taller: Antes del prompt: pensar, delegar y verificar con IA</span>
+        <span>Taller: Antes del prompt: qué pedir, qué delegar y cómo comprobar</span>
         <button type="button" class="btn btn-danger btn-sm" onclick="confirmReset()">Reiniciar actividad</button>
     </footer>
 
@@ -1318,7 +1314,7 @@
                 const fieldId = 'obs-' + version.id;
                 label.htmlFor = fieldId;
                 label.style.cssText = 'font-size: 0.85rem; color: var(--primary);';
-                label.textContent = '¿Qué observaste en la respuesta de ChatGPT?';
+                label.textContent = '¿Qué observaste en la respuesta del asistente?';
                 const textarea = document.createElement('textarea');
                 textarea.id = fieldId;
                 textarea.placeholder = 'Escribe tus observaciones breves sobre esta prueba...';
@@ -1361,7 +1357,7 @@
             md += `- **Resultado y verificación:** ${cs.outputVerification || 'Sin especificar'}\n\n`;
 
             md += `## 4. Versiones guardadas por el participante\n\n`;
-            md += `Guardar una versión conserva el prompt. No indica que se haya probado en ChatGPT.\n\n`;
+            md += `Guardar una versión conserva el prompt. No indica que se haya probado en un asistente de IA.\n\n`;
 
             if (!cs.savedVersions || cs.savedVersions.length === 0) {
                 md += `*No se guardaron versiones durante la sesión.*\n\n`;
@@ -1381,7 +1377,7 @@
             md += `**1. Diferencias observadas entre respuestas:**\n${cs.reflection1 || 'Sin respuesta.'}\n\n`;
             md += `**2. Ambigüedades que permanecen o aclaraciones pendientes:**\n${cs.reflection2 || 'Sin respuesta.'}\n\n`;
 
-            md += `---\n*Taller: Antes del prompt: pensar, delegar y verificar con IA en la investigación científica*\n`;
+            md += `---\n*Taller: Antes del prompt: qué pedir, qué delegar y cómo comprobar lo que hace la IA en investigación*\n`;
 
             return md;
         }

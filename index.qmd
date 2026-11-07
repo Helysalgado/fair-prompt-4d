@@ -1,6 +1,6 @@
 ---
 title: "Antes del prompt"
-subtitle: "Pensar, delegar y verificar con IA en la investigación científica"
+subtitle: "Qué pedir, qué delegar y cómo comprobar lo que hace la IA en investigación"
 description: "Taller práctico · seis etapas · AI Fluency 4D"
 toc: false
 author:
@@ -13,35 +13,56 @@ author:
 La IA puede hacerlo. ¿Tú sabes qué hizo, por qué lo hizo y cómo comprobarlo?
 :::
 
-Este taller propone una ruta de seis etapas para trabajar con asistentes de IA sin perder el criterio científico. Partimos de necesidades ambiguas, aprendemos el vocabulario necesario, delimitamos una tarea, decidimos qué delegar, contrastamos los resultados y documentamos decisiones.
+Este taller propone una ruta de seis etapas para trabajar con asistentes de IA sin perder el criterio científico.
+
+**Objetivo del taller:** desarrollar habilidades para transformar necesidades cotidianas de investigación, inicialmente ambiguas, en tareas claras, fundamentadas y verificables, mediante exploración conceptual, especificación, colaboración crítica con IA y documentación del proceso.
 
 **Sesión del programa ELIXIR-México 2026:** «Instrucciones para modelos de lenguaje en tareas científicas (*prompting*; ponencia y taller)».
 
 **Modalidad:** taller práctico presencial o híbrido. **Necesitas:** una computadora y una cuenta en un asistente de IA que permita adjuntar archivos; los detalles y la prueba están en [Antes del taller](contenido/00-preparacion.qmd). No se necesitan conocimientos de programación.
 
+## Aprendizajes
+
+Al finalizar, podrás:
+
+1. Expresar una necesidad en tus palabras e identificar ambigüedades y supuestos.
+2. Reconocer conocimientos faltantes y aprender vocabulario científico/técnico relevante con apoyo de IA y fuentes confiables.
+3. Delimitar objetivos, información disponible, restricciones, entregables y criterios para saber si se avanza correctamente.
+4. Decidir qué trabajo delegar a la IA y qué decisiones científicas permanecen bajo responsabilidad humana, usando el marco AI Fluency 4D.
+5. Distinguir respuestas plausibles de afirmaciones sustentadas; identificar inferencias no autorizadas, errores y lagunas.
+6. Documentar conocimientos, fuentes, instrucciones, revisiones, decisiones y próximos pasos en una bitácora reutilizable.
+
 ::: {.callout-important}
 ## Resultado esperado
-No vamos a certificar que un dataset cumple FAIR ni a depositarlo en un repositorio. La sesión cierra con dos productos: un **diagnóstico FAIR preliminar** del Excel simulado, elaborado en tu asistente, y la **Bitácora mínima 4D** descargada en Markdown.
+La sesión cierra con dos productos: un **diagnóstico FAIR preliminar** del Excel simulado, elaborado en tu asistente, y tu **Bitácora mínima 4D**, un archivo Markdown que completas durante la práctica.
+
+El éxito es que comprendas mejor el encargo y puedas justificar tu plan y los límites de lo que produjo la IA.
 :::
+
+## Qué incluye y qué no incluye este taller
+
+| Sí se enseña | No se enseña |
+|---|---|
+| Pensar y preguntar con ayuda de IA desde el principio | Una técnica avanzada o exhaustiva de ingeniería de prompts |
+| Descubrir vocabulario que falta y contrastar conceptos | Un curso completo de fundamentos de LLM |
+| Reformular el encargo y fijar expectativas | Programación, agentes, Cursor/Codex o automatización en profundidad |
+| Decidir qué delegar y qué verificar | Certificación de conformidad FAIR |
+| Examinar un Excel pequeño y notar sus ausencias | Diseño integral de metadatos, repositorios o ontologías |
+| Documentar el proceso con plantilla sencilla | Capacitación extensa en Docs, Markdown o herramientas específicas |
 
 ## Por dónde comenzar
 
 **Antes del taller**
 
 1. Prepara tu cuenta de IA y haz la [prueba del asistente](contenido/00-preparacion.qmd).
-2. Si puedes, lee [el sentido y los objetivos](contenido/01-contexto.qmd), [las seis etapas y el 4D](contenido/03-metodo.qmd) y [el caso integrador](contenido/04-caso-fair.qmd).
+2. Si puedes, lee [la introducción](contenido/01-contexto.qmd), [las seis etapas y el 4D](contenido/03-metodo.qmd) y [el caso de estudio](contenido/04-caso-fair.qmd).
 
 **Durante el taller**
 
-3. **Comprender el problema.** Reconocerás que una solicitud que parece clara admite varias interpretaciones e identificarás qué decisiones y qué vocabulario faltan antes de delegarla. Recorre [el sentido](contenido/01-contexto.qmd), [las tres situaciones](contenido/02-ejemplos.qmd) y [las seis etapas](contenido/03-metodo.qmd), y practica en [¿Qué falta por definir?](contenido/interactivos/que-falta-por-definir.qmd).
-4. **Construir una solicitud.** Delimitarás el resultado que necesitas, decidirás qué encargas a la IA y qué te reservas, y lo traducirás en instrucciones claras. Aprende a pasar [del problema al prompt](contenido/03b-estructura-prompt.qmd) y construye una instrucción en [De la solicitud al prompt](contenido/interactivos/de-la-solicitud-al-prompt.qmd).
-5. **Evaluar respuestas.** Distinguirás lo que una respuesta de IA demuestra con los datos de lo que solo suena convincente, y decidirás qué aceptar, qué corregir y qué dejar pendiente. Practica en [¿Qué puedo aceptar?](contenido/interactivos/que-puedo-aceptar.qmd).
-6. **Caso de estudio.** Aplicarás lo anterior a un Excel simulado de expresión génica: elaborarás un diagnóstico FAIR preliminar en tu asistente y comprobarás por tu cuenta una afirmación en la fuente primaria. Con el [Excel simulado](descargas/expresion_genica_caso_simulado.xlsx), haz el [caso](contenido/04-caso-fair.qmd), la [práctica guiada](contenido/05-practica.qmd) y la [verificación independiente](contenido/06-verificacion.qmd).
-7. **Registro.** Documentarás qué delegaste, qué comprobaste y qué queda pendiente, de modo que otra persona pueda entender y revisar tu proceso. Cierra en la [Bitácora mínima 4D](contenido/07-bitacora.qmd).
+3. **Comprender el problema.** Recorre [la introducción](contenido/01-contexto.qmd), [las tres situaciones](contenido/02-ejemplos.qmd) y [las seis etapas](contenido/03-metodo.qmd), y practica en [¿Qué falta por definir?](contenido/interactivos/que-falta-por-definir.qmd).
+4. **Construir una solicitud.** Aprende a pasar [del problema al prompt](contenido/03b-estructura-prompt.qmd) y construye una instrucción en [De la solicitud al prompt](contenido/interactivos/de-la-solicitud-al-prompt.qmd).
+5. **Evaluar respuestas.** Practica en [¿Qué puedo aceptar?](contenido/interactivos/que-puedo-aceptar.qmd).
+6. **Caso de estudio.** Con el [Excel simulado](descargas/expresion_genica_caso_simulado.xlsx), haz el [caso](contenido/04-caso-fair.qmd) y la [práctica guiada](contenido/05-practica.qmd), que incluye la verificación con la fuente.
+7. **Registro.** Cierra en la [Bitácora mínima 4D](contenido/07-bitacora.qmd).
 
 **Para profundizar:** [fuentes, materiales y continuidad](contenido/08-referencias.qmd).
-
-::: {.callout-warning}
-## Datos simulados
-Los números y las condiciones del Excel son **deliberadamente ficticios**. No constituyen resultados experimentales publicables.
-:::

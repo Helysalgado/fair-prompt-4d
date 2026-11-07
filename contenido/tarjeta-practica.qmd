@@ -1,6 +1,6 @@
 ---
 title: "Tarjeta de práctica"
-description: "Prompts, etiquetas y verificación de la práctica de cierre, en una sola hoja"
+description: "Pasos, prompts, verificación y etiquetas de la práctica guiada, en una sola hoja"
 toc: false
 ---
 
@@ -8,15 +8,17 @@ toc: false
 Durante el taller · tenla abierta en otra pestaña o imprímela
 :::
 
-**Un solo chat** para P0, P1, P5 y P6. **Datos simulados:** [Excel](../descargas/expresion_genica_caso_simulado.xlsx) · [versión en texto](../descargas/expresion_genica_caso_simulado.txt) · [Bitácora mínima 4D](07-bitacora.qmd).
+**Archivos:** [Excel](../descargas/expresion_genica_caso_simulado.xlsx) · [versión en texto](../descargas/expresion_genica_caso_simulado.txt) · [plantilla de la bitácora](../descargas/bitacora-minima-4d.md){download="bitacora-minima-4d.md"}. Datos simulados.
 
-| Paso | Qué haces | Dónde |
+**Antes de empezar:** abre la plantilla junto al chat y ten a la mano las tres cosas que anotaste en el [caso de estudio](04-caso-fair.qmd). Usa **un solo chat** para P0, P1, P5 y P6, y anota en la bitácora al final de cada paso.
+
+| Paso | Etapa · 4D | Qué haces |
 |---|---|---|
-| 1 | **P0** y anota qué hizo la IA | Chat |
-| 2 | **P1** | Chat |
-| 3 | **Tu especificación**, sin pedir a la IA que decida | [03b](03b-estructura-prompt.qmd) |
-| 4 | **P5**, **P6** y **tu verificación con la fuente** | [Verificación](06-verificacion.qmd) |
-| 5 | Bitácora mínima 4D y problema propio | [Bitácora](07-bitacora.qmd) |
+| 1 | Necesidad · Discernment | **P0** con el Excel adjunto; anota qué hizo la IA. |
+| 2 | Vocabulario · Discernment | **P1**; compara su respuesta con tu lista. |
+| 3 | Especificación · Delegation y Description | Escribe **tu especificación** en la bitácora: parte A (para la IA) y parte B (para ti). |
+| 4 | Colaboración y verificación · Discernment y Diligence | **P5** con la parte A pegada, **P6** y **tu verificación con la fuente**; revisa el diagnóstico con tu criterio de aceptación. |
+| 5 | Registro · Diligence | Cierra la bitácora: pendientes, quién los confirma y un problema propio. [Revisión final](07-bitacora.qmd). |
 
 ## Prompts
 
@@ -24,7 +26,7 @@ Durante el taller · tenla abierta en otra pestaña o imprímela
 
 {{< include _prompts/p1.md >}}
 
-**Entre P1 y P5 escribes tú:** resultado buscado · alcance (unidades, condiciones, réplicas, celda vacía) · exclusiones · evidencia aceptable · qué delegas · qué confirmas tú · límites · criterio de aceptación.
+**Entre P1 y P5 escribes tu especificación.** **A. Para la IA** (la pegas dentro de P5): resultado buscado · alcance (unidades, condiciones, réplicas, celda vacía) y exclusiones · evidencia aceptable · qué delegas · límites. **B. Para ti** (no se pega): qué confirmas tú · criterio de aceptación para revisar P5 y P6.
 
 {{< include _prompts/p5.md >}}
 
@@ -32,8 +34,8 @@ Durante el taller · tenla abierta en otra pestaña o imprímela
 
 ## Verificación obligatoria (la haces tú)
 
-Contrasta **«FAIR exige que todos los datos sean completamente abiertos»** con [Wilkinson et al. (2016)](https://doi.org/10.1038/sdata.2016.18), **Box 2** (principios A1.1, A1.2 y A2). Anota fuente, pasaje, fecha y tu conclusión: *respalda*, *contradice* o *no permite decidir*. **Sin fuente abierta: «pendiente», nunca «verificado».**
+Contrasta **«FAIR exige que todos los datos sean completamente abiertos»** con [Wilkinson et al. (2016)](https://doi.org/10.1038/sdata.2016.18), **Box 2**: principios A1, A1.1, A1.2 y A2. Anota en la bitácora la fuente (título y URL), la fecha, el pasaje, qué dice realmente y las limitaciones de tu lectura. Concluye *respalda*, *contradice*, *no permite decidir* o *pendiente*. **Sin fuente abierta: «pendiente», nunca «verificado».** [Pasos completos](05-practica.qmd#verificacion).
 
 ## Cuatro etiquetas
 
-**Observado** (cita hoja y celda) · **Inferido** (márcalo como hipótesis) · **Por confirmar** (pregúntalo a la responsable) · **Verificado** (solo con fuente que abriste tú).
+**Observado** (cita hoja y celda) · **Inferido** (márcalo como hipótesis) · **Por confirmar** (pregúntalo a la responsable) · **Verificado** (solo lo asignas tú, con una fuente que abriste). La IA usa solo las tres primeras.

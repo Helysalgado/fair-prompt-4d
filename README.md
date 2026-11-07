@@ -1,6 +1,6 @@
 # Antes del prompt
 
-**Pensar, delegar y verificar con IA en la investigación científica**
+**Qué pedir, qué delegar y cómo comprobar lo que hace la IA en investigación**
 
 Sitio del taller práctico que propone una ruta de seis etapas para trabajar con asistentes de IA sin perder el criterio científico, aplicada a un caso de datos de expresión génica y principios FAIR.
 
@@ -18,7 +18,7 @@ El taller forma parte del programa ELIXIR-México 2026 como sesión «Instruccio
 | Comprender el problema | `01-contexto` · `02-ejemplos` · `03-metodo` · `que-falta-por-definir` |
 | Construir una solicitud | `03b-estructura-prompt` · `de-la-solicitud-al-prompt` |
 | Evaluar respuestas | `que-puedo-aceptar` |
-| Caso de estudio | `04-caso-fair` · `05-practica` · `06-verificacion` · `07-bitacora` |
+| Caso de estudio | `04-caso-fair` · `05-practica` · `07-bitacora` |
 | Recursos | `tarjeta-practica` · `08-referencias` |
 
 ## Estructura del repositorio

@@ -9,84 +9,78 @@ Antes o durante el taller
 
 ::: {.en-un-minuto}
 - Seis etapas iterativas: **necesidad, vocabulario, especificación, colaboración, verificación y registro**.
-- Las competencias **4D** (Delegation, Description, Discernment, Diligence) acompañan todas las etapas.
+- Cuatro competencias acompañan todo el recorrido: **Delegation (delegación), Description (descripción), Discernment (discernimiento) y Diligence (diligencia)**.
 - Es una síntesis didáctica apoyada en fuentes, no un método validado.
 :::
 
-## Las seis etapas y el marco 4D
+## Las seis etapas
 
-Las seis etapas son una adaptación didáctica desarrollada para este taller; en [Procedencia del enfoque](#procedencia-del-enfoque) se explica en qué fuentes se apoya cada una y qué no puede afirmarse.
+En la [introducción](01-contexto.qmd) vimos el riesgo: respuestas plausibles que los datos no respaldan. Para evitarlo no basta con escribir un prompt más largo; hace falta entender la tarea antes de delegarla y comprobar lo que regresa. Las seis etapas ordenan ese trabajo, desde una necesidad todavía imprecisa hasta un resultado documentado.
 
 ![Las seis etapas: de la necesidad inicial al registro de decisiones](../recursos/metodologia-seis-etapas.svg){fig-alt="Diagrama de seis etapas iterativas: expreso mi necesidad, exploro y aprendo, delimito y especifico, decido cómo colaborar, obtengo y verifico, documento decisiones"}
 
-**Las seis etapas** (entre paréntesis, el nombre corto que usamos en tablas y diagramas):
+Cada etapa responde a una pregunta. Entre paréntesis, el nombre corto que usamos en tablas y diagramas:
 
 1. **Expreso lo que necesito, aunque todavía no sea preciso** (Necesidad). ¿Qué quiero lograr?
 2. **Identifico lo que desconozco y aprendo el vocabulario necesario** (Vocabulario). ¿Qué debo comprender antes de tomar decisiones?
 3. **Delimito el problema y establezco qué resultado necesito** (Especificación). ¿Qué entradas, alcance, entregable y criterios necesito?
-4. **Decido cómo colaborar con la IA utilizando las competencias 4D** (Colaboración). ¿Qué delego y qué superviso?
+4. **Decido cómo colaborar con la IA** (Colaboración). ¿Qué delego y qué superviso?
 5. **Obtengo un resultado, lo contrasto y corrijo sus limitaciones** (Verificación). ¿Qué evidencia permite aceptarlo?
 6. **Documento cómo llegué a él y qué decisiones tomé** (Registro). ¿Cómo lo entenderá o revisará otra persona?
 
-**No es un flujo lineal obligatorio:** un resultado incorrecto puede obligar a regresar a aprender vocabulario, corregir la especificación o reformular el problema.
-
-### AI Fluency 4D: marco de competencias
-
-El marco AI Fluency de Rick Dakan y Joseph Feller, desarrollado en colaboración con Anthropic [R1], identifica cuatro competencias interrelacionadas. Conservamos los nombres en inglés, como aparecen en el marco:
-
-| D | Competencia | Pregunta útil en el taller |
-|---|---|---|
-| **Delegation** (delegación) | Determinar metas y decidir si, cuándo y cómo usar IA. | ¿Qué le encargo a la IA y qué hago/decido yo? |
-| **Description** (descripción) | Comunicar metas y contexto para orientar el trabajo. | ¿He explicado datos, condiciones y resultado esperado? |
-| **Discernment** (discernimiento) | Evaluar críticamente productos y comportamiento de IA. | ¿Qué parte está comprobada y qué parte debo cuestionar? |
-| **Diligence** (diligencia) | Asumir responsabilidad y actuar apropiadamente. | ¿Qué debo registrar, proteger, atribuir y revisar antes de difundir? |
-
-Estas competencias no corresponden una a una a las etapas. Por ejemplo, la exploración también usa Description y Discernment; la verificación puede modificar la Delegation. El taller **aplica** el marco 4D, pero no pretende presentarse como una metodología oficial de Anthropic.
-
-![Las cuatro competencias acompañan las seis etapas](../recursos/4d-y-proceso.svg){fig-alt="Diagrama de las competencias Delegation, Description, Discernment y Diligence acompañando las seis etapas: necesidad, vocabulario, especificación, colaboración, verificación y registro"}
-
-### Mapa didáctico orientativo
-
-| Etapa | 4D particularmente visibles | Evidencia observable |
-|---|---|---|
-| 1. Necesidad | Delegation | Reconoce el propósito y lo que no sabe |
-| 2. Vocabulario | Description, Discernment | Distingue términos y confirma definiciones |
-| 3. Especificación | Delegation, Description | Define alcance, datos y entregable |
-| 4. Colaboración | Todas | Delimita IA/humano y supervisión |
-| 5. Verificación | Discernment, Description | Detecta supuestos y corrige |
-| 6. Registro | Diligence | Conserva fuentes, decisiones y pendientes |
-
-### Advertencia transversal sobre inferencias
-
-La IA actual puede formular preguntas acertadas y completar contexto con mucha soltura. Esto no autoriza convertir una hipótesis en metadatos observacionales. La misma cautela aplica a las inferencias humanas: una persona experta podría asociar `katG` con estrés oxidativo y concluir precipitadamente que una condición sin describir lo representa.
-
-### ¿Siempre hay que recorrer las seis etapas?
-
-No. El proceso es proporcional: se usa completo cuando la decisión tiene consecuencias (publicar datos, compartirlos o interpretarlos) y se comprime cuando la consulta es trivial.
-
-## Procedencia del enfoque
-
-La metodología *«Antes del prompt»* es una **síntesis didáctica del equipo docente desarrollada con asistencia de IA**. La formulación concreta, el orden y la combinación de seis etapas responden a las necesidades del taller. La literatura citada **respalda prácticas o competencias componentes**, pero no valida la secuencia completa ni su eficacia pedagógica.
-
-| Etapa propuesta en el taller | Fundamento o práctica vinculada | Alcance de la relación |
-|---|---|---|
-| 1. Necesidad: expreso lo que necesito | Investigación como indagación y búsqueda estratégica [R2]; Delegation [R1] | Inspiración conceptual; formulación propia |
-| 2. Vocabulario: identifico lo que desconozco y aprendo el vocabulario necesario | Búsqueda iterativa, lenguaje especializado y contraste de fuentes [R2] | Fundamento directo para explorar términos, no una técnica exclusiva de IA |
-| 3. Especificación: delimito el problema y establezco qué resultado necesito | Descomposición y criterios de aceptación [R3]; prácticas de especificación [R11]; Description [R1] | Adaptación desde desarrollo de productos a tareas científicas cotidianas |
-| 4. Colaboración: decido cómo colaborar con la IA | Cuatro competencias del 4D [R1] | Uso explícito del marco; 4D es transversal a todas las etapas |
-| 5. Verificación: obtengo un resultado, lo contrasto y corrijo | Discernment [R1]; gestión de riesgos y evaluación [R4]; revisión humana en ingeniería asistida [R12] | El contraste científico exige fuentes y criterios adecuados a cada tarea |
-| 6. Registro: documento cómo llegué al resultado y qué decidí | Diligence [R1]; documentación de datos [R6] y buenas prácticas [R10] | Adaptación a bitácora; no implica por sí sola que el resultado sea reproducible o FAIR |
-
-### Qué puede afirmarse, y qué no
-
-- **Sí:** el taller está **fundamentado en** AI Fluency 4D y toma elementos de alfabetización informacional, especificación, verificación y documentación.
-- **Sí:** se propone una secuencia iterativa de seis momentos aplicables al caso de datos científicos.
-- **No:** que «Antes del prompt» sea una metodología científica estandarizada o validada por Anthropic, ACRL, NIST o ELIXIR.
-- **No:** que los resultados de una respuesta de IA o una lista de cotejo certifiquen que un dataset cumple FAIR.
-
-Si vas a reutilizar o citar este enfoque, consulta [Cómo citar este material](08-referencias.qmd#cómo-citar-este-material).
+**No es un procedimiento rígido.** Un resultado incorrecto puede obligar a regresar a aprender vocabulario, corregir la especificación o reformular el problema. Tampoco hay que recorrer siempre las seis etapas: se usan completas cuando la decisión tiene consecuencias (publicar, compartir o interpretar datos) y se comprimen cuando la consulta es sencilla.
 
 ::: {.callout-tip}
 ## Delimitar no es todavía redactar el prompt
-Una vez definido el producto esperado (etapa 3), utiliza la [anatomía del prompt](03b-estructura-prompt.qmd) para traducirlo a instrucciones (etapa 4). Esto no añade una séptima etapa.
+Una vez definido el resultado que necesitas (etapa 3), la [anatomía del prompt](03b-estructura-prompt.qmd) te ayuda a traducirlo en instrucciones para la IA (etapa 4). No es una séptima etapa, sino el puente entre ambas.
 :::
+
+## Las cuatro competencias del marco AI Fluency 4D {#ai-fluency-4d-marco-de-competencias}
+
+Las etapas dicen **qué hacer**; las competencias describen **cómo trabajar con la IA** en cualquiera de ellas. Provienen del marco AI Fluency de Rick Dakan y Joseph Feller, desarrollado en colaboración con Anthropic [[R1](08-referencias.qmd#r1)]. Conservamos los nombres en inglés, como aparecen en el marco, con su equivalente en español.
+
+| Competencia | Qué implica | En el caso del Excel |
+|---|---|---|
+| **Delegation** (delegación) | Decidir si, cuándo y para qué usar IA, y qué decisiones conservas tú. | La IA hace el inventario de lo que falta; tú decides qué significa «Estrés A». |
+| **Description** (descripción) | Comunicar el objetivo, el contexto y los límites para orientar el trabajo. | Le pides que cite hoja y celda y que no invente unidades. |
+| **Discernment** (discernimiento) | Evaluar críticamente lo que la IA produce y cómo se comporta. | Compruebas que no convirtió «prom.» en «promedio» sin evidencia. |
+| **Diligence** (diligencia) | Asumir la responsabilidad: registrar, proteger, atribuir y revisar antes de difundir. | Anotas en la bitácora qué queda pendiente y quién debe confirmarlo. |
+
+### Cómo se relacionan con las etapas
+
+Las competencias **no corresponden una a una** a las etapas: acompañan todo el recorrido. Por ejemplo, al explorar vocabulario (etapa 2) también describes lo que buscas y evalúas lo que recibes; y lo que descubres al verificar (etapa 5) puede cambiar lo que decides delegar.
+
+![Las cuatro competencias acompañan las seis etapas](../recursos/4d-y-proceso.svg){fig-alt="Diagrama de las competencias Delegation (delegación), Description (descripción), Discernment (discernimiento) y Diligence (diligencia) acompañando las seis etapas: necesidad, vocabulario, especificación, colaboración, verificación y registro"}
+
+::: {.callout-warning}
+## Las inferencias también son nuestras
+La IA completa contexto con mucha soltura, pero eso no autoriza a convertir una hipótesis en un metadato. La misma cautela vale para quien investiga: una persona experta podría asociar `katG` con estrés oxidativo y concluir, sin evidencia, que «Estrés A» representa esa condición.
+:::
+
+**Practícalo ahora:** en [¿Qué falta por definir?](interactivos/que-falta-por-definir.qmd) recorrerás las etapas 1 a 3 con un caso breve.
+
+## Procedencia del enfoque
+
+«Antes del prompt» es una **síntesis didáctica desarrollada para este taller con asistencia de IA**. La literatura citada respalda prácticas y competencias que forman parte de cada etapa, pero no valida la secuencia completa ni su eficacia pedagógica. El taller **aplica** el marco 4D; no es una metodología oficial de Anthropic.
+
+**Qué puede afirmarse, y qué no:**
+
+- **Sí:** el taller está **fundamentado en** AI Fluency 4D y toma elementos de alfabetización informacional, especificación, verificación y documentación.
+- **Sí:** propone una secuencia iterativa de seis etapas aplicable al caso de datos científicos.
+- **No:** que «Antes del prompt» sea una metodología científica estandarizada o validada por Anthropic, ACRL, NIST o ELIXIR.
+- **No:** que una respuesta de IA o una lista de cotejo certifiquen que un dataset cumple FAIR.
+
+::: {.callout-note collapse="true"}
+## En qué fuentes se apoya cada etapa
+
+| Etapa | Fundamento o práctica vinculada | Alcance de la relación |
+|---|---|---|
+| 1. Necesidad | Investigación como indagación y búsqueda estratégica [[R2](08-referencias.qmd#r2)]; Delegation (delegación) [[R1](08-referencias.qmd#r1)] | Inspiración conceptual; formulación propia |
+| 2. Vocabulario | Búsqueda iterativa, lenguaje especializado y contraste de fuentes [[R2](08-referencias.qmd#r2)] | Fundamento directo para explorar términos, no una técnica exclusiva de IA |
+| 3. Especificación | Descomposición y criterios de aceptación [[R3](08-referencias.qmd#r3)]; prácticas de especificación [[R11](08-referencias.qmd#r11)]; Description (descripción) [[R1](08-referencias.qmd#r1)] | Adaptación desde el desarrollo de productos a tareas científicas cotidianas |
+| 4. Colaboración | Las cuatro competencias del 4D [[R1](08-referencias.qmd#r1)] | Uso explícito del marco; el 4D es transversal a todas las etapas |
+| 5. Verificación | Discernment (discernimiento) [[R1](08-referencias.qmd#r1)]; gestión de riesgos y evaluación [[R4](08-referencias.qmd#r4)]; revisión humana en ingeniería asistida [[R12](08-referencias.qmd#r12)] | El contraste científico exige fuentes y criterios adecuados a cada tarea |
+| 6. Registro | Diligence (diligencia) [[R1](08-referencias.qmd#r1)]; documentación de datos [[R6](08-referencias.qmd#r6)] y buenas prácticas [[R10](08-referencias.qmd#r10)] | Adaptación a bitácora; no implica por sí sola que el resultado sea reproducible o FAIR |
+:::
+
+Si vas a reutilizar o citar este enfoque, consulta [Cómo citar este material](08-referencias.qmd#cómo-citar-este-material).

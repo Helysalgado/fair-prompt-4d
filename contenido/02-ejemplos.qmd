@@ -15,19 +15,38 @@ Durante el taller
 
 ## Conceptos introductorios
 
-| Concepto | Definición operativa | Advertencia |
-|---|---|---|
-| Modelo de lenguaje (LLM) | Sistema capaz de generar texto y otras salidas a partir de patrones aprendidos y del contexto que recibe. | No debe asumirse que toda afirmación viene de una fuente comprobada. |
-| Prompt | Pregunta, instrucción y/o contexto proporcionado al sistema. | Se usan prompts desde la primera exploración; no existe un único prompt perfecto. |
-| Contexto | Antecedentes, datos, fuentes, objetivo, audiencia, restricciones y convenciones pertinentes. | No reemplaza la información experimental faltante. |
-| Supuesto | Información que se da por cierta o se introduce para completar una tarea. | Debe distinguirse un supuesto autorizado de uno no respaldado. |
-| Inferencia | Conclusión derivada de datos o premisas. | Puede ser plausible sin estar demostrada por el material aportado. |
-| Alucinación | Contenido falso, inventado o no sustentado presentado como si fuese válido. | Una cita con formato correcto puede no existir o no sustentar el argumento. |
-| Verificación | Contraste con datos, fuentes, criterios o procedimientos externos a la mera afirmación de la IA. | Pedirle al mismo modelo «¿estás seguro?» no equivale a verificar. |
-| Especificación | Descripción de una tarea que define propósito, entradas, alcance, límites, entregable y criterios de aceptación. | Más detalle no siempre implica mejor resultado si el problema sigue mal definido. |
-| Trazabilidad | Registro que permite reconstruir fuentes, decisiones, transformaciones y revisiones. | Guardar únicamente el último prompt resulta insuficiente en muchos contextos. |
-| FAIR | Principios para que datos y recursos digitales sean encontrables, accesibles, interoperables y reutilizables. | FAIR no equivale a «abierto», a un formato particular ni a un sí/no universal. |
+Antes de analizar los ejemplos conviene compartir un vocabulario mínimo. Las definiciones son *operativas*: describen cómo usamos cada término en el taller, no pretenden ser exhaustivas. La tercera columna señala la confusión más frecuente con cada concepto.
 
+### Sobre la IA
+
+::: {.tabla-conceptos}
+| Concepto | Qué significa aquí | Cuidado con… |
+|---|---|---|
+| **Modelo de lenguaje (LLM)** | Sistema capaz de generar texto y otras salidas a partir de patrones aprendidos y del contexto que recibe. | No debe asumirse que toda afirmación viene de una fuente comprobada. |
+| **Prompt** | Pregunta, instrucción y/o contexto proporcionado al sistema. | Se usan prompts desde la primera exploración; no existe un único prompt perfecto. |
+| **Contexto** | Antecedentes, datos, fuentes, objetivo, audiencia, restricciones y convenciones pertinentes. | No reemplaza la información experimental faltante. |
+| **Alucinación** | Contenido falso, inventado o no sustentado presentado como si fuese válido. | Una cita con formato correcto puede no existir o no sustentar el argumento. |
+:::
+
+### Sobre el razonamiento
+
+::: {.tabla-conceptos}
+| Concepto | Qué significa aquí | Cuidado con… |
+|---|---|---|
+| **Supuesto** | Información que se da por cierta o se introduce para completar una tarea. | Debe distinguirse un supuesto autorizado de uno no respaldado. |
+| **Inferencia** | Conclusión derivada de datos o premisas. | Puede ser plausible sin estar demostrada por el material aportado. |
+| **Verificación** | Contraste con datos, fuentes, criterios o procedimientos externos a la mera afirmación de la IA. | Pedirle al mismo modelo «¿estás seguro?» no equivale a verificar. |
+:::
+
+### Sobre el trabajo con datos
+
+::: {.tabla-conceptos}
+| Concepto | Qué significa aquí | Cuidado con… |
+|---|---|---|
+| **Especificación** | Descripción de una tarea que define propósito, entradas, alcance, límites, entregable y criterios de aceptación. | Más detalle no siempre implica mejor resultado si el problema sigue mal definido. |
+| **Trazabilidad** | Registro que permite reconstruir fuentes, decisiones, transformaciones y revisiones. | Guardar únicamente el último prompt resulta insuficiente en muchos contextos. |
+| **FAIR** | Principios para que datos y recursos digitales sean encontrables, accesibles, interoperables y reutilizables. | FAIR no equivale a «abierto», a un formato particular ni a un sí/no universal. |
+:::
 
 ::: {.callout-tip}
 ## Idea clave
@@ -36,9 +55,9 @@ Algunos problemas no se resuelven con un prompt más largo, sino aprendiendo con
 
 ## Tres ejemplos para analizar
 
-Los términos *Description*, *Discernment* y *Diligence* corresponden a las competencias del [marco AI Fluency 4D](03-metodo.qmd#ai-fluency-4d-marco-de-competencias), que se presenta en la página siguiente; la cuarta, *Delegation*, se trabaja en la práctica.
+**Entender por qué falló:** cuando un resultado falla, no se trata de culpar a quien escribió la instrucción ni de atribuirlo todo a la IA. Conviene distinguir entre límites del sistema, información insuficiente, ambigüedad y errores de evaluación.
 
-### Ejemplo 1. Respuesta válida a un encargo ambiguo
+### Ejemplo 1. Combinar tres archivos de genes
 
 ::: {.prompt data-label="Solicitud" data-meta="lo que escribe la investigadora" data-copy="no"}
 Tengo tres archivos con información de genes. Necesito combinarlos en una tabla
@@ -47,6 +66,11 @@ Tengo tres archivos con información de genes. Necesito combinarlos en una tabla
 ::: {.respuesta-ia data-label="Respuesta simulada"}
 Aquí tienes un script que concatena los tres archivos en una sola tabla.
 :::
+
+**Piensa antes de seguir:** ¿Qué significa «combinar»? ¿Qué información faltó? ¿En qué casos una solución técnicamente correcta respondería al problema equivocado?
+
+::: {.callout-note collapse="true"}
+## Qué falla y qué hacer (ábrela después de responder)
 
 **Qué falla:** la respuesta es técnicamente correcta, pero «combinar» admite varias operaciones:
 
@@ -58,49 +82,50 @@ Armonizar suele ser un paso previo a cualquiera de las otras dos. La IA eligió 
 
 ![Tres formas de «combinar»: concatenar, unir por clave y armonizar](../recursos/combinar-tablas.svg){fig-alt="Tres paneles con tablas pequeñas. A, concatenar: dos tablas con columnas Gen y Control se apilan en una de cuatro filas. B, unir por clave: una tabla con Control y otra con Estrés A se relacionan por el gen, aunque estén en distinto orden. C, armonizar: una tabla usa gen, Ctrl y RECA y otra Gen, Control y katG; primero se decide si significan lo mismo y luego se combinan."}
 
-**Preguntas para el grupo:** ¿Qué significa «combinar»? ¿Qué información faltó? ¿En qué casos una solución técnicamente correcta respondería al problema equivocado?
-
 **Qué hacer:** pedir primero: «¿Qué operaciones podrían corresponder a mi necesidad? Muéstrame entradas/salidas mínimas y pregunta qué necesitas saber antes de recomendar una». Después, comprobar con dos o tres genes que la tabla resultante contiene lo esperado.
+:::
 
-**Conceptos trabajados:** ambigüedad, vocabulario, criterios de aceptación, [*Description*](03-metodo.qmd#ai-fluency-4d-marco-de-competencias).
-
-### Ejemplo 2. La referencia existe, pero no demuestra lo que se le atribuye
+### Ejemplo 2. Evidencia sobre FAIR y reproducibilidad
 
 ::: {.prompt data-label="Solicitud" data-meta="lo que escribe la investigadora" data-copy="no"}
 Busca evidencia científica de que adoptar FAIR mejora la reproducibilidad de la investigación
 :::
 
-::: {.respuesta-ia .incorrecta data-label="Respuesta simulada · deliberadamente incorrecta"}
+::: {.respuesta-ia data-label="Respuesta simulada"}
 Wilkinson et al. (2016) demostraron que implementar FAIR aumenta la reproducibilidad científica un 80 %.
 
 Wilkinson, M. D. et al. (2016). *The FAIR Guiding Principles for scientific data management and stewardship*. *Scientific Data*, 3, 160018. https://doi.org/10.1038/sdata.2016.18
 :::
 
-**Qué falla:** **la referencia y el DOI son auténticos**. El artículo presenta los principios FAIR, su justificación y ejemplos, **pero no demuestra empíricamente un incremento del 80 % en reproducibilidad**. Esa cifra se ha añadido deliberadamente en la simulación y no debe citarse como hallazgo real [R5].
+**Piensa antes de seguir:** ¿Existe el artículo? ¿Su DOI es correcto? ¿Trata sobre FAIR? ¿Sustenta la afirmación cuantitativa? ¿Qué evidencia se necesitaría para sostenerla?
 
-**Preguntas para el grupo:** ¿Existe el artículo? ¿Su DOI es correcto? ¿Trata sobre FAIR? ¿Sustenta la afirmación cuantitativa? ¿Qué evidencia se necesitaría para sostenerla?
+::: {.callout-note collapse="true"}
+## Qué falla y qué hacer (ábrela después de responder)
+
+**Qué falla:** **la referencia y el DOI son auténticos**. El artículo presenta los principios FAIR, su justificación y ejemplos, **pero no demuestra empíricamente un incremento del 80 % en reproducibilidad**. Esa cifra se ha añadido deliberadamente en la simulación y no debe citarse como hallazgo real [[R5](08-referencias.qmd#r5)].
 
 **Qué hacer:** revisar la publicación original, identificar su tipo de contribución y buscar en ella el supuesto dato del 80 %. Estar ante una referencia real **no basta** para validar una afirmación.
+:::
 
-**Conceptos trabajados:** referencia verificable frente a afirmación respaldada, atribución incorrecta, [*Discernment*](03-metodo.qmd#ai-fluency-4d-marco-de-competencias).
-
-### Ejemplo 3. La IA inventa metadatos experimentales
+### Ejemplo 3. Documentar un Excel para hacerlo FAIR
 
 ::: {.prompt data-label="Solicitud" data-meta="lo que escribe la investigadora" data-copy="no"}
 Aquí está mi Excel de genes bajo tres condiciones. Ayúdame a documentarlo para hacerlo FAIR
 :::
 
-::: {.respuesta-ia .incorrecta data-label="Respuesta simulada · problemática"}
+::: {.respuesta-ia data-label="Respuesta simulada"}
 Los valores corresponden a TPM de RNA-seq con tres réplicas biológicas por condición; Estrés A indica estrés oxidativo.
 :::
 
+**Piensa antes de seguir:** ¿Qué se puede observar directamente en el archivo? ¿Qué información necesita confirmación de la investigadora? ¿Cuál es el riesgo de escribir documentación falsa y reutilizarla?
+
+::: {.callout-note collapse="true"}
+## Qué falla y qué hacer (ábrela después de responder)
+
 **Qué falla:** nada de eso puede determinarse con la tabla de ejemplo. Puede requerirse confirmación experimental externa.
 
-**Preguntas para el grupo:** ¿Qué se puede observar directamente en el archivo? ¿Qué información necesita confirmación de la investigadora? ¿Cuál es el riesgo de escribir documentación falsa y reutilizarla?
-
 **Qué hacer:** pedir a la IA que separe lo que **se observa en el archivo**, lo que **infiere** y lo que **debe confirmar la investigadora**, y que deje vacíos los campos que no puede establecer en lugar de rellenarlos.
-
-**Conceptos trabajados:** diferencia entre dato e interpretación, procedencia, incertidumbre, [*Diligence*](03-metodo.qmd#ai-fluency-4d-marco-de-competencias).
+:::
 
 ### Cierre de los ejemplos
 

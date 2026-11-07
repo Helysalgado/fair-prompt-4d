@@ -10,7 +10,7 @@ Antes del taller
 ::: {.en-un-minuto}
 - Necesitas **una cuenta en un asistente de IA que permita adjuntar archivos** y mantener una conversación larga en un mismo chat.
 - **Pruébala antes del taller** con el Excel simulado, para llegar con la cuenta lista.
-- Si puedes, lee [Sentido y objetivos](01-contexto.qmd) y [Seis etapas y 4D](03-metodo.qmd).
+- Si puedes, lee la [Introducción](01-contexto.qmd) y [Seis etapas y 4D](03-metodo.qmd).
 :::
 
 ## Lista de comprobación
@@ -20,7 +20,7 @@ Antes del taller
 | ☐ | **Computadora** | Portátil o de escritorio. Un celular complica la práctica: hay que leer respuestas largas y alternar entre ventanas. |
 | ☐ | **Cuenta en un asistente de IA** | Por ejemplo ChatGPT, Claude, Gemini o Copilot. Cualquiera sirve si **permite adjuntar un archivo Excel** y mantener **un solo chat** con varias preguntas. Crea la cuenta antes del taller: la verificación por correo o teléfono puede tardar. |
 | ☐ | **Programa para abrir el Excel** | Excel, LibreOffice Calc o Google Sheets. |
-| ☐ | **Bitácora** | Se completa en el navegador, en la [Bitácora mínima 4D](07-bitacora.qmd). Se guarda en este equipo y se descarga en Markdown. |
+| ☐ | **Editor de texto** | Para llenar la [plantilla de la bitácora](../descargas/bitacora-minima-4d.md){download="bitacora-minima-4d.md"}, un archivo Markdown. Sirve cualquiera: Bloc de notas, TextEdit, VS Code u otro. |
 | ☐ | **Archivos del taller** | [Excel simulado](../descargas/expresion_genica_caso_simulado.xlsx) · [versión en texto](../descargas/expresion_genica_caso_simulado.txt) · [tarjeta de práctica](tarjeta-practica.qmd). |
 
 Los planes gratuitos de los asistentes cambian con frecuencia (límite de mensajes, de archivos adjuntos o de longitud de la conversación). Por eso no recomendamos uno en particular: **comprueba el tuyo con la prueba siguiente**.
@@ -51,14 +51,14 @@ Descarga la [versión en texto del Excel](../descargas/expresion_genica_caso_sim
 ## Si participas en línea
 
 - Ten a la mano el enlace de la videollamada y, en otra ventana, tu asistente de IA y la bitácora. Dos pantallas ayudan, pero no son necesarias.
-- El trabajo de la sesión es individual. La bitácora se descarga al terminar; no hace falta compartirla durante el taller.
+- El trabajo de la sesión es individual. La bitácora es un archivo en tu equipo; no hace falta compartirla durante el taller.
 
 ## Lectura previa recomendada
 
 | Página | Qué aporta |
 |---|---|
-| [Sentido y objetivos](01-contexto.qmd) | Por qué importa saber qué delegar y cómo verificar |
+| [Introducción](01-contexto.qmd) | Por qué importa saber qué delegar y cómo verificar |
 | [Seis etapas y 4D](03-metodo.qmd) | El método que seguiremos y el marco de competencias |
-| [Caso integrador](04-caso-fair.qmd) | El Excel con el que trabajaremos |
+| [Caso de estudio](04-caso-fair.qmd) | El Excel con el que trabajaremos |
 
 No es obligatoria: el taller empieza con un resumen. Si llegas con estas páginas leídas, reconocerás el caso y el método al empezar la práctica.

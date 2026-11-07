@@ -1,0 +1,11 @@
+
+>Seq_01 | muestra_control_A
+ATGACGATCGATCGATCGATCGATCGAGTA
+Longitud: 30 bp | A:9 T:7 C:6 G:8 | %GC: 46.7%
+>Seq_02 | muestra_tratamiento_B
+ATCGATCGATCGATCGATCGATCG
+Longitud: 24 bp | A:6 T:6 C:6 G:6 | %GC: 50%
+>Seq_03 | muestra_tratamiento_C
+ATGACGATCGATCGATCGATCGATCGATCGAAGTAA
+Longitud: 36 bp | A:12 T:8 C:7 G:9 | %GC: 44.4%
+
