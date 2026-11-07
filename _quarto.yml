@@ -66,6 +66,8 @@ website:
             text: "Tarjeta de práctica"
           - href: contenido/08-referencias.qmd
             text: "Fuentes y continuidad"
+          - href: contenido/contacto.qmd
+            text: "Contacto"
   sidebar:
     style: docked
     search: true
@@ -107,6 +109,8 @@ website:
             text: "Tarjeta de práctica"
           - href: contenido/08-referencias.qmd
             text: "Fuentes y continuidad"
+          - href: contenido/contacto.qmd
+            text: "Contacto"
 
 format:
   html:
@@ -114,7 +118,9 @@ format:
       - cosmo
       - tema.scss
     css: styles.css
-    include-after-body: _prompt-copy.html
+    include-after-body:
+      - _prompt-copy.html
+      - includes/cloudflare-analytics.html
     toc: true
     toc-depth: 3
     toc-location: right

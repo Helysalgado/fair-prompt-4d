@@ -1,0 +1,20 @@
+---
+title: "Contacto"
+description: "Contacto de la autora del taller"
+toc: false
+---
+
+::: {.contacto}
+**Heladia Salgado Osorio**
+
+Programa de Genómica Computacional\
+Centro de Ciencias Genómicas\
+Universidad Nacional Autónoma de México (UNAM)
+
+- []{.bi .bi-envelope aria-hidden="true"} **Correo electrónico:** [heladia@ccg.unam.mx](mailto:heladia@ccg.unam.mx)
+- []{.bi .bi-person-badge aria-hidden="true"} **Perfil institucional:** <https://www.ccg.unam.mx/heladia-salgado-osorio/>
+- []{.bi .bi-linkedin aria-hidden="true"} **LinkedIn:** <https://www.linkedin.com/in/heladia-salgado-bb122954/>
+- []{.bi .bi-github aria-hidden="true"} **GitHub:** <https://github.com/Helysalgado>
+:::
+
+Este es el contacto de la autora del taller; no es un canal oficial de la UNAM.
