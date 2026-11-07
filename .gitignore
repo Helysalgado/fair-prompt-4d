@@ -16,5 +16,6 @@ Thumbs.db
 
 **/*.quarto_ipynb
 
-# Original de alta resolución de la infografía: se publica solo la versión -web
-imagenes/IA-trabajo-cientifico.png
+# Originales de alta resolución de las imágenes: se publican solo las versiones -web
+imagenes/*
+!imagenes/*-web.*

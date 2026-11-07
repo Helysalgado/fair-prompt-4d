@@ -13,6 +13,8 @@ author:
 La IA puede hacerlo. ¿Tú sabes qué hizo, por qué lo hizo y cómo comprobarlo?
 :::
 
+![](imagenes/investigadora-marco-4d-web.jpg){fig-alt="Una investigadora con bata observa, pensativa, la pantalla de una laptop con un asistente de IA que puede analizar información, resumir evidencia, explorar alternativas y generar borradores, y el marco 4D: delegación, descripción, discernimiento y diligencia. Sobre la mesa hay una libreta con las tareas plantear tarea, revisar resultados, contrastar evidencias y documentar decisiones, y libros sobre método científico, FAIR, calidad de datos y reproducibilidad."}
+
 Este taller propone una ruta de seis etapas para trabajar con asistentes de IA sin perder el criterio científico.
 
 **Objetivo del taller:** desarrollar habilidades para transformar necesidades cotidianas de investigación, inicialmente ambiguas, en tareas claras, fundamentadas y verificables, mediante exploración conceptual, especificación, colaboración crítica con IA y documentación del proceso.

@@ -64,7 +64,7 @@ Trabaja en la copia local (`~/git-local-projects/fair-prompt-4d`), no dentro de 
 
 ## Uso de IA (AI Fluency 4D)
 
-- **Delegation:** la IA reorganizó, redactó y revisó contenidos y diagramas; la aprobación y la publicación son responsabilidad de la autora.
+- **Delegation:** la IA reorganizó, redactó y revisó contenidos y diagramas, y generó las imágenes de la portada y de la introducción; la aprobación y la publicación son responsabilidad de la autora.
 - **Description:** se trabajó a partir del documento maestro, las decisiones pedagógicas del taller y revisiones página por página.
 - **Discernment:** las fuentes se comprobaron abriendo las páginas (2 de noviembre de 2026) y el sitio se construyó y revisó visualmente; **no se ha realizado aún un piloto con participantes**.
 - **Diligence:** se separan los materiales públicos de los privados y no se atribuyen certificación FAIR ni validación pedagógica inexistentes.
