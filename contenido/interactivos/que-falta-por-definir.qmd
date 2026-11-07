@@ -1,0 +1,61 @@
+---
+title: "¿Qué falta por definir?"
+description: "Elige un caso y distingue qué decisiones faltan por aclarar antes de delegar una solicitud a una IA"
+---
+
+::: {.etiqueta-pagina .durante}
+Durante el taller
+:::
+
+::: {.en-un-minuto}
+- Una solicitud puede entenderse y, aun así, admitir varias interpretaciones.
+- Eliges un caso, anotas qué aclararías, exploras pistas y reformulas la solicitud.
+- Todavía no se escribe el prompt: eso viene en [Del problema al prompt](../03b-estructura-prompt.qmd).
+:::
+
+## Para qué sirve
+
+Antes de delegar una tarea a la IA conviene saber qué decisiones faltan por tomar. Es lo que vimos en el [ejemplo 1](../02-ejemplos.qmd): «combinar» admitía varias operaciones y la IA eligió una sin preguntar. Esta actividad practica las etapas 1 a 3 del [método](../03-metodo.qmd): cada paso de la herramienta corresponde a una de ellas, como se indica abajo. En términos del 4D, trabajas sobre todo **Description (descripción)**, cómo comunicas lo que necesitas, y preparas **Delegation (delegación)**: saber qué falta decidir antes de delegar.
+
+## Los dos casos
+
+Elige **solo uno**; son independientes. No necesitas programar: se trabajan pensando en la solicitud, no escribiendo código.
+
+| Caso | Solicitud inicial |
+|---|---|
+| **A. Analizar secuencias FASTA** | «Tengo un archivo FASTA con secuencias de ADN y quiero calcular la frecuencia de nucleótidos». |
+| **B. Desarrollar una herramienta web** | «Quiero una aplicación web que permita cargar un archivo FASTA, analizar su contenido y descargar los resultados». |
+
+## Cómo participar
+
+La herramienta tiene cuatro pasos:
+
+1. **Identificar** (etapa 1, Necesidad). Lee la solicitud y escribe hasta tres preguntas o decisiones que aclararías antes de hacer la tarea. Si no se te ocurre ninguna, escribe «No sé» o pasa directamente a las pistas.
+2. **Explorar** (etapa 2, Vocabulario). Abre las pistas una por una: tres pistas y dos orientaciones adicionales, cada una con un término de vocabulario. Consultarlas es opcional y no equivale a tomar una decisión.
+3. **Reformular** (etapa 3, Especificación). Reescribe la solicitud para que otra persona o una IA entienda mejor lo que necesitas, y anota qué decisiones siguen pendientes.
+4. **Reporte.** Revisa el resumen y descarga el Markdown: `reporte_que_falta_por_definir_caso_A.md` o `reporte_que_falta_por_definir_caso_B.md`. Podrás consultarlo en la [práctica guiada](../05-practica.qmd).
+
+No hay respuestas correctas ni calificación. Lo que escribes se guarda en este navegador, por separado para cada caso. Si usas un equipo compartido, descarga el reporte y después pulsa **Reiniciar caso activo**.
+
+[Abrir la actividad en una pestaña independiente](../../interactivos/que_falta_por_definir.html){target="_blank"}
+
+## Herramienta
+
+```{=html}
+<iframe class="explorador-frame" src="../../interactivos/que_falta_por_definir.html" title="¿Qué falta por definir?: actividad para precisar una solicitud antes de delegarla"></iframe>
+<style>
+.explorador-frame {
+  display: block;
+  width: 100%;
+  height: 92vh;
+  min-height: 640px;
+  margin-top: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+}
+@media (max-width: 768px) {
+  .explorador-frame { height: 85vh; min-height: 520px; }
+}
+</style>
+```

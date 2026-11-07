@@ -1,13 +1,121 @@
 [
   {
+    "objectID": "contenido/interactivos/que-puedo-aceptar.html",
+    "href": "contenido/interactivos/que-puedo-aceptar.html",
+    "title": "¿Qué puedo aceptar de una respuesta de IA?",
+    "section": "",
+    "text": "Durante el taller\n¿Qué puedo aceptar de una respuesta de IA?\nPractica Discernment, una competencia del marco AI Fluency 4D: distinguir qué parte de una respuesta puede aceptarse, qué debe corregirse y qué sigue pendiente porque el archivo no lo demuestra.\nLa respuesta simulada es material de trabajo. No es un modelo que debas reproducir. Las secuencias son ficticias.",
+    "crumbs": [
+      "Inicio",
+      "Evaluar respuestas de IA",
+      "7 — ¿Qué puedo aceptar?"
+    ]
+  },
+  {
+    "objectID": "contenido/interactivos/que-puedo-aceptar.html#cómo-participar",
+    "href": "contenido/interactivos/que-puedo-aceptar.html#cómo-participar",
+    "title": "¿Qué puedo aceptar de una respuesta de IA?",
+    "section": "Cómo participar",
+    "text": "Cómo participar\n\nEn Examinar, lee el FASTA y la respuesta. Anota tu primera impresión.\nEn Contrastar, clasifica cada afirmación. Las pistas son opcionales. Valida solo cuando quieras contrastar tu clasificación con los datos.\nEn Decidir, elige una acción y, si lo deseas, revisa esa decisión.\nEn Reporte, copia o descarga el Markdown. El archivo se llama Discernimiento_IA_AAAA-MM-DD.md.\n\nPuedes regresar a una estación anterior sin perder lo escrito.\nAbrir la actividad en una pestaña independiente",
+    "crumbs": [
+      "Inicio",
+      "Evaluar respuestas de IA",
+      "7 — ¿Qué puedo aceptar?"
+    ]
+  },
+  {
+    "objectID": "contenido/interactivos/que-puedo-aceptar.html#herramienta",
+    "href": "contenido/interactivos/que-puedo-aceptar.html#herramienta",
+    "title": "¿Qué puedo aceptar de una respuesta de IA?",
+    "section": "Herramienta",
+    "text": "Herramienta",
+    "crumbs": [
+      "Inicio",
+      "Evaluar respuestas de IA",
+      "7 — ¿Qué puedo aceptar?"
+    ]
+  },
+  {
+    "objectID": "contenido/interactivos/que-puedo-aceptar.html#al-cerrar",
+    "href": "contenido/interactivos/que-puedo-aceptar.html#al-cerrar",
+    "title": "¿Qué puedo aceptar de una respuesta de IA?",
+    "section": "Al cerrar",
+    "text": "Al cerrar\nAntes de usar una respuesta parecida en un trabajo real, distingue lo que pudiste contar en el archivo de lo que todavía depende de información que el archivo no contiene.",
+    "crumbs": [
+      "Inicio",
+      "Evaluar respuestas de IA",
+      "7 — ¿Qué puedo aceptar?"
+    ]
+  },
+  {
+    "objectID": "contenido/interactivos/que-falta-por-definir.html",
+    "href": "contenido/interactivos/que-falta-por-definir.html",
+    "title": "¿Qué falta por definir?",
+    "section": "",
+    "text": "Durante el taller",
+    "crumbs": [
+      "Inicio",
+      "Comprender el problema",
+      "4 — ¿Qué falta por definir?"
+    ]
+  },
+  {
+    "objectID": "contenido/interactivos/que-falta-por-definir.html#para-qué-sirve",
+    "href": "contenido/interactivos/que-falta-por-definir.html#para-qué-sirve",
+    "title": "¿Qué falta por definir?",
+    "section": "Para qué sirve",
+    "text": "Para qué sirve\nAntes de delegar una tarea a la IA conviene saber qué decisiones faltan por tomar. Es lo que vimos en el ejemplo 1: «combinar» admitía varias operaciones y la IA eligió una sin preguntar. Esta actividad practica las etapas 1 a 3 del método: cada paso de la herramienta corresponde a una de ellas, como se indica abajo. En términos del 4D, trabajas sobre todo Description (descripción), cómo comunicas lo que necesitas, y preparas Delegation (delegación): saber qué falta decidir antes de delegar.",
+    "crumbs": [
+      "Inicio",
+      "Comprender el problema",
+      "4 — ¿Qué falta por definir?"
+    ]
+  },
+  {
+    "objectID": "contenido/interactivos/que-falta-por-definir.html#los-dos-casos",
+    "href": "contenido/interactivos/que-falta-por-definir.html#los-dos-casos",
+    "title": "¿Qué falta por definir?",
+    "section": "Los dos casos",
+    "text": "Los dos casos\nElige solo uno; son independientes. No necesitas programar: se trabajan pensando en la solicitud, no escribiendo código.\n\n\n\n\n\n\n\nCaso\nSolicitud inicial\n\n\n\n\nA. Analizar secuencias FASTA\n«Tengo un archivo FASTA con secuencias de ADN y quiero calcular la frecuencia de nucleótidos».\n\n\nB. Desarrollar una herramienta web\n«Quiero una aplicación web que permita cargar un archivo FASTA, analizar su contenido y descargar los resultados».",
+    "crumbs": [
+      "Inicio",
+      "Comprender el problema",
+      "4 — ¿Qué falta por definir?"
+    ]
+  },
+  {
+    "objectID": "contenido/interactivos/que-falta-por-definir.html#cómo-participar",
+    "href": "contenido/interactivos/que-falta-por-definir.html#cómo-participar",
+    "title": "¿Qué falta por definir?",
+    "section": "Cómo participar",
+    "text": "Cómo participar\nLa herramienta tiene cuatro pasos:\n\nIdentificar (etapa 1, Necesidad). Lee la solicitud y escribe hasta tres preguntas o decisiones que aclararías antes de hacer la tarea. Si no se te ocurre ninguna, escribe «No sé» o pasa directamente a las pistas.\nExplorar (etapa 2, Vocabulario). Abre las pistas una por una: tres pistas y dos orientaciones adicionales, cada una con un término de vocabulario. Consultarlas es opcional y no equivale a tomar una decisión.\nReformular (etapa 3, Especificación). Reescribe la solicitud para que otra persona o una IA entienda mejor lo que necesitas, y anota qué decisiones siguen pendientes.\nReporte. Revisa el resumen y descarga el Markdown: reporte_que_falta_por_definir_caso_A.md o reporte_que_falta_por_definir_caso_B.md. Podrás consultarlo en la práctica guiada.\n\nNo hay respuestas correctas ni calificación. Lo que escribes se guarda en este navegador, por separado para cada caso. Si usas un equipo compartido, descarga el reporte y después pulsa Reiniciar caso activo.\nAbrir la actividad en una pestaña independiente",
+    "crumbs": [
+      "Inicio",
+      "Comprender el problema",
+      "4 — ¿Qué falta por definir?"
+    ]
+  },
+  {
+    "objectID": "contenido/interactivos/que-falta-por-definir.html#herramienta",
+    "href": "contenido/interactivos/que-falta-por-definir.html#herramienta",
+    "title": "¿Qué falta por definir?",
+    "section": "Herramienta",
+    "text": "Herramienta",
+    "crumbs": [
+      "Inicio",
+      "Comprender el problema",
+      "4 — ¿Qué falta por definir?"
+    ]
+  },
+  {
     "objectID": "contenido/tarjeta-practica.html",
     "href": "contenido/tarjeta-practica.html",
     "title": "Tarjeta de práctica",
     "section": "",
-    "text": "Durante el taller · tenla abierta en otra pestaña o imprímela\nUn solo chat para P0, P1, P5 y P6. Datos simulados: Excel · versión en texto · bitácora (.docx).",
+    "text": "Durante el taller · tenla abierta en otra pestaña o imprímela\nArchivos: Excel · versión en texto · plantilla de la bitácora. Datos simulados.\nAntes de empezar: abre la plantilla junto al chat y ten a la mano las tres cosas que anotaste en el caso de estudio. Usa un solo chat para P0, P1, P5 y P6, y anota en la bitácora al final de cada paso.",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
+      "Recursos y continuidad",
       "Tarjeta de práctica"
     ]
   },
@@ -16,10 +124,10 @@
     "href": "contenido/tarjeta-practica.html#prompts",
     "title": "Tarjeta de práctica",
     "section": "Prompts",
-    "text": "Prompts\n\nTengo este Excel de expresión génica de cinco filas y tres condiciones. Voy a publicar un artículo y me piden que los datos sigan los principios FAIR. ¿Me ayudas a prepararlo?\n\n\nAntes de modificar el Excel, identifica solo cinco conceptos prioritarios que debo entender para preparar datos conforme a FAIR. Explica cada uno en una oración conectada con este archivo y formula cinco preguntas críticas al responsable del experimento. Distingue lo observado en el archivo de lo que falta confirmar y de lo que requiere consulta externa. No inventes unidades, tratamiento, cepa, método, replicación ni significado de «prom.». Indica dos fuentes institucionales candidatas, sin afirmar que ya las verificaste.\n\nEntre P1 y P5 escribes tú (bitácora 3): resultado buscado · alcance (unidades, condiciones, réplicas, celda vacía) · exclusiones · evidencia aceptable · qué delegas · qué confirmas tú · límites · criterio de aceptación.\n\nCon base en el Excel y la especificación que elaboré, prepara un diagnóstico preliminar, solo para cuatro asuntos: unidades de los valores, definición de las condiciones, réplicas y celda vacía. Devuelve una tabla con asunto, observado y ubicación (hoja/celda cuando sea posible), por confirmar, acción siguiente, persona/rol que confirmaría y estado de evidencia. No completes datos por inferencia, no transformes valores ni declares cumplimiento FAIR. Añade tres preguntas prioritarias para el responsable experimental.\n\n\nAudita tu diagnóstico anterior. Clasifica cada afirmación como observada en el Excel, inferencia, pendiente de confirmación o verificación externa requerida. Corrige afirmaciones como «no existe» cuando solo pueda concluirse «no está documentado». Selecciona una afirmación FAIR contrastable y explica qué fuente primaria y sección deberíamos revisar. No declares haberla verificado por revisar tu respuesta.",
+    "text": "Prompts\n\nTengo este Excel de expresión génica de cinco filas y tres condiciones. Voy a publicar un artículo y me piden que los datos sigan los principios FAIR. ¿Me ayudas a prepararlo?\n\n\nContexto: Sigo trabajando con el Excel que adjunté en este chat.\nObjetivo: Antes de modificar el Excel, quiero entender qué necesito saber para preparar estos datos conforme a FAIR.\nTarea: Identifica solo cinco conceptos prioritarios y formula cinco preguntas críticas para la persona responsable del experimento.\nSalida: Explica cada concepto en una oración conectada con este archivo; después, las cinco preguntas. Indica dos fuentes institucionales candidatas para profundizar.\nRestricciones: No inventes unidades, tratamiento, cepa, método, replicación ni significado de «prom.».\nVerificación: Marca cada afirmación sobre el archivo como observado, inferido o por confirmar. No afirmes que ya verificaste las fuentes que propones.\n\nEntre P1 y P5 escribes tu especificación. A. Para la IA (la pegas dentro de P5): resultado buscado · alcance (unidades, condiciones, réplicas, celda vacía) y exclusiones · evidencia aceptable · qué delegas · límites. B. Para ti (no se pega): qué confirmas tú · criterio de aceptación para revisar P5 y P6.\n\nContexto: Trabajamos con el Excel de este chat y con mi especificación: [pega aquí tu especificación]\nObjetivo: Obtener un diagnóstico preliminar de la información que falta, antes de preparar un depósito o afirmar cumplimiento FAIR.\nTarea: Revisa solo cuatro asuntos: unidades de los valores, definición de las condiciones, réplicas y celda vacía.\nSalida: Una tabla con asunto, lo observado y su ubicación (hoja/celda cuando sea posible), lo que falta confirmar, siguiente acción, persona o rol que lo confirmaría y estado de evidencia. Al final, tres preguntas prioritarias para la persona responsable del experimento.\nRestricciones: No completes datos por inferencia, no transformes valores ni declares cumplimiento FAIR.\nVerificación: En «estado de evidencia» usa solo observado, inferido o por confirmar.\n\n\nTarea: Audita tu diagnóstico anterior.\nSalida: Para cada afirmación, indica si es observado, inferido o por confirmar, y marca las que requieren verificación externa. Cambia «no existe» por «no está documentado» cuando eso sea lo único que puede concluirse.\nVerificación: Elige una afirmación sobre FAIR que se pueda contrastar e indica qué fuente primaria y qué sección habría que revisar.\nRestricciones: No uses la etiqueta «verificado»: solo la asigno yo después de consultar la fuente. Revisar tu respuesta no equivale a verificarla.",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
+      "Recursos y continuidad",
       "Tarjeta de práctica"
     ]
   },
@@ -28,10 +136,10 @@
     "href": "contenido/tarjeta-practica.html#verificación-obligatoria-la-haces-tú",
     "title": "Tarjeta de práctica",
     "section": "Verificación obligatoria (la haces tú)",
-    "text": "Verificación obligatoria (la haces tú)\nContrasta «FAIR exige que todos los datos sean completamente abiertos» con Wilkinson et al. (2016), Box 2 (principios A1.1, A1.2 y A2). Anota fuente, pasaje, fecha y tu conclusión: respalda, contradice o no permite decidir. Sin fuente abierta: «pendiente», nunca «verificado».",
+    "text": "Verificación obligatoria (la haces tú)\nContrasta «FAIR exige que todos los datos sean completamente abiertos» con Wilkinson et al. (2016), Box 2: principios A1, A1.1, A1.2 y A2. Anota en la bitácora la fuente (título y URL), la fecha, el pasaje, qué dice realmente y las limitaciones de tu lectura. Concluye respalda, contradice, no permite decidir o pendiente. Sin fuente abierta: «pendiente», nunca «verificado». Pasos completos.",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
+      "Recursos y continuidad",
       "Tarjeta de práctica"
     ]
   },
@@ -40,155 +148,166 @@
     "href": "contenido/tarjeta-practica.html#cuatro-etiquetas",
     "title": "Tarjeta de práctica",
     "section": "Cuatro etiquetas",
-    "text": "Cuatro etiquetas\nObservado (cita hoja y celda) · Inferido (márcalo como hipótesis) · Por confirmar (pregúntalo a la responsable) · Verificado (solo con fuente que abriste tú).",
+    "text": "Cuatro etiquetas\nObservado (cita hoja y celda) · Inferido (márcalo como hipótesis) · Por confirmar (pregúntalo a la responsable) · Verificado (solo lo asignas tú, con una fuente que abriste). La IA usa solo las tres primeras.",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
+      "Recursos y continuidad",
       "Tarjeta de práctica"
     ]
   },
   {
     "objectID": "contenido/07-bitacora.html",
     "href": "contenido/07-bitacora.html",
-    "title": "Bitácora y revisión entre pares",
+    "title": "Bitácora mínima 4D",
     "section": "",
-    "text": "Durante el taller · plantilla para completar\nLa bitácora documenta qué se pidió, qué respondió el asistente, qué se verificó y quién debe resolver lo pendiente. No necesitas conocer Markdown para participar.\nLa revisión entre pares no exige dictamen: una persona debe poder reconstruir el proceso y aportar una observación concreta y una pregunta.",
-    "crumbs": [
-      "Inicio",
-      "Taller FAIR",
-      "7 — Bitácora"
-    ]
+    "text": "Durante el taller · cierre"
   },
   {
-    "objectID": "contenido/07-bitacora.html#plantilla",
-    "href": "contenido/07-bitacora.html#plantilla",
-    "title": "Bitácora y revisión entre pares",
-    "section": "Plantilla",
-    "text": "Plantilla\n\nDatos generales\n\n\n\nCampo\nTu respuesta\n\n\n\n\nIdentificador o alias\n\n\n\nFecha\n\n\n\nHerramienta/modelo (si se conoce)\n\n\n\n\n\n\n1 · Necesidad inicial (P0)\n\n\n\nPregunta\nTu respuesta\n\n\n\n\n¿Qué querías resolver?\n\n\n\n¿Qué entregó o propuso la IA?\n\n\n\n¿Parecía listo para usarse? ¿Por qué?\n\n\n\n\n\n\n2 · Lo que necesito aprender (P1)\n\n\n\n#\nConcepto prioritario\nPregunta para quien hizo el experimento\n\n\n\n\n1\n\n\n\n\n2\n\n\n\n\n3\n\n\n\n\n4\n\n\n\n\n5\n\n\n\n\n\n\n\n3 · Especificación propia (antes de P5)\n\n\n\nCampo\nTu decisión\n\n\n\n\nResultado buscado\n\n\n\nAlcance (4 asuntos)\n\n\n\nExclusiones (qué queda fuera y por qué)\n\n\n\nEvidencia aceptable\n\n\n\nQué delego a la IA\n\n\n\nQué confirmo yo\n\n\n\nLímites para la IA\n\n\n\nCriterio de aceptación\n\n\n\n\n\n\n4 · Colaboración AI Fluency 4D\n\n\n\nDimensión\nMi decisión / evidencia\n\n\n\n\nDelegation · ¿qué delego a la IA?\n\n\n\nDescription · ¿cómo expliqué tarea, entradas y restricciones?\n\n\n\nDiscernment · ¿cómo decido si sirve?\n\n\n\nDiligence · ¿qué conservo, documento y asumo?\n\n\n\nComponentes del prompt que aportaron claridad\n\n\n\n\n\n\n5 · Diagnóstico y revisión (P5–P6)\n\n\n\n\n\n\n\n\n\n\nAsunto\nObservado (hoja/celda)\nInferencia o incertidumbre\nQuién debe confirmarlo\nPróxima acción\n\n\n\n\nUnidades\n\n\n\n\n\n\nCondiciones\n\n\n\n\n\n\nRéplicas\n\n\n\n\n\n\nCelda vacía\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPregunta\nTu respuesta\n\n\n\n\nUna afirmación corregida por P6\n\n\n\n¿La autorrevisión consultó realmente una fuente externa? (Sí / No / No consta) y evidencia\n\n\n\n\n\n\n5b · Verificación humana independiente obligatoria\n\n\n\nCampo\nTu respuesta\n\n\n\n\nAfirmación precisa\n\n\n\nFuente primaria abierta y revisada (título y URL)\n\n\n\nSección, fragmento o localización\n\n\n\nFecha de consulta\n\n\n\nLa fuente respalda / contradice / no permite decidir\n\n\n\nMi argumento (no basta con el DOI)\n\n\n\nEstado: revisado directamente / pendiente por falta de acceso\n\n\n\nLímites de la comprobación\n\n\n\n\n\n\n6 · Registro y revisión por pares\n\n\n\nCampo\nTu respuesta\n\n\n\n\n¿Qué no sabemos aún del experimento?\n\n\n\n¿Cuál es el siguiente paso responsable?\n\n\n\nRevisor/a o alias\n\n\n\n¿Puede reconstruir el proceso? (Sí / Parcialmente / No)\n\n\n\nObservación concreta\n\n\n\nPregunta de revisión\n\n\n\n\n\n\nTransferencia a un problema real\n\n\n\nCampo\nTu respuesta\n\n\n\n\nMi tarea científica\n\n\n\nQué delegaría y cómo lo verificaría\n\n\n\n\n\n\nDeclaración de uso de IA\nSe usó IA para ; verifiqué personalmente ; quedan pendientes ___.",
-    "crumbs": [
-      "Inicio",
-      "Taller FAIR",
-      "7 — Bitácora"
-    ]
+    "objectID": "contenido/07-bitacora.html#la-plantilla",
+    "href": "contenido/07-bitacora.html#la-plantilla",
+    "title": "Bitácora mínima 4D",
+    "section": "La plantilla",
+    "text": "La plantilla\nSi todavía no la tienes, descarga la plantilla y ábrela en cualquier editor de texto (Bloc de notas, TextEdit, VS Code u otro). Empieza con tus datos y el problema del caso, y sigue con una sección por cada paso de la práctica guiada:\n\n\n\n\n\n\n\n\nSección\nCompetencia 4D\nQué registras\n\n\n\n\nPaso 1 · Necesidad\nDiscernment (discernimiento)\nQué hizo la IA con el encargo abierto\n\n\nPaso 2 · Vocabulario\nDiscernment (discernimiento)\nTu lista y lo que la IA añadió o dio por hecho\n\n\nPaso 3 · Especificación\nDelegation (delegación) y Description (descripción)\nLo que le dijiste a la IA y lo que te guardaste para evaluar\n\n\nPaso 4 · Colaboración y verificación\nDiscernment (discernimiento) y Diligence (diligencia)\nSi aceptas el diagnóstico y tu verificación con la fuente\n\n\nPaso 5 · Registro\nDiligence (diligencia)\nPendientes, quién debe confirmarlos y exclusiones\n\n\nCierre\n\nUn problema propio y qué harás distinto"
+  },
+  {
+    "objectID": "contenido/07-bitacora.html#antes-de-terminar-revisa",
+    "href": "contenido/07-bitacora.html#antes-de-terminar-revisa",
+    "title": "Bitácora mínima 4D",
+    "section": "Antes de terminar, revisa",
+    "text": "Antes de terminar, revisa\n\n\nEscribiste tu nombre, la fecha y el asistente que usaste.\nEl paso 1 dice qué hizo la IA con P0, antes de que la orientaras.\nLa especificación del paso 3 la escribiste tú, antes de P5.\nNinguna afirmación dice «verificado» sin una fuente que abriste, con pasaje y fecha.\nCada pendiente tiene a alguien que debe confirmarlo.\nOtra persona podría reconstruir qué pediste, qué comprobaste y qué sigue pendiente."
+  },
+  {
+    "objectID": "contenido/07-bitacora.html#guarda-el-archivo",
+    "href": "contenido/07-bitacora.html#guarda-el-archivo",
+    "title": "Bitácora mínima 4D",
+    "section": "Guarda el archivo",
+    "text": "Guarda el archivo\nEl archivo es tuyo: no hace falta entregarlo ni compartirlo durante el taller. Guárdalo con un nombre que reconozcas, por ejemplo bitacora-fair-AAAA-MM-DD.md. Puedes usarlo como modelo para documentar tu próximo trabajo con IA.\nCompletar la bitácora no certifica que un conjunto de datos cumpla los principios FAIR."
+  },
+  {
+    "objectID": "contenido/07-bitacora.html#versión-ampliada-opcional",
+    "href": "contenido/07-bitacora.html#versión-ampliada-opcional",
+    "title": "Bitácora mínima 4D",
+    "section": "Versión ampliada (opcional)",
+    "text": "Versión ampliada (opcional)\nSi después de la sesión quieres un registro más detallado, la plantilla extensa está en Word y en Markdown."
   },
   {
     "objectID": "contenido/05-practica.html",
     "href": "contenido/05-practica.html",
-    "title": "Práctica guiada: P0, P1, P5 y P6",
+    "title": "Práctica guiada: del encargo al diagnóstico con IA",
     "section": "",
-    "text": "Durante el taller · guía de la práctica (120 min)\nLos cuatro prompts principales se ejecutan en un mismo chat, conservando las respuestas anteriores. La exploración, la especificación humana, la verificación y la bitácora completan las seis etapas. El término «antes del prompt» no prohíbe usar IA para aprender desde el inicio.\nLa numeración sigue la de la versión completa del taller: P2–P4 corresponden a las etapas 3 y 4, que aquí haces tú sin pedírselas a la IA.\nDescargar Excel para participantes · Plantilla de bitácora (.docx) · Ver bitácora",
+    "text": "Durante el taller · práctica de cierre\nEn el caso de estudio conociste el encargo, miraste los datos por tu cuenta y anotaste lo que no puedes saber con el archivo. Ahora recorres las seis etapas del método con la IA. Ten a la mano esa lista: te servirá para comparar.\nAntes de empezar, descarga la plantilla de la bitácora y ábrela en un editor de texto junto al chat. Al final de cada paso hay un recuadro «Para tu bitácora» que corresponde a una sección del archivo: anota en el momento, con la respuesta todavía en pantalla.\nLos cuatro prompts se ejecutan en un mismo chat, conservando las respuestas anteriores. La numeración sigue la del taller: P2–P4 no son prompts; corresponden a la especificación y a la decisión de delegar, que resuelves tú. P1, P5 y P6 muestran sus componentes con etiquetas (Contexto, Objetivo, Tarea…), como la versión B de Del problema al prompt; puedes copiarlos así. Completar la práctica no certifica que un conjunto de datos cumpla los principios FAIR.\nDescargar el Excel · Plantilla de la bitácora · Versión en texto · Tarjeta de práctica",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "5 — Práctica guiada"
+      "Aplicar a un caso de estudio",
+      "9 — Práctica guiada con IA"
     ]
   },
   {
-    "objectID": "contenido/05-practica.html#desarrollo-de-la-práctica",
-    "href": "contenido/05-practica.html#desarrollo-de-la-práctica",
-    "title": "Práctica guiada: P0, P1, P5 y P6",
-    "section": "Desarrollo de la práctica",
-    "text": "Desarrollo de la práctica\nDuración total del taller: 120 min. Actividad: diagnóstico preliminar de documentación. Trabaja con el Excel simulado. Los datos son ficticios y no son resultados publicables. Usa un solo chat para P0, P1, P5 y P6, y conserva la secuencia. Puedes usar Google Docs o Markdown para la bitácora. ¿Prefieres tenerlo todo en una hoja? Usa la tarjeta de práctica.\n\n\n\nUn solo chat, dos actores",
+    "objectID": "contenido/05-practica.html#las-etapas-y-las-4d-en-esta-práctica",
+    "href": "contenido/05-practica.html#las-etapas-y-las-4d-en-esta-práctica",
+    "title": "Práctica guiada: del encargo al diagnóstico con IA",
+    "section": "Las etapas y las 4D en esta práctica",
+    "text": "Las etapas y las 4D en esta práctica\nCada paso corresponde a una etapa del método y ejercita sobre todo una o dos competencias del marco 4D:\n\n\n\n\n\n\n\n\nPaso\nEtapa\nCompetencia 4D\n\n\n\n\n1. P0\nNecesidad\nDiscernment (discernimiento)\n\n\n2. P1\nVocabulario\nDiscernment (discernimiento)\n\n\n3. Especificación\nEspecificación\nDelegation (delegación) y Description (descripción)\n\n\n4. P5, P6 y fuente\nColaboración y Verificación\nDiscernment (discernimiento) y Diligence (diligencia)\n\n\n5. Registro\nRegistro\nDiligence (diligencia)\n\n\n\n\n\n\n\n\n\nNotaArchivos de las actividades anteriores (opcional)\n\n\n\n\n\nLas actividades anteriores descargan un Markdown en tu equipo. Ábrelos si te sirven para recordar tu propio trabajo. Puedes consultarlos a mano. Esta práctica no pide subirlos al asistente ni entregarlos.\n\nreporte_que_falta_por_definir_caso_A.md o reporte_que_falta_por_definir_caso_B.md: preguntas y decisiones que marcaste como pendientes al precisar una solicitud.\nreporte_del_prompt_caso_A.md o reporte_del_prompt_caso_B.md: decisiones que tomaste al formular instrucciones y las versiones que guardaste.\nDiscernimiento_IA_AAAA-MM-DD.md: criterios con los que evaluaste qué aceptar, corregir o dejar pendiente en una respuesta de IA.\n\nSi no descargaste alguno, sigue con lo que recuerdes. Si además usaste el Explorador FAIR, su reporte se llama explorador-fair-reporte.md y también puede consultarse. Esos archivos son apoyo del proceso. Los productos de la sesión son el diagnóstico de este chat y la bitácora.",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "5 — Práctica guiada"
+      "Aplicar a un caso de estudio",
+      "9 — Práctica guiada con IA"
     ]
   },
   {
-    "objectID": "contenido/05-practica.html#min-020-11301150-apertura-y-método",
-    "href": "contenido/05-practica.html#min-020-11301150-apertura-y-método",
-    "title": "Práctica guiada: P0, P1, P5 y P6",
-    "section": "Min 0–20 (11:30–11:50) · Apertura y método",
-    "text": "Min 0–20 (11:30–11:50) · Apertura y método\nAnaliza los tres ejemplos: operación ambigua, cita real con afirmación no respaldada y metadatos fabricados. Se presentan las seis etapas del trabajo con IA.",
+    "objectID": "contenido/05-practica.html#paso-1-necesidad-el-encargo-abierto-p0",
+    "href": "contenido/05-practica.html#paso-1-necesidad-el-encargo-abierto-p0",
+    "title": "Práctica guiada: del encargo al diagnóstico con IA",
+    "section": "Paso 1 · Necesidad: el encargo abierto (P0)",
+    "text": "Paso 1 · Necesidad: el encargo abierto (P0)\n4D · Discernment (discernimiento): evalúas qué hace la IA con un encargo abierto.\nAbre un chat nuevo, adjunta el Excel y dale a la IA el encargo tal como llegó:\n\nTengo este Excel de expresión génica de cinco filas y tres condiciones. Voy a publicar un artículo y me piden que los datos sigan los principios FAIR. ¿Me ayudas a prepararlo?\n\nP0 está incompleto a propósito: es el encargo tal como llegó, sin los componentes que viste en Del problema al prompt. Así puedes ver qué hace la IA cuando tiene que decidir por su cuenta.\n\n\n\n\n\n\nNotaPausa antes de P1\n\n\n\nAnota qué hizo la IA: ¿preguntó, explicó, sugirió archivos, atribuyó un significado experimental no demostrado? Compáralo con lo que tú entendiste del encargo en el caso de estudio. Que una respuesta sea útil no la vuelve automáticamente publicable.\n\n\n\n\n\n\n\n\nTipPara tu bitácora\n\n\n\n\n¿Qué hizo la IA: preguntó, explicó, propuso archivos, inventó algo?\n¿Coincide con lo que tú entendiste del encargo?",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "5 — Práctica guiada"
+      "Aplicar a un caso de estudio",
+      "9 — Práctica guiada con IA"
     ]
   },
   {
-    "objectID": "contenido/05-practica.html#min-2040-11501210-etapas-1-y-2-necesidad-y-vocabulario",
-    "href": "contenido/05-practica.html#min-2040-11501210-etapas-1-y-2-necesidad-y-vocabulario",
-    "title": "Práctica guiada: P0, P1, P5 y P6",
-    "section": "Min 20–40 (11:50–12:10) · Etapas 1 y 2: necesidad y vocabulario",
-    "text": "Min 20–40 (11:50–12:10) · Etapas 1 y 2: necesidad y vocabulario\nAdjunta el Excel simulado y escribe:\n\nTengo este Excel de expresión génica de cinco filas y tres condiciones. Voy a publicar un artículo y me piden que los datos sigan los principios FAIR. ¿Me ayudas a prepararlo?\n\n\n\n\n\n\n\nNotaPausa antes de P1\n\n\n\nRegistra qué hizo la IA: ¿preguntó, explicó, sugirió archivos, atribuyó un significado experimental no demostrado? Que una respuesta sea útil no la vuelve automáticamente publicable.\n\n\n\nAntes de modificar el Excel, identifica solo cinco conceptos prioritarios que debo entender para preparar datos conforme a FAIR. Explica cada uno en una oración conectada con este archivo y formula cinco preguntas críticas al responsable del experimento. Distingue lo observado en el archivo de lo que falta confirmar y de lo que requiere consulta externa. No inventes unidades, tratamiento, cepa, método, replicación ni significado de «prom.». Indica dos fuentes institucionales candidatas, sin afirmar que ya las verificaste.\n\nPuesta en común (3 min). Cada persona usa un asistente distinto: aprovechemos la diferencia. ¿A quién le hizo preguntas antes de responder? ¿A quién le entregó archivos? ¿Alguien recibió unidades o tratamientos que el Excel no menciona?",
+    "objectID": "contenido/05-practica.html#paso-2-vocabulario-los-conceptos-p1",
+    "href": "contenido/05-practica.html#paso-2-vocabulario-los-conceptos-p1",
+    "title": "Práctica guiada: del encargo al diagnóstico con IA",
+    "section": "Paso 2 · Vocabulario: los conceptos (P1)",
+    "text": "Paso 2 · Vocabulario: los conceptos (P1)\n4D · Discernment (discernimiento): comparas su explicación con lo que tú observaste.\n\nContexto: Sigo trabajando con el Excel que adjunté en este chat.\nObjetivo: Antes de modificar el Excel, quiero entender qué necesito saber para preparar estos datos conforme a FAIR.\nTarea: Identifica solo cinco conceptos prioritarios y formula cinco preguntas críticas para la persona responsable del experimento.\nSalida: Explica cada concepto en una oración conectada con este archivo; después, las cinco preguntas. Indica dos fuentes institucionales candidatas para profundizar.\nRestricciones: No inventes unidades, tratamiento, cepa, método, replicación ni significado de «prom.».\nVerificación: Marca cada afirmación sobre el archivo como observado, inferido o por confirmar. No afirmes que ya verificaste las fuentes que propones.\n\nEn el caso anotaste tres cosas que no puedes saber con el archivo y leíste una orientación breve sobre FAIR. Compara: ¿la lista de la IA coincide con la tuya? ¿Señaló algo que tú no viste? ¿Dio por hecho algo que el archivo no dice, como unidades, tratamientos o «prom.» como promedio?\n\n\n\n\n\n\nTipPara tu bitácora\n\n\n\n\nCopia tu lista de tres cosas que no se pueden saber con el archivo.\nAnota algo que la IA señaló y tú no habías visto, y algo que dio por hecho sin evidencia.",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "5 — Práctica guiada"
+      "Aplicar a un caso de estudio",
+      "9 — Práctica guiada con IA"
     ]
   },
   {
-    "objectID": "contenido/05-practica.html#min-4060-12101230-etapas-3-y-4-especificar-construir-instrucciones-y-delegar",
-    "href": "contenido/05-practica.html#min-4060-12101230-etapas-3-y-4-especificar-construir-instrucciones-y-delegar",
-    "title": "Práctica guiada: P0, P1, P5 y P6",
-    "section": "Min 40–60 (12:10–12:30) · Etapas 3 y 4: especificar, construir instrucciones y delegar",
-    "text": "Min 40–60 (12:10–12:30) · Etapas 3 y 4: especificar, construir instrucciones y delegar\nPrimeros 5–7 minutos: consulta Del problema al prompt y realiza la actividad breve. Elige los componentes necesarios para un diagnóstico documental: objetivo, contexto, tarea, salida, restricciones y verificación. El rol es opcional. Este segmento sustituye parte de la explicación de estas etapas: no añade tiempo al taller.\nLuego escribe en la sección 3 de tu bitácora, sin pedir a la IA que tome las decisiones por ti:\n\nResultado buscado: diagnóstico documental, no depósito ni certificación.\nAlcance: unidades, condiciones, réplicas y celda vacía.\nEvidencia aceptable: celda/nota del archivo o fuente primaria externa, indicando qué se consultó.\nQué delego a IA: inventariar evidencia y preguntas, organizar una tabla y proponer próximos pasos.\nQué confirmo como investigador/a: realidad experimental, unidades, protocolo, responsables, publicación, licencias.\nLímites: no completar vacíos con cero, no inventar metadatos, no suponer que «prom.» es promedio.\nCriterio de aceptación: cada afirmación etiquetada como observada / inferida / pendiente / verificación externa.\n\nMarco 4D, en breve: Delegation = repartir tareas; Description = especificar entradas y restricciones; Discernment = evaluar; Diligence = documentar y responder por decisiones.\nPunto de atención: cuando ejecutes P5, anota en tu bitácora qué componentes de tu especificación aportaron claridad y qué responsabilidad de verificación conservas tú.",
+    "objectID": "contenido/05-practica.html#paso-3-especificación-la-escribes-tú",
+    "href": "contenido/05-practica.html#paso-3-especificación-la-escribes-tú",
+    "title": "Práctica guiada: del encargo al diagnóstico con IA",
+    "section": "Paso 3 · Especificación: la escribes tú",
+    "text": "Paso 3 · Especificación: la escribes tú\n4D · Delegation (delegación) y Description (descripción): decides qué encargas y cómo lo dices.\nEl resultado y el alcance ya los conoces por Qué vas a producir; aquí los conviertes en tu especificación. Si lo necesitas, revisa los componentes de Del problema al prompt y el reporte de «De la solicitud al prompt». Elige los que sirvan para un diagnóstico documental: objetivo, contexto, tarea, salida, restricciones y verificación. El rol es opcional.\nEscríbela tú, sin pedir a la IA que tome las decisiones. Tiene dos partes: lo que le dices a la IA y lo que te guardas para evaluar su respuesta.\nA. Lo que le dices a la IA (lo pegarás dentro de P5):\n\nResultado buscado: diagnóstico documental, no depósito ni certificación.\nAlcance: unidades, condiciones, réplicas y celda vacía.\nEvidencia aceptable: celda o nota del archivo, o fuente primaria externa, indicando qué se consultó.\nQué delegas: inventariar evidencia y preguntas, organizar una tabla y proponer próximos pasos.\nLímites: no completar vacíos con cero, no inventar metadatos, no suponer que «prom.» es promedio.\n\nB. Lo que te guardas para evaluar (no se pega; lo usas en el paso 4 para revisar lo que responda la IA):\n\nQué confirmas tú: la realidad experimental, las unidades, el protocolo, las personas responsables, la publicación y las licencias.\nCriterio de aceptación: cada afirmación lleva observado, inferido o por confirmar, con su ubicación en el archivo; «verificado» solo lo asignas tú, después de consultar la fuente.\n\n\n\n\n\n\n\nNotaEjemplo de especificación (ábrelo solo si te atoras)\n\n\n\n\n\nA. Lo que pego en P5\n\nResultado buscado: un diagnóstico documental de lo que falta saber; no un paquete para depositar ni una declaración de cumplimiento FAIR.\nAlcance: solo las unidades de los valores, qué significan Control, Estrés A y Estrés B, las réplicas y la celda vacía de b0014 en Estrés B. Quedan fuera los identificadores, la cepa y el procesamiento.\nEvidencia aceptable: una celda o nota del Excel, indicando hoja y celda, o una fuente primaria que yo consulte.\nQué te pido: que hagas el inventario de evidencia, organices la tabla y propongas preguntas y siguientes pasos.\nLímites: no rellenes la celda vacía con cero, no inventes metadatos y no supongas que «prom.» significa promedio.\n\nB. Lo que me guardo para evaluar\n\nQué confirmo yo: con la responsable del experimento, las unidades, los tratamientos y las réplicas; yo decido qué se publica.\nCriterio de aceptación: acepto la tabla si cada afirmación lleva observado, inferido o por confirmar, con su ubicación, y si nada aparece como verificado sin una fuente que yo haya abierto.\n\nTu versión puede ser distinta; lo importante es que las decisiones sean tuyas.\n\n\n\nAntes de P5, copia la parte A. La pegarás dentro de P5, en el lugar indicado; si no la pegas, la IA no la conoce. La parte B no se pega: la usarás en el paso 4 para decidir qué aceptas.\n\n\n\n\n\n\nTipPara tu bitácora\n\n\n\nEscribe tu especificación directamente en la sección del paso 3 de la plantilla: la parte A y la parte B. De ahí copias la parte A para pegarla en P5.",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "5 — Práctica guiada"
+      "Aplicar a un caso de estudio",
+      "9 — Práctica guiada con IA"
     ]
   },
   {
-    "objectID": "contenido/05-practica.html#min-6090-12301300-etapa-5-diagnóstico-autocrítica-y-contraste-real",
-    "href": "contenido/05-practica.html#min-6090-12301300-etapa-5-diagnóstico-autocrítica-y-contraste-real",
-    "title": "Práctica guiada: P0, P1, P5 y P6",
-    "section": "Min 60–90 (12:30–13:00) · Etapa 5: diagnóstico, autocrítica y contraste real",
-    "text": "Min 60–90 (12:30–13:00) · Etapa 5: diagnóstico, autocrítica y contraste real\nEn esta etapa, cada afirmación del diagnóstico lleva una de cuatro etiquetas. P6 marca las que requieren verificación externa; solo tú puedes cambiarlas a «Verificado».\n\n\n\nCuatro etiquetas para cada afirmación\n\n\n\nCon base en el Excel y la especificación que elaboré, prepara un diagnóstico preliminar, solo para cuatro asuntos: unidades de los valores, definición de las condiciones, réplicas y celda vacía. Devuelve una tabla con asunto, observado y ubicación (hoja/celda cuando sea posible), por confirmar, acción siguiente, persona/rol que confirmaría y estado de evidencia. No completes datos por inferencia, no transformes valores ni declares cumplimiento FAIR. Añade tres preguntas prioritarias para el responsable experimental.\n\n\nAudita tu diagnóstico anterior. Clasifica cada afirmación como observada en el Excel, inferencia, pendiente de confirmación o verificación externa requerida. Corrige afirmaciones como «no existe» cuando solo pueda concluirse «no está documentado». Selecciona una afirmación FAIR contrastable y explica qué fuente primaria y sección deberíamos revisar. No declares haberla verificado por revisar tu respuesta.\n\n\n\n\n\n\n\nImportanteActividad obligatoria · la haces tú, no basta con P6\n\n\n\nContrasta la afirmación «FAIR exige que todos los datos sean completamente abiertos» con la fuente primaria. Sigue los pasos en Verificación independiente. Si no accedes a la fuente, escribe «pendiente», nunca «verificado». Si el tiempo no alcanza, prioriza esta verificación sobre leer completa la respuesta a P6.",
+    "objectID": "contenido/05-practica.html#paso-4-colaboración-y-verificación-diagnóstico-autorrevisión-y-contraste",
+    "href": "contenido/05-practica.html#paso-4-colaboración-y-verificación-diagnóstico-autorrevisión-y-contraste",
+    "title": "Práctica guiada: del encargo al diagnóstico con IA",
+    "section": "Paso 4 · Colaboración y verificación: diagnóstico, autorrevisión y contraste",
+    "text": "Paso 4 · Colaboración y verificación: diagnóstico, autorrevisión y contraste\n4D · Discernment (discernimiento) y Diligence (diligencia): evalúas el diagnóstico y no marcas nada como verificado sin fuente.\nCada afirmación del diagnóstico lleva una de cuatro etiquetas. P6 marca las que requieren verificación externa. Solo tú puedes cambiarlas a «Verificado».\n\n\n\nCuatro etiquetas para cada afirmación\n\n\n\nContexto: Trabajamos con el Excel de este chat y con mi especificación: [pega aquí tu especificación]\nObjetivo: Obtener un diagnóstico preliminar de la información que falta, antes de preparar un depósito o afirmar cumplimiento FAIR.\nTarea: Revisa solo cuatro asuntos: unidades de los valores, definición de las condiciones, réplicas y celda vacía.\nSalida: Una tabla con asunto, lo observado y su ubicación (hoja/celda cuando sea posible), lo que falta confirmar, siguiente acción, persona o rol que lo confirmaría y estado de evidencia. Al final, tres preguntas prioritarias para la persona responsable del experimento.\nRestricciones: No completes datos por inferencia, no transformes valores ni declares cumplimiento FAIR.\nVerificación: En «estado de evidencia» usa solo observado, inferido o por confirmar.\n\n\nTarea: Audita tu diagnóstico anterior.\nSalida: Para cada afirmación, indica si es observado, inferido o por confirmar, y marca las que requieren verificación externa. Cambia «no existe» por «no está documentado» cuando eso sea lo único que puede concluirse.\nVerificación: Elige una afirmación sobre FAIR que se pueda contrastar e indica qué fuente primaria y qué sección habría que revisar.\nRestricciones: No uses la etiqueta «verificado»: solo la asigno yo después de consultar la fuente. Revisar tu respuesta no equivale a verificarla.\n\nP6 es autorrevisión: la IA relee su respuesta y te dice qué habría que comprobar, pero no consulta ninguna fuente. Una referencia bibliográfica existente tampoco prueba que sustente la frase que se le atribuye. Verificar lo haces tú.\n\n\n\nAutorrevisión de la IA frente a verificación independiente\n\n\n\nTu verificación con la fuente (obligatoria)\n\n\n\n\n\n\nImportantePrioridad\n\n\n\nSi tienes que elegir, prioriza esta verificación sobre leer completa la respuesta a P6.\n\n\nAfirmación para comprobar: «FAIR exige que todos los datos sean completamente abiertos».\nEs una confusión frecuente sobre FAIR, y puede aparecer, dicha así o de otra forma, en lo que te respondió la IA: revisa si está en sus respuestas. Si P6 te propuso otra afirmación para contrastar, puedes verificarla después con los mismos pasos.\n\nAbre Wilkinson et al. (2016), la fuente primaria. Si quieres, usa GO FAIR — FAIR Principles como complemento.\nLocaliza qué dice el artículo sobre el acceso a los datos. En Wilkinson et al., el Box 2 enumera todos los principios; lee los que empiezan con A: A1, A1.1, A1.2 y A2.\nAnota con tus palabras qué dice realmente el texto.\nRegistra en tu bitácora la fuente (título y URL), la fecha de consulta, la sección o el pasaje, qué dice realmente y las limitaciones de tu lectura.\nConcluye respalda, contradice, no permite decidir o pendiente, y justifica tu conclusión con el pasaje consultado.\n\n\n\n\n\n\n\nAdvertenciaRegla de evidencia\n\n\n\nSi no pudiste abrir y leer la fuente, tu conclusión es «pendiente». El enlace que sugiere una IA no prueba que la consulta ocurrió.\n\n\n\n\n\n\n\n\nNotaSi quieres profundizar (ábrelo después de llegar a tu conclusión)\n\n\n\n\n\nMons et al. (2017) [R13] dedica una sección a la relación entre FAIR y los datos abiertos: Cloudy, increasingly FAIR. Compara lo que dice con tu conclusión.\n\n\n\n\n\nRevisa el diagnóstico\nRevisa la tabla de P5 y la autorrevisión de P6 con tu criterio de aceptación (parte B del paso 3): ¿cada afirmación tiene su etiqueta y su ubicación? ¿Algo aparece como confirmado sin evidencia?\nEl producto de este chat es el diagnóstico FAIR preliminar: unidades, condiciones, réplicas y la celda vacía, con lo observado, lo inferido y lo que falta confirmar.\n\n\n\n\n\n\nTipPara tu bitácora\n\n\n\n\n¿La tabla de P5 cumple tu criterio de aceptación? ¿Qué corregiste o no aceptaste?\nTu verificación con la fuente: título y URL, fecha, pasaje, qué dice, limitaciones y conclusión. Si no abriste la fuente, escribe «pendiente».",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "5 — Práctica guiada"
+      "Aplicar a un caso de estudio",
+      "9 — Práctica guiada con IA"
     ]
   },
   {
-    "objectID": "contenido/05-practica.html#min-90110-13001320-etapa-6-registro-y-revisión-por-pares",
-    "href": "contenido/05-practica.html#min-90110-13001320-etapa-6-registro-y-revisión-por-pares",
-    "title": "Práctica guiada: P0, P1, P5 y P6",
-    "section": "Min 90–110 (13:00–13:20) · Etapa 6: registro y revisión por pares",
-    "text": "Min 90–110 (13:00–13:20) · Etapa 6: registro y revisión por pares\nCompleta la bitácora; intercambia con otra persona y comprueba que pueda reconstruir qué se pidió, qué respondió la IA, cómo se contrastó y qué sigue pendiente. Una observación constructiva y una pregunta por pareja. En línea: comparte tu bitácora con permiso de comentario o pega el enlace en el chat de la reunión.",
+    "objectID": "contenido/05-practica.html#paso-5-registro-cierra-tu-bitácora",
+    "href": "contenido/05-practica.html#paso-5-registro-cierra-tu-bitácora",
+    "title": "Práctica guiada: del encargo al diagnóstico con IA",
+    "section": "Paso 5 · Registro: cierra tu bitácora",
+    "text": "Paso 5 · Registro: cierra tu bitácora\n4D · Diligence (diligencia): respondes por lo que queda abierto.\nCompleta las secciones «Paso 5 · Registro» y «Cierre» de tu bitácora y guarda el archivo; en Bitácora mínima 4D tienes una lista para revisarla antes de terminar. Ese archivo es el segundo producto de la sesión.\n\n\n\n\n\n\nTipPara tu bitácora\n\n\n\n\nQué queda pendiente y quién debe confirmarlo.\nLas exclusiones: identificadores, procesamiento, cepa y persona responsable.",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "5 — Práctica guiada"
+      "Aplicar a un caso de estudio",
+      "9 — Práctica guiada con IA"
     ]
   },
   {
-    "objectID": "contenido/05-practica.html#min-110120-13201330-cierre",
-    "href": "contenido/05-practica.html#min-110120-13201330-cierre",
-    "title": "Práctica guiada: P0, P1, P5 y P6",
-    "section": "Min 110–120 (13:20–13:30) · Cierre",
-    "text": "Min 110–120 (13:20–13:30) · Cierre\nEscribe un problema propio al que aplicarías estas seis etapas, sin necesidad de resolverlo; usa la sección Transferencia a un problema real de la bitácora.\nPregunta de cierre: «La IA puede hacerlo. ¿Tú sabes qué hizo, por qué lo hizo y cómo comprobarlo?»\nAntes de irte (2 min): responde, de forma anónima, en el formulario que compartiremos en la sesión: ¿Qué harás distinto la próxima vez que delegues algo a la IA? y ¿Qué parte del taller te costó más? Tus respuestas sirven para mejorar el taller: es su primera edición con participantes.",
+    "objectID": "contenido/05-practica.html#cierre",
+    "href": "contenido/05-practica.html#cierre",
+    "title": "Práctica guiada: del encargo al diagnóstico con IA",
+    "section": "Cierre",
+    "text": "Cierre\nEscribe un problema de tu trabajo al que aplicarías estas etapas, sin resolverlo ahora. Anótalo en la sección «Cierre» de tu bitácora.\nPregunta de cierre: «La IA puede hacerlo. ¿Tú sabes qué hizo, por qué lo hizo y cómo comprobarlo?»\nSi el equipo docente comparte un formulario de opinión, responde de forma anónima: ¿Qué harás distinto la próxima vez que delegues algo a la IA? y ¿Qué parte del taller te costó más? Tus respuestas sirven para mejorar el taller.",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "5 — Práctica guiada"
+      "Aplicar a un caso de estudio",
+      "9 — Práctica guiada con IA"
     ]
   },
   {
     "objectID": "contenido/05-practica.html#vas-bien-autoevaluación",
     "href": "contenido/05-practica.html#vas-bien-autoevaluación",
-    "title": "Práctica guiada: P0, P1, P5 y P6",
+    "title": "Práctica guiada: del encargo al diagnóstico con IA",
     "section": "¿Vas bien? Autoevaluación",
-    "text": "¿Vas bien? Autoevaluación\nNo hay una respuesta única, pero un buen resultado cumple con esto:\n\n\nTu bitácora registra qué hizo la IA con P0 antes de que la corrigieras.\nEscribiste la especificación tú, antes de P5.\nEl diagnóstico tiene cuatro asuntos y cada afirmación lleva una etiqueta (observado, inferido, por confirmar, verificado).\nNinguna afirmación dice «verificado» sin una fuente que abriste tú, con pasaje y fecha.\nDistinguiste «no existe» de «no está documentado».\nOtra persona pudo reconstruir tu proceso leyendo la bitácora.",
+    "text": "¿Vas bien? Autoevaluación\nNo hay una respuesta única. Un buen resultado cumple con esto:\n\n\nEscribiste la especificación tú, antes de P5.\nEl diagnóstico cubre unidades, condiciones, réplicas y la celda vacía, y cada afirmación lleva una etiqueta (observado, inferido, por confirmar, verificado).\nNinguna afirmación dice «verificado» sin una fuente que abriste tú, con pasaje y fecha.\nDistinguiste «no existe» de «no está documentado».",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "5 — Práctica guiada"
+      "Aplicar a un caso de estudio",
+      "9 — Práctica guiada con IA"
     ]
   },
   {
-    "objectID": "contenido/05-practica.html#si-sobra-tiempo",
-    "href": "contenido/05-practica.html#si-sobra-tiempo",
-    "title": "Práctica guiada: P0, P1, P5 y P6",
-    "section": "Si sobra tiempo",
-    "text": "Si sobra tiempo\nUsa un segundo chat limpio con el mismo Excel y la especificación final. Compara P0 y la respuesta final como demostración informal; no atribuyas causalidad experimental a esa comparación.",
+    "objectID": "contenido/05-practica.html#ampliación-opcional",
+    "href": "contenido/05-practica.html#ampliación-opcional",
+    "title": "Práctica guiada: del encargo al diagnóstico con IA",
+    "section": "Ampliación opcional",
+    "text": "Ampliación opcional\nUsa un segundo chat limpio con el mismo Excel y tu especificación final, y compara la respuesta con la de P0. Recuerda que una misma instrucción puede dar respuestas distintas cada vez: la comparación muestra diferencias, pero no prueba que las causó tu especificación.\nLa cita del 80 %. Aplica los pasos de tu verificación a la respuesta simulada del ejemplo 2: busca en el artículo si contiene realmente ese resultado y distingue una cita auténtica de una atribución no sustentada.",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "5 — Práctica guiada"
+      "Aplicar a un caso de estudio",
+      "9 — Práctica guiada con IA"
     ]
   },
   {
@@ -196,11 +315,11 @@
     "href": "contenido/03b-estructura-prompt.html",
     "title": "Del problema al prompt: cómo construir instrucciones claras",
     "section": "",
-    "text": "Durante el taller · lectura de 6 min · actividad de 5–7 min",
+    "text": "Durante el taller",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
-      "3b — Del problema al prompt"
+      "Construir una solicitud",
+      "5 — Del problema al prompt"
     ]
   },
   {
@@ -208,11 +327,11 @@
     "href": "contenido/03b-estructura-prompt.html#por-qué-hablar-de-prompting-en-este-taller",
     "title": "Del problema al prompt: cómo construir instrucciones claras",
     "section": "¿Por qué hablar de prompting en este taller?",
-    "text": "¿Por qué hablar de prompting en este taller?\nEn la etapa 3 decidimos qué resultado necesitamos. En la etapa 4 decidimos cómo colaborar con la IA. La estructura del prompt es el puente entre ambas: convierte una necesidad definida en un encargo concreto. No constituye una séptima etapa ni pretende sustituir un curso especializado de prompting científico.\nNo existe una plantilla universal obligatoria, ni todos sus elementos tienen que aparecer en cualquier consulta. Esta es una herramienta pedagógica flexible, útil cuando una tarea científica tiene incertidumbres, datos propios o consecuencias de publicación.",
+    "text": "¿Por qué hablar de prompting en este taller?\nEn ¿Qué falta por definir? reformulaste una solicitud y anotaste lo que faltaba decidir (etapas 1 a 3). Ahora toca traducirla en instrucciones para la IA (etapa 4). La estructura del prompt es el puente entre la especificación y la colaboración: convierte una necesidad definida en un encargo concreto. No existe una plantilla universal obligatoria, ni todos sus elementos tienen que aparecer en cualquier consulta. Esta es una herramienta pedagógica flexible, útil cuando una tarea científica tiene incertidumbres, datos propios o consecuencias de publicación.",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
-      "3b — Del problema al prompt"
+      "Construir una solicitud",
+      "5 — Del problema al prompt"
     ]
   },
   {
@@ -223,8 +342,8 @@
     "text": "Siete componentes y su efecto esperado\n\n\n\nLos siete componentes como puente entre la especificación y la colaboración\n\n\n\n\n\n\n\n\n\n\n\nComponente\nPregunta que resuelve\nQué puede cambiar en la salida\nPrecaución\n\n\n\n\nRol\n¿Desde qué perspectiva pido ayuda?\nTerminología, enfoque, profundidad y criterios a considerar\n«Actúa como experto» no demuestra competencia ni aporta evidencia ausente.\n\n\nContexto\n¿Con qué información debe trabajar?\nPertinencia de supuestos y referencias al caso\nContexto incompleto o incorrecto puede propagarse.\n\n\nObjetivo\n¿Para qué necesito el resultado?\nPrioridad y dirección de la respuesta\n«Hacer FAIR» es demasiado amplio si no se define el alcance.\n\n\nTarea\n¿Qué acciones concretas debe ejecutar?\nTipo de análisis, pasos y cobertura\nUna lista de tareas no autoriza inventar datos.\n\n\nSalida\n¿Cómo necesito recibir el producto?\nEstructura, columnas, longitud y posibilidad de revisión\nUna tabla impecable puede contener afirmaciones incorrectas.\n\n\nRestricciones\n¿Qué límites debe respetar?\nReducción de transformaciones o afirmaciones no autorizadas\nNo sustituyen la inspección del resultado.\n\n\nVerificación\n¿Cómo sabré si es aceptable?\nTrazas de evidencia, fuentes, incertidumbre y pendientes\nPedir citas no equivale a leer ni contrastar las fuentes.\n\n\n\n\n\n\n\n\n\nNota¿Qué componente es más importante?\n\n\n\nEn muchas tareas importan más objetivo, contexto, tarea y verificación (criterios de aceptación) que asignar un rol llamativo. El rol es opcional: no hace que el sistema adquiera conocimientos experimentales que no están en el archivo.",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
-      "3b — Del problema al prompt"
+      "Construir una solicitud",
+      "5 — Del problema al prompt"
     ]
   },
   {
@@ -232,35 +351,23 @@
     "href": "contenido/03b-estructura-prompt.html#un-mismo-caso-dos-solicitudes",
     "title": "Del problema al prompt: cómo construir instrucciones claras",
     "section": "Un mismo caso: dos solicitudes",
-    "text": "Un mismo caso: dos solicitudes\nTrabajaremos con el Excel simulado de expresión génica. Tiene dos hojas (los datos y unas notas experimentales parciales), cinco filas de genes, tres columnas de condiciones y una celda vacía; no hay suficiente información para establecer las unidades, el método, las réplicas ni las condiciones experimentales exactas.\n\nA. Solicitud abierta (P0)\n\nTengo este Excel de expresión génica de cinco filas y tres condiciones. Voy a publicar un artículo y me piden que los datos sigan los principios FAIR. ¿Me ayudas a prepararlo?\n\nEs una consulta auténtica y razonable. La IA puede ofrecer una respuesta útil, pero debe decidir por su cuenta si explicar conceptos, pedir detalles, proponer un plan o producir archivos.\n\n\nB. Solicitud delimitada\n\nRol (opcional): Ayúdame desde la perspectiva de gestión de datos científicos.\nContexto: Tengo un Excel simulado de expresión génica con cinco filas de genes y tres condiciones, destinado a un ejercicio sobre FAIR.\nObjetivo: Identificar la información que falta antes de preparar un depósito o afirmar cumplimiento FAIR.\nTarea: Revisa encabezados, valores y notas; identifica incertidumbres sobre unidades, condiciones, réplicas y celda vacía.\nSalida: Entrega una tabla con asunto, evidencia localizable en hoja/celda, información por confirmar, siguiente acción y responsable propuesto.\nRestricciones: No inventes unidades, tratamientos, cepa, métodos, réplicas ni el significado de «prom.». No sustituyas celdas vacías por cero ni modifiques los datos.\nVerificación: Separa lo observado de las inferencias y de lo que requiere consulta externa. Indica qué habría que verificar y dónde; no declares una verificación que no realizaste.\n\nLa segunda versión no es una respuesta al problema: es una mejor delimitación del encargo. Esperamos una salida más fácil de revisar, no necesariamente más verdadera. Comparar dos ejecuciones ilustra diferencias, pero no es una prueba controlada de causalidad.",
+    "text": "Un mismo caso: dos solicitudes\nComo ejemplo resuelto usamos el Excel simulado de expresión génica del caso de estudio, con el que trabajarás al final del taller. Tiene dos hojas (los datos y unas notas experimentales parciales), cinco filas de genes, tres columnas de condiciones y una celda vacía; no hay suficiente información para establecer las unidades, el método, las réplicas ni las condiciones experimentales exactas.\n\nA. Solicitud abierta (P0)\n\nTengo este Excel de expresión génica de cinco filas y tres condiciones. Voy a publicar un artículo y me piden que los datos sigan los principios FAIR. ¿Me ayudas a prepararlo?\n\nEs una consulta auténtica y razonable. La IA puede ofrecer una respuesta útil, pero debe decidir por su cuenta si explicar conceptos, pedir detalles, proponer un plan o producir archivos.\n\n\nB. Solicitud delimitada\n\nCon etiquetasDe corrido\n\n\n\nRol (opcional): Ayúdame desde la perspectiva de gestión de datos científicos.\nContexto: Tengo un Excel simulado de expresión génica con cinco filas de genes y tres condiciones, destinado a un ejercicio sobre FAIR.\nObjetivo: Identificar la información que falta antes de preparar un depósito o afirmar cumplimiento FAIR.\nTarea: Revisa encabezados, valores y notas; identifica incertidumbres sobre unidades, condiciones, réplicas y celda vacía.\nSalida: Entrega una tabla con asunto, evidencia localizable en hoja/celda, información por confirmar, siguiente acción y responsable propuesto.\nRestricciones: No inventes unidades, tratamientos, cepa, métodos, réplicas ni el significado de «prom.». No sustituyas celdas vacías por cero ni modifiques los datos.\nVerificación: Separa lo observado de las inferencias y de lo que requiere consulta externa. Indica qué habría que verificar y dónde; no declares una verificación que no realizaste.\n\n\n\n\nAyúdame, desde la perspectiva de gestión de datos científicos, a revisar un Excel simulado de expresión génica con cinco filas de genes y tres condiciones, destinado a un ejercicio sobre FAIR. Antes de preparar un depósito o afirmar cumplimiento FAIR, necesito identificar la información que falta. Revisa encabezados, valores y notas, e identifica las incertidumbres sobre unidades, condiciones, réplicas y la celda vacía. Entrégame una tabla con el asunto, la evidencia localizable en hoja y celda, la información por confirmar, la siguiente acción y el responsable propuesto. No inventes unidades, tratamientos, cepa, métodos, réplicas ni el significado de «prom.»; no sustituyas celdas vacías por cero ni modifiques los datos. Separa lo observado de las inferencias y de lo que requiere consulta externa, e indica qué habría que verificar y dónde, sin declarar una verificación que no realizaste.\n\n\n\n\nLas etiquetas no son obligatorias: la IA entiende igual la versión de corrido. Sirven para comprobar que no falta ningún componente; úsalas mientras aprendes o cuando el encargo es largo.\nLa segunda versión no es una respuesta al problema: es una mejor delimitación del encargo. Esperamos una salida más fácil de revisar, no necesariamente más verdadera.",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
-      "3b — Del problema al prompt"
+      "Construir una solicitud",
+      "5 — Del problema al prompt"
     ]
   },
   {
-    "objectID": "contenido/03b-estructura-prompt.html#cómo-aislar-los-efectos-de-algunos-componentes",
-    "href": "contenido/03b-estructura-prompt.html#cómo-aislar-los-efectos-de-algunos-componentes",
+    "objectID": "contenido/03b-estructura-prompt.html#qué-cambia-al-añadir-cada-componente",
+    "href": "contenido/03b-estructura-prompt.html#qué-cambia-al-añadir-cada-componente",
     "title": "Del problema al prompt: cómo construir instrucciones claras",
-    "section": "Cómo aislar los efectos de algunos componentes",
-    "text": "Cómo aislar los efectos de algunos componentes\nImagina que ya proporcionaste el Excel y una tarea breve: «Revisa los datos y dime qué falta».\n\n\n\n\n\n\n\nCambio en la instrucción\nCambio que buscarías al comparar las respuestas\n\n\n\n\nAñadir objetivo («necesito un diagnóstico preliminar, no archivos para publicar»)\n¿La IA evita entregar un supuesto paquete de publicación?\n\n\nAñadir salida («tabla de cuatro asuntos con evidencia»)\n¿Se vuelve más sencillo revisar cada afirmación?\n\n\nAñadir restricciones («no inventes unidades ni réplicas»)\n¿Distingue lo conocido de lo pendiente?\n\n\nAñadir verificación («indica celdas y fuentes aún no consultadas»)\n¿Es más claro qué observó y qué habría que contrastar externamente?\n\n\n\nEstos son efectos esperados que debemos observar, no resultados garantizados. Las respuestas pueden variar entre ejecuciones y modelos.",
+    "section": "Qué cambia al añadir cada componente",
+    "text": "Qué cambia al añadir cada componente\nImagina que ya proporcionaste el Excel y una tarea breve: «Revisa los datos y dime qué falta». Esto es lo que suele cambiar al añadir algunos componentes:\n\n\n\n\n\n\n\n\nSi añades…\nSin él, es frecuente que la IA…\nCon él, deberías notar que…\n\n\n\n\nObjetivo («necesito un diagnóstico preliminar, no archivos para publicar»)\nproponga README, CSV y metadatos como si fueras a publicar\nse limita a un diagnóstico preliminar\n\n\nSalida («tabla de cuatro asuntos con evidencia»)\nresponda en párrafos difíciles de revisar\nentrega una tabla en la que cada afirmación se revisa por separado\n\n\nRestricciones («no inventes unidades ni réplicas»)\ncomplete unidades o réplicas «razonables»\nmarca esos datos como pendientes\n\n\nVerificación («indica celdas y fuentes aún no consultadas»)\nmezcle lo observado con lo supuesto\nsepara lo observado, lo inferido y lo que falta consultar\n\n\n\nSon patrones frecuentes, no resultados garantizados. Una misma instrucción puede dar respuestas distintas cada vez, así que comparar dos versiones muestra diferencias, pero no prueba que las causó el cambio en el prompt.",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
-      "3b — Del problema al prompt"
-    ]
-  },
-  {
-    "objectID": "contenido/03b-estructura-prompt.html#actividad-breve-57-minutos",
-    "href": "contenido/03b-estructura-prompt.html#actividad-breve-57-minutos",
-    "title": "Del problema al prompt: cómo construir instrucciones claras",
-    "section": "Actividad breve · 5–7 minutos",
-    "text": "Actividad breve · 5–7 minutos\nPropósito: reconocer cómo una instrucción hace visible la intención científica y facilita evaluar el trabajo de la IA. No necesitas ejecutar siete prompts.\n\nRelee P0 e identifica los elementos que ya contiene, aunque no tengan etiquetas.\nEn parejas (en línea: en sala separada o por el chat de la reunión), escribe una versión mejorada con objetivo + tarea + salida + una restricción + un criterio de verificación. Decide si necesitas añadir un rol; justifica por qué.\nSubraya qué información proviene del Excel y cuál debe obtenerse de una persona o una fuente primaria.\nCompara tu texto con la versión B. Probarlo en un chat nuevo queda para el final de la práctica, si sobra tiempo.\nEn tu bitácora anota una decisión de Description, una de Delegation y un criterio de Discernment.\n\nPregunta para discutir: si un prompt solicita «una tabla con citas», ¿qué responsabilidad científica conserva la persona que la utilizará?\n\n\n\n\n\n\nNotaRespuesta orientadora (ábrela después de discutir)\n\n\n\n\n\nComprobar la correspondencia entre cada afirmación, su evidencia y la fuente efectiva, y mantener la responsabilidad sobre los datos y su publicación.",
-    "crumbs": [
-      "Inicio",
-      "Fundamentos",
-      "3b — Del problema al prompt"
+      "Construir una solicitud",
+      "5 — Del problema al prompt"
     ]
   },
   {
@@ -271,8 +378,8 @@
     "text": "Errores frecuentes\n\nCreer que mencionar un rol experto garantiza exactitud.\nConfundir objetivo («preparar datos para publicación») con tarea inmediata («diagnosticar información faltante»).\nPedir una salida convincente sin fijar criterios de revisión.\nExigir «fuentes» y dar por hecho que el modelo las leyó o que respaldan exactamente la afirmación.\nEscribir restricciones pero omitir la verificación humana e independiente.\nTratar el prompt como un texto fijo: se puede revisar conforme aprendemos y delimitamos el problema.",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
-      "3b — Del problema al prompt"
+      "Construir una solicitud",
+      "5 — Del problema al prompt"
     ]
   },
   {
@@ -280,11 +387,35 @@
     "href": "contenido/03b-estructura-prompt.html#conexión-con-ai-fluency-4d",
     "title": "Del problema al prompt: cómo construir instrucciones claras",
     "section": "Conexión con AI Fluency 4D",
-    "text": "Conexión con AI Fluency 4D\n\n\n\n\n\n\n\nCompetencia\nPregunta práctica en este ejercicio\n\n\n\n\nDelegation\n¿Qué puede hacer la IA y qué información debe confirmar la investigadora?\n\n\nDescription\n¿Expresé contexto, objetivo, tarea, salida y límites de forma suficiente?\n\n\nDiscernment\n¿Puedo revisar la evidencia y detectar afirmaciones injustificadas?\n\n\nDiligence\n¿Conservo datos originales, registro decisiones y no presento como verificado lo pendiente?\n\n\n\nContinúa con el caso FAIR y la práctica guiada. Las técnicas de prompting se tratan con más detalle en el curso Prompting científico con inteligencia artificial [R9]: aquí nos concentramos en especificar bien una necesidad científica y comprobar la respuesta.",
+    "text": "Conexión con AI Fluency 4D\nEscribir un prompt es sobre todo Description (descripción), pero las otras tres competencias también intervienen: decides qué delegas, anticipas cómo revisarás la respuesta y te haces responsable de lo que uses. Estas preguntas sirven para revisar tu prompt antes de enviarlo.\n\n\n\n\n\n\n\nCompetencia\nPregunta práctica al escribir un prompt\n\n\n\n\nDelegation (delegación)\n¿Qué puede hacer la IA y qué información debo confirmar yo o la persona responsable de los datos?\n\n\nDescription (descripción)\n¿Expresé contexto, objetivo, tarea, salida y límites de forma suficiente?\n\n\nDiscernment (discernimiento)\n¿Puedo revisar la evidencia y detectar afirmaciones injustificadas?\n\n\nDiligence (diligencia)\n¿Conservo datos originales, registro decisiones y no presento como verificado lo pendiente?",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
-      "3b — Del problema al prompt"
+      "Construir una solicitud",
+      "5 — Del problema al prompt"
+    ]
+  },
+  {
+    "objectID": "contenido/03b-estructura-prompt.html#para-pensar",
+    "href": "contenido/03b-estructura-prompt.html#para-pensar",
+    "title": "Del problema al prompt: cómo construir instrucciones claras",
+    "section": "Para pensar",
+    "text": "Para pensar\nCuatro situaciones frecuentes al trabajar con IA. Piensa tu respuesta antes de abrir la orientación.\n1. La tabla con citas. Si un prompt pide «una tabla con citas», ¿qué responsabilidad científica conserva la persona que la utilizará?\n\n\n\n\n\n\nNotaRespuesta orientadora\n\n\n\n\n\nComprobar la correspondencia entre cada afirmación, su evidencia y la fuente efectiva, y mantener la responsabilidad sobre los datos y su publicación.\n\n\n\n2. Extraer datos de artículos. Le pides a la IA que extraiga de veinte artículos el organismo, la condición experimental y los genes reportados, y te entrega una tabla completa. ¿Cómo sabes si puedes usarla?\n\n\n\n\n\n\nNotaRespuesta orientadora\n\n\n\n\n\nUna tabla completa no garantiza una extracción correcta: la IA puede rellenar campos que el artículo no reporta, mezclar datos de dos artículos o quedarse con lo que dice el resumen. Pide desde el prompt que indique la sección o el pasaje de donde sale cada dato y que escriba «no reportado» en lugar de inferir. Después revisa una muestra de filas contra el texto original.\n\n\n\n3. Mejorar la redacción. Pides «mejora la redacción de este párrafo». ¿Qué revisas antes de aceptar el cambio?\n\n\n\n\n\n\nNotaRespuesta orientadora\n\n\n\n\n\nQue no haya cambiado lo que afirmas. Un «sugiere» puede convertirse en «demuestra», o puede desaparecer una limitación. Compara afirmación por afirmación, no solo el estilo.\n\n\n\n4. El script que corre. La IA te da un script que se ejecuta sin errores. ¿Ya está listo?\n\n\n\n\n\n\nNotaRespuesta orientadora\n\n\n\n\n\nQue corra no significa que calcule lo correcto. Pruébalo con un caso pequeño cuyo resultado conozcas y revisa casos límite, como valores vacíos o caracteres inesperados.",
+    "crumbs": [
+      "Inicio",
+      "Construir una solicitud",
+      "5 — Del problema al prompt"
+    ]
+  },
+  {
+    "objectID": "contenido/03b-estructura-prompt.html#de-los-siete-componentes-a-la-herramienta",
+    "href": "contenido/03b-estructura-prompt.html#de-los-siete-componentes-a-la-herramienta",
+    "title": "Del problema al prompt: cómo construir instrucciones claras",
+    "section": "De los siete componentes a la herramienta",
+    "text": "De los siete componentes a la herramienta\nPracticarás estos componentes en De la solicitud al prompt. La herramienta los agrupa en cuatro bloques:\n\n\n\nBloque en la herramienta\nComponentes de esta página\n\n\n\n\nTarea\nTarea\n\n\nContexto y objetivo\nContexto, objetivo\n\n\nCondiciones y límites\nRestricciones\n\n\nResultado esperado y verificación\nSalida, verificación\n\n\n\nEl rol no aparece porque es opcional: si lo necesitas, inclúyelo en «Contexto y objetivo».\nDespués recorrerás ¿Qué puedo aceptar? y, al llegar al caso, la práctica guiada. Las técnicas de prompting se tratan con más detalle en el curso Prompting científico con inteligencia artificial [R9]: aquí nos concentramos en especificar bien una necesidad científica y comprobar la respuesta.",
+    "crumbs": [
+      "Inicio",
+      "Construir una solicitud",
+      "5 — Del problema al prompt"
     ]
   },
   {
@@ -292,10 +423,10 @@
     "href": "contenido/02-ejemplos.html",
     "title": "Tres situaciones que requieren criterio científico",
     "section": "",
-    "text": "Durante el taller · lectura de 4 min",
+    "text": "Durante el taller",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
+      "Comprender el problema",
       "2 — Tres situaciones"
     ]
   },
@@ -304,22 +435,22 @@
     "href": "contenido/02-ejemplos.html#conceptos-introductorios",
     "title": "Tres situaciones que requieren criterio científico",
     "section": "Conceptos introductorios",
-    "text": "Conceptos introductorios\n\n\n\n\n\n\n\n\nConcepto\nDefinición operativa\nAdvertencia\n\n\n\n\nModelo de lenguaje (LLM)\nSistema capaz de generar texto y otras salidas a partir de patrones aprendidos y del contexto que recibe.\nNo debe asumirse que toda afirmación viene de una fuente comprobada.\n\n\nPrompt\nPregunta, instrucción y/o contexto proporcionado al sistema.\nSe usan prompts desde la primera exploración; no existe un único prompt perfecto.\n\n\nContexto\nAntecedentes, datos, fuentes, objetivo, audiencia, restricciones y convenciones pertinentes.\nNo reemplaza la información experimental faltante.\n\n\nSupuesto\nInformación que se da por cierta o se introduce para completar una tarea.\nDebe distinguirse un supuesto autorizado de uno no respaldado.\n\n\nInferencia\nConclusión derivada de datos o premisas.\nPuede ser plausible sin estar demostrada por el material aportado.\n\n\nAlucinación\nContenido falso, inventado o no sustentado presentado como si fuese válido.\nUna cita con formato correcto puede no existir o no sustentar el argumento.\n\n\nVerificación\nContraste con datos, fuentes, criterios o procedimientos externos a la mera afirmación de la IA.\nPedirle al mismo modelo «¿estás seguro?» no equivale a verificar.\n\n\nEspecificación\nDescripción de una tarea que define propósito, entradas, alcance, límites, entregable y criterios de aceptación.\nMás detalle no siempre implica mejor resultado si el problema sigue mal definido.\n\n\nTrazabilidad\nRegistro que permite reconstruir fuentes, decisiones, transformaciones y revisiones.\nGuardar únicamente el último prompt resulta insuficiente en muchos contextos.\n\n\nFAIR\nPrincipios para que datos y recursos digitales sean encontrables, accesibles, interoperables y reutilizables.\nFAIR no equivale a «abierto», a un formato particular ni a un sí/no universal.\n\n\n\n\n\n\n\n\n\nTipIdea clave\n\n\n\nAlgunos problemas no se resuelven con un prompt más largo, sino aprendiendo conceptos, aportando datos, delimitando expectativas o contrastando evidencia.",
+    "text": "Conceptos introductorios\nAntes de analizar los ejemplos conviene compartir un vocabulario mínimo. Las definiciones son operativas: describen cómo usamos cada término en el taller, no pretenden ser exhaustivas. La tercera columna señala la confusión más frecuente con cada concepto.\n\nSobre la IA\n\n\n\n\n\n\n\n\n\nConcepto\nQué significa aquí\nCuidado con…\n\n\n\n\nModelo de lenguaje (LLM)\nSistema capaz de generar texto y otras salidas a partir de patrones aprendidos y del contexto que recibe.\nNo debe asumirse que toda afirmación viene de una fuente comprobada.\n\n\nPrompt\nPregunta, instrucción y/o contexto proporcionado al sistema.\nSe usan prompts desde la primera exploración; no existe un único prompt perfecto.\n\n\nContexto\nAntecedentes, datos, fuentes, objetivo, audiencia, restricciones y convenciones pertinentes.\nNo reemplaza la información experimental faltante.\n\n\nAlucinación\nContenido falso, inventado o no sustentado presentado como si fuese válido.\nUna cita con formato correcto puede no existir o no sustentar el argumento.\n\n\n\n\n\n\nSobre el razonamiento\n\n\n\n\n\n\n\n\n\nConcepto\nQué significa aquí\nCuidado con…\n\n\n\n\nSupuesto\nInformación que se da por cierta o se introduce para completar una tarea.\nDebe distinguirse un supuesto autorizado de uno no respaldado.\n\n\nInferencia\nConclusión derivada de datos o premisas.\nPuede ser plausible sin estar demostrada por el material aportado.\n\n\nVerificación\nContraste con datos, fuentes, criterios o procedimientos externos a la mera afirmación de la IA.\nPedirle al mismo modelo «¿estás seguro?» no equivale a verificar.\n\n\n\n\n\n\nSobre el trabajo con datos\n\n\n\n\n\n\n\n\n\nConcepto\nQué significa aquí\nCuidado con…\n\n\n\n\nEspecificación\nDescripción de una tarea que define propósito, entradas, alcance, límites, entregable y criterios de aceptación.\nMás detalle no siempre implica mejor resultado si el problema sigue mal definido.\n\n\nTrazabilidad\nRegistro que permite reconstruir fuentes, decisiones, transformaciones y revisiones.\nGuardar únicamente el último prompt resulta insuficiente en muchos contextos.\n\n\nFAIR\nPrincipios para que datos y recursos digitales sean encontrables, accesibles, interoperables y reutilizables.\nFAIR no equivale a «abierto», a un formato particular ni a un sí/no universal.\n\n\n\n\n\n\n\n\n\n\nTipIdea clave\n\n\n\nAlgunos problemas no se resuelven con un prompt más largo, sino aprendiendo conceptos, aportando datos, delimitando expectativas o contrastando evidencia.",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
+      "Comprender el problema",
       "2 — Tres situaciones"
     ]
   },
   {
-    "objectID": "contenido/02-ejemplos.html#tres-ejemplos-para-discutir",
-    "href": "contenido/02-ejemplos.html#tres-ejemplos-para-discutir",
+    "objectID": "contenido/02-ejemplos.html#tres-ejemplos-para-analizar",
+    "href": "contenido/02-ejemplos.html#tres-ejemplos-para-analizar",
     "title": "Tres situaciones que requieren criterio científico",
-    "section": "Tres ejemplos para discutir",
-    "text": "Tres ejemplos para discutir\nLos términos Description, Discernment y Diligence corresponden a las competencias del marco AI Fluency 4D, que se presenta en la página siguiente; la cuarta, Delegation, se trabaja en la práctica.\n\nEjemplo 1. Respuesta válida a un encargo ambiguo\n\nTengo tres archivos con información de genes. Necesito combinarlos en una tabla\n\n\nAquí tienes un script que concatena los tres archivos en una sola tabla.\n\nQué falla: la respuesta es técnicamente correcta, pero «combinar» admite varias operaciones:\n\nConcatenar: apilar filas si comparten estructura.\nUnir por clave (join): relacionar filas por identificadores comunes.\nArmonizar: resolver sinonimias o columnas con significados/formatos diferentes antes de combinar.\n\nArmonizar suele ser un paso previo a cualquiera de las otras dos. La IA eligió una operación razonable sin saber cuál necesitaba realmente la investigadora: quizá lo que hacía falta era unir por identificador de gen.\n\n\n\nTres formas de «combinar»: concatenar, unir por clave y armonizar\n\n\nPreguntas para el grupo: ¿Qué significa «combinar»? ¿Qué información faltó? ¿En qué casos una solución técnicamente correcta respondería al problema equivocado?\nQué hacer: pedir primero: «¿Qué operaciones podrían corresponder a mi necesidad? Muéstrame entradas/salidas mínimas y pregunta qué necesitas saber antes de recomendar una». Después, comprobar con dos o tres genes que la tabla resultante contiene lo esperado.\nConceptos trabajados: ambigüedad, vocabulario, criterios de aceptación, Description.\n\n\nEjemplo 2. La referencia existe, pero no demuestra lo que se le atribuye\n\nBusca evidencia científica de que adoptar FAIR mejora la reproducibilidad de la investigación\n\n\nWilkinson et al. (2016) demostraron que implementar FAIR aumenta la reproducibilidad científica un 80 %.\nWilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3, 160018. https://doi.org/10.1038/sdata.2016.18\n\nQué falla: la referencia y el DOI son auténticos. El artículo presenta los principios FAIR, su justificación y ejemplos, pero no demuestra empíricamente un incremento del 80 % en reproducibilidad. Esa cifra se ha añadido deliberadamente en la simulación y no debe citarse como hallazgo real [R5].\nPreguntas para el grupo: ¿Existe el artículo? ¿Su DOI es correcto? ¿Trata sobre FAIR? ¿Sustenta la afirmación cuantitativa? ¿Qué evidencia se necesitaría para sostenerla?\nQué hacer: revisar la publicación original, identificar su tipo de contribución y buscar en ella el supuesto dato del 80 %. Estar ante una referencia real no basta para validar una afirmación.\nConceptos trabajados: referencia verificable frente a afirmación respaldada, atribución incorrecta, Discernment.\n\n\nEjemplo 3. La IA inventa metadatos experimentales\n\nAquí está mi Excel de genes bajo tres condiciones. Ayúdame a documentarlo para hacerlo FAIR\n\n\nLos valores corresponden a TPM de RNA-seq con tres réplicas biológicas por condición; Estrés A indica estrés oxidativo.\n\nQué falla: nada de eso puede determinarse con la tabla de ejemplo. Puede requerirse confirmación experimental externa.\nPreguntas para el grupo: ¿Qué se puede observar directamente en el archivo? ¿Qué información necesita confirmación de la investigadora? ¿Cuál es el riesgo de escribir documentación falsa y reutilizarla?\nQué hacer: pedir a la IA que separe lo que se observa en el archivo, lo que infiere y lo que debe confirmar la investigadora, y que deje vacíos los campos que no puede establecer en lugar de rellenarlos.\nConceptos trabajados: diferencia entre dato e interpretación, procedencia, incertidumbre, Diligence.\n\n\nCierre de los ejemplos\nLas tres fallas son distintas: (1) tarea indefinida; (2) evidencia no confirmada; (3) supuestos presentados como hechos. Las respuestas se prepararon de antemano para ilustrar cada falla; un modelo real puede o no cometerlas en una sesión dada.",
+    "section": "Tres ejemplos para analizar",
+    "text": "Tres ejemplos para analizar\nEntender por qué falló: cuando un resultado falla, no se trata de culpar a quien escribió la instrucción ni de atribuirlo todo a la IA. Conviene distinguir entre límites del sistema, información insuficiente, ambigüedad y errores de evaluación.\n\nEjemplo 1. Combinar tres archivos de genes\n\nTengo tres archivos con información de genes. Necesito combinarlos en una tabla\n\n\nAquí tienes un script que concatena los tres archivos en una sola tabla.\n\nPiensa antes de seguir: ¿Qué significa «combinar»? ¿Qué información faltó? ¿En qué casos una solución técnicamente correcta respondería al problema equivocado?\n\n\n\n\n\n\nNotaQué falla y qué hacer (ábrela después de responder)\n\n\n\n\n\nQué falla: la respuesta es técnicamente correcta, pero «combinar» admite varias operaciones:\n\nConcatenar: apilar filas si comparten estructura.\nUnir por clave (join): relacionar filas por identificadores comunes.\nArmonizar: resolver sinonimias o columnas con significados/formatos diferentes antes de combinar.\n\nArmonizar suele ser un paso previo a cualquiera de las otras dos. La IA eligió una operación razonable sin saber cuál necesitaba realmente la investigadora: quizá lo que hacía falta era unir por identificador de gen.\n\n\n\nTres formas de «combinar»: concatenar, unir por clave y armonizar\n\n\nQué hacer: pedir primero: «¿Qué operaciones podrían corresponder a mi necesidad? Muéstrame entradas/salidas mínimas y pregunta qué necesitas saber antes de recomendar una». Después, comprobar con dos o tres genes que la tabla resultante contiene lo esperado.\n\n\n\n\n\nEjemplo 2. Evidencia sobre FAIR y reproducibilidad\n\nBusca evidencia científica de que adoptar FAIR mejora la reproducibilidad de la investigación\n\n\nWilkinson et al. (2016) demostraron que implementar FAIR aumenta la reproducibilidad científica un 80 %.\nWilkinson, M. D. et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3, 160018. https://doi.org/10.1038/sdata.2016.18\n\nPiensa antes de seguir: ¿Existe el artículo? ¿Su DOI es correcto? ¿Trata sobre FAIR? ¿Sustenta la afirmación cuantitativa? ¿Qué evidencia se necesitaría para sostenerla?\n\n\n\n\n\n\nNotaQué falla y qué hacer (ábrela después de responder)\n\n\n\n\n\nQué falla: la referencia y el DOI son auténticos. El artículo presenta los principios FAIR, su justificación y ejemplos, pero no demuestra empíricamente un incremento del 80 % en reproducibilidad. Esa cifra se ha añadido deliberadamente en la simulación y no debe citarse como hallazgo real [R5].\nQué hacer: revisar la publicación original, identificar su tipo de contribución y buscar en ella el supuesto dato del 80 %. Estar ante una referencia real no basta para validar una afirmación.\n\n\n\n\n\nEjemplo 3. Documentar un Excel para hacerlo FAIR\n\nAquí está mi Excel de genes bajo tres condiciones. Ayúdame a documentarlo para hacerlo FAIR\n\n\nLos valores corresponden a TPM de RNA-seq con tres réplicas biológicas por condición; Estrés A indica estrés oxidativo.\n\nPiensa antes de seguir: ¿Qué se puede observar directamente en el archivo? ¿Qué información necesita confirmación de la investigadora? ¿Cuál es el riesgo de escribir documentación falsa y reutilizarla?\n\n\n\n\n\n\nNotaQué falla y qué hacer (ábrela después de responder)\n\n\n\n\n\nQué falla: nada de eso puede determinarse con la tabla de ejemplo. Puede requerirse confirmación experimental externa.\nQué hacer: pedir a la IA que separe lo que se observa en el archivo, lo que infiere y lo que debe confirmar la investigadora, y que deje vacíos los campos que no puede establecer en lugar de rellenarlos.\n\n\n\n\n\nCierre de los ejemplos\nLas tres fallas son distintas: (1) tarea indefinida; (2) evidencia no confirmada; (3) supuestos presentados como hechos. Las respuestas se prepararon de antemano para ilustrar cada falla; un modelo real puede o no cometerlas en una sesión dada.",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
+      "Comprender el problema",
       "2 — Tres situaciones"
     ]
   },
@@ -328,10 +459,10 @@
     "href": "contenido/00-preparacion.html",
     "title": "Antes del taller",
     "section": "",
-    "text": "Antes del taller · 10 min + prueba de 2 min",
+    "text": "Antes del taller",
     "crumbs": [
       "Inicio",
-      "0 — Antes del taller"
+      "Antes del taller"
     ]
   },
   {
@@ -339,21 +470,21 @@
     "href": "contenido/00-preparacion.html#lista-de-comprobación",
     "title": "Antes del taller",
     "section": "Lista de comprobación",
-    "text": "Lista de comprobación\n\n\n\n✓\nRequisito\nDetalle\n\n\n\n\n☐\nComputadora\nPortátil o de escritorio. Un celular complica la práctica: hay que leer respuestas largas y alternar entre ventanas.\n\n\n☐\nCuenta en un asistente de IA\nPor ejemplo ChatGPT, Claude, Gemini o Copilot. Cualquiera sirve si permite adjuntar un archivo Excel y mantener un solo chat con varias preguntas. Crea la cuenta antes del taller: la verificación por correo o teléfono puede tardar.\n\n\n☐\nPrograma para abrir el Excel\nExcel, LibreOffice Calc o Google Sheets.\n\n\n☐\nDónde escribir tu bitácora\nGoogle Docs (requiere cuenta de Google), Word o un editor de texto. Hay plantillas descargables.\n\n\n☐\nArchivos del taller\nExcel simulado · versión en texto · plantilla de bitácora · tarjeta de práctica, para imprimir.\n\n\n\nLos planes gratuitos de los asistentes cambian con frecuencia (límite de mensajes, de archivos adjuntos o de longitud de la conversación). Por eso no recomendamos uno en particular: comprueba el tuyo con la prueba siguiente.",
+    "text": "Lista de comprobación\n\n\n\n✓\nRequisito\nDetalle\n\n\n\n\n☐\nComputadora\nPortátil o de escritorio. Un celular complica la práctica: hay que leer respuestas largas y alternar entre ventanas.\n\n\n☐\nCuenta en un asistente de IA\nPor ejemplo ChatGPT, Claude, Gemini o Copilot. Cualquiera sirve si permite adjuntar un archivo Excel y mantener un solo chat con varias preguntas. Crea la cuenta antes del taller: la verificación por correo o teléfono puede tardar.\n\n\n☐\nPrograma para abrir el Excel\nExcel, LibreOffice Calc o Google Sheets.\n\n\n☐\nEditor de texto\nPara llenar la plantilla de la bitácora, un archivo Markdown. Sirve cualquiera: Bloc de notas, TextEdit, VS Code u otro.\n\n\n☐\nArchivos del taller\nExcel simulado · versión en texto · tarjeta de práctica.\n\n\n\nLos planes gratuitos de los asistentes cambian con frecuencia (límite de mensajes, de archivos adjuntos o de longitud de la conversación). Por eso no recomendamos uno en particular: comprueba el tuyo con la prueba siguiente.",
     "crumbs": [
       "Inicio",
-      "0 — Antes del taller"
+      "Antes del taller"
     ]
   },
   {
-    "objectID": "contenido/00-preparacion.html#prueba-de-2-minutos",
-    "href": "contenido/00-preparacion.html#prueba-de-2-minutos",
+    "objectID": "contenido/00-preparacion.html#prueba-del-asistente",
+    "href": "contenido/00-preparacion.html#prueba-del-asistente",
     "title": "Antes del taller",
-    "section": "Prueba de 2 minutos",
-    "text": "Prueba de 2 minutos\n\nAbre un chat nuevo en tu asistente.\nAdjunta el Excel simulado.\nEscribe:\n\n\n¿Cuántas hojas tiene este archivo y cómo se llaman? Responde solo con eso.\n\nSi responde que hay dos hojas, Expresion_genica y Notas_experimento, tu cuenta sirve. No sigas conversando en ese chat: en el taller empezarás uno nuevo.\n\n\n\n\n\n\nAdvertenciaPlan B · si tu asistente no permite adjuntar archivos\n\n\n\nDescarga la versión en texto del Excel, copia todo su contenido y pégalo al inicio de tu primer mensaje. Tiene las mismas dos hojas; las celdas vacías aparecen como [vacía]. Anota en tu bitácora que trabajaste con la versión en texto.",
+    "section": "Prueba del asistente",
+    "text": "Prueba del asistente\n\nAbre un chat nuevo en tu asistente.\nAdjunta el Excel simulado.\nEscribe:\n\n\n¿Cuántas hojas tiene este archivo y cómo se llaman? Responde solo con eso.\n\nSi responde que hay dos hojas, Expresion_genica y Notas_experimento, tu cuenta sirve. No sigas conversando en ese chat: en el taller empezarás uno nuevo.\n\n\n\n\n\n\nAdvertenciaPlan B · si tu asistente no permite adjuntar archivos\n\n\n\nDescarga la versión en texto del Excel, copia todo su contenido y pégalo al inicio de tu primer mensaje. Tiene las mismas dos hojas; las celdas vacías aparecen como [vacía]. Anota en tu bitácora que trabajaste con la versión en texto.",
     "crumbs": [
       "Inicio",
-      "0 — Antes del taller"
+      "Antes del taller"
     ]
   },
   {
@@ -364,7 +495,7 @@
     "text": "Privacidad y uso responsable\n\nNo subas datos reales, confidenciales o personales, ni en el taller ni en la prueba. Usaremos solo datos simulados.\nRevisa en la configuración de tu asistente si tus conversaciones se usan para entrenar el modelo y desactívalo si lo prefieres.\nSi tu institución tiene una política sobre el uso de IA, tenla presente: el taller no la sustituye.",
     "crumbs": [
       "Inicio",
-      "0 — Antes del taller"
+      "Antes del taller"
     ]
   },
   {
@@ -372,10 +503,10 @@
     "href": "contenido/00-preparacion.html#si-participas-en-línea",
     "title": "Antes del taller",
     "section": "Si participas en línea",
-    "text": "Si participas en línea\n\nTen a la mano el enlace de la videollamada y, en otra ventana, tu asistente de IA y tu bitácora. Dos pantallas ayudan, pero no son necesarias.\nLas actividades en pareja se harán en salas separadas de la videollamada. Si no se forman salas, comparte tu texto en el chat de la reunión y comenta el de otra persona.\nPara la revisión entre pares, comparte tu bitácora con permiso de comentario (en Google Docs: Compartir → Comentador).",
+    "text": "Si participas en línea\n\nTen a la mano el enlace de la videollamada y, en otra ventana, tu asistente de IA y la bitácora. Dos pantallas ayudan, pero no son necesarias.\nEl trabajo de la sesión es individual. La bitácora es un archivo en tu equipo; no hace falta compartirla durante el taller.",
     "crumbs": [
       "Inicio",
-      "0 — Antes del taller"
+      "Antes del taller"
     ]
   },
   {
@@ -383,10 +514,10 @@
     "href": "contenido/00-preparacion.html#lectura-previa-recomendada",
     "title": "Antes del taller",
     "section": "Lectura previa recomendada",
-    "text": "Lectura previa recomendada\n\n\n\nPágina\nQué aporta\nLectura\n\n\n\n\nSentido y objetivos\nPor qué importa saber qué delegar y cómo verificar\n5 min\n\n\nSeis etapas y 4D\nEl método que seguiremos y el marco de competencias\n5 min\n\n\nCaso integrador\nEl Excel con el que trabajaremos\n3 min\n\n\n\nNo es obligatoria: el taller empieza con un resumen. Pero si llegas con estas páginas leídas, tendrás más tiempo para la práctica.",
+    "text": "Lectura previa recomendada\n\n\n\nPágina\nQué aporta\n\n\n\n\nIntroducción\nPor qué importa saber qué delegar y cómo verificar\n\n\nSeis etapas y 4D\nEl método que seguiremos y el marco de competencias\n\n\nCaso de estudio\nEl Excel con el que trabajaremos\n\n\n\nNo es obligatoria: el taller empieza con un resumen. Si llegas con estas páginas leídas, reconocerás el caso y el método al empezar la práctica.",
     "crumbs": [
       "Inicio",
-      "0 — Antes del taller"
+      "Antes del taller"
     ]
   },
   {
@@ -394,7 +525,27 @@
     "href": "index.html",
     "title": "Antes del prompt",
     "section": "",
-    "text": "La IA puede hacerlo. ¿Tú sabes qué hizo, por qué lo hizo y cómo comprobarlo?\nEste taller propone una ruta de seis etapas para trabajar con asistentes de IA sin perder el criterio científico. Partimos de necesidades ambiguas, aprendemos el vocabulario necesario, delimitamos una tarea, decidimos qué delegar, contrastamos los resultados y documentamos decisiones.\nSesión del programa ELIXIR-México 2026: «Instrucciones para modelos de lenguaje en tareas científicas (prompting; ponencia y taller)».\nDuración: 120 minutos. Modalidad: taller práctico presencial o híbrido. Necesitas: una computadora y una cuenta en un asistente de IA que permita adjuntar archivos; los detalles y una prueba de 2 minutos están en Antes del taller. No se necesitan conocimientos de programación.",
+    "text": "La IA puede hacerlo. ¿Tú sabes qué hizo, por qué lo hizo y cómo comprobarlo?\nEste taller propone una ruta de seis etapas para trabajar con asistentes de IA sin perder el criterio científico.\nObjetivo del taller: desarrollar habilidades para transformar necesidades cotidianas de investigación, inicialmente ambiguas, en tareas claras, fundamentadas y verificables, mediante exploración conceptual, especificación, colaboración crítica con IA y documentación del proceso.\nSesión del programa ELIXIR-México 2026: «Instrucciones para modelos de lenguaje en tareas científicas (prompting; ponencia y taller)».\nModalidad: taller práctico presencial o híbrido. Necesitas: una computadora y una cuenta en un asistente de IA que permita adjuntar archivos; los detalles y la prueba están en Antes del taller. No se necesitan conocimientos de programación.",
+    "crumbs": [
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "index.html#aprendizajes",
+    "href": "index.html#aprendizajes",
+    "title": "Antes del prompt",
+    "section": "Aprendizajes",
+    "text": "Aprendizajes\nAl finalizar, podrás:\n\nExpresar una necesidad en tus palabras e identificar ambigüedades y supuestos.\nReconocer conocimientos faltantes y aprender vocabulario científico/técnico relevante con apoyo de IA y fuentes confiables.\nDelimitar objetivos, información disponible, restricciones, entregables y criterios para saber si se avanza correctamente.\nDecidir qué trabajo delegar a la IA y qué decisiones científicas permanecen bajo responsabilidad humana, usando el marco AI Fluency 4D.\nDistinguir respuestas plausibles de afirmaciones sustentadas; identificar inferencias no autorizadas, errores y lagunas.\nDocumentar conocimientos, fuentes, instrucciones, revisiones, decisiones y próximos pasos en una bitácora reutilizable.\n\n\n\n\n\n\n\nImportanteResultado esperado\n\n\n\nLa sesión cierra con dos productos: un diagnóstico FAIR preliminar del Excel simulado, elaborado en tu asistente, y tu Bitácora mínima 4D, un archivo Markdown que completas durante la práctica.\nEl éxito es que comprendas mejor el encargo y puedas justificar tu plan y los límites de lo que produjo la IA.",
+    "crumbs": [
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "index.html#qué-incluye-y-qué-no-incluye-este-taller",
+    "href": "index.html#qué-incluye-y-qué-no-incluye-este-taller",
+    "title": "Antes del prompt",
+    "section": "Qué incluye y qué no incluye este taller",
+    "text": "Qué incluye y qué no incluye este taller\n\n\n\n\n\n\n\nSí se enseña\nNo se enseña\n\n\n\n\nPensar y preguntar con ayuda de IA desde el principio\nUna técnica avanzada o exhaustiva de ingeniería de prompts\n\n\nDescubrir vocabulario que falta y contrastar conceptos\nUn curso completo de fundamentos de LLM\n\n\nReformular el encargo y fijar expectativas\nProgramación, agentes, Cursor/Codex o automatización en profundidad\n\n\nDecidir qué delegar y qué verificar\nCertificación de conformidad FAIR\n\n\nExaminar un Excel pequeño y notar sus ausencias\nDiseño integral de metadatos, repositorios o ontologías\n\n\nDocumentar el proceso con plantilla sencilla\nCapacitación extensa en Docs, Markdown o herramientas específicas",
     "crumbs": [
       "Inicio"
     ]
@@ -404,7 +555,7 @@
     "href": "index.html#por-dónde-comenzar",
     "title": "Antes del prompt",
     "section": "Por dónde comenzar",
-    "text": "Por dónde comenzar\nAntes del taller\n\nPrepara tu cuenta de IA y haz la prueba de 2 minutos.\nSi puedes, lee el sentido y los objetivos, las seis etapas y el 4D y el caso integrador (unos 15 minutos).\n\nDurante el taller\n\nRevisa los tres casos problemáticos.\nAprende a pasar del problema al prompt.\nDescarga el Excel simulado y sigue la práctica guiada.\nRealiza la verificación independiente y completa la bitácora.\n\nPara profundizar: fuentes, materiales y continuidad.\n\n\n\n\n\n\nAdvertenciaDatos simulados\n\n\n\nLos números y las condiciones del Excel son deliberadamente ficticios. No constituyen resultados experimentales publicables.\n\n\n\n\n\nLas seis etapas del taller",
+    "text": "Por dónde comenzar\nAntes del taller\n\nPrepara tu cuenta de IA y haz la prueba del asistente.\nSi puedes, lee la introducción, las seis etapas y el 4D y el caso de estudio.\n\nDurante el taller\n\nComprender el problema. Recorre la introducción, las tres situaciones y las seis etapas, y practica en ¿Qué falta por definir?.\nConstruir una solicitud. Aprende a pasar del problema al prompt y construye una instrucción en De la solicitud al prompt.\nEvaluar respuestas. Practica en ¿Qué puedo aceptar?.\nCaso de estudio. Con el Excel simulado, haz el caso y la práctica guiada, que incluye la verificación con la fuente.\nRegistro. Cierra en la Bitácora mínima 4D.\n\nPara profundizar: fuentes, materiales y continuidad.",
     "crumbs": [
       "Inicio"
     ]
@@ -412,49 +563,61 @@
   {
     "objectID": "contenido/01-contexto.html",
     "href": "contenido/01-contexto.html",
-    "title": "Sentido, objetivos y alcance",
+    "title": "Introducción: por qué importa saber qué delegar",
     "section": "",
-    "text": "Antes del taller · lectura de 5 min",
+    "text": "Antes o durante el taller",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
-      "1 — Sentido y objetivos"
+      "Comprender el problema",
+      "1 — Introducción"
     ]
   },
   {
-    "objectID": "contenido/01-contexto.html#sentido-y-contexto",
-    "href": "contenido/01-contexto.html#sentido-y-contexto",
-    "title": "Sentido, objetivos y alcance",
-    "section": "Sentido y contexto",
-    "text": "Sentido y contexto\n\nLa transformación del trabajo científico con IA\nLa inteligencia artificial está transformando muchas actividades científicas. La IA puede ayudar a explorar literatura, estructurar información, redactar documentos, proponer análisis y preparar documentación de datos. Que produzca resultados con rapidez no significa que haya interpretado correctamente el objetivo de quien investiga ni que las afirmaciones sean válidas.\nUn antecedente útil viene de la ingeniería de software. Allí, los asistentes permiten delegar partes de la implementación; como consecuencia, cobran mayor relevancia la definición de necesidades, las especificaciones, los criterios de aceptación y la revisión de los resultados. El enfoque Spec-Driven Development insiste en conservar la intención del producto desde los requisitos hasta la validación [R11]. Martin Fowler denomina Agentic Engineering a una práctica en la que agentes producen o modifican código mientras las personas conservan la responsabilidad de revisarlo y comprenderlo [R12]. Estas son descripciones y propuestas del ámbito de software, no pruebas de que todo trabajo de programación haya cambiado del mismo modo ni garantías automáticas de productividad o calidad.\n\nCuando producir resultados se vuelve más fácil, saber qué producir y cómo verificarlo se vuelve aún más importante.\n\nLa analogía tiene límites: en investigación a menudo no conocemos de antemano la respuesta correcta. No se trata de trasladar mecánicamente pruebas de software al trabajo científico, sino de definir qué se puede verificar: procedencia, supuestos, métodos, consistencia, datos y solidez de las conclusiones.\n\n\nEl problema: delegar sin perder el criterio científico\nLos asistentes actuales pueden interpretar instrucciones ambiguas, sugerir opciones y completar información implícita. Esa capacidad es útil, pero también puede producir explicaciones convincentes basadas en supuestos que no están respaldados por los datos. Este riesgo no es exclusivo de los modelos: quienes investigan también pueden introducir inferencias plausibles que no corresponden a hechos observados.\nEn una matriz de expresión génica, por ejemplo, un modelo puede identificar genes y comparar valores, pero no puede establecer con certeza unidades, réplicas o tratamientos si esa información no figura en el archivo ni en otras fuentes fiables. Una inferencia biológicamente razonable no autoriza a completar los metadatos experimentales como si fueran hechos.\nEl problema no es solamente cómo escribir instrucciones más elaboradas. También es reconocer qué sabemos, qué desconocemos, qué estamos suponiendo y qué podemos justificar con evidencia.\n\nNo se trata de hacer el trabajo antes que la IA, sino de comprenderlo lo suficiente para saber qué delegar, qué esperar y qué verificar.\n\n\n\nLa propuesta de «Antes del prompt»\nEste taller plantea una secuencia iterativa de seis etapas para transformar necesidades de investigación expresadas informalmente en tareas delimitadas, resultados evaluables y decisiones documentadas. Integra competencias de AI Fluency 4D [R1], alfabetización informacional [R2], descomposición y criterios de aceptación [R3], y buenas prácticas de verificación y documentación [R4, R6, R10]. Las prácticas de especificación en desarrollo de software [R11, R12] sirven como antecedente conceptual y analogía, no como metodología formal aplicable sin cambios a toda investigación. La secuencia concreta es una síntesis didáctica desarrollada para este taller con asistencia de IA; no se presenta como un método estandarizado ni como una intervención con eficacia pedagógica validada (véase la procedencia del enfoque).\nLos prompts se usan desde el comienzo, incluso para reconocer conceptos desconocidos y pedir explicaciones. «Antes del prompt» no significa esperar para conversar con IA; significa pensar antes de delegar una solución sin comprender suficientemente la tarea. El propósito no es enseñar fórmulas rígidas, sino decidir qué pedir, qué recursos utilizar y cómo evaluar lo recibido.\nEl caso integrador es una situación cotidiana en investigación: una investigadora tiene un Excel con expresión génica bajo tres condiciones, asociado a una publicación, y le piden preparar sus datos siguiendo los principios FAIR. Las personas participantes investigarán términos, revisarán la información disponible, identificarán ausencias, formularán un encargo razonable y contrastarán recomendaciones.\n\n\nDos públicos, una misma habilidad\n\nQuien publica un dataset: necesita comprender condiciones de uso, metadatos, fuentes, formatos, políticas editoriales y repositorios apropiados.\nQuien mantiene una base de datos: debe considerar identificadores, descripción, acceso, interoperabilidad, procedencia, versiones y reutilización; a otra escala y con desafíos técnicos adicionales.\n\nEl taller no implementa una base de datos ni deposita datasets. Busca reconocer preguntas compartidas entre ambas situaciones.",
+    "objectID": "contenido/01-contexto.html#la-transformación-del-trabajo-científico-con-ia",
+    "href": "contenido/01-contexto.html#la-transformación-del-trabajo-científico-con-ia",
+    "title": "Introducción: por qué importa saber qué delegar",
+    "section": "La transformación del trabajo científico con IA",
+    "text": "La transformación del trabajo científico con IA\nLa inteligencia artificial está transformando muchas actividades científicas. La IA puede ayudar a explorar literatura, estructurar información, redactar documentos, proponer análisis y preparar documentación de datos. Que produzca resultados con rapidez no significa que haya interpretado correctamente el objetivo de quien investiga ni que las afirmaciones sean válidas.\n\n\n\nCinco actividades científicas en las que puede ayudar la IA y lo que sigue siendo responsabilidad de quien investiga\n\n\nUn antecedente útil viene de la ingeniería de software. Allí, los asistentes permiten delegar partes de la implementación; como consecuencia, cobran mayor relevancia la definición de necesidades, las especificaciones, los criterios de aceptación y la revisión de los resultados. El enfoque Spec-Driven Development insiste en conservar la intención del producto desde los requisitos hasta la validación [R11]. Martin Fowler denomina Agentic Engineering a una práctica en la que agentes producen o modifican código mientras las personas conservan la responsabilidad de revisarlo y comprenderlo [R12]. Estas son descripciones y propuestas del ámbito de software, no pruebas de que todo trabajo de programación haya cambiado del mismo modo ni garantías automáticas de productividad o calidad.\n\nCuando producir resultados se vuelve más fácil, saber qué producir y cómo verificarlo se vuelve aún más importante.\n\nLa analogía tiene límites: en investigación a menudo no conocemos de antemano la respuesta correcta. No se trata de trasladar mecánicamente pruebas de software al trabajo científico, sino de definir qué se puede verificar: procedencia, supuestos, métodos, consistencia, datos y solidez de las conclusiones.",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
-      "1 — Sentido y objetivos"
+      "Comprender el problema",
+      "1 — Introducción"
     ]
   },
   {
-    "objectID": "contenido/01-contexto.html#objetivo-y-aprendizajes",
-    "href": "contenido/01-contexto.html#objetivo-y-aprendizajes",
-    "title": "Sentido, objetivos y alcance",
-    "section": "Objetivo y aprendizajes",
-    "text": "Objetivo y aprendizajes\n\nObjetivo general\nDesarrollar habilidades para transformar necesidades cotidianas de investigación inicialmente ambiguas en tareas claras, fundamentadas y verificables, mediante exploración conceptual, especificación, colaboración crítica con IA y documentación del proceso.\n\n\nAl finalizar, podrás\n\nExpresar una necesidad en sus palabras e identificar ambigüedades y supuestos.\nReconocer conocimientos faltantes y aprender vocabulario científico/técnico relevante con apoyo de IA y fuentes confiables.\nDelimitar objetivos, información disponible, restricciones, entregables y criterios para saber si se avanza correctamente.\nDecidir qué trabajo delegar a la IA y qué decisiones científicas permanecen bajo responsabilidad humana, usando el marco AI Fluency 4D.\nDistinguir respuestas plausibles de afirmaciones sustentadas; identificar inferencias no autorizadas, errores y lagunas.\nDocumentar conocimientos, fuentes, instrucciones, revisiones, decisiones y próximos pasos en una bitácora reutilizable.\n\nÉxito esperado: no un dataset certificado como FAIR, sino una persona que comprende mejor el encargo y puede justificar su plan y los límites de lo que la IA produjo.",
+    "objectID": "contenido/01-contexto.html#el-problema-respuestas-plausibles-que-los-datos-no-respaldan",
+    "href": "contenido/01-contexto.html#el-problema-respuestas-plausibles-que-los-datos-no-respaldan",
+    "title": "Introducción: por qué importa saber qué delegar",
+    "section": "El problema: respuestas plausibles que los datos no respaldan",
+    "text": "El problema: respuestas plausibles que los datos no respaldan\nLos asistentes actuales pueden interpretar instrucciones ambiguas, sugerir opciones y completar información implícita. Esa capacidad es útil, pero también puede producir explicaciones convincentes basadas en supuestos que no están respaldados por los datos. Este riesgo no es exclusivo de los modelos: quienes investigan también pueden introducir inferencias plausibles que no corresponden a hechos observados.\nEn una matriz de expresión génica, por ejemplo, un modelo puede identificar genes y comparar valores, pero no puede establecer con certeza unidades, réplicas o tratamientos si esa información no figura en el archivo ni en otras fuentes fiables. Una inferencia biológicamente razonable no autoriza a completar los metadatos experimentales como si fueran hechos.\nEl problema no es solamente cómo escribir instrucciones más elaboradas. También es reconocer qué sabemos, qué desconocemos, qué estamos suponiendo y qué podemos justificar con evidencia.\n\nNo se trata de hacer el trabajo antes que la IA, sino de comprenderlo lo suficiente para saber qué delegar, qué esperar y qué verificar.",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
-      "1 — Sentido y objetivos"
+      "Comprender el problema",
+      "1 — Introducción"
     ]
   },
   {
-    "objectID": "contenido/01-contexto.html#alcance-y-decisiones-pedagógicas",
-    "href": "contenido/01-contexto.html#alcance-y-decisiones-pedagógicas",
-    "title": "Sentido, objetivos y alcance",
-    "section": "Alcance y decisiones pedagógicas",
-    "text": "Alcance y decisiones pedagógicas\n\n\n\n\n\n\n\nSí se enseña\nNo se enseña en estas dos horas\n\n\n\n\nPensar y preguntar con ayuda de IA desde el principio\nUna técnica avanzada o exhaustiva de ingeniería de prompts\n\n\nDescubrir vocabulario que falta y contrastar conceptos\nUn curso completo de fundamentos de LLM\n\n\nReformular el encargo y fijar expectativas\nProgramación, agentes, Cursor/Codex o automatización en profundidad\n\n\nDecidir qué delegar y qué verificar\nCertificación de conformidad FAIR\n\n\nExaminar un Excel pequeño y notar sus ausencias\nDiseño integral de metadatos, repositorios o ontologías\n\n\nDocumentar el proceso con plantilla sencilla\nCapacitación extensa en Docs, Markdown o herramientas específicas\n\n\n\nEnfoque didáctico: situaciones reconocibles → conceptos mínimos → seis etapas → ejercicio común → comparación de lo que se creía al inicio y lo que se puede defender al final.\nSin culpables: cuando un resultado falla, no se trata de culpar a quien escribió la instrucción ni de atribuirlo todo a la IA. Conviene distinguir entre límites del sistema, información insuficiente, ambigüedad y errores de evaluación. Los tres ejemplos son simulaciones pedagógicas, no registros de ejecuciones reales.",
+    "objectID": "contenido/01-contexto.html#la-propuesta-de-antes-del-prompt",
+    "href": "contenido/01-contexto.html#la-propuesta-de-antes-del-prompt",
+    "title": "Introducción: por qué importa saber qué delegar",
+    "section": "La propuesta de «Antes del prompt»",
+    "text": "La propuesta de «Antes del prompt»\nEste taller plantea una secuencia iterativa de seis etapas para transformar necesidades de investigación expresadas informalmente en tareas delimitadas, resultados evaluables y decisiones documentadas. Integra competencias de AI Fluency 4D [R1], alfabetización informacional [R2], descomposición y criterios de aceptación [R3], y buenas prácticas de verificación y documentación [R4, R6, R10]. Las prácticas de especificación en desarrollo de software [R11, R12] sirven como antecedente conceptual y analogía, no como metodología formal aplicable sin cambios a toda investigación. La secuencia concreta es una síntesis didáctica desarrollada para este taller con asistencia de IA; no se presenta como un método estandarizado ni como una intervención con eficacia pedagógica validada (véase la procedencia del enfoque).\nLos prompts se usan desde el comienzo, incluso para reconocer conceptos desconocidos y pedir explicaciones. «Antes del prompt» no significa esperar para conversar con IA; significa pensar antes de delegar una solución sin comprender suficientemente la tarea. El propósito no es enseñar fórmulas rígidas, sino decidir qué pedir, qué recursos utilizar y cómo evaluar lo recibido.\nEl caso de estudio es una situación cotidiana en investigación: una investigadora tiene un Excel con expresión génica bajo tres condiciones, asociado a una publicación, y le piden preparar sus datos siguiendo los principios FAIR. Las personas participantes investigarán términos, revisarán la información disponible, identificarán ausencias, formularán un encargo razonable y contrastarán recomendaciones.",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
-      "1 — Sentido y objetivos"
+      "Comprender el problema",
+      "1 — Introducción"
+    ]
+  },
+  {
+    "objectID": "contenido/01-contexto.html#dos-públicos-una-misma-habilidad",
+    "href": "contenido/01-contexto.html#dos-públicos-una-misma-habilidad",
+    "title": "Introducción: por qué importa saber qué delegar",
+    "section": "Dos públicos, una misma habilidad",
+    "text": "Dos públicos, una misma habilidad\n\nQuien publica un dataset: necesita comprender condiciones de uso, metadatos, fuentes, formatos, políticas editoriales y repositorios apropiados.\nQuien mantiene una base de datos: debe considerar identificadores, descripción, acceso, interoperabilidad, procedencia, versiones y reutilización; a otra escala y con desafíos técnicos adicionales.\n\nEl taller no implementa una base de datos ni deposita datasets. Busca reconocer preguntas compartidas entre ambas situaciones.",
+    "crumbs": [
+      "Inicio",
+      "Comprender el problema",
+      "1 — Introducción"
     ]
   },
   {
@@ -462,22 +625,34 @@
     "href": "contenido/03-metodo.html",
     "title": "Metodología de seis etapas y AI Fluency 4D",
     "section": "",
-    "text": "Antes del taller · lectura de 5 min",
+    "text": "Antes o durante el taller",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
+      "Comprender el problema",
       "3 — Seis etapas y 4D"
     ]
   },
   {
-    "objectID": "contenido/03-metodo.html#las-seis-etapas-y-el-marco-4d",
-    "href": "contenido/03-metodo.html#las-seis-etapas-y-el-marco-4d",
+    "objectID": "contenido/03-metodo.html#las-seis-etapas",
+    "href": "contenido/03-metodo.html#las-seis-etapas",
     "title": "Metodología de seis etapas y AI Fluency 4D",
-    "section": "Las seis etapas y el marco 4D",
-    "text": "Las seis etapas y el marco 4D\nLas seis etapas son una adaptación didáctica desarrollada para este taller; en Procedencia del enfoque se explica en qué fuentes se apoya cada una y qué no puede afirmarse.\n\n\n\nLas seis etapas: de la necesidad inicial al registro de decisiones\n\n\nLas seis etapas (entre paréntesis, el nombre corto que usamos en tablas y diagramas):\n\nExpreso lo que necesito, aunque todavía no sea preciso (Necesidad). ¿Qué quiero lograr?\nIdentifico lo que desconozco y aprendo el vocabulario necesario (Vocabulario). ¿Qué debo comprender antes de tomar decisiones?\nDelimito el problema y establezco qué resultado necesito (Especificación). ¿Qué entradas, alcance, entregable y criterios necesito?\nDecido cómo colaborar con la IA utilizando las competencias 4D (Colaboración). ¿Qué delego y qué superviso?\nObtengo un resultado, lo contrasto y corrijo sus limitaciones (Verificación). ¿Qué evidencia permite aceptarlo?\nDocumento cómo llegué a él y qué decisiones tomé (Registro). ¿Cómo lo entenderá o revisará otra persona?\n\nNo es un flujo lineal obligatorio: un resultado incorrecto puede obligar a regresar a aprender vocabulario, corregir la especificación o reformular el problema.\n\nAI Fluency 4D: marco de competencias\nEl marco AI Fluency de Rick Dakan y Joseph Feller, desarrollado en colaboración con Anthropic [R1], identifica cuatro competencias interrelacionadas. Conservamos los nombres en inglés, como aparecen en el marco:\n\n\n\n\n\n\n\n\nD\nCompetencia\nPregunta útil en el taller\n\n\n\n\nDelegation (delegación)\nDeterminar metas y decidir si, cuándo y cómo usar IA.\n¿Qué le encargo a la IA y qué hago/decido yo?\n\n\nDescription (descripción)\nComunicar metas y contexto para orientar el trabajo.\n¿He explicado datos, condiciones y resultado esperado?\n\n\nDiscernment (discernimiento)\nEvaluar críticamente productos y comportamiento de IA.\n¿Qué parte está comprobada y qué parte debo cuestionar?\n\n\nDiligence (diligencia)\nAsumir responsabilidad y actuar apropiadamente.\n¿Qué debo registrar, proteger, atribuir y revisar antes de difundir?\n\n\n\nEstas competencias no corresponden una a una a las etapas. Por ejemplo, la exploración también usa Description y Discernment; la verificación puede modificar la Delegation. El taller aplica el marco 4D, pero no pretende presentarse como una metodología oficial de Anthropic.\n\n\n\nLas cuatro competencias acompañan las seis etapas\n\n\n\n\nMapa didáctico orientativo\n\n\n\n\n\n\n\n\nEtapa\n4D particularmente visibles\nEvidencia observable\n\n\n\n\n1. Necesidad\nDelegation\nReconoce el propósito y lo que no sabe\n\n\n2. Vocabulario\nDescription, Discernment\nDistingue términos y confirma definiciones\n\n\n3. Especificación\nDelegation, Description\nDefine alcance, datos y entregable\n\n\n4. Colaboración\nTodas\nDelimita IA/humano y supervisión\n\n\n5. Verificación\nDiscernment, Description\nDetecta supuestos y corrige\n\n\n6. Registro\nDiligence\nConserva fuentes, decisiones y pendientes\n\n\n\n\n\nAdvertencia transversal sobre inferencias\nLa IA actual puede formular preguntas acertadas y completar contexto con mucha soltura. Esto no autoriza convertir una hipótesis en metadatos observacionales. La misma cautela aplica a las inferencias humanas: una persona experta podría asociar katG con estrés oxidativo y concluir precipitadamente que una condición sin describir lo representa.\n\n\n¿Siempre hay que recorrer las seis etapas?\nNo. El proceso es proporcional: se usa completo cuando la decisión tiene consecuencias (publicar datos, compartirlos o interpretarlos) y se comprime cuando la consulta es trivial.",
+    "section": "Las seis etapas",
+    "text": "Las seis etapas\nEn la introducción vimos el riesgo: respuestas plausibles que los datos no respaldan. Para evitarlo no basta con escribir un prompt más largo; hace falta entender la tarea antes de delegarla y comprobar lo que regresa. Las seis etapas ordenan ese trabajo, desde una necesidad todavía imprecisa hasta un resultado documentado.\n\n\n\nLas seis etapas: de la necesidad inicial al registro de decisiones\n\n\nCada etapa responde a una pregunta. Entre paréntesis, el nombre corto que usamos en tablas y diagramas:\n\nExpreso lo que necesito, aunque todavía no sea preciso (Necesidad). ¿Qué quiero lograr?\nIdentifico lo que desconozco y aprendo el vocabulario necesario (Vocabulario). ¿Qué debo comprender antes de tomar decisiones?\nDelimito el problema y establezco qué resultado necesito (Especificación). ¿Qué entradas, alcance, entregable y criterios necesito?\nDecido cómo colaborar con la IA (Colaboración). ¿Qué delego y qué superviso?\nObtengo un resultado, lo contrasto y corrijo sus limitaciones (Verificación). ¿Qué evidencia permite aceptarlo?\nDocumento cómo llegué a él y qué decisiones tomé (Registro). ¿Cómo lo entenderá o revisará otra persona?\n\nNo es un procedimiento rígido. Un resultado incorrecto puede obligar a regresar a aprender vocabulario, corregir la especificación o reformular el problema. Tampoco hay que recorrer siempre las seis etapas: se usan completas cuando la decisión tiene consecuencias (publicar, compartir o interpretar datos) y se comprimen cuando la consulta es sencilla.\n\n\n\n\n\n\nTipDelimitar no es todavía redactar el prompt\n\n\n\nUna vez definido el resultado que necesitas (etapa 3), la anatomía del prompt te ayuda a traducirlo en instrucciones para la IA (etapa 4). No es una séptima etapa, sino el puente entre ambas.",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
+      "Comprender el problema",
+      "3 — Seis etapas y 4D"
+    ]
+  },
+  {
+    "objectID": "contenido/03-metodo.html#ai-fluency-4d-marco-de-competencias",
+    "href": "contenido/03-metodo.html#ai-fluency-4d-marco-de-competencias",
+    "title": "Metodología de seis etapas y AI Fluency 4D",
+    "section": "Las cuatro competencias del marco AI Fluency 4D",
+    "text": "Las cuatro competencias del marco AI Fluency 4D\nLas etapas dicen qué hacer; las competencias describen cómo trabajar con la IA en cualquiera de ellas. Provienen del marco AI Fluency de Rick Dakan y Joseph Feller, desarrollado en colaboración con Anthropic [R1]. Conservamos los nombres en inglés, como aparecen en el marco, con su equivalente en español.\n\n\n\n\n\n\n\n\nCompetencia\nQué implica\nEn el caso del Excel\n\n\n\n\nDelegation (delegación)\nDecidir si, cuándo y para qué usar IA, y qué decisiones conservas tú.\nLa IA hace el inventario de lo que falta; tú decides qué significa «Estrés A».\n\n\nDescription (descripción)\nComunicar el objetivo, el contexto y los límites para orientar el trabajo.\nLe pides que cite hoja y celda y que no invente unidades.\n\n\nDiscernment (discernimiento)\nEvaluar críticamente lo que la IA produce y cómo se comporta.\nCompruebas que no convirtió «prom.» en «promedio» sin evidencia.\n\n\nDiligence (diligencia)\nAsumir la responsabilidad: registrar, proteger, atribuir y revisar antes de difundir.\nAnotas en la bitácora qué queda pendiente y quién debe confirmarlo.\n\n\n\n\nCómo se relacionan con las etapas\nLas competencias no corresponden una a una a las etapas: acompañan todo el recorrido. Por ejemplo, al explorar vocabulario (etapa 2) también describes lo que buscas y evalúas lo que recibes; y lo que descubres al verificar (etapa 5) puede cambiar lo que decides delegar.\n\n\n\nLas cuatro competencias acompañan las seis etapas\n\n\n\n\n\n\n\n\nAdvertenciaLas inferencias también son nuestras\n\n\n\nLa IA completa contexto con mucha soltura, pero eso no autoriza a convertir una hipótesis en un metadato. La misma cautela vale para quien investiga: una persona experta podría asociar katG con estrés oxidativo y concluir, sin evidencia, que «Estrés A» representa esa condición.\n\n\nPractícalo ahora: en ¿Qué falta por definir? recorrerás las etapas 1 a 3 con un caso breve.",
+    "crumbs": [
+      "Inicio",
+      "Comprender el problema",
       "3 — Seis etapas y 4D"
     ]
   },
@@ -486,120 +661,91 @@
     "href": "contenido/03-metodo.html#procedencia-del-enfoque",
     "title": "Metodología de seis etapas y AI Fluency 4D",
     "section": "Procedencia del enfoque",
-    "text": "Procedencia del enfoque\nLa metodología «Antes del prompt» es una síntesis didáctica del equipo docente desarrollada con asistencia de IA. La formulación concreta, el orden y la combinación de seis etapas responden a las necesidades del taller. La literatura citada respalda prácticas o competencias componentes, pero no valida la secuencia completa ni su eficacia pedagógica.\n\n\n\n\n\n\n\n\nEtapa propuesta en el taller\nFundamento o práctica vinculada\nAlcance de la relación\n\n\n\n\n1. Necesidad: expreso lo que necesito\nInvestigación como indagación y búsqueda estratégica [R2]; Delegation [R1]\nInspiración conceptual; formulación propia\n\n\n2. Vocabulario: identifico lo que desconozco y aprendo el vocabulario necesario\nBúsqueda iterativa, lenguaje especializado y contraste de fuentes [R2]\nFundamento directo para explorar términos, no una técnica exclusiva de IA\n\n\n3. Especificación: delimito el problema y establezco qué resultado necesito\nDescomposición y criterios de aceptación [R3]; prácticas de especificación [R11]; Description [R1]\nAdaptación desde desarrollo de productos a tareas científicas cotidianas\n\n\n4. Colaboración: decido cómo colaborar con la IA\nCuatro competencias del 4D [R1]\nUso explícito del marco; 4D es transversal a todas las etapas\n\n\n5. Verificación: obtengo un resultado, lo contrasto y corrijo\nDiscernment [R1]; gestión de riesgos y evaluación [R4]; revisión humana en ingeniería asistida [R12]\nEl contraste científico exige fuentes y criterios adecuados a cada tarea\n\n\n6. Registro: documento cómo llegué al resultado y qué decidí\nDiligence [R1]; documentación de datos [R6] y buenas prácticas [R10]\nAdaptación a bitácora; no implica por sí sola que el resultado sea reproducible o FAIR\n\n\n\n\nQué puede afirmarse, y qué no\n\nSí: el taller está fundamentado en AI Fluency 4D y toma elementos de alfabetización informacional, especificación, verificación y documentación.\nSí: se propone una secuencia iterativa de seis momentos aplicables al caso de datos científicos.\nNo: que «Antes del prompt» sea una metodología científica estandarizada o validada por Anthropic, ACRL, NIST o ELIXIR.\nNo: que los resultados de una respuesta de IA o una lista de cotejo certifiquen que un dataset cumple FAIR.\n\nSi vas a reutilizar o citar este enfoque, consulta Cómo citar este material.\n\n\n\n\n\n\nTipDelimitar no es todavía redactar el prompt\n\n\n\nUna vez definido el producto esperado (etapa 3), utiliza la anatomía del prompt para traducirlo a instrucciones (etapa 4). Esto no añade una séptima etapa.",
+    "text": "Procedencia del enfoque\n«Antes del prompt» es una síntesis didáctica desarrollada para este taller con asistencia de IA. La literatura citada respalda prácticas y competencias que forman parte de cada etapa, pero no valida la secuencia completa ni su eficacia pedagógica. El taller aplica el marco 4D; no es una metodología oficial de Anthropic.\nQué puede afirmarse, y qué no:\n\nSí: el taller está fundamentado en AI Fluency 4D y toma elementos de alfabetización informacional, especificación, verificación y documentación.\nSí: propone una secuencia iterativa de seis etapas aplicable al caso de datos científicos.\nNo: que «Antes del prompt» sea una metodología científica estandarizada o validada por Anthropic, ACRL, NIST o ELIXIR.\nNo: que una respuesta de IA o una lista de cotejo certifiquen que un dataset cumple FAIR.\n\n\n\n\n\n\n\nNotaEn qué fuentes se apoya cada etapa\n\n\n\n\n\n\n\n\nEtapa\nFundamento o práctica vinculada\nAlcance de la relación\n\n\n\n\n1. Necesidad\nInvestigación como indagación y búsqueda estratégica [R2]; Delegation (delegación) [R1]\nInspiración conceptual; formulación propia\n\n\n2. Vocabulario\nBúsqueda iterativa, lenguaje especializado y contraste de fuentes [R2]\nFundamento directo para explorar términos, no una técnica exclusiva de IA\n\n\n3. Especificación\nDescomposición y criterios de aceptación [R3]; prácticas de especificación [R11]; Description (descripción) [R1]\nAdaptación desde el desarrollo de productos a tareas científicas cotidianas\n\n\n4. Colaboración\nLas cuatro competencias del 4D [R1]\nUso explícito del marco; el 4D es transversal a todas las etapas\n\n\n5. Verificación\nDiscernment (discernimiento) [R1]; gestión de riesgos y evaluación [R4]; revisión humana en ingeniería asistida [R12]\nEl contraste científico exige fuentes y criterios adecuados a cada tarea\n\n\n6. Registro\nDiligence (diligencia) [R1]; documentación de datos [R6] y buenas prácticas [R10]\nAdaptación a bitácora; no implica por sí sola que el resultado sea reproducible o FAIR\n\n\n\n\n\n\nSi vas a reutilizar o citar este enfoque, consulta Cómo citar este material.",
     "crumbs": [
       "Inicio",
-      "Fundamentos",
+      "Comprender el problema",
       "3 — Seis etapas y 4D"
     ]
   },
   {
     "objectID": "contenido/04-caso-fair.html",
     "href": "contenido/04-caso-fair.html",
-    "title": "Caso integrador: un Excel de expresión génica",
+    "title": "Caso de estudio: un Excel que debe «seguir FAIR»",
     "section": "",
-    "text": "Antes o durante el taller · lectura de 3 min",
+    "text": "Antes o durante el taller",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "4 — Caso integrador"
+      "Aplicar a un caso de estudio",
+      "8 — Caso de estudio FAIR"
     ]
   },
   {
-    "objectID": "contenido/04-caso-fair.html#escenario",
-    "href": "contenido/04-caso-fair.html#escenario",
-    "title": "Caso integrador: un Excel de expresión génica",
-    "section": "Escenario",
-    "text": "Escenario\nUna investigadora prepara un artículo y recibe una solicitud: «Los datos de expresión génica deben seguir los principios FAIR». Tiene una tabla pequeña con cinco filas de genes y tres columnas de condiciones, pero le faltan datos esenciales de contexto experimental.\nNuestra tarea no es fabricar metadatos para completar una tabla. Es reconocer qué información está disponible, cuál falta, quién podría confirmarla y qué principios o documentación externa ayudan a organizar el trabajo.\nDescarga el Excel simulado. Tiene dos hojas: los datos y unas notas experimentales parciales. Una nota visible indica que los datos son ficticios. Si tu asistente no acepta archivos, usa la versión en texto.\n\n\n\nLas dos hojas del Excel simulado",
+    "objectID": "contenido/04-caso-fair.html#el-encargo",
+    "href": "contenido/04-caso-fair.html#el-encargo",
+    "title": "Caso de estudio: un Excel que debe «seguir FAIR»",
+    "section": "El encargo",
+    "text": "El encargo\nYa conoces este archivo: en el ejemplo 3 una IA le inventaba metadatos, y en Del problema al prompt sirvió para comparar dos solicitudes. Ahora lo trabajas tú.\nUna investigadora prepara un artículo y recibe esta solicitud:\n\nLos datos de expresión génica deben seguir los principios FAIR.\n\nTiene una tabla pequeña con cinco filas de genes y tres columnas de condiciones, pero le faltan datos esenciales de contexto experimental.\n«Seguir FAIR» suena a una sola tarea, pero no lo es. Antes de empezar conviene preguntarse:\n\n¿Qué significa, en concreto, que estos datos «sigan FAIR»? Lo vemos más abajo, aplicado al archivo.\n¿Quién lo pide y qué espera recibir: un depósito en un repositorio, una tabla documentada, una declaración de disponibilidad de datos?\n¿Qué se puede hacer con la información que ya hay y qué depende de otras personas?\n\nLa tarea no es fabricar metadatos para completar la tabla. Es reconocer qué información está disponible, cuál falta y quién podría confirmarla.",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "4 — Caso integrador"
+      "Aplicar a un caso de estudio",
+      "8 — Caso de estudio FAIR"
     ]
   },
   {
-    "objectID": "contenido/04-caso-fair.html#qué-observar-sin-inventar",
-    "href": "contenido/04-caso-fair.html#qué-observar-sin-inventar",
-    "title": "Caso integrador: un Excel de expresión génica",
-    "section": "Qué observar sin inventar",
-    "text": "Qué observar sin inventar\n\n\n\n\n\n\n\nElemento\nPregunta que debes hacerte\n\n\n\n\nCinco identificadores: recA, rpoS, b0014, katG, dnaK\n¿Qué referencia genómica o sistema de identificadores se utilizó?\n\n\nControl, Estrés A (prom.), Estrés B\n¿Qué tratamientos representan? ¿Qué significa prom.?\n\n\nUna celda vacía en Estrés B para b0014\n¿Es dato ausente, no aplicable o perdido? Nunca interpretarlo automáticamente como 0.\n\n\nValores numéricos sin unidad confirmada\n¿Qué miden, en qué unidades y bajo qué procedimiento?\n\n\nNotas que dicen «valores procesados»\n¿Qué procesamiento se realizó y dónde está registrado?\n\n\nOrganismo «E. coli (sin cepa confirmada)»\n¿Qué cepa y qué genoma de referencia corresponden a los datos?\n\n\n«Datos del experimento de marzo» y responsable «por confirmar»\n¿De qué año son y quién puede confirmar la información?\n\n\n\n\n\n\n\n\n\nNotaSobre la identidad génica\n\n\n\nNo asumas equivalencias entre b0014 y otro símbolo génico sin confirmar cepa, ensamblaje y anotación. La coincidencia biológica sugerente no es una comprobación documental.\n\n\n\n\n\nLo observable en el archivo frente a lo que requiere confirmación",
+    "objectID": "contenido/04-caso-fair.html#los-datos-qué-dice-y-qué-no-dice-el-archivo",
+    "href": "contenido/04-caso-fair.html#los-datos-qué-dice-y-qué-no-dice-el-archivo",
+    "title": "Caso de estudio: un Excel que debe «seguir FAIR»",
+    "section": "Los datos: qué dice y qué no dice el archivo",
+    "text": "Los datos: qué dice y qué no dice el archivo\nDescarga el Excel simulado. Tiene dos hojas: los datos y unas notas experimentales parciales. Una nota visible indica que los datos son ficticios. Si tu asistente no acepta archivos, usa la versión en texto.\n\n\n\nLas dos hojas del Excel simulado\n\n\nAntes de seguir leyendo, mira el archivo por tu cuenta, en Excel o en el Explorador FAIR, que muestra las dos hojas en el navegador. Anota tres cosas que no puedes saber solo con este archivo. Después abre la caja y compara. Guarda tu lista: en la práctica la contrastarás con lo que diga la IA.\n\n\n\n\n\n\nNotaCompara con tu lista (ábrela después de anotar la tuya)\n\n\n\n\n\n\n\n\n\n\n\n\nElemento\nPregunta que debes hacerte\n\n\n\n\nCinco identificadores: recA, rpoS, b0014, katG, dnaK\n¿Qué referencia genómica o sistema de identificadores se utilizó?\n\n\nControl, Estrés A (prom.), Estrés B\n¿Qué tratamientos representan? ¿Qué significa prom.?\n\n\nUna celda vacía en Estrés B para b0014\n¿Es dato ausente, no aplicable o perdido? Nunca interpretarlo automáticamente como 0.\n\n\nValores numéricos sin unidad confirmada\n¿Qué miden, en qué unidades y bajo qué procedimiento?\n\n\nNotas que dicen «valores procesados»\n¿Qué procesamiento se realizó y dónde está registrado?\n\n\nOrganismo «E. coli (sin cepa confirmada)»\n¿Qué cepa y qué genoma de referencia corresponden a los datos?\n\n\n«Datos del experimento de marzo» y responsable «por confirmar»\n¿De qué año son y quién puede confirmar la información?\n\n\n\nSobre la identidad génica. En la anotación de E. coli K-12, b0014 es el identificador de locus de dnaK. La tabla tiene los dos, con valores distintos (200 y 190 en Control). ¿Es el mismo gen medido dos veces, o dos genes en otra anotación? Sin la cepa y la referencia genómica, el archivo no permite saberlo: una coincidencia sugerente no es una comprobación documental.\n\n\n\nLo observable en el archivo frente a lo que requiere confirmación",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "4 — Caso integrador"
+      "Aplicar a un caso de estudio",
+      "8 — Caso de estudio FAIR"
     ]
   },
   {
-    "objectID": "contenido/04-caso-fair.html#fair-como-contexto-no-como-certificado",
-    "href": "contenido/04-caso-fair.html#fair-como-contexto-no-como-certificado",
-    "title": "Caso integrador: un Excel de expresión génica",
-    "section": "FAIR como contexto, no como certificado",
-    "text": "FAIR como contexto, no como certificado\nSegún Wilkinson et al. (2016) [R5], los principios FAIR plantean cuatro preguntas:\n\nF — Findable: ¿cómo se descubrirían y citarían los datos?\nA — Accessible: ¿qué protocolos y condiciones regulan el acceso? FAIR no significa necesariamente acceso abierto irrestricto.\nI — Interoperable: ¿son interpretables los identificadores, términos, variables y formatos?\nR — Reusable: ¿se conoce suficiente sobre procedencia, método, contexto y licencias para reutilizarlos?\n\nLa existencia de un CSV o de un README no prueba conformidad FAIR. Una fuente externa puede explicar un estándar; no puede reconstruir tratamientos y réplicas que faltan en los registros experimentales.",
+    "objectID": "contenido/04-caso-fair.html#qué-pide-fair-aplicado-a-este-archivo",
+    "href": "contenido/04-caso-fair.html#qué-pide-fair-aplicado-a-este-archivo",
+    "title": "Caso de estudio: un Excel que debe «seguir FAIR»",
+    "section": "Qué pide FAIR, aplicado a este archivo",
+    "text": "Qué pide FAIR, aplicado a este archivo\nFAIR es el vocabulario clave del encargo. Lo que sigue es una descripción breve para orientarte: en la práctica guiada, con P1, le pedirás a la IA que te explique con más detalle los conceptos que necesitas, y podrás contrastar su explicación con esta. En otras sesiones del programa FAIR se estudia a fondo; aquí lo aplicamos a un caso concreto.\nQué es. FAIR son cuatro principios para que los datos científicos sean Findable (localizables), Accessible (accesibles), Interoperable (interoperables) y Reusable (reutilizables). Wilkinson et al. (2016) [R5] los propusieron pensando en las personas y también en los programas: que una computadora pueda encontrar y usar los datos con poca intervención humana.\nPor qué se pide. Revistas y agencias de financiamiento piden cada vez más que los datos de una publicación se compartan siguiendo estos principios, para que otras personas puedan comprobar los resultados o reutilizar los datos.\nQué se espera de un archivo. En la práctica, que otra persona, sin preguntarle nada a la investigadora, pueda encontrar los datos, obtenerlos, entender qué significa cada columna y saber en qué condiciones puede reutilizarlos. FAIR no es un sí o un no: un conjunto de datos puede ser más o menos FAIR, y ningún formato por sí solo lo garantiza.\nLas cuatro letras se pueden leer como cuatro preguntas:\n\n\n\n\n\n\n\n\nPrincipio\nPregunta\nEn este Excel\n\n\n\n\nF — Findable (localizable)\n¿Cómo encontraría y citaría alguien estos datos?\nEs un archivo suelto, sin identificador ni descripción que permita encontrarlo o citarlo.\n\n\nA — Accessible (accesible)\nUna vez encontrados, ¿cómo se obtienen y quién puede consultarlos?\nNo se indica dónde se depositará ni quién podrá consultarlo.\n\n\nI — Interoperable (interoperable)\n¿Otras personas y programas pueden interpretar los identificadores, los términos y las columnas?\nb0014 y dnaK podrían usar sistemas distintos; «Estrés A» y «prom.» no tienen definición.\n\n\nR — Reusable (reutilizable)\n¿Se sabe lo suficiente sobre su origen, el método y la licencia para volver a usarlos?\nFaltan unidades, réplicas, procesamiento documentado y licencia.\n\n\n\nAquí usamos FAIR para ordenar lo que falta, no para declarar que el archivo cumple. Convertir el Excel a CSV o añadirle un archivo README no lo vuelve FAIR por sí solo: lo que importa es que contengan la información que falta. Y esa información, como los tratamientos o las réplicas, solo puede darla quien hizo el experimento; ninguna fuente externa, ni la IA, puede reconstruirla.",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "4 — Caso integrador"
+      "Aplicar a un caso de estudio",
+      "8 — Caso de estudio FAIR"
     ]
   },
   {
-    "objectID": "contenido/04-caso-fair.html#producto-esperado",
-    "href": "contenido/04-caso-fair.html#producto-esperado",
-    "title": "Caso integrador: un Excel de expresión génica",
-    "section": "Producto esperado",
-    "text": "Producto esperado\nUna tabla de diagnóstico limitada a cuatro asuntos (unidades, condiciones, réplicas y celda faltante), tres preguntas prioritarias, una comprobación documental externa y una bitácora de decisiones.\nLos identificadores, el procesamiento, la cepa y la responsabilidad quedan fuera del alcance de P5 por tiempo, no porque sean menos importantes. Regístralos como exclusiones en la bitácora.",
+    "objectID": "contenido/04-caso-fair.html#qué-vas-a-producir",
+    "href": "contenido/04-caso-fair.html#qué-vas-a-producir",
+    "title": "Caso de estudio: un Excel que debe «seguir FAIR»",
+    "section": "Qué vas a producir",
+    "text": "Qué vas a producir\nLa sesión cierra con dos productos:\n\nUn diagnóstico elaborado en tu asistente, limitado a cuatro asuntos: las unidades de los valores, la definición de las condiciones, las réplicas y la celda vacía. Incluye tres preguntas prioritarias para la persona responsable del experimento.\nTu Bitácora mínima 4D, un archivo Markdown que completas paso a paso durante la práctica, donde registras también la comprobación con una fuente primaria que harás tú.\n\nLos identificadores, el procesamiento, la cepa y la persona responsable quedan fuera del alcance del diagnóstico por el tiempo de la práctica, no porque sean menos importantes. Regístralos como exclusiones en la bitácora.",
     "crumbs": [
       "Inicio",
-      "Taller FAIR",
-      "4 — Caso integrador"
+      "Aplicar a un caso de estudio",
+      "8 — Caso de estudio FAIR"
+    ]
+  },
+  {
+    "objectID": "contenido/04-caso-fair.html#cómo-se-trabaja",
+    "href": "contenido/04-caso-fair.html#cómo-se-trabaja",
+    "title": "Caso de estudio: un Excel que debe «seguir FAIR»",
+    "section": "Cómo se trabaja",
+    "text": "Cómo se trabaja\nEn la práctica guiada recorrerás las seis etapas del método con la IA, en un solo chat, y ejercitarás las cuatro competencias 4D. La práctica incluye la verificación con una fuente primaria y termina con tu Bitácora mínima 4D. Lleva contigo la lista que anotaste.",
+    "crumbs": [
+      "Inicio",
+      "Aplicar a un caso de estudio",
+      "8 — Caso de estudio FAIR"
     ]
   },
   {
     "objectID": "contenido/06-verificacion.html",
     "href": "contenido/06-verificacion.html",
-    "title": "Verificación independiente de afirmaciones",
+    "title": "Nota de ruta",
     "section": "",
-    "text": "Durante el taller · lectura de 2 min",
-    "crumbs": [
-      "Inicio",
-      "Taller FAIR",
-      "6 — Verificación"
-    ]
-  },
-  {
-    "objectID": "contenido/06-verificacion.html#qué-significa-contrastar-realmente",
-    "href": "contenido/06-verificacion.html#qué-significa-contrastar-realmente",
-    "title": "Verificación independiente de afirmaciones",
-    "section": "Qué significa contrastar realmente",
-    "text": "Qué significa contrastar realmente\nP6 pide a la IA una auditoría de su respuesta: identifica lo observado, lo inferido y lo pendiente. Eso no equivale a consultar una fuente independiente. Una referencia bibliográfica existente tampoco prueba que sustente la frase que se le atribuye.\n\n\n\nAutorrevisión de la IA frente a verificación independiente\n\n\n\nActividad obligatoria\nAfirmación para comprobar: «FAIR exige que todos los datos sean completamente abiertos».\n\nAbre primero Wilkinson et al. (2016), la fuente primaria. Si quieres, usa GO FAIR — FAIR Principles como complemento.\nLocaliza la parte que describe el principio Accessible y las condiciones de acceso (en Wilkinson et al., el Box 2 enumera todos los principios: lee A1.1, A1.2 y A2). Para una aclaración explícita sobre FAIR y apertura, puedes consultar también Mons et al. (2017) [R13].\nAnota qué dice realmente el texto; distingue acceso bajo condiciones de acceso libre e irrestricto.\nRegistra título, URL, fecha de consulta, sección o párrafo, interpretación y limitaciones.\nConcluye: «respalda», «contradice» o «no permite decidir», justificando tu decisión con el pasaje consultado.\n\n\n\n\n\n\n\nAdvertenciaRegla de evidencia\n\n\n\nSi no pudiste abrir y leer la fuente, escribe «verificación externa pendiente». El enlace sugerido por una IA no es prueba de que la consulta ocurrió.",
-    "crumbs": [
-      "Inicio",
-      "Taller FAIR",
-      "6 — Verificación"
-    ]
-  },
-  {
-    "objectID": "contenido/06-verificacion.html#ejercicio-opcional-la-cita-del-80",
-    "href": "contenido/06-verificacion.html#ejercicio-opcional-la-cita-del-80",
-    "title": "Verificación independiente de afirmaciones",
-    "section": "Ejercicio opcional: la cita del 80 %",
-    "text": "Ejercicio opcional: la cita del 80 %\nAplica los mismos pasos a la respuesta simulada del ejemplo 2: busca en el artículo si contiene realmente ese resultado y distingue una cita auténtica de una atribución no sustentada.",
-    "crumbs": [
-      "Inicio",
-      "Taller FAIR",
-      "6 — Verificación"
-    ]
-  },
-  {
-    "objectID": "contenido/06-verificacion.html#registro-de-la-verificación",
-    "href": "contenido/06-verificacion.html#registro-de-la-verificación",
-    "title": "Verificación independiente de afirmaciones",
-    "section": "Registro de la verificación",
-    "text": "Registro de la verificación\nAnota tu comprobación en la sección 5b · Verificación humana independiente obligatoria de la bitácora: afirmación, fuente, localización, fecha, evaluación propia y límites.",
-    "crumbs": [
-      "Inicio",
-      "Taller FAIR",
-      "6 — Verificación"
-    ]
+    "text": "La verificación con la fuente primaria ahora es parte del paso 4 de la práctica guiada."
   },
   {
     "objectID": "contenido/08-referencias.html",
@@ -609,6 +755,7 @@
     "text": "Para profundizar · consulta",
     "crumbs": [
       "Inicio",
+      "Recursos y continuidad",
       "Fuentes y continuidad"
     ]
   },
@@ -617,9 +764,10 @@
     "href": "contenido/08-referencias.html#bibliografía-comentada",
     "title": "Fuentes, materiales y continuidad",
     "section": "Bibliografía comentada",
-    "text": "Bibliografía comentada\nLas referencias se identifican en el texto con claves [R#]. Se distinguen fundamentos conceptuales, referencias aplicadas y recursos contextuales. Los ejemplos de aula son construcciones didácticas; no deben atribuirse a estas fuentes como demostraciones empíricas.\n\nFundamentos metodológicos y de uso de IA\n\n[R1] Dakan, R. (Ringling College of Art and Design) y Feller, J. (University College Cork). AI Fluency Framework; cursos desarrollados con Anthropic. https://aifluencyframework.org/ . Consultado el 2 de noviembre de 2026. Define Delegation, Description, Discernment y Diligence. Aporta: fundamento para decidir, comunicar, evaluar y actuar responsablemente con IA. No define nuestra secuencia de seis pasos.\n[R2] Association of College and Research Libraries (ACRL). (2016; revisiones posteriores). Framework for Information Literacy for Higher Education. https://www.ala.org/acrl/standards/ilframework . En particular Research as Inquiry y Searching as Strategic Exploration: una búsqueda iterativa que requiere ampliar vocabulario, valorar fuentes y reformular necesidades. Aporta: base para las etapas 1 y 2.\n[R3] Anthropic / CodePath. AI Fluency for Builders. https://academy.claude.com/courses/ai-fluency-for-builders . Consultado el 2 de noviembre de 2026. Incluye descomposición de problemas, identificación del papel de la IA, especificación y pruebas de aceptación. Aporta: inspiración para las etapas 3–5; es un curso destinado a builders, no un protocolo validado específicamente para investigación científica.\n[R4] Autio, C., Schwartz, R., Dunietz, J., Jain, S., Stanley, M., Tabassi, E., Hall, P. y Roberts, K. (2024). Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile. NIST AI 600-1. https://doi.org/10.6028/NIST.AI.600-1 . Aporta: fundamento de la evaluación crítica de errores, contenido no sustentado y riesgos de IA generativa; no sustituye la evaluación científica de fuentes.\n\n\n\nFAIR y gestión de datos científicos\n\n[R5] Wilkinson, M. D., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3, 160018. https://doi.org/10.1038/sdata.2016.18 . Aporta: definición primaria de Findable, Accessible, Interoperable y Reusable, con foco en acceso y reutilización por personas y máquinas.\n[R6] ELIXIR RDMkit. Your tasks: Documentation and metadata. https://rdmkit.elixir-europe.org/metadata_management . Consultado el 2 de noviembre de 2026. Aporta: orientación para documentar el origen, los métodos, las características y el contexto necesarios para comprender y reutilizar los datos.\n[R7] GO FAIR Foundation. FAIR Principles. https://www.gofair.foundation/fair-principles . Consultado el 2 de noviembre de 2026. Aporta: consulta pedagógica complementaria de los principios; conviene cotejar afirmaciones con [R5]. Precaución: el principio A1.1 («el protocolo es abierto») se refiere al protocolo de acceso, no a que los datos sean abiertos.\n[R13] Mons, B., Neylon, C., Velterop, J., Dumontier, M., da Silva Santos, L. O. B. y Wilkinson, M. D. (2017). Cloudy, increasingly FAIR; revisiting the FAIR Data guiding principles for the European Open Science Cloud. Information Services & Use, 37, 49–56. https://doi.org/10.3233/ISU-170824 . Aporta: aclaración explícita, en la sección «FAIR is not equal to Open», de que la «A» significa accesible bajo condiciones bien definidas y de que ningún principio exige que los datos sean abiertos o gratuitos.\n\n\n\nContexto y continuidad formativa\n\n[R8] Taller ELIXIR-México 2026. Programa del evento (16–27 de noviembre de 2026, CCG-UNAM). https://laboratorio-de-biologia-computacional.github.io/taller-elixir-mexico-2026/ . Consultado el 2 de noviembre de 2026. En el programa, este taller corresponde a la sesión «Instrucciones para modelos de lenguaje en tareas científicas». Aporta: contexto del público y posible complementariedad temática.\n[R9] Salgado Osorio, H. Prompting científico con inteligencia artificial (material docente en línea). https://helysalgado.github.io/prompting-cientifico/ . Consultado el 2 de noviembre de 2026. Aporta: continuidad formativa; el taller actual es introductorio y no resume ni sustituye el curso.\n[R10] Wilson, G., Bryan, J., Cranston, K., Kitzes, J., Nederbragt, L. y Teal, T. K. (2017). Good Enough Practices in Scientific Computing. PLOS Computational Biology, 13(6), e1005510. https://doi.org/10.1371/journal.pcbi.1005510 . Aporta: contexto de buenas prácticas de organización, documentación y trazabilidad; la práctica en aula no exige programación.\n\n\n\nEspecificación y revisión en ingeniería de software (analogía metodológica)\n\n[R11] Gupta, A. (10 de junio de 2026). Spec-Driven Development: A Spec-First Approach to AI-Native Engineering. Microsoft for Developers. https://developer.microsoft.com/blog/spec-driven-development-ai-native-engineering/ . Consultado el 2 de noviembre de 2026. Aporta: conservar intención, requisitos, restricciones y criterios de aceptación durante la implementación y validación. Precaución: descripción de una práctica de ingeniería, no evidencia de mejora generalizable ni un estándar para investigación científica.\n[R12] Fowler, M. (21 de mayo de 2026). Agentic Engineering. martinfowler.com. https://martinfowler.com/bliki/AgenticEngineering.html . Consultado el 2 de noviembre de 2026. Aporta: distinción entre delegar implementación a agentes y conservar revisión y responsabilidad humana. Precaución: reflexión profesional, no estudio causal sobre resultados científicos.",
+    "text": "Bibliografía comentada\nLas referencias se identifican en el texto con claves [R#]. Se distinguen fundamentos conceptuales, referencias aplicadas y recursos contextuales. Los ejemplos de aula son construcciones didácticas; no deben atribuirse a estas fuentes como demostraciones empíricas.\n\nFundamentos metodológicos y de uso de IA\n\n[R1] Dakan, R. (Ringling College of Art and Design) y Feller, J. (University College Cork). AI Fluency Framework; cursos desarrollados con Anthropic. https://aifluencyframework.org/. Consultado el 2 de noviembre de 2026. Describe cuatro competencias: Delegation, Description, Discernment y Diligence. Aporta: fundamento para decidir, comunicar, evaluar y actuar responsablemente con IA. No define nuestra secuencia de seis etapas.\n[R2] Association of College and Research Libraries (ACRL). (2016; revisiones posteriores). Framework for Information Literacy for Higher Education. https://www.ala.org/acrl/standards/ilframework. En particular Research as Inquiry y Searching as Strategic Exploration: una búsqueda iterativa que requiere ampliar vocabulario, valorar fuentes y reformular necesidades. Aporta: base para las etapas 1 y 2.\n[R3] Anthropic / CodePath. AI Fluency for Builders. https://academy.claude.com/courses/ai-fluency-for-builders. Consultado el 2 de noviembre de 2026. Incluye descomposición de problemas, identificación del papel de la IA, especificación y pruebas de aceptación. Aporta: inspiración para las etapas 3–5; es un curso destinado a builders, no un protocolo validado específicamente para investigación científica.\n[R4] National Institute of Standards and Technology (NIST). (2024). Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile. NIST AI 600-1. https://doi.org/10.6028/NIST.AI.600-1. Aporta: fundamento de la evaluación crítica de errores, contenido no sustentado y riesgos de IA generativa; no sustituye la evaluación científica de fuentes.\n\n\n\nFAIR y gestión de datos científicos\n\n[R5] Wilkinson, M. D., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data, 3, 160018. https://doi.org/10.1038/sdata.2016.18. Aporta: definición primaria de Findable, Accessible, Interoperable y Reusable, con foco en acceso y reutilización por personas y máquinas.\n[R6] ELIXIR RDMkit. Your tasks: Documentation and metadata. https://rdmkit.elixir-europe.org/metadata_management. Consultado el 2 de noviembre de 2026. Aporta: orientación para documentar el origen, los métodos, las características y el contexto necesarios para comprender y reutilizar los datos.\n[R7] GO FAIR Foundation. FAIR Principles. https://www.gofair.foundation/fair-principles. Consultado el 2 de noviembre de 2026. Aporta: consulta pedagógica complementaria de los principios; conviene cotejar afirmaciones con [R5]. Precaución: es una versión resumida; para interpretar un principio, lee su redacción completa en [R5].\n[R13] Mons, B., Neylon, C., Velterop, J., Dumontier, M., da Silva Santos, L. O. B. y Wilkinson, M. D. (2017). Cloudy, increasingly FAIR; revisiting the FAIR Data guiding principles for the European Open Science Cloud. Information Services & Use, 37, 49–56. https://doi.org/10.3233/ISU-170824. Aporta: aclaración de varios de los autores originales sobre lo que FAIR es y lo que no es, incluida su relación con los datos abiertos.\n\n\n\nContexto y continuidad formativa\n\n[R8] Taller ELIXIR-México 2026. Programa del evento (16–27 de noviembre de 2026, CCG-UNAM). https://laboratorio-de-biologia-computacional.github.io/taller-elixir-mexico-2026/. Consultado el 2 de noviembre de 2026. En el programa, este taller corresponde a la sesión «Instrucciones para modelos de lenguaje en tareas científicas». Aporta: contexto del público y posible complementariedad temática.\n[R9] Salgado Osorio, H. Prompting científico con inteligencia artificial (material docente en línea). https://helysalgado.github.io/prompting-cientifico/. Consultado el 2 de noviembre de 2026. Aporta: continuidad formativa; el taller actual es introductorio y no resume ni sustituye el curso.\n[R10] Wilson, G., Bryan, J., Cranston, K., Kitzes, J., Nederbragt, L. y Teal, T. K. (2017). Good Enough Practices in Scientific Computing. PLOS Computational Biology, 13(6), e1005510. https://doi.org/10.1371/journal.pcbi.1005510. Aporta: contexto de buenas prácticas de organización, documentación y trazabilidad; la práctica en aula no exige programación.\n\n\n\nEspecificación y revisión en ingeniería de software (analogía metodológica)\n\n[R11] Gupta, A. (10 de junio de 2026). Spec-Driven Development: A Spec-First Approach to AI-Native Engineering. Microsoft for Developers. https://developer.microsoft.com/blog/spec-driven-development-ai-native-engineering/. Consultado el 2 de noviembre de 2026. Aporta: conservar intención, requisitos, restricciones y criterios de aceptación durante la implementación y validación. Precaución: descripción de una práctica de ingeniería, no evidencia de mejora generalizable ni un estándar para investigación científica.\n[R12] Fowler, M. (21 de mayo de 2026). Agentic Engineering. martinfowler.com. https://martinfowler.com/bliki/AgenticEngineering.html. Consultado el 2 de noviembre de 2026. Aporta: distinción entre delegar implementación a agentes y conservar revisión y responsabilidad humana. Precaución: reflexión profesional, no estudio causal sobre resultados científicos.",
     "crumbs": [
       "Inicio",
+      "Recursos y continuidad",
       "Fuentes y continuidad"
     ]
   },
@@ -628,9 +776,10 @@
     "href": "contenido/08-referencias.html#materiales",
     "title": "Fuentes, materiales y continuidad",
     "section": "Materiales",
-    "text": "Materiales\nPara descargar\n\nExcel simulado para participantes.\nPlantilla de bitácora en Word (.docx) · en Markdown (.md).\nVersión en texto del Excel, para asistentes que no aceptan archivos.\n\nEn este sitio\n\nPráctica paso a paso.\nBitácora.\nTarjeta de práctica, para imprimir.\nAntes del taller: requisitos y prueba de 2 minutos.",
+    "text": "Materiales\nPara descargar\n\nExcel simulado para participantes.\nPlantilla de la Bitácora mínima 4D (.md), para llenar durante la práctica.\nPlantilla extensa de la versión anterior, en Word (.docx) · en Markdown (.md). Recurso opcional.\nVersión en texto del Excel, para asistentes que no aceptan archivos.\n\nEn este sitio\n\nPráctica paso a paso.\nBitácora mínima 4D.\nTarjeta de práctica, para imprimir.\nAntes del taller: requisitos y prueba del asistente.",
     "crumbs": [
       "Inicio",
+      "Recursos y continuidad",
       "Fuentes y continuidad"
     ]
   },
@@ -642,6 +791,7 @@
     "text": "Para continuar aprendiendo\nEste taller se enfoca en decisiones y verificación, no en automatización o técnicas avanzadas. Para profundizar en prompting científico, consulta Prompting científico con inteligencia artificial.",
     "crumbs": [
       "Inicio",
+      "Recursos y continuidad",
       "Fuentes y continuidad"
     ]
   },
@@ -650,9 +800,10 @@
     "href": "contenido/08-referencias.html#cómo-citar-este-material",
     "title": "Fuentes, materiales y continuidad",
     "section": "Cómo citar este material",
-    "text": "Cómo citar este material\nEste sitio: Salgado, H. (2026). Antes del prompt: pensar, delegar y verificar con IA en la investigación científica [material didáctico]. Centro de Ciencias Genómicas, UNAM. Licencia CC BY 4.0.\nFórmula breve para presentaciones: «Metodología didáctica de seis etapas desarrollada para este taller, inspirada en AI Fluency 4D (Dakan y Feller), alfabetización informacional (ACRL) y prácticas de especificación, verificación y documentación científica». Citar [R1], [R2], [R3] y [R6]; para la analogía con ingeniería de software, añadir [R11] y [R12].",
+    "text": "Cómo citar este material\nEste sitio: Salgado, H. (2026). Antes del prompt: qué pedir, qué delegar y cómo comprobar lo que hace la IA en investigación [material didáctico]. Centro de Ciencias Genómicas, UNAM. Licencia CC BY 4.0.\nFórmula breve para presentaciones: «Metodología didáctica de seis etapas desarrollada para este taller, inspirada en AI Fluency 4D (Dakan y Feller), alfabetización informacional (ACRL) y prácticas de especificación, verificación y documentación científica». Citar [R1], [R2], [R3] y [R6]; para la analogía con ingeniería de software, añadir [R11] y [R12].",
     "crumbs": [
       "Inicio",
+      "Recursos y continuidad",
       "Fuentes y continuidad"
     ]
   },
@@ -661,10 +812,78 @@
     "href": "contenido/08-referencias.html#estado-del-material",
     "title": "Fuentes, materiales y continuidad",
     "section": "Estado del material",
-    "text": "Estado del material\nSe ha realizado una prueba de interacción con IA de los prompts P0, P1, P5 y P6 usando un Excel didáctico. No se ha documentado aún un piloto con participantes ni una evaluación formal de resultados de aprendizaje.",
+    "text": "Estado del material\nSe realizó una prueba de interacción con IA de una versión anterior de los prompts P0, P1, P5 y P6 usando un Excel didáctico. P1, P5 y P6 se reescribieron en noviembre de 2026 para mostrar sus componentes y unificar las etiquetas de evidencia; falta volver a probarlos. No se ha documentado aún un piloto con participantes ni una evaluación formal de resultados de aprendizaje.",
     "crumbs": [
       "Inicio",
+      "Recursos y continuidad",
       "Fuentes y continuidad"
+    ]
+  },
+  {
+    "objectID": "contenido/interactivos/explorador-fair.html",
+    "href": "contenido/interactivos/explorador-fair.html",
+    "title": "Nota de ruta",
+    "section": "",
+    "text": "El recorrido del taller continúa en la práctica guiada y en la Bitácora mínima 4D.\nEl Explorador FAIR sigue disponible para mirar la hoja en el navegador. El diagnóstico se elabora en el asistente, con el Excel y los prompts de la práctica."
+  },
+  {
+    "objectID": "contenido/interactivos/de-la-solicitud-al-prompt.html",
+    "href": "contenido/interactivos/de-la-solicitud-al-prompt.html",
+    "title": "De la solicitud al prompt",
+    "section": "",
+    "text": "Durante el taller",
+    "crumbs": [
+      "Inicio",
+      "Construir una solicitud",
+      "6 — De la solicitud al prompt"
+    ]
+  },
+  {
+    "objectID": "contenido/interactivos/de-la-solicitud-al-prompt.html#para-qué-sirve",
+    "href": "contenido/interactivos/de-la-solicitud-al-prompt.html#para-qué-sirve",
+    "title": "De la solicitud al prompt",
+    "section": "Para qué sirve",
+    "text": "Para qué sirve\nAquí aplicas lo que viste en Del problema al prompt: traducir una necesidad en instrucciones concretas (etapa 4, Colaboración) y observar cómo cambia la respuesta al añadir componentes. Practicas sobre todo Description (descripción) al escribir el prompt y Discernment (discernimiento) al comparar las respuestas.",
+    "crumbs": [
+      "Inicio",
+      "Construir una solicitud",
+      "6 — De la solicitud al prompt"
+    ]
+  },
+  {
+    "objectID": "contenido/interactivos/de-la-solicitud-al-prompt.html#los-dos-casos",
+    "href": "contenido/interactivos/de-la-solicitud-al-prompt.html#los-dos-casos",
+    "title": "De la solicitud al prompt",
+    "section": "Los dos casos",
+    "text": "Los dos casos\nSon los mismos de ¿Qué falta por definir?, pero la solicitud de partida ya es más precisa. Si hiciste esa actividad, conviene elegir el mismo caso. Elige solo uno.\n\n\n\n\n\n\n\nCaso\nSolicitud de partida\n\n\n\n\nA. Analizar secuencias FASTA\n«Necesito analizar un archivo FASTA con varias secuencias de ADN para conocer la frecuencia de los nucleótidos. Quiero obtener resultados por secuencia y poder compararlos».\n\n\nB. Desarrollar una herramienta web\n«Necesito desarrollar una aplicación web que permita introducir secuencias de ADN en formato FASTA, realizar análisis básicos y descargar los resultados. La aplicación debe ser sencilla de utilizar y ayudar a identificar entradas incorrectas».\n\n\n\nPara probar tus versiones, ten abierto en otra pestaña el asistente de IA que preparaste en Antes del taller. Cualquiera sirve. Probarlas es opcional, pero sin respuestas no hay nada que comparar en el paso 3.",
+    "crumbs": [
+      "Inicio",
+      "Construir una solicitud",
+      "6 — De la solicitud al prompt"
+    ]
+  },
+  {
+    "objectID": "contenido/interactivos/de-la-solicitud-al-prompt.html#cómo-participar",
+    "href": "contenido/interactivos/de-la-solicitud-al-prompt.html#cómo-participar",
+    "title": "De la solicitud al prompt",
+    "section": "Cómo participar",
+    "text": "Cómo participar\nLa herramienta tiene cuatro pasos:\n\n¿Qué voy a delegar? Elige el tipo de ayuda que pedirás. En el caso A, por ejemplo: que la IA te explique cómo hacer el análisis, escriba un script, analice los datos o revise resultados que ya tienes. Una misma necesidad puede dar lugar a tareas distintas.\nConstruir y probar. Parte de la instrucción básica y añade bloques: precisar la tarea, contexto y objetivo, condiciones y límites, resultado esperado y verificación. En Del problema al prompt está la equivalencia con los siete componentes. Copia el prompt, pégalo en una conversación nueva de tu asistente y guarda la versión. Puedes guardar hasta tres.\nComparar y reflexionar. Anota qué observaste en cada respuesta y qué diferencias podrían deberse a tus cambios. Dos versiones bastan; la tercera es opcional.\nReporte. Revisa el resumen y descarga el Markdown: reporte_del_prompt_caso_A.md o reporte_del_prompt_caso_B.md. Podrás consultarlo en la práctica guiada.\n\nGuardar una versión no significa haberla probado; el reporte lo indica así. Los casos son ficticios: no pegues en el asistente datos reales o confidenciales. Lo que escribes se guarda en este navegador; Reiniciar actividad borra los dos casos.\nAbrir la actividad en una pestaña independiente",
+    "crumbs": [
+      "Inicio",
+      "Construir una solicitud",
+      "6 — De la solicitud al prompt"
+    ]
+  },
+  {
+    "objectID": "contenido/interactivos/de-la-solicitud-al-prompt.html#herramienta",
+    "href": "contenido/interactivos/de-la-solicitud-al-prompt.html#herramienta",
+    "title": "De la solicitud al prompt",
+    "section": "Herramienta",
+    "text": "Herramienta",
+    "crumbs": [
+      "Inicio",
+      "Construir una solicitud",
+      "6 — De la solicitud al prompt"
     ]
   }
 ]

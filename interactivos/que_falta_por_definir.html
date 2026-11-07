@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Qué falta por definir?</title>
+  <style>
+    /* VARIABLES & THEME */
+    :root {
+      --primary: #00314F;
+      --primary-light: #004a77;
+      --accent: #C9A227;
+      --accent-light: #fef0c7;
+      --bg-page: #F3F4F6;
+      --bg-card: #FFFFFF;
+      --text-main: #1F2937;
+      --text-muted: #4B5563;
+      --border: #E5E7EB;
+      --border-focus: #00314F;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 16px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* CONTAINER & HEADER */
+    .app-container {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      padding: 20px 24px;
+      border-bottom: 4px solid var(--accent);
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    header p {
+      color: #E5E7EB;
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
+
+    .workshop-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      color: #F3F4F6;
+    }
+
+    /* CASE SELECTOR BAR */
+    .case-selector {
+      background-color: #EBF2F7;
+      padding: 12px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .case-selector label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+
+    .case-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-case {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: var(--text-main);
+      transition: all 0.2s ease;
+    }
+
+    .btn-case:hover {
+      background: #F1F5F9;
+    }
+
+    .btn-case.active {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+
+    /* TABS NAV */
+    nav.tabs {
+      display: flex;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: 120px;
+      padding: 12px 16px;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      color: var(--primary);
+      background-color: #F8FAFC;
+    }
+
+    .tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--accent);
+      background-color: #FFFFFF;
+    }
+
+    /* MAIN CONTENT & PANELS */
+    main {
+      padding: 24px;
+      flex: 1;
+    }
+
+    .panel {
+      display: none;
+    }
+
+    .panel.active {
+      display: block;
+    }
+
+    /* CARDS & CARDS CONTENT */
+    .card {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .initial-request {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary);
+      background: #FFFFFF;
+      padding: 12px 16px;
+      border-left: 4px solid var(--accent);
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+
+    .instruction {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    /* FORM ELEMENTS */
+    .input-group {
+      margin-bottom: 16px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      background-color: #FFFFFF;
+      transition: border-color 0.2s ease;
+    }
+
+    textarea:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(0, 49, 79, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    /* HINTS / PISTAS */
+    .hint-container {
+      margin-top: 20px;
+    }
+
+    .hint-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .hint-card.revealed {
+      border-color: var(--accent);
+      background-color: #FFFDF5;
+    }
+
+    .hint-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hint-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+
+    .hint-content {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      display: none;
+    }
+
+    .hint-card.revealed .hint-content {
+      display: block;
+    }
+
+    .vocab-box {
+      margin-top: 8px;
+      padding: 8px 12px;
+      background: #F1F5F9;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-left: 3px solid var(--primary);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--primary-light);
+    }
+
+    .btn-secondary {
+      background: #E2E8F0;
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background: #CBD5E1;
+    }
+
+    .btn-danger {
+      background: #DC2626;
+      color: #FFFFFF;
+    }
+
+    .btn-danger:hover {
+      background: #B91C1C;
+    }
+
+    .btn:disabled {
+      background: #E2E8F0;
+      color: #94A3B8;
+      cursor: not-allowed;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* DISPLAY READONLY LISTS */
+    .display-list {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    .display-list li {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .display-list li.empty-item {
+      color: #94A3B8;
+      font-style: italic;
+    }
+
+    /* REPORT VIEW */
+    .report-paper {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .report-section {
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .report-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .report-section h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .report-section p, .report-section ul {
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .report-section ul {
+      padding-left: 20px;
+    }
+
+    .report-section li {
+      margin-bottom: 4px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      body {
+        padding: 8px;
+      }
+
+      header {
+        padding: 16px;
+      }
+
+      header h1 {
+        font-size: 1.25rem;
+      }
+
+      main {
+        padding: 16px;
+      }
+
+      .case-selector {
+        padding: 10px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .actions-bar {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .actions-bar .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-container">
+  <!-- HEADER -->
+  <header>
+    <div class="workshop-tag">Taller: Antes del prompt: qué pedir, qué delegar y cómo comprobar</div>
+    <h1>¿Qué falta por definir?</h1>
+    <p>De una necesidad comprensible a una solicitud más precisa.</p>
+  </header>
+
+  <!-- CASE SELECTOR -->
+  <section class="case-selector" aria-label="Selección de Caso">
+    <label id="case-label">Selecciona el caso a trabajar:</label>
+    <div class="case-buttons" role="radiogroup" aria-labelledby="case-label">
+      <button type="button" class="btn-case active" id="btn-case-a" role="radio" aria-checked="true" onclick="selectCase('A', true)">Caso A: Analizar FASTA</button>
+      <button type="button" class="btn-case" id="btn-case-b" role="radio" aria-checked="false" onclick="selectCase('B', true)">Caso B: Herramienta Web</button>
+    </div>
+  </section>
+
+  <!-- NAVIGATION TABS -->
+  <nav class="tabs" role="tablist" aria-label="Pasos de la actividad">
+    <button type="button" class="tab-btn active" id="tab-1" role="tab" aria-selected="true" aria-controls="panel-1" onclick="switchTab(1)">1. Identificar</button>
+    <button type="button" class="tab-btn" id="tab-2" role="tab" aria-selected="false" aria-controls="panel-2" onclick="switchTab(2)">2. Explorar</button>
+    <button type="button" class="tab-btn" id="tab-3" role="tab" aria-selected="false" aria-controls="panel-3" onclick="switchTab(3)">3. Reformular</button>
+    <button type="button" class="tab-btn" id="tab-4" role="tab" aria-selected="false" aria-controls="panel-4" onclick="switchTab(4)">4. Reporte</button>
+  </nav>
+
+  <!-- MAIN CONTENT PANELS -->
+  <main>
+    <!-- PASO 1: IDENTIFICAR -->
+    <section id="panel-1" class="panel active" role="tabpanel" aria-labelledby="tab-1">
+      <div class="card">
+        <div class="card-title">Solicitud Inicial</div>
+        <div class="initial-request" id="p1-initial-request">Cargando...</div>
+      </div>
+
+      <p class="instruction">¿Qué necesitarías aclarar antes de realizar esta tarea?</p>
+      <p style="font-size:0.875rem; color:var(--text-muted); margin-bottom:16px;">
+        Escribe hasta tres preguntas o decisiones pendientes. Si todavía no identificas ninguna, puedes escribir “No sé” o continuar directamente a las pistas.
+      </p>
+
+      <div class="input-group">
+        <label for="q1">Pregunta o decisión 1:</label>
+        <input type="text" id="q1" placeholder="Escribe aquí una duda o decisión pendiente..." oninput="updateQuestion(0, this.value)">
+      </div>
+
+      <div class="input-group">
+        <label for="q2">Pregunta o decisión 2:</label>
+        <input type="text" id="q2" placeholder="Escribe aquí una duda o decisión pendiente..." oninput="updateQuestion(1, this.value)">
+      </div>
+
+      <div class="input-group">
+        <label for="q3">Pregunta o decisión 3:</label>
+        <input type="text" id="q3" placeholder="Escribe aquí una duda o decisión pendiente..." oninput="updateQuestion(2, this.value)">
+      </div>
+
+      <div class="actions-bar">
+        <span></span>
+        <button type="button" class="btn" onclick="switchTab(2)">Ir a 2. Explorar &rarr;</button>
+      </div>
+    </section>
+
+    <!-- PASO 2: EXPLORAR -->
+    <section id="panel-2" class="panel" role="tabpanel" aria-labelledby="tab-2">
+      <div class="card">
+        <div class="card-title">Tus preguntas o decisiones registradas</div>
+        <ul class="display-list" id="p2-user-questions">
+          <!-- JS fills this -->
+        </ul>
+        <button type="button" class="btn-case" onclick="switchTab(1)" style="font-size:0.8rem;">&larr; Modificar mis preguntas</button>
+      </div>
+
+      <p class="instruction">Pistas progresivas</p>
+      <p style="font-size:0.875rem; color:var(--text-muted); margin-bottom:16px;">Consulta libremente las pistas para orientar tu análisis. Las pistas se habilitan una a una. Consultar una pista ayuda a explorar aspectos del problema, pero no equivale automáticamente a tomar una decisión ni borra tu historial si la cierras.</p>
+
+      <div id="hints-container" class="hint-container">
+        <!-- JS fills hints -->
+      </div>
+
+      <div class="actions-bar">
+        <button type="button" class="btn btn-secondary" onclick="switchTab(1)">&larr; Anterior</button>
+        <button type="button" class="btn" onclick="switchTab(3)">Ir a 3. Reformular &rarr;</button>
+      </div>
+    </section>
+
+    <!-- PASO 3: REFORMULAR -->
+    <section id="panel-3" class="panel" role="tabpanel" aria-labelledby="tab-3">
+      <div class="card">
+        <div class="card-title">Resumen de trabajo</div>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:4px;">Solicitud inicial:</p>
+        <div class="initial-request" id="p3-initial-request" style="font-size:0.95rem; margin-bottom:12px;"></div>
+        
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:4px;">Tus preguntas registradas:</p>
+        <ul class="display-list" id="p3-user-questions"></ul>
+
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:4px;">Pistas efectivamente consultadas:</p>
+        <ul class="display-list" id="p3-consulted-hints"></ul>
+      </div>
+
+      <div class="input-group">
+        <label for="revised-request">¿Cómo describirías ahora tu solicitud para que otra persona o una IA comprenda mejor lo que necesitas?</label>
+        <textarea id="revised-request" placeholder="Escribe aquí tu solicitud afinada o reformulada..." oninput="updateRevisedRequest(this.value)"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="pending-decisions">¿Qué decisiones siguen pendientes de confirmar?</label>
+        <textarea id="pending-decisions" placeholder="Indica los aspectos que aún requieran validación posterior..." oninput="updatePendingDecisions(this.value)"></textarea>
+      </div>
+
+      <div class="actions-bar">
+        <button type="button" class="btn btn-secondary" onclick="switchTab(2)">&larr; Anterior</button>
+        <button type="button" class="btn" onclick="switchTab(4)">Ver Reporte &rarr;</button>
+      </div>
+    </section>
+
+    <!-- PASO 4: REPORTE -->
+    <section id="panel-4" class="panel" role="tabpanel" aria-labelledby="tab-4">
+      <div class="report-paper" id="report-view">
+        <!-- JS generates report content dynamically -->
+      </div>
+
+      <div class="actions-bar">
+        <button type="button" class="btn btn-danger" onclick="confirmReset()">Reiniciar caso activo</button>
+        <button type="button" class="btn" onclick="downloadMarkdown()">Descargar reporte (.md)</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  /* DATOS DE LOS CASOS */
+  const CASES_DATA = {
+    A: {
+      title: "Caso A — Analizar secuencias FASTA",
+      initialRequest: "«Tengo un archivo FASTA con secuencias de ADN y quiero calcular la frecuencia de nucleótidos».",
+      hints: [
+        {
+          id: "a_hint_1",
+          genericTitle: "Pista 1",
+          detailTitle: "Pista 1: Estructura de datos",
+          content: "¿El archivo contiene una sola secuencia o múltiples secuencias de ADN?",
+          vocab: "Formato FASTA: Formato de texto para representar secuencias de nucleótidos o aminoácidos, donde cada registro comienza con un encabezado '>'"
+        },
+        {
+          id: "a_hint_2",
+          genericTitle: "Pista 2",
+          detailTitle: "Pista 2: Métrica esperada",
+          content: "¿Se requieren conteos absolutos (ej. A: 120, C: 80), porcentajes (ej. A: 60%), o ambos?",
+          vocab: "Frecuencia: Puede referirse al conteo directo de apariciones o a la proporción relativa."
+        },
+        {
+          id: "a_hint_3",
+          genericTitle: "Pista 3",
+          detailTitle: "Pista 3: Manejo de ambigüedades",
+          content: "¿Cómo deben tratarse las bases no estándar o caracteres ambiguos (como N, R, Y)? ¿Se omiten, se cuentan aparte o generan error?",
+          vocab: "Códigos IUPAC: Letras que representan incertidumbre en la secuencia (ej. N = cualquier nucleótido)."
+        },
+        {
+          id: "a_hint_4",
+          genericTitle: "Orientación adicional 1",
+          detailTitle: "Orientación adicional 1: Alcance del cálculo",
+          content: "¿Se deben calcular las frecuencias por cada secuencia individual o de forma global para todo el archivo?",
+          vocab: "Frecuencia global vs. individual: Alcance del cálculo sobre el conjunto de datos."
+        },
+        {
+          id: "a_hint_5",
+          genericTitle: "Orientación adicional 2",
+          detailTitle: "Orientación adicional 2: Presentación",
+          content: "¿Cómo debe presentarse el resultado? (ej. en consola, tabla CSV, gráfico, JSON).",
+          vocab: "Salida estructurada: Formato legible por humanos o procesable por software."
+        }
+      ]
+    },
+    B: {
+      title: "Caso B — Desarrollar una herramienta web",
+      initialRequest: "«Quiero una aplicación web que permita cargar un archivo FASTA, analizar su contenido y descargar los resultados».",
+      hints: [
+        {
+          id: "b_hint_1",
+          genericTitle: "Pista 1",
+          detailTitle: "Pista 1: Interacción",
+          content: "¿Cómo ingresará información el usuario? ¿Se arrastrará un archivo, se seleccionará mediante un botón o se ofrecerá un área de texto para pegar secuencias directamente?",
+          vocab: "Modalidad de entrada: Forma en que la persona interactúa para suministrar los datos a la herramienta."
+        },
+        {
+          id: "b_hint_2",
+          genericTitle: "Pista 2",
+          detailTitle: "Pista 2: Validación",
+          content: "¿Qué deberá verificar la aplicación antes de procesar una secuencia? ¿Qué debe ocurrir si la entrada está vacía, tiene caracteres no válidos o supera cierto tamaño?",
+          vocab: "Validación de entrada: Comprobación de que la información cumple con las reglas mínimas antes de ejecutar un análisis."
+        },
+        {
+          id: "b_hint_3",
+          genericTitle: "Pista 3",
+          detailTitle: "Pista 3: Funcionalidades",
+          content: "¿Qué análisis realizará realmente la herramienta? ¿Se limitará a métricas básicas (longitud, contenido GC, frecuencia de bases) o ejecutará búsquedas o transformaciones específicas?",
+          vocab: "Alcance funcional: Conjunto delimitado de operaciones que el software debe ejecutar sobre los datos."
+        },
+        {
+          id: "b_hint_4",
+          genericTitle: "Orientación adicional 1",
+          detailTitle: "Orientación adicional 1: Resultados",
+          content: "¿Cómo se visualizarán y descargarán los resultados? ¿Se mostrarán tablas, gráficos o un archivo ejecutable/texto para descargar (ej. CSV, TXT, JSON)?",
+          vocab: "Visualización y exportación: Mecanismos para presentar datos procesados y permitir su guardado local."
+        },
+        {
+          id: "b_hint_5",
+          genericTitle: "Orientación adicional 2",
+          detailTitle: "Orientación adicional 2: Tecnología y funcionamiento",
+          content: "Antes de elegir lenguajes, frameworks o servicios, piensa si la aplicación necesita funcionar sin conexión, procesar archivos grandes, almacenar información o permitir el acceso de varias personas. ¿Cuáles de estas necesidades están realmente definidas?",
+          vocab: "Requisitos de entorno: Criterios funcionales y de uso que condicionan el diseño técnico sin imponer una tecnología única."
+        }
+      ]
+    }
+  };
+
+  const STORAGE_KEY = "que_falta_por_definir_state_v3";
+
+  /* ESTADO DE LA APLICACIÓN */
+  let appState = {
+    currentCase: "A",
+    currentTab: 1,
+    cases: {
+      A: {
+        questions: ["", "", ""],
+        consultedHints: [], // Pistas consultadas al menos una vez (historial)
+        expandedHints: [],  // Pistas expandidas visualmente en pantalla
+        revisedRequest: "",
+        pendingDecisions: ""
+      },
+      B: {
+        questions: ["", "", ""],
+        consultedHints: [],
+        expandedHints: [],
+        revisedRequest: "",
+        pendingDecisions: ""
+      }
+    }
+  };
+
+  /* UTILIDADES SANITIZACIÓN (Seguridad) */
+  function escapeHTML(str) {
+    if (!str) return "";
+    return str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  /* PERSISTENCIA LOCALSTORAGE */
+  function saveState() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+    } catch (e) {
+      console.warn("No se pudo guardar en localStorage", e);
+    }
+  }
+
+  function normalizeTab(value) {
+    const tab = Number(value);
+    if (Number.isInteger(tab) && tab >= 1 && tab <= 4) return tab;
+    return 1;
+  }
+
+  function normalizeQuestions(value) {
+    const source = Array.isArray(value) ? value : [];
+    return [0, 1, 2].map(function (index) {
+      return typeof source[index] === "string" ? source[index] : "";
+    });
+  }
+
+  function normalizeText(value) {
+    return typeof value === "string" ? value : "";
+  }
+
+  function normalizeHintList(value, caseKey) {
+    if (!Array.isArray(value)) return [];
+    const valid = CASES_DATA[caseKey].hints.map(function (hint) { return hint.id; });
+    const seen = {};
+    const kept = [];
+    value.forEach(function (id) {
+      if (typeof id !== "string" || valid.indexOf(id) === -1 || seen[id]) return;
+      seen[id] = true;
+      kept.push(id);
+    });
+    return kept;
+  }
+
+  function normalizeCaseRecord(source, caseKey) {
+    const record = source && typeof source === "object" && !Array.isArray(source) ? source : {};
+    const consultedSource = Array.isArray(record.consultedHints) ? record.consultedHints : record.revealedHints;
+    return {
+      questions: normalizeQuestions(record.questions),
+      consultedHints: normalizeHintList(consultedSource, caseKey),
+      expandedHints: normalizeHintList(record.expandedHints, caseKey),
+      revisedRequest: normalizeText(record.revisedRequest),
+      pendingDecisions: normalizeText(record.pendingDecisions)
+    };
+  }
+
+  function loadState() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) return;
+      const parsed = JSON.parse(saved);
+      if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return;
+      const cases = parsed.cases && typeof parsed.cases === "object" && !Array.isArray(parsed.cases) ? parsed.cases : {};
+      appState = {
+        currentCase: parsed.currentCase === "B" ? "B" : "A",
+        currentTab: normalizeTab(parsed.currentTab),
+        cases: {
+          A: normalizeCaseRecord(cases.A, "A"),
+          B: normalizeCaseRecord(cases.B, "B")
+        }
+      };
+    } catch (e) {
+      console.warn("Error al restaurar estado, usando estado inicial", e);
+    }
+  }
+
+  /* LÓGICA DE INTERFAZ */
+  function selectCase(caseKey, isUserClick = false) {
+    if (caseKey !== "A" && caseKey !== "B") return;
+    appState.currentCase = caseKey;
+    
+    // Si el usuario cambia de caso explícitamente mediante el botón, forzar Pestaña 1
+    if (isUserClick) {
+      appState.currentTab = 1;
+    }
+
+    // Actualizar UI Botones Caso
+    document.getElementById("btn-case-a").classList.toggle("active", caseKey === "A");
+    document.getElementById("btn-case-a").setAttribute("aria-checked", caseKey === "A");
+    document.getElementById("btn-case-b").classList.toggle("active", caseKey === "B");
+    document.getElementById("btn-case-b").setAttribute("aria-checked", caseKey === "B");
+
+    renderCurrentCaseData();
+    switchTab(appState.currentTab);
+    saveState();
+  }
+
+  function switchTab(tabIndex) {
+    if (tabIndex < 1 || tabIndex > 4) return;
+    appState.currentTab = tabIndex;
+
+    // Actualizar tabs
+    for (let i = 1; i <= 4; i++) {
+      const tab = document.getElementById(`tab-${i}`);
+      const panel = document.getElementById(`panel-${i}`);
+      const isActive = i === tabIndex;
+      
+      if (tab && panel) {
+        tab.classList.toggle("active", isActive);
+        tab.setAttribute("aria-selected", isActive);
+        panel.classList.toggle("active", isActive);
+      }
+    }
+
+    // Actualizar vistas si entramos a pasos específicos
+    if (tabIndex === 2) renderP2();
+    if (tabIndex === 3) renderP3();
+    if (tabIndex === 4) renderP4();
+
+    saveState();
+  }
+
+  function renderCurrentCaseData() {
+    const cData = CASES_DATA[appState.currentCase];
+    const cState = appState.cases[appState.currentCase];
+
+    // Paso 1
+    document.getElementById("p1-initial-request").textContent = cData.initialRequest;
+    document.getElementById("q1").value = cState.questions[0] || "";
+    document.getElementById("q2").value = cState.questions[1] || "";
+    document.getElementById("q3").value = cState.questions[2] || "";
+
+    // Paso 3 inputs
+    document.getElementById("revised-request").value = cState.revisedRequest || "";
+    document.getElementById("pending-decisions").value = cState.pendingDecisions || "";
+
+    // Renderizar según pestaña activa
+    if (appState.currentTab === 2) renderP2();
+    if (appState.currentTab === 3) renderP3();
+    if (appState.currentTab === 4) renderP4();
+  }
+
+  /* ACTUALIZACIÓN DE ESTADO */
+  function updateQuestion(index, val) {
+    appState.cases[appState.currentCase].questions[index] = val;
+    saveState();
+  }
+
+  function updateRevisedRequest(val) {
+    appState.cases[appState.currentCase].revisedRequest = val;
+    saveState();
+  }
+
+  function updatePendingDecisions(val) {
+    appState.cases[appState.currentCase].pendingDecisions = val;
+    saveState();
+  }
+
+  function toggleHint(hintId) {
+    const cState = appState.cases[appState.currentCase];
+    const expIdx = cState.expandedHints.indexOf(hintId);
+
+    if (expIdx === -1) {
+      // Expandir pista
+      cState.expandedHints.push(hintId);
+      // Registrar en historial permanente de consultadas si es primera vez
+      if (!cState.consultedHints.includes(hintId)) {
+        cState.consultedHints.push(hintId);
+      }
+    } else {
+      // Ocultar visiblemente sin borrar de consultedHints
+      cState.expandedHints.splice(expIdx, 1);
+    }
+    
+    renderP2Hints();
+    saveState();
+  }
+
+  /* RENDERS DE PESTAÑAS */
+  function renderP2() {
+    const cState = appState.cases[appState.currentCase];
+    
+    // Render preguntas del usuario
+    const ul = document.getElementById("p2-user-questions");
+    ul.innerHTML = "";
+    const activeQs = cState.questions.filter(function (q) {
+      return typeof q === "string" && q.trim().length > 0;
+    });
+    
+    if (activeQs.length === 0) {
+      ul.innerHTML = `<li class="empty-item">No has registrado preguntas o decisiones aún. Puedes regresar al paso 1 para escribirlas.</li>`;
+    } else {
+      activeQs.forEach(q => {
+        const li = document.createElement("li");
+        li.textContent = q;
+        ul.appendChild(li);
+      });
+    }
+
+    renderP2Hints();
+  }
+
+  function renderP2Hints() {
+    const cData = CASES_DATA[appState.currentCase];
+    const cState = appState.cases[appState.currentCase];
+    const container = document.getElementById("hints-container");
+    container.innerHTML = "";
+
+    cData.hints.forEach((hint, index) => {
+      const isConsulted = cState.consultedHints.includes(hint.id);
+      const isExpanded = cState.expandedHints.includes(hint.id);
+
+      // Regla de desbloqueo progresivo:
+      // Pista 0 (Pista 1) siempre desbloqueada.
+      // Pistas subsiguientes requieren que la pista previa haya sido consultada.
+      const isUnlocked = (index === 0) || cState.consultedHints.includes(cData.hints[index - 1].id);
+
+      const card = document.createElement("div");
+      
+      if (!isUnlocked) {
+        card.className = "hint-card";
+        card.style.opacity = "0.6";
+        card.style.backgroundColor = "#F8FAFC";
+        card.innerHTML = `
+          <div class="hint-header">
+            <span class="hint-title" style="color:var(--text-muted);">${escapeHTML(hint.genericTitle)}</span>
+            <button type="button" class="btn-case" disabled style="opacity:0.6; cursor:not-allowed;">
+              Bloqueada
+            </button>
+          </div>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin-top:6px;">Consulta la pista anterior para habilitar esta orientación.</p>
+        `;
+      } else {
+        card.className = `hint-card ${isExpanded ? "revealed" : ""}`;
+        
+        // Título: Si nunca se ha consultado, mostrar genericTitle. Si ya fue consultada (o está expandida), mostrar detailTitle
+        const displayTitle = isConsulted ? hint.detailTitle : hint.genericTitle;
+        
+        card.innerHTML = `
+          <div class="hint-header">
+            <span class="hint-title">${escapeHTML(displayTitle)}</span>
+            <button type="button" class="btn-case" onclick="toggleHint('${hint.id}')">
+              ${isExpanded ? "Ocultar pista" : (isConsulted ? "Volver a consultar" : "Consultar pista")}
+            </button>
+          </div>
+          <div class="hint-content">
+            <p>${escapeHTML(hint.content)}</p>
+            ${hint.vocab ? `<div class="vocab-box"><strong>Concepto de referencia:</strong> ${escapeHTML(hint.vocab)}</div>` : ""}
+          </div>
+        `;
+      }
+
+      container.appendChild(card);
+    });
+  }
+
+  function renderP3() {
+    const cData = CASES_DATA[appState.currentCase];
+    const cState = appState.cases[appState.currentCase];
+
+    document.getElementById("p3-initial-request").textContent = cData.initialRequest;
+
+    // Preguntas
+    const ulQ = document.getElementById("p3-user-questions");
+    ulQ.innerHTML = "";
+    const activeQs = cState.questions.filter(function (q) {
+      return typeof q === "string" && q.trim().length > 0;
+    });
+    if (activeQs.length === 0) {
+      ulQ.innerHTML = `<li class="empty-item">Sin preguntas registradas.</li>`;
+    } else {
+      activeQs.forEach(q => {
+        const li = document.createElement("li");
+        li.textContent = q;
+        ulQ.appendChild(li);
+      });
+    }
+
+    // Pistas consultadas (usar historial de consultedHints)
+    const ulH = document.getElementById("p3-consulted-hints");
+    ulH.innerHTML = "";
+    const consulted = cData.hints.filter(h => cState.consultedHints.includes(h.id));
+    if (consulted.length === 0) {
+      ulH.innerHTML = `<li class="empty-item">No has consultado pistas aún.</li>`;
+    } else {
+      consulted.forEach(h => {
+        const li = document.createElement("li");
+        li.textContent = `${h.detailTitle}: ${h.content}`;
+        ulH.appendChild(li);
+      });
+    }
+  }
+
+  const EMPTY_REPORT = {
+    questions: "Sin preguntas registradas.",
+    hints: "Sin pistas consultadas.",
+    revised: "Sin reformulación registrada.",
+    pending: "Sin decisiones pendientes registradas."
+  };
+
+  function prepareReport() {
+    const cData = CASES_DATA[appState.currentCase];
+    const cState = appState.cases[appState.currentCase];
+    const questions = cState.questions.filter(function (q) {
+      return typeof q === "string" && q.trim().length > 0;
+    });
+    const hints = cData.hints.filter(function (hint) {
+      return cState.consultedHints.indexOf(hint.id) !== -1;
+    });
+    const revised = typeof cState.revisedRequest === "string" ? cState.revisedRequest.trim() : "";
+    const pending = typeof cState.pendingDecisions === "string" ? cState.pendingDecisions.trim() : "";
+    return {
+      caseTitle: cData.title,
+      initialRequest: cData.initialRequest,
+      questions: questions,
+      hints: hints,
+      revised: revised || EMPTY_REPORT.revised,
+      pending: pending || EMPTY_REPORT.pending,
+      questionsEmpty: questions.length === 0,
+      hintsEmpty: hints.length === 0,
+      revisedEmpty: !revised,
+      pendingEmpty: !pending
+    };
+  }
+
+  function renderP4() {
+    const data = prepareReport();
+    const container = document.getElementById("report-view");
+
+    const questionsHTML = data.questionsEmpty
+      ? `<p style="color:#94A3B8; font-style:italic;">${escapeHTML(EMPTY_REPORT.questions)}</p>`
+      : `<ul>${data.questions.map(q => `<li>${escapeHTML(q)}</li>`).join("")}</ul>`;
+
+    const hintsHTML = data.hintsEmpty
+      ? `<p style="color:#94A3B8; font-style:italic;">${escapeHTML(EMPTY_REPORT.hints)}</p>`
+      : `<ul>${data.hints.map(h => `<li><strong>${escapeHTML(h.detailTitle)}:</strong> ${escapeHTML(h.content)}</li>`).join("")}</ul>`;
+
+    const revisedHTML = data.revisedEmpty
+      ? `<p style="color:#94A3B8; font-style:italic;">${escapeHTML(data.revised)}</p>`
+      : `<p>${escapeHTML(data.revised)}</p>`;
+
+    const pendingHTML = data.pendingEmpty
+      ? `<p style="color:#94A3B8; font-style:italic;">${escapeHTML(data.pending)}</p>`
+      : `<p>${escapeHTML(data.pending)}</p>`;
+
+    container.innerHTML = `
+      <div class="report-section">
+        <h3>Caso Seleccionado</h3>
+        <p><strong>${escapeHTML(data.caseTitle)}</strong></p>
+      </div>
+
+      <div class="report-section">
+        <h3>Solicitud Inicial</h3>
+        <p>${escapeHTML(data.initialRequest)}</p>
+      </div>
+
+      <div class="report-section">
+        <h3>Preguntas / Decisiones Identificadas</h3>
+        ${questionsHTML}
+      </div>
+
+      <div class="report-section">
+        <h3>Pistas Consultadas</h3>
+        ${hintsHTML}
+      </div>
+
+      <div class="report-section">
+        <h3>Solicitud Revisada / Reformulada</h3>
+        ${revisedHTML}
+      </div>
+
+      <div class="report-section">
+        <h3>Decisiones Pendientes de Confirmar</h3>
+        ${pendingHTML}
+      </div>
+    `;
+  }
+
+  /* DESCARGA MARKDOWN */
+  function generateMarkdown() {
+    const data = prepareReport();
+
+    let md = `# Reporte de Actividad: ¿Qué falta por definir?\n\n`;
+    md += `**Taller:** Antes del prompt: qué pedir, qué delegar y cómo comprobar lo que hace la IA en investigación\n\n`;
+    md += `---\n\n`;
+    md += `## Caso Seleccionado\n${data.caseTitle}\n\n`;
+    md += `## Solicitud Inicial\n${data.initialRequest}\n\n`;
+
+    md += `## Preguntas / Decisiones Identificadas\n`;
+    if (data.questionsEmpty) {
+      md += `${EMPTY_REPORT.questions}\n`;
+    } else {
+      data.questions.forEach(function (q) { md += `- ${q}\n`; });
+    }
+    md += `\n`;
+
+    md += `## Pistas Consultadas\n`;
+    if (data.hintsEmpty) {
+      md += `${EMPTY_REPORT.hints}\n`;
+    } else {
+      data.hints.forEach(function (hint) { md += `- **${hint.detailTitle}:** ${hint.content}\n`; });
+    }
+    md += `\n`;
+
+    md += `## Solicitud Revisada / Reformulada\n`;
+    md += `${data.revised}\n\n`;
+
+    md += `## Decisiones Pendientes de Confirmar\n`;
+    md += `${data.pending}\n`;
+
+    return md;
+  }
+
+  function downloadMarkdown() {
+    const mdText = generateMarkdown();
+    const blob = new Blob([mdText], { type: "text/markdown;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `reporte_que_falta_por_definir_caso_${appState.currentCase}.md`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  /* REINICIO */
+  function confirmReset() {
+    const confirmChoice = window.confirm(`¿Estás seguro de que deseas reiniciar únicamente los datos del Caso ${appState.currentCase}? Esta acción no afectará al otro caso.`);
+    if (confirmChoice) {
+      appState.cases[appState.currentCase] = {
+        questions: ["", "", ""],
+        consultedHints: [],
+        expandedHints: [],
+        revisedRequest: "",
+        pendingDecisions: ""
+      };
+      appState.currentTab = 1;
+      saveState();
+      renderCurrentCaseData();
+      switchTab(1);
+    }
+  }
+
+  /* INICIALIZACIÓN */
+  window.addEventListener("DOMContentLoaded", () => {
+    loadState();
+    selectCase(appState.currentCase, false);
+  });
+</script>
+</body>
+</html>

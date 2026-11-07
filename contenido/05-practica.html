@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Ejercicio y prompts completos con tiempos de 120 minutos">
+<meta name="description" content="Las seis etapas del método con la IA, aplicadas al caso de estudio">
 
-<title>Práctica guiada: P0, P1, P5 y P6 – Antes del prompt</title>
+<title>Práctica guiada: del encargo al diagnóstico con IA – Antes del prompt</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../contenido/06-verificacion.html" rel="next">
+<link href="../contenido/tarjeta-practica.html" rel="next">
 <link href="../contenido/04-caso-fair.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c06d6e174cfa7b6d09782cdbecc7f54e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5852d7353255d58dcfac19ab8ea79984.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,61 +102,84 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Antes del taller</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fundamentos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Fundamentos</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-comprender-el-problema" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Comprender el problema</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-fundamentos">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-comprender-el-problema">    
         <li>
     <a class="dropdown-item" href="../contenido/01-contexto.html">
- <span class="dropdown-text">Sentido y objetivos</span></a>
+ <span class="dropdown-text">1 — Introducción</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../contenido/02-ejemplos.html">
- <span class="dropdown-text">Tres situaciones</span></a>
+ <span class="dropdown-text">2 — Tres situaciones</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../contenido/03-metodo.html">
- <span class="dropdown-text">Seis etapas y 4D</span></a>
+ <span class="dropdown-text">3 — Seis etapas y 4D</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../contenido/03b-estructura-prompt.html">
- <span class="dropdown-text">Del problema al prompt</span></a>
+    <a class="dropdown-item" href="../contenido/interactivos/que-falta-por-definir.html">
+ <span class="dropdown-text">4 — ¿Qué falta por definir?</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-taller-fair" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Taller FAIR</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-construir-una-solicitud" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Construir una solicitud</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-taller-fair">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-construir-una-solicitud">    
         <li>
-    <a class="dropdown-item" href="../contenido/04-caso-fair.html">
- <span class="dropdown-text">Caso integrador</span></a>
+    <a class="dropdown-item" href="../contenido/03b-estructura-prompt.html">
+ <span class="dropdown-text">5 — Del problema al prompt</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../contenido/05-practica.html">
- <span class="dropdown-text">Práctica guiada</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../contenido/06-verificacion.html">
- <span class="dropdown-text">Verificación independiente</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../contenido/07-bitacora.html">
- <span class="dropdown-text">Bitácora</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../contenido/tarjeta-practica.html">
- <span class="dropdown-text">Tarjeta de práctica (imprimible)</span></a>
+    <a class="dropdown-item" href="../contenido/interactivos/de-la-solicitud-al-prompt.html">
+ <span class="dropdown-text">6 — De la solicitud al prompt</span></a>
   </li>  
     </ul>
   </li>
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../contenido/08-referencias.html"> 
-<span class="menu-text">Fuentes</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-evaluar-respuestas" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Evaluar respuestas</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-evaluar-respuestas">    
+        <li>
+    <a class="dropdown-item" href="../contenido/interactivos/que-puedo-aceptar.html">
+ <span class="dropdown-text">7 — ¿Qué puedo aceptar?</span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-caso-de-estudio" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Caso de estudio</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-caso-de-estudio">    
+        <li>
+    <a class="dropdown-item" href="../contenido/04-caso-fair.html">
+ <span class="dropdown-text">8 — Caso de estudio FAIR</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/05-practica.html">
+ <span class="dropdown-text">9 — Práctica guiada con IA</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-recursos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Recursos</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-recursos">    
+        <li>
+    <a class="dropdown-item" href="../contenido/tarjeta-practica.html">
+ <span class="dropdown-text">Tarjeta de práctica</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/08-referencias.html">
+ <span class="dropdown-text">Fuentes y continuidad</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -173,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/04-caso-fair.html">Taller FAIR</a></li><li class="breadcrumb-item"><a href="../contenido/05-practica.html">5 — Práctica guiada</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/04-caso-fair.html">Aplicar a un caso de estudio</a></li><li class="breadcrumb-item"><a href="../contenido/05-practica.html">9 — Práctica guiada con IA</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -202,13 +225,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/00-preparacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">0 — Antes del taller</span></a>
+ <span class="menu-text">Antes del taller</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">Fundamentos</span></a>
+ <span class="menu-text">Comprender el problema</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -217,7 +240,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/01-contexto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1 — Sentido y objetivos</span></a>
+ <span class="menu-text">1 — Introducción</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -234,59 +257,98 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/03b-estructura-prompt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3b — Del problema al prompt</span></a>
+  <a href="../contenido/interactivos/que-falta-por-definir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4 — ¿Qué falta por definir?</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Taller FAIR</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Construir una solicitud</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/03b-estructura-prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5 — Del problema al prompt</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/interactivos/de-la-solicitud-al-prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6 — De la solicitud al prompt</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Evaluar respuestas de IA</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/interactivos/que-puedo-aceptar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7 — ¿Qué puedo aceptar?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Aplicar a un caso de estudio</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/04-caso-fair.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4 — Caso integrador</span></a>
+ <span class="menu-text">8 — Caso de estudio FAIR</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/05-practica.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">5 — Práctica guiada</span></a>
+ <span class="menu-text">9 — Práctica guiada con IA</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../contenido/06-verificacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6 — Verificación</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../contenido/07-bitacora.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7 — Bitácora</span></a>
-  </div>
-</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Recursos y continuidad</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/tarjeta-practica.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tarjeta de práctica</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/08-referencias.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fuentes y continuidad</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -297,29 +359,33 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#desarrollo-de-la-práctica" id="toc-desarrollo-de-la-práctica" class="nav-link active" data-scroll-target="#desarrollo-de-la-práctica">Desarrollo de la práctica</a></li>
-  <li><a href="#min-020-11301150-apertura-y-método" id="toc-min-020-11301150-apertura-y-método" class="nav-link" data-scroll-target="#min-020-11301150-apertura-y-método">Min 0–20 (11:30–11:50) · Apertura y método</a></li>
-  <li><a href="#min-2040-11501210-etapas-1-y-2-necesidad-y-vocabulario" id="toc-min-2040-11501210-etapas-1-y-2-necesidad-y-vocabulario" class="nav-link" data-scroll-target="#min-2040-11501210-etapas-1-y-2-necesidad-y-vocabulario">Min 20–40 (11:50–12:10) · Etapas 1 y 2: necesidad y vocabulario</a></li>
-  <li><a href="#min-4060-12101230-etapas-3-y-4-especificar-construir-instrucciones-y-delegar" id="toc-min-4060-12101230-etapas-3-y-4-especificar-construir-instrucciones-y-delegar" class="nav-link" data-scroll-target="#min-4060-12101230-etapas-3-y-4-especificar-construir-instrucciones-y-delegar">Min 40–60 (12:10–12:30) · Etapas 3 y 4: especificar, construir instrucciones y delegar</a></li>
-  <li><a href="#min-6090-12301300-etapa-5-diagnóstico-autocrítica-y-contraste-real" id="toc-min-6090-12301300-etapa-5-diagnóstico-autocrítica-y-contraste-real" class="nav-link" data-scroll-target="#min-6090-12301300-etapa-5-diagnóstico-autocrítica-y-contraste-real">Min 60–90 (12:30–13:00) · Etapa 5: diagnóstico, autocrítica y contraste real</a></li>
-  <li><a href="#min-90110-13001320-etapa-6-registro-y-revisión-por-pares" id="toc-min-90110-13001320-etapa-6-registro-y-revisión-por-pares" class="nav-link" data-scroll-target="#min-90110-13001320-etapa-6-registro-y-revisión-por-pares">Min 90–110 (13:00–13:20) · Etapa 6: registro y revisión por pares</a></li>
-  <li><a href="#min-110120-13201330-cierre" id="toc-min-110120-13201330-cierre" class="nav-link" data-scroll-target="#min-110120-13201330-cierre">Min 110–120 (13:20–13:30) · Cierre</a></li>
+  <li><a href="#las-etapas-y-las-4d-en-esta-práctica" id="toc-las-etapas-y-las-4d-en-esta-práctica" class="nav-link active" data-scroll-target="#las-etapas-y-las-4d-en-esta-práctica">Las etapas y las 4D en esta práctica</a></li>
+  <li><a href="#paso-1-necesidad-el-encargo-abierto-p0" id="toc-paso-1-necesidad-el-encargo-abierto-p0" class="nav-link" data-scroll-target="#paso-1-necesidad-el-encargo-abierto-p0">Paso 1 · Necesidad: el encargo abierto (P0)</a></li>
+  <li><a href="#paso-2-vocabulario-los-conceptos-p1" id="toc-paso-2-vocabulario-los-conceptos-p1" class="nav-link" data-scroll-target="#paso-2-vocabulario-los-conceptos-p1">Paso 2 · Vocabulario: los conceptos (P1)</a></li>
+  <li><a href="#paso-3-especificación-la-escribes-tú" id="toc-paso-3-especificación-la-escribes-tú" class="nav-link" data-scroll-target="#paso-3-especificación-la-escribes-tú">Paso 3 · Especificación: la escribes tú</a></li>
+  <li><a href="#paso-4-colaboración-y-verificación-diagnóstico-autorrevisión-y-contraste" id="toc-paso-4-colaboración-y-verificación-diagnóstico-autorrevisión-y-contraste" class="nav-link" data-scroll-target="#paso-4-colaboración-y-verificación-diagnóstico-autorrevisión-y-contraste">Paso 4 · Colaboración y verificación: diagnóstico, autorrevisión y contraste</a>
+  <ul class="collapse">
+  <li><a href="#verificacion" id="toc-verificacion" class="nav-link" data-scroll-target="#verificacion">Tu verificación con la fuente (obligatoria)</a></li>
+  <li><a href="#revisa-el-diagnóstico" id="toc-revisa-el-diagnóstico" class="nav-link" data-scroll-target="#revisa-el-diagnóstico">Revisa el diagnóstico</a></li>
+  </ul></li>
+  <li><a href="#paso-5-registro-cierra-tu-bitácora" id="toc-paso-5-registro-cierra-tu-bitácora" class="nav-link" data-scroll-target="#paso-5-registro-cierra-tu-bitácora">Paso 5 · Registro: cierra tu bitácora</a></li>
+  <li><a href="#cierre" id="toc-cierre" class="nav-link" data-scroll-target="#cierre">Cierre</a></li>
   <li><a href="#vas-bien-autoevaluación" id="toc-vas-bien-autoevaluación" class="nav-link" data-scroll-target="#vas-bien-autoevaluación">¿Vas bien? Autoevaluación</a></li>
-  <li><a href="#si-sobra-tiempo" id="toc-si-sobra-tiempo" class="nav-link" data-scroll-target="#si-sobra-tiempo">Si sobra tiempo</a></li>
+  <li><a href="#ampliación-opcional" id="toc-ampliación-opcional" class="nav-link" data-scroll-target="#ampliación-opcional">Ampliación opcional</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Helysalgado/fair-prompt-4d/edit/main/contenido/05-practica.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Helysalgado/fair-prompt-4d/issues/new" class="toc-action"><i class="bi empty"></i>Informar sobre problema</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/04-caso-fair.html">Taller FAIR</a></li><li class="breadcrumb-item"><a href="../contenido/05-practica.html">5 — Práctica guiada</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/04-caso-fair.html">Aplicar a un caso de estudio</a></li><li class="breadcrumb-item"><a href="../contenido/05-practica.html">9 — Práctica guiada con IA</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Práctica guiada: P0, P1, P5 y P6</h1>
+<h1 class="title">Práctica guiada: del encargo al diagnóstico con IA</h1>
 </div>
 
 <div>
   <div class="description">
-    Ejercicio y prompts completos con tiempos de 120 minutos
+    Las seis etapas del método con la IA, aplicadas al caso de estudio
   </div>
 </div>
 
@@ -337,44 +403,100 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="etiqueta-pagina durante">
-<p>Durante el taller · guía de la práctica (120 min)</p>
+<p>Durante el taller · práctica de cierre</p>
 </div>
 <div class="en-un-minuto">
 <ul>
-<li>Cuatro prompts (<strong>P0, P1, P5 y P6</strong>) en <strong>un solo chat</strong>; las etapas 3 y 4 las resuelves tú.</li>
-<li>La <strong>verificación con una fuente primaria la haces tú</strong>: la autorrevisión de la IA (P6) no basta.</li>
-<li>Todo queda en la <strong>bitácora</strong>, para que otra persona pueda reconstruir el proceso.</li>
+<li>Recorres las <strong>seis etapas</strong> del método con la IA, en <strong>un solo chat</strong>, con el Excel del <a href="../contenido/04-caso-fair.html">caso de estudio</a>.</li>
+<li>Cuatro prompts (<strong>P0, P1, P5 y P6</strong>); la especificación y la verificación con la fuente las haces tú.</li>
+<li>Cierras con el diagnóstico del chat y la <a href="../contenido/07-bitacora.html">Bitácora mínima 4D</a>.</li>
 </ul>
 </div>
-<p>Los <strong>cuatro prompts principales se ejecutan en un mismo chat</strong>, conservando las respuestas anteriores. La exploración, la especificación humana, la verificación y la bitácora completan las seis etapas. El término «antes del prompt» no prohíbe usar IA para aprender desde el inicio.</p>
-<p>La numeración sigue la de la versión completa del taller: <strong>P2–P4 corresponden a las etapas 3 y 4, que aquí haces tú</strong> sin pedírselas a la IA.</p>
+<p>En el <a href="../contenido/04-caso-fair.html">caso de estudio</a> conociste el encargo, miraste los datos por tu cuenta y anotaste lo que no puedes saber con el archivo. Ahora recorres las seis etapas del método con la IA. Ten a la mano esa lista: te servirá para comparar.</p>
+<p><strong>Antes de empezar, descarga la <a href="../descargas/bitacora-minima-4d.md" download="bitacora-minima-4d.md">plantilla de la bitácora</a></strong> y ábrela en un editor de texto junto al chat. Al final de cada paso hay un recuadro «Para tu bitácora» que corresponde a una sección del archivo: anota en el momento, con la respuesta todavía en pantalla.</p>
+<p>Los <strong>cuatro prompts se ejecutan en un mismo chat</strong>, conservando las respuestas anteriores. La numeración sigue la del taller: <strong>P2–P4 no son prompts</strong>; corresponden a la especificación y a la decisión de delegar, que resuelves tú. P1, P5 y P6 muestran sus componentes con etiquetas (Contexto, Objetivo, Tarea…), como la versión B de <a href="../contenido/03b-estructura-prompt.html">Del problema al prompt</a>; puedes copiarlos así. Completar la práctica <strong>no certifica</strong> que un conjunto de datos cumpla los principios FAIR.</p>
+<p><a href="../descargas/expresion_genica_caso_simulado.xlsx">Descargar el Excel</a> · <a href="../descargas/bitacora-minima-4d.md" download="bitacora-minima-4d.md">Plantilla de la bitácora</a> · <a href="../descargas/expresion_genica_caso_simulado.txt">Versión en texto</a> · <a href="../contenido/tarjeta-practica.html">Tarjeta de práctica</a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../recursos/agenda-practica.svg" class="img-fluid figure-img" alt="Línea de tiempo de 120 minutos. 0–20 min: apertura, método y tres ejemplos. 20–40: etapas 1 y 2 con P0 y P1. 40–60: etapas 3 y 4, decisiones propias e incluye 5 a 7 minutos de prompt. 60–90: etapa 5 con P5, P6 y contraste con una fuente hecho por la persona. 90–110: etapa 6, bitácora y revisión por pares. 110–120: cierre con un problema propio."></p>
-<figcaption>Agenda de la práctica: seis bloques en 120 minutos</figcaption>
-</figure>
-</div>
-<p><a href="../descargas/expresion_genica_caso_simulado.xlsx">Descargar Excel para participantes</a> · <a href="../descargas/bitacora-plantilla.docx">Plantilla de bitácora (.docx)</a> · <a href="../contenido/07-bitacora.html">Ver bitácora</a></p>
-<section id="desarrollo-de-la-práctica" class="level2">
-<h2 class="anchored" data-anchor-id="desarrollo-de-la-práctica">Desarrollo de la práctica</h2>
-<p><strong>Duración total del taller:</strong> 120 min. <strong>Actividad:</strong> diagnóstico preliminar de documentación. Trabaja con el <a href="../descargas/expresion_genica_caso_simulado.xlsx">Excel simulado</a>. <strong>Los datos son ficticios</strong> y no son resultados publicables. Usa <strong>un solo chat</strong> para P0, P1, P5 y P6, y conserva la secuencia. Puedes usar Google Docs o Markdown para la bitácora. ¿Prefieres tenerlo todo en una hoja? Usa la <a href="../contenido/tarjeta-practica.html">tarjeta de práctica</a>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../recursos/un-solo-chat.svg" class="img-fluid figure-img" alt="Dos carriles. Carril de la IA, un solo chat donde se acumula el contexto: P0 solicitud abierta, P1 conceptos, P5 diagnóstico y P6 autorrevisión. Carril de la persona: etapas 3 y 4, especificas y decides, entre P1 y P5; después de P6, verificas tú con una fuente y registras en la bitácora y con pares."></p>
+<p><img src="../recursos/un-solo-chat.svg" class="img-fluid figure-img" alt="Dos carriles. Carril de la IA, un solo chat donde se acumula el contexto: P0 solicitud abierta, P1 conceptos, P5 diagnóstico y P6 autorrevisión. Carril de la persona: entre P1 y P5 escribes la especificación y decides qué delegar; después de P6 abres una fuente y registras el resultado en la bitácora."></p>
 <figcaption>Un solo chat, dos actores</figcaption>
 </figure>
 </div>
+<section id="las-etapas-y-las-4d-en-esta-práctica" class="level2">
+<h2 class="anchored" data-anchor-id="las-etapas-y-las-4d-en-esta-práctica">Las etapas y las 4D en esta práctica</h2>
+<p>Cada paso corresponde a una etapa del <a href="../contenido/03-metodo.html">método</a> y ejercita sobre todo una o dos competencias del <a href="../contenido/03-metodo.html#ai-fluency-4d-marco-de-competencias">marco 4D</a>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Paso</th>
+<th>Etapa</th>
+<th>Competencia 4D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. P0</td>
+<td>Necesidad</td>
+<td><strong>Discernment</strong> (discernimiento)</td>
+</tr>
+<tr class="even">
+<td>2. P1</td>
+<td>Vocabulario</td>
+<td><strong>Discernment</strong> (discernimiento)</td>
+</tr>
+<tr class="odd">
+<td>3. Especificación</td>
+<td>Especificación</td>
+<td><strong>Delegation</strong> (delegación) y <strong>Description</strong> (descripción)</td>
+</tr>
+<tr class="even">
+<td>4. P5, P6 y fuente</td>
+<td>Colaboración y Verificación</td>
+<td><strong>Discernment</strong> (discernimiento) y <strong>Diligence</strong> (diligencia)</td>
+</tr>
+<tr class="odd">
+<td>5. Registro</td>
+<td>Registro</td>
+<td><strong>Diligence</strong> (diligencia)</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Archivos de las actividades anteriores (opcional)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Las actividades anteriores descargan un Markdown en tu equipo. Ábrelos si te sirven para recordar tu propio trabajo. Puedes consultarlos a mano. Esta práctica no pide subirlos al asistente ni entregarlos.</p>
+<ul>
+<li><code>reporte_que_falta_por_definir_caso_A.md</code> o <code>reporte_que_falta_por_definir_caso_B.md</code>: preguntas y decisiones que marcaste como pendientes al precisar una solicitud.</li>
+<li><code>reporte_del_prompt_caso_A.md</code> o <code>reporte_del_prompt_caso_B.md</code>: decisiones que tomaste al formular instrucciones y las versiones que guardaste.</li>
+<li><code>Discernimiento_IA_AAAA-MM-DD.md</code>: criterios con los que evaluaste qué aceptar, corregir o dejar pendiente en una respuesta de IA.</li>
+</ul>
+<p>Si no descargaste alguno, sigue con lo que recuerdes. Si además usaste el Explorador FAIR, su reporte se llama <code>explorador-fair-reporte.md</code> y también puede consultarse. Esos archivos son apoyo del proceso. Los productos de la sesión son el diagnóstico de este chat y la bitácora.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="min-020-11301150-apertura-y-método" class="level2">
-<h2 class="anchored" data-anchor-id="min-020-11301150-apertura-y-método">Min 0–20 (11:30–11:50) · Apertura y método</h2>
-<p>Analiza los <a href="../contenido/02-ejemplos.html">tres ejemplos</a>: operación ambigua, cita real con afirmación no respaldada y metadatos fabricados. Se presentan las <a href="../contenido/03-metodo.html">seis etapas</a> del trabajo con IA.</p>
-</section>
-<section id="min-2040-11501210-etapas-1-y-2-necesidad-y-vocabulario" class="level2">
-<h2 class="anchored" data-anchor-id="min-2040-11501210-etapas-1-y-2-necesidad-y-vocabulario">Min 20–40 (11:50–12:10) · Etapas 1 y 2: necesidad y vocabulario</h2>
-<p>Adjunta <a href="../descargas/expresion_genica_caso_simulado.xlsx">el Excel simulado</a> y escribe:</p>
+<section id="paso-1-necesidad-el-encargo-abierto-p0" class="level2">
+<h2 class="anchored" data-anchor-id="paso-1-necesidad-el-encargo-abierto-p0">Paso 1 · Necesidad: el encargo abierto (P0)</h2>
+<p><em>4D · Discernment (discernimiento): evalúas qué hace la IA con un encargo abierto.</em></p>
+<p>Abre un chat nuevo, adjunta el Excel y dale a la IA el encargo tal como llegó:</p>
 <div class="prompt" data-label="P0" data-meta="nuevo chat · adjunta el Excel">
 <p>Tengo este Excel de expresión génica de cinco filas y tres condiciones. Voy a publicar un artículo y me piden que los datos sigan los principios FAIR. ¿Me ayudas a prepararlo?</p>
 </div>
+<p>P0 está <strong>incompleto a propósito</strong>: es el encargo tal como llegó, sin los componentes que viste en <a href="../contenido/03b-estructura-prompt.html">Del problema al prompt</a>. Así puedes ver qué hace la IA cuando tiene que decidir por su cuenta.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -385,86 +507,267 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Registra qué hizo la IA: ¿preguntó, explicó, sugirió archivos, atribuyó un significado experimental no demostrado? Que una respuesta sea útil no la vuelve automáticamente publicable.</p>
+<p>Anota qué hizo la IA: ¿preguntó, explicó, sugirió archivos, atribuyó un significado experimental no demostrado? Compáralo con lo que tú entendiste del encargo en el caso de estudio. Que una respuesta sea útil no la vuelve automáticamente publicable.</p>
 </div>
 </div>
-<div class="prompt" data-label="P1" data-meta="mismo chat · versión acotada">
-<p>Antes de modificar el Excel, identifica <strong>solo cinco conceptos prioritarios</strong> que debo entender para preparar datos conforme a FAIR. Explica cada uno en una oración conectada con este archivo y formula <strong>cinco preguntas críticas</strong> al responsable del experimento. Distingue lo observado en el archivo de lo que falta confirmar y de lo que requiere consulta externa. No inventes unidades, tratamiento, cepa, método, replicación ni significado de «prom.». Indica dos fuentes institucionales candidatas, sin afirmar que ya las verificaste.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p><strong>Puesta en común (3 min).</strong> Cada persona usa un asistente distinto: aprovechemos la diferencia. ¿A quién le hizo preguntas antes de responder? ¿A quién le entregó archivos? ¿Alguien recibió unidades o tratamientos que el Excel no menciona?</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Para tu bitácora
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>¿Qué hizo la IA: preguntó, explicó, propuso archivos, inventó algo?</li>
+<li>¿Coincide con lo que tú entendiste del encargo?</li>
+</ul>
+</div>
+</div>
 </section>
-<section id="min-4060-12101230-etapas-3-y-4-especificar-construir-instrucciones-y-delegar" class="level2">
-<h2 class="anchored" data-anchor-id="min-4060-12101230-etapas-3-y-4-especificar-construir-instrucciones-y-delegar">Min 40–60 (12:10–12:30) · Etapas 3 y 4: especificar, construir instrucciones y delegar</h2>
-<p><strong>Primeros 5–7 minutos:</strong> consulta <a href="../contenido/03b-estructura-prompt.html">Del problema al prompt</a> y realiza la actividad breve. Elige los componentes necesarios para un diagnóstico documental: objetivo, contexto, tarea, salida, restricciones y verificación. El rol es opcional. <strong>Este segmento sustituye parte de la explicación de estas etapas: no añade tiempo al taller.</strong></p>
-<p><strong>Luego escribe en la <a href="../contenido/07-bitacora.html#especificacion-propia">sección 3 de tu bitácora</a>, sin pedir a la IA que tome las decisiones por ti:</strong></p>
+<section id="paso-2-vocabulario-los-conceptos-p1" class="level2">
+<h2 class="anchored" data-anchor-id="paso-2-vocabulario-los-conceptos-p1">Paso 2 · Vocabulario: los conceptos (P1)</h2>
+<p><em>4D · Discernment (discernimiento): comparas su explicación con lo que tú observaste.</em></p>
+<div class="prompt estructurado" data-label="P1" data-meta="mismo chat · vocabulario">
+<p><strong>Contexto:</strong> Sigo trabajando con el Excel que adjunté en este chat.</p>
+<p><strong>Objetivo:</strong> Antes de modificar el Excel, quiero entender qué necesito saber para preparar estos datos conforme a FAIR.</p>
+<p><strong>Tarea:</strong> Identifica <strong>solo cinco conceptos prioritarios</strong> y formula <strong>cinco preguntas críticas</strong> para la persona responsable del experimento.</p>
+<p><strong>Salida:</strong> Explica cada concepto en una oración conectada con este archivo; después, las cinco preguntas. Indica dos fuentes institucionales candidatas para profundizar.</p>
+<p><strong>Restricciones:</strong> No inventes unidades, tratamiento, cepa, método, replicación ni significado de «prom.».</p>
+<p><strong>Verificación:</strong> Marca cada afirmación sobre el archivo como observado, inferido o por confirmar. No afirmes que ya verificaste las fuentes que propones.</p>
+</div>
+<p>En el caso anotaste tres cosas que no puedes saber con el archivo y leíste una orientación breve sobre FAIR. Compara: ¿la lista de la IA coincide con la tuya? ¿Señaló algo que tú no viste? ¿Dio por hecho algo que el archivo no dice, como unidades, tratamientos o «prom.» como promedio?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Para tu bitácora
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Copia tu lista de tres cosas que no se pueden saber con el archivo.</li>
+<li>Anota algo que la IA señaló y tú no habías visto, y algo que dio por hecho sin evidencia.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="paso-3-especificación-la-escribes-tú" class="level2">
+<h2 class="anchored" data-anchor-id="paso-3-especificación-la-escribes-tú">Paso 3 · Especificación: la escribes tú</h2>
+<p><em>4D · Delegation (delegación) y Description (descripción): decides qué encargas y cómo lo dices.</em></p>
+<p>El resultado y el alcance ya los conoces por <a href="../contenido/04-caso-fair.html#qué-vas-a-producir">Qué vas a producir</a>; aquí los conviertes en tu especificación. Si lo necesitas, revisa los componentes de <a href="../contenido/03b-estructura-prompt.html">Del problema al prompt</a> y el reporte de «De la solicitud al prompt». Elige los que sirvan para un diagnóstico documental: objetivo, contexto, tarea, salida, restricciones y verificación. El rol es opcional.</p>
+<p><strong>Escríbela tú, sin pedir a la IA que tome las decisiones.</strong> Tiene dos partes: lo que le dices a la IA y lo que te guardas para evaluar su respuesta.</p>
+<p><strong>A. Lo que le dices a la IA</strong> (lo pegarás dentro de P5):</p>
 <ul>
 <li>Resultado buscado: <strong>diagnóstico documental</strong>, no depósito ni certificación.</li>
 <li>Alcance: <strong>unidades, condiciones, réplicas y celda vacía</strong>.</li>
-<li>Evidencia aceptable: celda/nota del archivo o fuente primaria externa, indicando qué se consultó.</li>
-<li>Qué delego a IA: inventariar evidencia y preguntas, organizar una tabla y proponer próximos pasos.</li>
-<li>Qué confirmo como investigador/a: realidad experimental, unidades, protocolo, responsables, publicación, licencias.</li>
+<li>Evidencia aceptable: celda o nota del archivo, o fuente primaria externa, indicando qué se consultó.</li>
+<li>Qué delegas: inventariar evidencia y preguntas, organizar una tabla y proponer próximos pasos.</li>
 <li>Límites: no completar vacíos con cero, no inventar metadatos, no suponer que «prom.» es promedio.</li>
-<li>Criterio de aceptación: cada afirmación etiquetada como observada / inferida / pendiente / verificación externa.</li>
 </ul>
-<p><strong><a href="../contenido/03-metodo.html#ai-fluency-4d-marco-de-competencias">Marco 4D</a>, en breve:</strong> Delegation = repartir tareas; Description = especificar entradas y restricciones; Discernment = evaluar; Diligence = documentar y responder por decisiones.</p>
-<p><strong>Punto de atención:</strong> cuando ejecutes P5, anota en tu bitácora qué componentes de tu especificación aportaron claridad y qué responsabilidad de verificación conservas tú.</p>
+<p><strong>B. Lo que te guardas para evaluar</strong> (no se pega; lo usas en el paso 4 para revisar lo que responda la IA):</p>
+<ul>
+<li>Qué confirmas tú: la realidad experimental, las unidades, el protocolo, las personas responsables, la publicación y las licencias.</li>
+<li>Criterio de aceptación: cada afirmación lleva observado, inferido o por confirmar, con su ubicación en el archivo; «verificado» solo lo asignas tú, después de consultar la fuente.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Ejemplo de especificación (ábrelo solo si te atoras)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>A. Lo que pego en P5</strong></p>
+<ul>
+<li><strong>Resultado buscado:</strong> un diagnóstico documental de lo que falta saber; no un paquete para depositar ni una declaración de cumplimiento FAIR.</li>
+<li><strong>Alcance:</strong> solo las unidades de los valores, qué significan Control, Estrés A y Estrés B, las réplicas y la celda vacía de <code>b0014</code> en Estrés B. Quedan fuera los identificadores, la cepa y el procesamiento.</li>
+<li><strong>Evidencia aceptable:</strong> una celda o nota del Excel, indicando hoja y celda, o una fuente primaria que yo consulte.</li>
+<li><strong>Qué te pido:</strong> que hagas el inventario de evidencia, organices la tabla y propongas preguntas y siguientes pasos.</li>
+<li><strong>Límites:</strong> no rellenes la celda vacía con cero, no inventes metadatos y no supongas que «prom.» significa promedio.</li>
+</ul>
+<p><strong>B. Lo que me guardo para evaluar</strong></p>
+<ul>
+<li><strong>Qué confirmo yo:</strong> con la responsable del experimento, las unidades, los tratamientos y las réplicas; yo decido qué se publica.</li>
+<li><strong>Criterio de aceptación:</strong> acepto la tabla si cada afirmación lleva observado, inferido o por confirmar, con su ubicación, y si nada aparece como verificado sin una fuente que yo haya abierto.</li>
+</ul>
+<p>Tu versión puede ser distinta; lo importante es que las decisiones sean tuyas.</p>
+</div>
+</div>
+</div>
+<p><strong>Antes de P5, copia la parte A.</strong> La pegarás dentro de P5, en el lugar indicado; si no la pegas, la IA no la conoce. La parte B no se pega: la usarás en el paso 4 para decidir qué aceptas.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Para tu bitácora
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Escribe tu especificación directamente en la sección del paso 3 de la plantilla: la parte A y la parte B. De ahí copias la parte A para pegarla en P5.</p>
+</div>
+</div>
 </section>
-<section id="min-6090-12301300-etapa-5-diagnóstico-autocrítica-y-contraste-real" class="level2">
-<h2 class="anchored" data-anchor-id="min-6090-12301300-etapa-5-diagnóstico-autocrítica-y-contraste-real">Min 60–90 (12:30–13:00) · Etapa 5: diagnóstico, autocrítica y contraste real</h2>
-<p>En esta etapa, cada afirmación del diagnóstico lleva una de cuatro etiquetas. P6 marca las que requieren verificación externa; <strong>solo tú puedes cambiarlas a «Verificado»</strong>.</p>
+<section id="paso-4-colaboración-y-verificación-diagnóstico-autorrevisión-y-contraste" class="level2">
+<h2 class="anchored" data-anchor-id="paso-4-colaboración-y-verificación-diagnóstico-autorrevisión-y-contraste">Paso 4 · Colaboración y verificación: diagnóstico, autorrevisión y contraste</h2>
+<p><em>4D · Discernment (discernimiento) y Diligence (diligencia): evalúas el diagnóstico y no marcas nada como verificado sin fuente.</em></p>
+<p>Cada afirmación del diagnóstico lleva una de cuatro etiquetas. P6 marca las que requieren verificación externa. <strong>Solo tú puedes cambiarlas a «Verificado».</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../recursos/escala-evidencia.svg" class="img-fluid figure-img" alt="Cuatro tarjetas. Observado: está en el archivo y se puede señalar; ejemplo, la columna C se llama Estrés A (prom.); qué hacer: citar hoja y celda. Inferido: plausible pero el archivo no lo dice; ejemplo, prom. probablemente significa promedio; qué hacer: marcarlo como hipótesis. Por confirmar: solo puede responderlo quien generó los datos; ejemplo, ¿promedio de cuántas réplicas?; qué hacer: preguntarlo a la responsable. Verificado: comprobado abriendo una fuente primaria; ejemplo, los principios FAIR están enumerados en el Box 2 de Wilkinson et al. 2016; qué hacer: anotar fuente, pasaje y fecha."></p>
 <figcaption>Cuatro etiquetas para cada afirmación</figcaption>
 </figure>
 </div>
-<div class="prompt" data-label="P5" data-meta="mismo chat">
-<p>Con base en el Excel y la especificación que elaboré, prepara un diagnóstico preliminar, <strong>solo para cuatro asuntos: unidades de los valores, definición de las condiciones, réplicas y celda vacía</strong>. Devuelve una tabla con asunto, observado y ubicación (hoja/celda cuando sea posible), por confirmar, acción siguiente, persona/rol que confirmaría y estado de evidencia. No completes datos por inferencia, no transformes valores ni declares cumplimiento FAIR. Añade <strong>tres preguntas prioritarias</strong> para el responsable experimental.</p>
+<div class="prompt estructurado" data-label="P5" data-meta="mismo chat · pega tu especificación donde se indica">
+<p><strong>Contexto:</strong> Trabajamos con el Excel de este chat y con mi especificación: [pega aquí tu especificación]</p>
+<p><strong>Objetivo:</strong> Obtener un diagnóstico preliminar de la información que falta, antes de preparar un depósito o afirmar cumplimiento FAIR.</p>
+<p><strong>Tarea:</strong> Revisa <strong>solo cuatro asuntos: unidades de los valores, definición de las condiciones, réplicas y celda vacía</strong>.</p>
+<p><strong>Salida:</strong> Una tabla con asunto, lo observado y su ubicación (hoja/celda cuando sea posible), lo que falta confirmar, siguiente acción, persona o rol que lo confirmaría y estado de evidencia. Al final, <strong>tres preguntas prioritarias</strong> para la persona responsable del experimento.</p>
+<p><strong>Restricciones:</strong> No completes datos por inferencia, no transformes valores ni declares cumplimiento FAIR.</p>
+<p><strong>Verificación:</strong> En «estado de evidencia» usa solo observado, inferido o por confirmar.</p>
 </div>
-<div class="prompt" data-label="P6" data-meta="mismo chat · autorrevisión">
-<p>Audita tu diagnóstico anterior. Clasifica cada afirmación como observada en el Excel, inferencia, pendiente de confirmación o verificación externa requerida. Corrige afirmaciones como «no existe» cuando solo pueda concluirse «no está documentado». Selecciona una afirmación FAIR contrastable y explica qué fuente primaria y sección deberíamos revisar. <strong>No declares haberla verificado por revisar tu respuesta.</strong></p>
+<div class="prompt estructurado" data-label="P6" data-meta="mismo chat · autorrevisión">
+<p><strong>Tarea:</strong> Audita tu diagnóstico anterior.</p>
+<p><strong>Salida:</strong> Para cada afirmación, indica si es observado, inferido o por confirmar, y marca las que requieren verificación externa. Cambia «no existe» por «no está documentado» cuando eso sea lo único que puede concluirse.</p>
+<p><strong>Verificación:</strong> Elige una afirmación sobre FAIR que se pueda contrastar e indica qué fuente primaria y qué sección habría que revisar.</p>
+<p><strong>Restricciones:</strong> No uses la etiqueta «verificado»: solo la asigno yo después de consultar la fuente. Revisar tu respuesta no equivale a verificarla.</p>
 </div>
+<p>P6 es <strong>autorrevisión</strong>: la IA relee su respuesta y te dice qué habría que comprobar, pero no consulta ninguna fuente. Una referencia bibliográfica existente tampoco prueba que sustente la frase que se le atribuye. Verificar lo haces tú.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../recursos/revisar-vs-verificar.svg" class="img-fluid figure-img" alt="Dos columnas separadas por un signo de distinto. P6, autorrevisión de la IA: la IA relee su respuesta, clasifica lo observado, inferido y por confirmar, corrige no existe por no está documentado y sugiere qué fuente revisar; su resultado es una lista de lo que habría que comprobar. Tú, verificación independiente: una persona abre y lee la fuente, localiza el pasaje y anota fecha, interpretación y limitaciones; su resultado es respalda, contradice o no permite decidir. Ambas columnas llevan a la bitácora; si no se abrió la fuente se anota pendiente."></p>
+<figcaption>Autorrevisión de la IA frente a verificación independiente</figcaption>
+</figure>
+</div>
+<section id="verificacion" class="level3">
+<h3 class="anchored" data-anchor-id="verificacion">Tu verificación con la fuente (obligatoria)</h3>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Importante</span>Actividad obligatoria · la haces tú, no basta con P6
+<span class="screen-reader-only">Importante</span>Prioridad
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Contrasta la afirmación <strong>«FAIR exige que todos los datos sean completamente abiertos»</strong> con la fuente primaria. Sigue los pasos en <a href="../contenido/06-verificacion.html#actividad-obligatoria">Verificación independiente</a>. <strong>Si no accedes a la fuente, escribe «pendiente», nunca «verificado».</strong> Si el tiempo no alcanza, prioriza esta verificación sobre leer completa la respuesta a P6.</p>
+<p>Si tienes que elegir, prioriza esta verificación sobre leer completa la respuesta a P6.</p>
+</div>
+</div>
+<p><strong>Afirmación para comprobar:</strong> «FAIR exige que todos los datos sean completamente abiertos».</p>
+<p>Es una confusión frecuente sobre FAIR, y puede aparecer, dicha así o de otra forma, en lo que te respondió la IA: revisa si está en sus respuestas. Si P6 te propuso otra afirmación para contrastar, puedes verificarla después con los mismos pasos.</p>
+<ol type="1">
+<li>Abre <a href="https://doi.org/10.1038/sdata.2016.18">Wilkinson et al.&nbsp;(2016)</a>, la fuente primaria. Si quieres, usa <a href="https://www.gofair.foundation/fair-principles">GO FAIR — FAIR Principles</a> como complemento.</li>
+<li>Localiza qué dice el artículo sobre el acceso a los datos. En Wilkinson et al., el <strong>Box 2</strong> enumera todos los principios; lee los que empiezan con <strong>A</strong>: A1, A1.1, A1.2 y A2.</li>
+<li>Anota con tus palabras <strong>qué dice realmente</strong> el texto.</li>
+<li>Registra en tu bitácora la fuente (título y URL), la fecha de consulta, la sección o el pasaje, qué dice realmente y las limitaciones de tu lectura.</li>
+<li>Concluye <strong>respalda</strong>, <strong>contradice</strong>, <strong>no permite decidir</strong> o <strong>pendiente</strong>, y justifica tu conclusión con el pasaje consultado.</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>Regla de evidencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si no pudiste abrir y leer la fuente, tu conclusión es <strong>«pendiente»</strong>. El enlace que sugiere una IA no prueba que la consulta ocurrió.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Si quieres profundizar (ábrelo después de llegar a tu conclusión)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Mons et al.&nbsp;(2017) [<a href="../contenido/08-referencias.html#r13">R13</a>] dedica una sección a la relación entre FAIR y los datos abiertos: <a href="https://doi.org/10.3233/ISU-170824"><em>Cloudy, increasingly FAIR</em></a>. Compara lo que dice con tu conclusión.</p>
+</div>
 </div>
 </div>
 </section>
-<section id="min-90110-13001320-etapa-6-registro-y-revisión-por-pares" class="level2">
-<h2 class="anchored" data-anchor-id="min-90110-13001320-etapa-6-registro-y-revisión-por-pares">Min 90–110 (13:00–13:20) · Etapa 6: registro y revisión por pares</h2>
-<p>Completa <a href="../contenido/07-bitacora.html">la bitácora</a>; intercambia con otra persona y comprueba que pueda reconstruir qué se pidió, qué respondió la IA, cómo se contrastó y qué sigue pendiente. Una observación constructiva y una pregunta por pareja. <em>En línea:</em> comparte tu bitácora con permiso de comentario o pega el enlace en el chat de la reunión.</p>
+<section id="revisa-el-diagnóstico" class="level3">
+<h3 class="anchored" data-anchor-id="revisa-el-diagnóstico">Revisa el diagnóstico</h3>
+<p>Revisa la tabla de P5 y la autorrevisión de P6 con tu <strong>criterio de aceptación</strong> (parte B del paso 3): ¿cada afirmación tiene su etiqueta y su ubicación? ¿Algo aparece como confirmado sin evidencia?</p>
+<p>El producto de este chat es el <strong>diagnóstico FAIR preliminar</strong>: unidades, condiciones, réplicas y la celda vacía, con lo observado, lo inferido y lo que falta confirmar.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Para tu bitácora
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>¿La tabla de P5 cumple tu criterio de aceptación? ¿Qué corregiste o no aceptaste?</li>
+<li>Tu verificación con la fuente: título y URL, fecha, pasaje, qué dice, limitaciones y conclusión. Si no abriste la fuente, escribe «pendiente».</li>
+</ul>
+</div>
+</div>
 </section>
-<section id="min-110120-13201330-cierre" class="level2">
-<h2 class="anchored" data-anchor-id="min-110120-13201330-cierre">Min 110–120 (13:20–13:30) · Cierre</h2>
-<p>Escribe un problema propio al que aplicarías estas seis etapas, sin necesidad de resolverlo; usa la sección <a href="../contenido/07-bitacora.html#transferencia">Transferencia a un problema real</a> de la bitácora.</p>
+</section>
+<section id="paso-5-registro-cierra-tu-bitácora" class="level2">
+<h2 class="anchored" data-anchor-id="paso-5-registro-cierra-tu-bitácora">Paso 5 · Registro: cierra tu bitácora</h2>
+<p><em>4D · Diligence (diligencia): respondes por lo que queda abierto.</em></p>
+<p>Completa las secciones «Paso 5 · Registro» y «Cierre» de tu bitácora y guarda el archivo; en <a href="../contenido/07-bitacora.html">Bitácora mínima 4D</a> tienes una lista para revisarla antes de terminar. Ese archivo es el segundo producto de la sesión.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Para tu bitácora
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Qué queda pendiente y quién debe confirmarlo.</li>
+<li>Las exclusiones: identificadores, procesamiento, cepa y persona responsable.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="cierre" class="level2">
+<h2 class="anchored" data-anchor-id="cierre">Cierre</h2>
+<p>Escribe un problema de tu trabajo al que aplicarías estas etapas, sin resolverlo ahora. Anótalo en la sección «Cierre» de tu bitácora.</p>
 <p>Pregunta de cierre: <strong>«La IA puede hacerlo. ¿Tú sabes qué hizo, por qué lo hizo y cómo comprobarlo?»</strong></p>
-<p><strong>Antes de irte (2 min):</strong> responde, de forma anónima, en el formulario que compartiremos en la sesión: <em>¿Qué harás distinto la próxima vez que delegues algo a la IA?</em> y <em>¿Qué parte del taller te costó más?</em> Tus respuestas sirven para mejorar el taller: es su primera edición con participantes.</p>
+<p>Si el equipo docente comparte un formulario de opinión, responde de forma anónima: <em>¿Qué harás distinto la próxima vez que delegues algo a la IA?</em> y <em>¿Qué parte del taller te costó más?</em> Tus respuestas sirven para mejorar el taller.</p>
 </section>
 <section id="vas-bien-autoevaluación" class="level2">
 <h2 class="anchored" data-anchor-id="vas-bien-autoevaluación">¿Vas bien? Autoevaluación</h2>
-<p>No hay una respuesta única, pero un buen resultado cumple con esto:</p>
+<p>No hay una respuesta única. Un buen resultado cumple con esto:</p>
 <div class="autoevaluacion">
 <ul>
-<li>Tu bitácora registra <strong>qué hizo la IA con P0</strong> antes de que la corrigieras.</li>
 <li>Escribiste la <strong>especificación tú</strong>, antes de P5.</li>
-<li>El diagnóstico tiene <strong>cuatro asuntos</strong> y cada afirmación lleva <strong>una etiqueta</strong> (observado, inferido, por confirmar, verificado).</li>
+<li>El diagnóstico cubre <strong>unidades, condiciones, réplicas y la celda vacía</strong>, y cada afirmación lleva <strong>una etiqueta</strong> (observado, inferido, por confirmar, verificado).</li>
 <li>Ninguna afirmación dice <strong>«verificado»</strong> sin una fuente que abriste tú, con pasaje y fecha.</li>
 <li>Distinguiste <strong>«no existe»</strong> de <strong>«no está documentado»</strong>.</li>
-<li>Otra persona pudo <strong>reconstruir tu proceso</strong> leyendo la bitácora.</li>
 </ul>
 </div>
 </section>
-<section id="si-sobra-tiempo" class="level2">
-<h2 class="anchored" data-anchor-id="si-sobra-tiempo">Si sobra tiempo</h2>
-<p>Usa un <strong>segundo chat limpio</strong> con el mismo Excel y la especificación final. Compara P0 y la respuesta final como demostración informal; no atribuyas causalidad experimental a esa comparación.</p>
+<section id="ampliación-opcional" class="level2">
+<h2 class="anchored" data-anchor-id="ampliación-opcional">Ampliación opcional</h2>
+<p>Usa un <strong>segundo chat limpio</strong> con el mismo Excel y tu especificación final, y compara la respuesta con la de P0. Recuerda que una misma instrucción puede dar respuestas distintas cada vez: la comparación muestra diferencias, pero no prueba que las causó tu especificación.</p>
+<p><strong>La cita del 80 %.</strong> Aplica los pasos de <a href="#verificacion">tu verificación</a> a la respuesta simulada del <a href="../contenido/02-ejemplos.html#ejemplo-2.-evidencia-sobre-fair-y-reproducibilidad">ejemplo 2</a>: busca en el artículo si contiene realmente ese resultado y distingue una cita auténtica de una atribución no sustentada.</p>
 
 
 </section>
@@ -908,13 +1211,13 @@ document.addEventListener("DOMContentLoaded", function () {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../contenido/04-caso-fair.html" class="pagination-link" aria-label="4 — Caso integrador">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">4 — Caso integrador</span>
+      <a href="../contenido/04-caso-fair.html" class="pagination-link" aria-label="8 — Caso de estudio FAIR">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8 — Caso de estudio FAIR</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../contenido/06-verificacion.html" class="pagination-link" aria-label="6 — Verificación">
-        <span class="nav-page-text">6 — Verificación</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../contenido/tarjeta-practica.html" class="pagination-link" aria-label="Tarjeta de práctica">
+        <span class="nav-page-text">Tarjeta de práctica</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

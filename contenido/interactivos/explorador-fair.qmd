@@ -1,0 +1,8 @@
+---
+title: "Nota de ruta"
+description: "Esta página ya no forma parte del recorrido"
+---
+
+El recorrido del taller continúa en la [práctica guiada](../05-practica.qmd) y en la [Bitácora mínima 4D](../07-bitacora.qmd).
+
+El [Explorador FAIR](../../interactivos/explorador_fair.html){target="_blank"} sigue disponible para mirar la hoja en el navegador. El diagnóstico se elabora en el asistente, con el Excel y los prompts de la práctica.

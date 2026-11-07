@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Plantilla para reconstruir qué se pidió, qué se obtuvo y qué se verificó">
+<meta name="description" content="Revisa tu registro, completa los pendientes y guarda el archivo">
 
-<title>Bitácora y revisión entre pares – Antes del prompt</title>
+<title>Bitácora mínima 4D – Antes del prompt</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../contenido/tarjeta-practica.html" rel="next">
-<link href="../contenido/06-verificacion.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -43,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c06d6e174cfa7b6d09782cdbecc7f54e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5852d7353255d58dcfac19ab8ea79984.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,61 +100,84 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Antes del taller</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fundamentos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Fundamentos</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-comprender-el-problema" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Comprender el problema</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-fundamentos">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-comprender-el-problema">    
         <li>
     <a class="dropdown-item" href="../contenido/01-contexto.html">
- <span class="dropdown-text">Sentido y objetivos</span></a>
+ <span class="dropdown-text">1 — Introducción</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../contenido/02-ejemplos.html">
- <span class="dropdown-text">Tres situaciones</span></a>
+ <span class="dropdown-text">2 — Tres situaciones</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../contenido/03-metodo.html">
- <span class="dropdown-text">Seis etapas y 4D</span></a>
+ <span class="dropdown-text">3 — Seis etapas y 4D</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../contenido/03b-estructura-prompt.html">
- <span class="dropdown-text">Del problema al prompt</span></a>
+    <a class="dropdown-item" href="../contenido/interactivos/que-falta-por-definir.html">
+ <span class="dropdown-text">4 — ¿Qué falta por definir?</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-taller-fair" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Taller FAIR</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-construir-una-solicitud" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Construir una solicitud</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-taller-fair">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-construir-una-solicitud">    
         <li>
-    <a class="dropdown-item" href="../contenido/04-caso-fair.html">
- <span class="dropdown-text">Caso integrador</span></a>
+    <a class="dropdown-item" href="../contenido/03b-estructura-prompt.html">
+ <span class="dropdown-text">5 — Del problema al prompt</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../contenido/05-practica.html">
- <span class="dropdown-text">Práctica guiada</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../contenido/06-verificacion.html">
- <span class="dropdown-text">Verificación independiente</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../contenido/07-bitacora.html">
- <span class="dropdown-text">Bitácora</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../contenido/tarjeta-practica.html">
- <span class="dropdown-text">Tarjeta de práctica (imprimible)</span></a>
+    <a class="dropdown-item" href="../contenido/interactivos/de-la-solicitud-al-prompt.html">
+ <span class="dropdown-text">6 — De la solicitud al prompt</span></a>
   </li>  
     </ul>
   </li>
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../contenido/08-referencias.html"> 
-<span class="menu-text">Fuentes</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-evaluar-respuestas" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Evaluar respuestas</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-evaluar-respuestas">    
+        <li>
+    <a class="dropdown-item" href="../contenido/interactivos/que-puedo-aceptar.html">
+ <span class="dropdown-text">7 — ¿Qué puedo aceptar?</span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-caso-de-estudio" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Caso de estudio</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-caso-de-estudio">    
+        <li>
+    <a class="dropdown-item" href="../contenido/04-caso-fair.html">
+ <span class="dropdown-text">8 — Caso de estudio FAIR</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/05-practica.html">
+ <span class="dropdown-text">9 — Práctica guiada con IA</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-recursos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Recursos</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-recursos">    
+        <li>
+    <a class="dropdown-item" href="../contenido/tarjeta-practica.html">
+ <span class="dropdown-text">Tarjeta de práctica</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/08-referencias.html">
+ <span class="dropdown-text">Fuentes y continuidad</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -173,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/04-caso-fair.html">Taller FAIR</a></li><li class="breadcrumb-item"><a href="../contenido/07-bitacora.html">7 — Bitácora</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Bitácora mínima 4D</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -202,13 +223,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/00-preparacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">0 — Antes del taller</span></a>
+ <span class="menu-text">Antes del taller</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">Fundamentos</span></a>
+ <span class="menu-text">Comprender el problema</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -217,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/01-contexto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1 — Sentido y objetivos</span></a>
+ <span class="menu-text">1 — Introducción</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -234,59 +255,98 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/03b-estructura-prompt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3b — Del problema al prompt</span></a>
+  <a href="../contenido/interactivos/que-falta-por-definir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4 — ¿Qué falta por definir?</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Taller FAIR</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Construir una solicitud</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/03b-estructura-prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5 — Del problema al prompt</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/interactivos/de-la-solicitud-al-prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6 — De la solicitud al prompt</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Evaluar respuestas de IA</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/interactivos/que-puedo-aceptar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7 — ¿Qué puedo aceptar?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Aplicar a un caso de estudio</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/04-caso-fair.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4 — Caso integrador</span></a>
+ <span class="menu-text">8 — Caso de estudio FAIR</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/05-practica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5 — Práctica guiada</span></a>
+ <span class="menu-text">9 — Práctica guiada con IA</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../contenido/06-verificacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6 — Verificación</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../contenido/07-bitacora.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">7 — Bitácora</span></a>
-  </div>
-</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Recursos y continuidad</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/tarjeta-practica.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tarjeta de práctica</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/08-referencias.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fuentes y continuidad</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -297,33 +357,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#plantilla" id="toc-plantilla" class="nav-link active" data-scroll-target="#plantilla">Plantilla</a>
-  <ul class="collapse">
-  <li><a href="#datos-generales" id="toc-datos-generales" class="nav-link" data-scroll-target="#datos-generales">Datos generales</a></li>
-  <li><a href="#necesidad-inicial-p0" id="toc-necesidad-inicial-p0" class="nav-link" data-scroll-target="#necesidad-inicial-p0">1 · Necesidad inicial (P0)</a></li>
-  <li><a href="#lo-que-necesito-aprender-p1" id="toc-lo-que-necesito-aprender-p1" class="nav-link" data-scroll-target="#lo-que-necesito-aprender-p1">2 · Lo que necesito aprender (P1)</a></li>
-  <li><a href="#especificacion-propia" id="toc-especificacion-propia" class="nav-link" data-scroll-target="#especificacion-propia">3 · Especificación propia (antes de P5)</a></li>
-  <li><a href="#colaboración-ai-fluency-4d" id="toc-colaboración-ai-fluency-4d" class="nav-link" data-scroll-target="#colaboración-ai-fluency-4d">4 · Colaboración AI Fluency 4D</a></li>
-  <li><a href="#diagnóstico-y-revisión-p5p6" id="toc-diagnóstico-y-revisión-p5p6" class="nav-link" data-scroll-target="#diagnóstico-y-revisión-p5p6">5 · Diagnóstico y revisión (P5–P6)</a></li>
-  <li><a href="#verificacion-humana" id="toc-verificacion-humana" class="nav-link" data-scroll-target="#verificacion-humana">5b · Verificación humana independiente obligatoria</a></li>
-  <li><a href="#registro-y-revisión-por-pares" id="toc-registro-y-revisión-por-pares" class="nav-link" data-scroll-target="#registro-y-revisión-por-pares">6 · Registro y revisión por pares</a></li>
-  <li><a href="#transferencia" id="toc-transferencia" class="nav-link" data-scroll-target="#transferencia">Transferencia a un problema real</a></li>
-  <li><a href="#declaración-de-uso-de-ia" id="toc-declaración-de-uso-de-ia" class="nav-link" data-scroll-target="#declaración-de-uso-de-ia">Declaración de uso de IA</a></li>
-  </ul></li>
+  <li><a href="#la-plantilla" id="toc-la-plantilla" class="nav-link active" data-scroll-target="#la-plantilla">La plantilla</a></li>
+  <li><a href="#antes-de-terminar-revisa" id="toc-antes-de-terminar-revisa" class="nav-link" data-scroll-target="#antes-de-terminar-revisa">Antes de terminar, revisa</a></li>
+  <li><a href="#guarda-el-archivo" id="toc-guarda-el-archivo" class="nav-link" data-scroll-target="#guarda-el-archivo">Guarda el archivo</a></li>
+  <li><a href="#versión-ampliada-opcional" id="toc-versión-ampliada-opcional" class="nav-link" data-scroll-target="#versión-ampliada-opcional">Versión ampliada (opcional)</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Helysalgado/fair-prompt-4d/edit/main/contenido/07-bitacora.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Helysalgado/fair-prompt-4d/issues/new" class="toc-action"><i class="bi empty"></i>Informar sobre problema</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/04-caso-fair.html">Taller FAIR</a></li><li class="breadcrumb-item"><a href="../contenido/07-bitacora.html">7 — Bitácora</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Bitácora y revisión entre pares</h1>
+<h1 class="title">Bitácora mínima 4D</h1>
 </div>
 
 <div>
   <div class="description">
-    Plantilla para reconstruir qué se pidió, qué se obtuvo y qué se verificó
+    Revisa tu registro, completa los pendientes y guarda el archivo
   </div>
 </div>
 
@@ -341,384 +392,88 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="etiqueta-pagina durante">
-<p>Durante el taller · plantilla para completar</p>
+<p>Durante el taller · cierre</p>
 </div>
 <div class="en-un-minuto">
 <ul>
-<li>La bitácora registra <strong>qué pediste, qué respondió la IA, qué verificaste y qué queda pendiente</strong>.</li>
-<li>Descárgala en Word o Markdown, o cópiala desde esta página.</li>
-<li>En la revisión entre pares, otra persona debe poder <strong>reconstruir tu proceso</strong>.</li>
+<li>La bitácora es un archivo Markdown que llenas durante la práctica, un paso a la vez.</li>
+<li>Al terminar, revisa que permita reconstruir qué pediste, qué comprobaste y qué queda pendiente.</li>
+<li>Ese archivo, junto con el diagnóstico del chat, es el producto de la sesión.</li>
 </ul>
 </div>
-<p>La bitácora documenta <strong>qué se pidió, qué respondió el asistente, qué se verificó y quién debe resolver lo pendiente</strong>. No necesitas conocer Markdown para participar.</p>
-<p>La revisión entre pares no exige dictamen: una persona debe poder reconstruir el proceso y aportar <strong>una observación concreta y una pregunta</strong>.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Descarga la plantilla
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<section id="la-plantilla" class="level2">
+<h2 class="anchored" data-anchor-id="la-plantilla">La plantilla</h2>
+<p>Si todavía no la tienes, <a href="../descargas/bitacora-minima-4d.md" download="bitacora-minima-4d.md">descarga la plantilla</a> y ábrela en cualquier editor de texto (Bloc de notas, TextEdit, VS Code u otro). Empieza con tus datos y el problema del caso, y sigue con una sección por cada paso de la <a href="../contenido/05-practica.html">práctica guiada</a>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sección</th>
+<th>Competencia 4D</th>
+<th>Qué registras</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Paso 1 · Necesidad</td>
+<td><strong>Discernment</strong> (discernimiento)</td>
+<td>Qué hizo la IA con el encargo abierto</td>
+</tr>
+<tr class="even">
+<td>Paso 2 · Vocabulario</td>
+<td><strong>Discernment</strong> (discernimiento)</td>
+<td>Tu lista y lo que la IA añadió o dio por hecho</td>
+</tr>
+<tr class="odd">
+<td>Paso 3 · Especificación</td>
+<td><strong>Delegation</strong> (delegación) y <strong>Description</strong> (descripción)</td>
+<td>Lo que le dijiste a la IA y lo que te guardaste para evaluar</td>
+</tr>
+<tr class="even">
+<td>Paso 4 · Colaboración y verificación</td>
+<td><strong>Discernment</strong> (discernimiento) y <strong>Diligence</strong> (diligencia)</td>
+<td>Si aceptas el diagnóstico y tu verificación con la fuente</td>
+</tr>
+<tr class="odd">
+<td>Paso 5 · Registro</td>
+<td><strong>Diligence</strong> (diligencia)</td>
+<td>Pendientes, quién debe confirmarlos y exclusiones</td>
+</tr>
+<tr class="even">
+<td>Cierre</td>
+<td></td>
+<td>Un problema propio y qué harás distinto</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="antes-de-terminar-revisa" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-terminar-revisa">Antes de terminar, revisa</h2>
+<div class="autoevaluacion">
 <ul>
-<li><a href="../descargas/bitacora-plantilla.docx">Plantilla en Word (.docx)</a>: se abre en Word o en Google Docs (Archivo → Abrir → Subir).</li>
-<li><a href="../descargas/bitacora-plantilla.md">Plantilla en Markdown (.md)</a>: para quien prefiera texto plano.</li>
+<li>Escribiste tu nombre, la fecha y el asistente que usaste.</li>
+<li>El paso 1 dice <strong>qué hizo la IA con P0</strong>, antes de que la orientaras.</li>
+<li>La especificación del paso 3 la escribiste <strong>tú</strong>, antes de P5.</li>
+<li>Ninguna afirmación dice <strong>«verificado»</strong> sin una fuente que abriste, con pasaje y fecha.</li>
+<li>Cada pendiente tiene a alguien que debe confirmarlo.</li>
+<li>Otra persona podría reconstruir qué pediste, qué comprobaste y qué sigue pendiente.</li>
 </ul>
 </div>
-</div>
-<section id="plantilla" class="level2">
-<h2 class="anchored" data-anchor-id="plantilla">Plantilla</h2>
-<section id="datos-generales" class="level3">
-<h3 class="anchored" data-anchor-id="datos-generales">Datos generales</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Campo</th>
-<th>Tu respuesta</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Identificador o alias</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Fecha</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Herramienta/modelo (si se conoce)</td>
-<td></td>
-</tr>
-</tbody>
-</table>
 </section>
-<section id="necesidad-inicial-p0" class="level3">
-<h3 class="anchored" data-anchor-id="necesidad-inicial-p0">1 · Necesidad inicial (P0)</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Pregunta</th>
-<th>Tu respuesta</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>¿Qué querías resolver?</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>¿Qué entregó o propuso la IA?</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>¿Parecía listo para usarse? ¿Por qué?</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<section id="guarda-el-archivo" class="level2">
+<h2 class="anchored" data-anchor-id="guarda-el-archivo">Guarda el archivo</h2>
+<p>El archivo es tuyo: no hace falta entregarlo ni compartirlo durante el taller. Guárdalo con un nombre que reconozcas, por ejemplo <code>bitacora-fair-AAAA-MM-DD.md</code>. Puedes usarlo como modelo para documentar tu próximo trabajo con IA.</p>
+<p>Completar la bitácora no certifica que un conjunto de datos cumpla los principios FAIR.</p>
 </section>
-<section id="lo-que-necesito-aprender-p1" class="level3">
-<h3 class="anchored" data-anchor-id="lo-que-necesito-aprender-p1">2 · Lo que necesito aprender (P1)</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>#</th>
-<th>Concepto prioritario</th>
-<th>Pregunta para quien hizo el experimento</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="especificacion-propia" class="level3">
-<h3 class="anchored" data-anchor-id="especificacion-propia">3 · Especificación propia (antes de P5)</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Campo</th>
-<th>Tu decisión</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Resultado buscado</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Alcance (4 asuntos)</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Exclusiones (qué queda fuera y por qué)</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Evidencia aceptable</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Qué delego a la IA</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Qué confirmo yo</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Límites para la IA</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Criterio de aceptación</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="colaboración-ai-fluency-4d" class="level3">
-<h3 class="anchored" data-anchor-id="colaboración-ai-fluency-4d">4 · Colaboración AI Fluency 4D</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Dimensión</th>
-<th>Mi decisión / evidencia</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Delegation · ¿qué delego a la IA?</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Description · ¿cómo expliqué tarea, entradas y restricciones?</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Discernment · ¿cómo decido si sirve?</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Diligence · ¿qué conservo, documento y asumo?</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Componentes del prompt que aportaron claridad</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="diagnóstico-y-revisión-p5p6" class="level3">
-<h3 class="anchored" data-anchor-id="diagnóstico-y-revisión-p5p6">5 · Diagnóstico y revisión (P5–P6)</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Asunto</th>
-<th>Observado (hoja/celda)</th>
-<th>Inferencia o incertidumbre</th>
-<th>Quién debe confirmarlo</th>
-<th>Próxima acción</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Unidades</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Condiciones</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Réplicas</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Celda vacía</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Pregunta</th>
-<th>Tu respuesta</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Una afirmación corregida por P6</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>¿La autorrevisión consultó realmente una fuente externa? (Sí / No / No consta) y evidencia</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="verificacion-humana" class="level3">
-<h3 class="anchored" data-anchor-id="verificacion-humana">5b · Verificación humana independiente obligatoria</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Campo</th>
-<th>Tu respuesta</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Afirmación precisa</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Fuente primaria abierta y revisada (título y URL)</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Sección, fragmento o localización</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Fecha de consulta</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>La fuente respalda / contradice / no permite decidir</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Mi argumento (no basta con el DOI)</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Estado: revisado directamente / pendiente por falta de acceso</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Límites de la comprobación</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="registro-y-revisión-por-pares" class="level3">
-<h3 class="anchored" data-anchor-id="registro-y-revisión-por-pares">6 · Registro y revisión por pares</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Campo</th>
-<th>Tu respuesta</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>¿Qué no sabemos aún del experimento?</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>¿Cuál es el siguiente paso responsable?</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Revisor/a o alias</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>¿Puede reconstruir el proceso? (Sí / Parcialmente / No)</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Observación concreta</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Pregunta de revisión</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="transferencia" class="level3">
-<h3 class="anchored" data-anchor-id="transferencia">Transferencia a un problema real</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Campo</th>
-<th>Tu respuesta</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Mi tarea científica</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Qué delegaría y cómo lo verificaría</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="declaración-de-uso-de-ia" class="level3">
-<h3 class="anchored" data-anchor-id="declaración-de-uso-de-ia">Declaración de uso de IA</h3>
-<p>Se usó IA para <strong><em>; verifiqué personalmente </em></strong>; quedan pendientes ___.</p>
+<section id="versión-ampliada-opcional" class="level2">
+<h2 class="anchored" data-anchor-id="versión-ampliada-opcional">Versión ampliada (opcional)</h2>
+<p>Si después de la sesión quieres un registro más detallado, la plantilla extensa está en <a href="../descargas/bitacora-plantilla.docx">Word</a> y en <a href="../descargas/bitacora-plantilla.md">Markdown</a>.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1158,18 +913,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../contenido/06-verificacion.html" class="pagination-link" aria-label="6 — Verificación">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">6 — Verificación</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../contenido/tarjeta-practica.html" class="pagination-link" aria-label="Tarjeta de práctica">
-        <span class="nav-page-text">Tarjeta de práctica</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

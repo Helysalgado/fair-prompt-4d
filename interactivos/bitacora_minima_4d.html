@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitácora mínima 4D · Taller IA en la Investigación Científica</title>
+  <style>
+    /* ==========================================================================
+       VARIABLES DE IDENTIDAD VISUAL Y SISTEMA DE DISEÑO (SIN DEPENDENCIAS)
+       ========================================================================== */
+    :root {
+      --primary: #00314F;
+      --primary-light: #0A466B;
+      --primary-tint: #F0F5F9;
+      --accent: #C9A227;
+      --accent-hover: #B38E1D;
+      --accent-tint: #FBF7EB;
+      
+      --bg-page: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --text-main: #1E293B;
+      --text-muted: #475569;
+      --text-light: #64748B;
+      --border: #CBD5E1;
+      --border-light: #E2E8F0;
+
+      /* Estados de comprobación (Discernment) */
+      --status-supported-bg: #ECFDF5;
+      --status-supported-text: #065F46;
+      --status-supported-border: #A7F3D0;
+
+      --status-partial-bg: #FFFBEB;
+      --status-partial-text: #92400E;
+      --status-partial-border: #FDE68A;
+
+      --status-contradicted-bg: #FEF2F2;
+      --status-contradicted-text: #991B1B;
+      --status-contradicted-border: #FECACA;
+
+      --status-pending-bg: #F1F5F9;
+      --status-pending-text: #334155;
+      --status-pending-border: #CBD5E1;
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 3px rgba(0, 49, 79, 0.06);
+      --shadow-md: 0 4px 12px rgba(0, 49, 79, 0.08);
+      --focus-ring: 0 0 0 3px rgba(201, 162, 39, 0.45);
+    }
+
+    /* ==========================================================================
+       RESET Y TIPOGRAFÍA BASE
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.55;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ==========================================================================
+       ENCABEZADO INSTITUCIONAL Y CONTENEDOR PRINCIPAL
+       ========================================================================== */
+    .app-header {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      border-bottom: 4px solid var(--accent);
+      padding: 1.2rem 1rem;
+    }
+
+    .header-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .workshop-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .app-title {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #FFFFFF;
+    }
+
+    .app-subtitle {
+      margin: 0.3rem 0 0;
+      font-size: 0.9rem;
+      color: #CBD5E1;
+      max-width: 620px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .save-indicator {
+      font-size: 0.8rem;
+      color: #E2E8F0;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.35rem 0.65rem;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .save-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #34D399;
+      display: inline-block;
+    }
+
+    .main-container {
+      max-width: 880px;
+      margin: 1.35rem auto 2.5rem;
+      padding: 0 1rem;
+    }
+
+    /* ==========================================================================
+       BANNER DE PROPÓSITO Y AVISO DE PRIVACIDAD LOCAL
+       ========================================================================== */
+    .purpose-banner {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.1rem;
+      margin-bottom: 1.1rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+    }
+
+    .purpose-question {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .local-storage-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin: 0 0 1.1rem;
+      padding: 0.5rem 0.85rem;
+      background-color: #F1F5F9;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    /* ==========================================================================
+       NAVEGACIÓN DE ESTACIONES (TABS ACCESIBLES SIN FALSAS MARCAS DE COMPLETADO)
+       ========================================================================== */
+    .stations-nav {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .stations-nav {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stations-nav .tab-btn:last-child {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .stations-nav {
+        grid-template-columns: 1fr;
+      }
+      .stations-nav .tab-btn:last-child {
+        grid-column: span 1;
+      }
+    }
+
+    .tab-btn {
+      appearance: none;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.65rem 0.75rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      position: relative;
+      color: var(--text-main);
+    }
+
+    .tab-btn:hover {
+      border-color: var(--primary);
+      background-color: var(--primary-tint);
+    }
+
+    .tab-btn:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    .tab-btn[aria-selected="true"] {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      color: #FFFFFF;
+      box-shadow: var(--shadow-md);
+    }
+
+    .tab-btn[aria-selected="true"]::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      right: 10%;
+      height: 3px;
+      background-color: var(--accent);
+      border-radius: 3px 3px 0 0;
+    }
+
+    .tab-step {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-light);
+    }
+
+    .tab-btn[aria-selected="true"] .tab-step {
+      color: var(--accent);
+    }
+
+    .tab-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    /* ==========================================================================
+       TARJETA DE ESTACIÓN Y FORMULARIOS
+       ========================================================================== */
+    .station-panel {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .station-panel[hidden] {
+      display: none;
+    }
+
+    .station-header {
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .station-kicker {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .station-heading {
+      margin: 0;
+      font-size: 1.28rem;
+      color: var(--primary);
+    }
+
+    .station-desc {
+      margin: 0.35rem 0 0;
+      font-size: 0.93rem;
+      color: var(--text-muted);
+    }
+
+    .context-reference-card {
+      background-color: var(--primary-tint);
+      border: 1px solid #D5E3EE;
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-md);
+      padding: 0.95rem 1.1rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .context-reference-card strong {
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .context-reference-card p {
+      margin: 0;
+      color: var(--text-main);
+    }
+
+    .form-group {
+      margin-bottom: 1.15rem;
+    }
+
+    label.field-label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 0.3rem;
+    }
+
+    .field-hint {
+      display: block;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      background-color: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.6rem 0.75rem;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: var(--focus-ring);
+    }
+
+    /* ==========================================================================
+       AYUDA OPCIONAL BAJO DEMANDA (CERRADA POR DEFECTO)
+       ========================================================================== */
+    .optional-help {
+      margin-top: 1.1rem;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      background-color: #F8FAFC;
+      padding: 0.7rem 0.95rem;
+      font-size: 0.88rem;
+    }
+
+    .optional-help summary {
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .optional-help summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .optional-help summary::before {
+      content: "▸";
+      font-size: 0.9rem;
+      color: var(--accent-hover);
+      transition: transform 0.15s ease;
+    }
+
+    .optional-help[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .optional-help-body {
+      margin-top: 0.65rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid var(--border-light);
+      color: var(--text-main);
+    }
+
+    .optional-help-body ul {
+      margin: 0.3rem 0 0;
+      padding-left: 1.2rem;
+    }
+
+    .optional-help-body li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* ==========================================================================
+       ESTACIÓN 4: DISCERNMENT Y TARJETAS DE COMPROBACIÓN
+       ========================================================================== */
+    .verification-scale-box {
+      background-color: var(--accent-tint);
+      border: 1px solid #EFE0B1;
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      margin-bottom: 1.15rem;
+      font-size: 0.87rem;
+    }
+
+    .verification-scale-title {
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0 0 0.45rem;
+      font-size: 0.9rem;
+    }
+
+    .scale-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem;
+    }
+
+    @media (max-width: 700px) {
+      .scale-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .scale-item {
+      background: #FFFFFF;
+      border: 1px solid #E6D8AC;
+      border-radius: var(--radius-sm);
+      padding: 0.55rem 0.7rem;
+    }
+
+    .scale-item.highlight {
+      border-left: 4px solid var(--primary);
+    }
+
+    .scale-item strong {
+      display: block;
+      color: var(--primary);
+      font-size: 0.84rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .scale-item span {
+      font-size: 0.81rem;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    .claim-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.1rem;
+      margin-bottom: 1rem;
+      background-color: #FCFDFE;
+    }
+
+    .claim-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .claim-number {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.96rem;
+    }
+
+    .claim-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .status-pill {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+
+    .status-pill[data-status="respaldado"] {
+      background: var(--status-supported-bg);
+      color: var(--status-supported-text);
+      border-color: var(--status-supported-border);
+    }
+
+    .status-pill[data-status="parcialmente_respaldado"] {
+      background: var(--status-partial-bg);
+      color: var(--status-partial-text);
+      border-color: var(--status-partial-border);
+    }
+
+    .status-pill[data-status="contradicho"] {
+      background: var(--status-contradicted-bg);
+      color: var(--status-contradicted-text);
+      border-color: var(--status-contradicted-border);
+    }
+
+    .status-pill[data-status="pendiente"] {
+      background: var(--status-pending-bg);
+      color: var(--status-pending-text);
+      border-color: var(--status-pending-border);
+    }
+
+    .grid-2-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .grid-2-cols {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .claim-warning {
+      margin-top: 0.75rem;
+      padding: 0.65rem 0.85rem;
+      border-radius: var(--radius-sm);
+      background-color: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-left: 4px solid #D97706;
+      color: #92400E;
+      font-size: 0.85rem;
+    }
+
+    /* ==========================================================================
+       VISTA PREVIA DE BITÁCORA Y EXPORTACIÓN (ESTACIÓN 5)
+       ========================================================================== */
+    .preview-container {
+      margin-top: 1.4rem;
+      border-top: 2px solid var(--border-light);
+      padding-top: 1.15rem;
+    }
+
+    .preview-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .preview-toolbar h3 {
+      margin: 0;
+      font-size: 1.02rem;
+      color: var(--primary);
+    }
+
+    .export-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .markdown-preview {
+      background-color: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.95rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.84rem;
+      line-height: 1.5;
+      color: #0F172A;
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 360px;
+      overflow-y: auto;
+    }
+
+    /* ==========================================================================
+       BOTONES Y PIE DE NAVEGACIÓN
+       ========================================================================== */
+    .btn {
+      appearance: none;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      padding: 0.55rem 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-light);
+    }
+
+    .btn-accent {
+      background-color: var(--accent);
+      color: #002238;
+    }
+
+    .btn-accent:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background-color: #FFFFFF;
+      color: var(--primary);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--primary-tint);
+      border-color: var(--primary);
+    }
+
+    .btn-ghost-danger {
+      background-color: transparent;
+      color: #FCA5A5;
+      border-color: rgba(252, 165, 165, 0.35);
+      font-size: 0.82rem;
+      padding: 0.4rem 0.75rem;
+    }
+
+    .btn-ghost-danger:hover {
+      background-color: rgba(239, 68, 68, 0.15);
+      color: #FFFFFF;
+      border-color: #FCA5A5;
+    }
+
+    .btn-sm {
+      font-size: 0.82rem;
+      padding: 0.35rem 0.7rem;
+    }
+
+    .station-footer {
+      margin-top: 1.4rem;
+      padding-top: 0.95rem;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* ==========================================================================
+       MODAL DE CONFIRMACIÓN Y MENSAJES DE ESTADO
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(15, 23, 42, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 1000;
+    }
+
+    .modal-backdrop[hidden] {
+      display: none;
+    }
+
+    .modal-dialog {
+      background-color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      max-width: 440px;
+      width: 100%;
+      padding: 1.35rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+      border-top: 4px solid var(--accent);
+    }
+
+    .modal-title {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    .modal-text {
+      margin: 0 0 1.25rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.6rem;
+    }
+
+    .toast-region {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 1100;
+      max-width: 340px;
+    }
+
+    .toast-msg {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      border-left: 4px solid var(--accent);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-md);
+      font-size: 0.88rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ENCABEZADO DEL TALLER -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div>
+        <span class="workshop-tag">Taller v2.2 · Antes del prompt: qué pedir, qué delegar y cómo comprobar</span>
+        <h1 class="app-title">Bitácora mínima 4D</h1>
+        <p class="app-subtitle">Registro breve de decisiones relevantes, comprobación de evidencias y responsabilidad científica.</p>
+      </div>
+      <div class="header-actions">
+        <div class="save-indicator" aria-live="polite" id="saveStatus">
+          <span class="save-dot" aria-hidden="true"></span>
+          <span id="saveStatusText">Guardado local</span>
+        </div>
+        <button type="button" class="btn btn-ghost-danger" id="btnOpenReset" aria-label="Reiniciar bitácora y borrar datos locales">
+          Reiniciar
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- PROPÓSITO PEDAGÓGICO -->
+    <section class="purpose-banner" aria-label="Objetivo de la actividad">
+      <div>
+        <span class="purpose-question">Pregunta guía:</span>
+        <span>¿Qué hice con ayuda de IA, cómo evalué sus resultados y de qué me hago responsable?</span>
+      </div>
+    </section>
+
+    <p class="local-storage-note" role="note">
+      <strong>Nota sobre privacidad local:</strong> Tus respuestas se guardan únicamente en este navegador (<code>localStorage</code>). Si utilizas un equipo compartido, descarga tu bitácora en Markdown y pulsa <strong>Reiniciar</strong> al terminar.
+    </p>
+
+    <!-- NAVEGACIÓN DE 5 ESTACIONES -->
+    <nav class="stations-nav" role="tablist" aria-label="Estaciones de la bitácora 4D">
+      <button type="button" class="tab-btn" role="tab" id="tab-0" aria-selected="true" aria-controls="panel-0" data-step="0">
+        <span class="tab-step">Estación 1</span>
+        <span class="tab-title">Mi actividad</span>
+      </button>
+      <button type="button" class="tab-btn" role="tab" id="tab-1" aria-selected="false" aria-controls="panel-1" tabindex="-1" data-step="1">
+        <span class="tab-step">Estación 2</span>
+        <span class="tab-title">Delegation</span>
+      </button>
+      <button type="button" class="tab-btn" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1" data-step="2">
+        <span class="tab-step">Estación 3</span>
+        <span class="tab-title">Description</span>
+      </button>
+      <button type="button" class="tab-btn" role="tab" id="tab-3" aria-selected="false" aria-controls="panel-3" tabindex="-1" data-step="3">
+        <span class="tab-step">Estación 4</span>
+        <span class="tab-title">Discernment</span>
+      </button>
+      <button type="button" class="tab-btn" role="tab" id="tab-4" aria-selected="false" aria-controls="panel-4" tabindex="-1" data-step="4">
+        <span class="tab-step">Estación 5</span>
+        <span class="tab-title">Diligence y reporte</span>
+      </button>
+    </nav>
+
+    <!-- ======================================================================
+         ESTACIÓN 1: MI ACTIVIDAD
+         ====================================================================== -->
+    <section class="station-panel" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
+      <div class="station-header">
+        <span class="station-kicker">Estación 1 de 5 · Contexto de referencia</span>
+        <h2 class="station-heading">Mi actividad</h2>
+        <p class="station-desc">Revisa el contexto del ejercicio y anota en pocas frases qué objetivo te propusiste resolver.</p>
+      </div>
+
+      <div class="context-reference-card" role="region" aria-label="Contexto del ejercicio">
+        <strong>Contexto de referencia: Diagnóstico FAIR preliminar (Excel simulado de expresión génica)</strong>
+        <p>El ejercicio consiste en examinar una hoja de cálculo simulada de expresión génica para distinguir qué información está observada directamente en el archivo, qué corresponde a inferencias por confirmar y qué aspectos requieren consultar al responsable experimental o documentación externa (sin modificar el dataset ni certificar cumplimiento FAIR).</p>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="s1_objective">Descripción breve de lo que hice o de mi objetivo</label>
+        <span class="field-hint">Ejemplo: Revisar qué metadatos faltan para interpretar las muestras y separar hallazgos observables de dudas para el equipo experimental.</span>
+        <textarea id="s1_objective" data-field="s1_objective" rows="3" placeholder="Escribe en una o dos frases qué buscabas resolver en esta actividad..."></textarea>
+      </div>
+
+      <details class="optional-help">
+        <summary>¿Necesitas una guía rápida para responder? (opcional)</summary>
+        <div class="optional-help-body">
+          <ul>
+            <li>Enfócate en el alcance de tu revisión (por ejemplo: identificar ambigüedades en encabezados o unidades), sin repetir todo el diagnóstico FAIR.</li>
+            <li>Si adaptaste el ejercicio a otro archivo propio, indícalo brevemente aquí.</li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="station-footer">
+        <span></span>
+        <button type="button" class="btn btn-primary" data-nav="1">Siguiente: Delegation →</button>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ESTACIÓN 2: DELEGATION
+         ====================================================================== -->
+    <section class="station-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" hidden>
+      <div class="station-header">
+        <span class="station-kicker">Estación 2 de 5 · Dimensión 1: Delegation</span>
+        <h2 class="station-heading">Qué delegué (y qué mantuve bajo mi criterio)</h2>
+        <p class="station-desc">Registra en pocas frases cómo repartiste el trabajo entre la IA y tu criterio científico.</p>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="s2_delegated">¿Qué encargué a la IA?</label>
+        <textarea id="s2_delegated" data-field="s2_delegated" rows="3" placeholder="Ej. Pedí listar posibles vacíos de documentación en las columnas y proponer preguntas para revisar metadatos..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="s2_human">¿Qué decisiones mantuve bajo mi responsabilidad?</label>
+        <textarea id="s2_human" data-field="s2_human" rows="3" placeholder="Ej. Decidir qué afirmaciones correspondían realmente al archivo, qué requería confirmar el número de réplicas y no dar por válidas sus suposiciones..."></textarea>
+      </div>
+
+      <details class="optional-help">
+        <summary>Ver ejemplos y preguntas orientadoras (opcional)</summary>
+        <div class="optional-help-body">
+          <ul>
+            <li><strong>Ejemplos compatibles con el Excel simulado:</strong> Delegar la detección preliminar de ambigüedades (como una unidad de expresión no documentada o una celda vacía cuyo significado se desconoce), manteniendo bajo tu responsabilidad distinguir si es un error de registro o una decisión experimental.</li>
+            <li><strong>Preguntas guía:</strong> ¿Qué tarea concreta recibió la IA? ¿Qué decisión tomaste tú frente a su propuesta?</li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="station-footer">
+        <button type="button" class="btn btn-secondary" data-nav="0">← Anterior</button>
+        <button type="button" class="btn btn-primary" data-nav="2">Siguiente: Description →</button>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ESTACIÓN 3: DESCRIPTION
+         ====================================================================== -->
+    <section class="station-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+      <div class="station-header">
+        <span class="station-kicker">Estación 3 de 5 · Dimensión 2: Description</span>
+        <h2 class="station-heading">Cómo trabajé con la IA</h2>
+        <p class="station-desc">Anota qué condiciones fijaste para guiar la respuesta y cómo ajustaste tu instrucción al revisar el resultado.</p>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="s3_context">¿Qué contexto o instrucciones fueron importantes?</label>
+        <textarea id="s3_context" data-field="s3_context" rows="3" placeholder="Ej. Compartí los encabezados y filas de ejemplo, pidiendo explícitamente no inventar metadatos y separar datos observados de inferencias..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="s3_changes">¿Tuve que ajustar alguna instrucción? ¿Por qué?</label>
+        <textarea id="s3_changes" data-field="s3_changes" rows="3" placeholder="Ej. Al notar que la IA asumía el significado de una celda vacía o condiciones de estrés no descritas, pedí marcar esos puntos como pendientes. («No fue necesario» también es una respuesta válida si la primera instrucción funcionó bien.)"></textarea>
+      </div>
+
+      <details class="optional-help">
+        <summary>Registrar herramienta o prompt representativo (opcional)</summary>
+        <div class="optional-help-body">
+          <p style="margin: 0 0 0.65rem; font-size: 0.84rem; color: var(--text-muted);">
+            <strong>Nota:</strong> Si tu instrucción inicial fue clara y no requeriste corregir el rumbo, responder <em>«No fue necesario»</em> junto con el motivo es completamente válido.
+          </p>
+          <div class="form-group" style="margin-top: 0.4rem;">
+            <label class="field-label" for="s3_tool">Herramienta utilizada (opcional)</label>
+            <input type="text" id="s3_tool" data-field="s3_tool" placeholder="Ej. ChatGPT / Claude / Gemini (no es obligatorio indicar versión)">
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="field-label" for="s3_prompt">Prompt representativo (opcional)</label>
+            <textarea id="s3_prompt" data-field="s3_prompt" rows="2" placeholder="Pega una instrucción clave si lo deseas (no hace falta copiar toda la conversación)..."></textarea>
+          </div>
+        </div>
+      </details>
+
+      <div class="station-footer">
+        <button type="button" class="btn btn-secondary" data-nav="1">← Anterior</button>
+        <button type="button" class="btn btn-primary" data-nav="3">Siguiente: Discernment →</button>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ESTACIÓN 4: DISCERNMENT (SIMPLIFICADO A 4 CAMPOS POR AFIRMACIÓN)
+         ====================================================================== -->
+    <section class="station-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+      <div class="station-header">
+        <span class="station-kicker">Estación 4 de 5 · Dimensión 3: Discernment</span>
+        <h2 class="station-heading">Qué comprobé</h2>
+        <p class="station-desc">Registra <strong>una comprobación representativa</strong> (y agrega hasta dos más solo si lo deseas).</p>
+      </div>
+
+      <!-- Distinción pedagógica explícita -->
+      <div class="verification-scale-box" role="note" aria-label="Niveles de comprobación">
+        <p class="verification-scale-title">Distinción clave al evaluar respuestas de IA:</p>
+        <div class="scale-grid">
+          <div class="scale-item">
+            <strong>1. Leer la respuesta de IA</strong>
+            <span>Revisar coherencia o redacción. No verifica exactitud factual.</span>
+          </div>
+          <div class="scale-item">
+            <strong>2. Pedir a la IA que se revise</strong>
+            <span>Útil para detectar inconsistencias, pero sigue siendo el mismo sistema.</span>
+          </div>
+          <div class="scale-item highlight">
+            <strong>3. Comprobación independiente</strong>
+            <span>Contrastar directamente con el Excel, documentación o el responsable del experimento.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenedor dinámico de tarjetas de afirmaciones (1 por defecto, máx. 3) -->
+      <div id="claimsContainer"></div>
+
+      <div style="margin-bottom: 0.75rem;">
+        <button type="button" class="btn btn-secondary btn-sm" id="btnAddClaim">
+          + Agregar otra afirmación (1/3)
+        </button>
+      </div>
+
+      <details class="optional-help">
+        <summary>Ver ejemplos compatibles con el Excel simulado (opcional)</summary>
+        <div class="optional-help-body">
+          <ul>
+            <li><strong>Afirmación:</strong> «La unidad de expresión génica no está documentada en el archivo.» → <strong>Cómo se comprobó:</strong> Revisión directa de encabezados y notas en el Excel (comprobación independiente) → <strong>Estado:</strong> Respaldado.</li>
+            <li><strong>Afirmación:</strong> «El experimento cuenta con tres réplicas biológicas.» → <strong>Cómo se comprobó:</strong> Revisión del archivo; no hay columna o nota que confirme el número de réplicas → <strong>Estado:</strong> Pendiente (requiere consultar al responsable).</li>
+            <li><strong>Otras situaciones frecuentes:</strong> Condiciones de estrés insuficientemente descritas o una celda vacía cuyo significado se desconoce.</li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="station-footer">
+        <button type="button" class="btn btn-secondary" data-nav="2">← Anterior</button>
+        <button type="button" class="btn btn-primary" data-nav="4">Siguiente: Diligence y reporte →</button>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ESTACIÓN 5: DILIGENCE Y REPORTE FINAL
+         ====================================================================== -->
+    <section class="station-panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
+      <div class="station-header">
+        <span class="station-kicker">Estación 5 de 5 · Dimensión 4: Diligence</span>
+        <h2 class="station-heading">Responsabilidad y reporte final</h2>
+        <p class="station-desc">Documenta qué permanece abierto y quién debe confirmarlo antes de usar o compartir estos hallazgos.</p>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="s5_pending">¿Qué quedó pendiente?</label>
+        <span class="field-hint">Incluye incertidumbres, datos faltantes o afirmaciones que no pudieron verificarse hoy.</span>
+        <textarea id="s5_pending" data-field="s5_pending" rows="2" placeholder="Ej. Confirmar la unidad de expresión, el número de réplicas, el significado de celdas vacías y las condiciones de estrés..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="s5_next_who">¿Qué haría después y quién debe confirmarlo?</label>
+        <textarea id="s5_next_who" data-field="s5_next_who" rows="2" placeholder="Ej. Consultar al investigador/a responsable del experimento antes de completar metadatos o reutilizar el archivo..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="s5_reflection">Reflexión final (opcional): ¿Qué aprendí sobre colaborar responsablemente con IA?</label>
+        <textarea id="s5_reflection" data-field="s5_reflection" rows="2" placeholder="Una frase breve sobre tu criterio frente a las respuestas de IA..."></textarea>
+      </div>
+
+      <details class="optional-help">
+        <summary>Preguntas guía para cerrar la bitácora (opcional)</summary>
+        <div class="optional-help-body">
+          <ul>
+            <li>¿Qué necesitarías confirmar antes de citar o reutilizar este dataset?</li>
+            <li>¿Qué cuidados tuviste para no tratar sugerencias de la IA como hechos experimentales confirmados?</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- VISTA PREVIA Y EXPORTACIÓN MARKDOWN -->
+      <div class="preview-container">
+        <div class="preview-toolbar">
+          <h3>Vista previa de la bitácora (Markdown)</h3>
+          <div class="export-buttons">
+            <button type="button" class="btn btn-secondary btn-sm" id="btnCopyMarkdown">
+              Copiar Markdown
+            </button>
+            <button type="button" class="btn btn-accent btn-sm" id="btnDownloadMarkdown">
+              Descargar .md
+            </button>
+          </div>
+        </div>
+        <div class="markdown-preview" id="markdownPreview" tabindex="0" aria-label="Vista previa del reporte en formato Markdown"></div>
+      </div>
+
+      <div class="station-footer">
+        <button type="button" class="btn btn-secondary" data-nav="3">← Anterior</button>
+        <button type="button" class="btn btn-primary" id="btnBottomDownload">Descargar bitácora (.md)</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DE CONFIRMACIÓN PARA REINICIAR -->
+  <div class="modal-backdrop" id="resetModal" role="dialog" aria-modal="true" aria-labelledby="resetModalTitle" hidden>
+    <div class="modal-dialog">
+      <h2 class="modal-title" id="resetModalTitle">¿Reiniciar toda la bitácora?</h2>
+      <p class="modal-text">Esta acción borrará tus respuestas guardadas en este navegador y dejará los campos en blanco. No se puede deshacer.</p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="btnCancelReset">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnConfirmReset">Sí, reiniciar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTIFICACIONES ACCESIBLES -->
+  <div class="toast-region" aria-live="polite" id="toastRegion"></div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      /* ========================================================================
+         CONSTANTES Y ESTADO PREDETERMINADO
+         ======================================================================== */
+      const STORAGE_KEY = "taller_ia_bitacora_minima_4d_v2_2_compact";
+
+      const CHECK_TYPE_LABELS = {
+        sin_comprobar: "Aún sin comprobar (pendiente)",
+        lectura_ia: "1. Solo lectura crítica de la respuesta de IA",
+        autorevision_ia: "2. Autorrevisión o segunda pregunta a la IA",
+        fuente_independiente: "3. Comprobación independiente (Excel / documentación / responsable)"
+      };
+
+      const STATUS_LABELS = {
+        pendiente: "Pendiente",
+        respaldado: "Respaldado",
+        parcialmente_respaldado: "Parcialmente respaldado",
+        contradicho: "Contradicho"
+      };
+
+      function createEmptyClaim() {
+        return {
+          statement: "",
+          checkType: "sin_comprobar",
+          evidence: "",
+          status: "pendiente"
+        };
+      }
+
+      function createDefaultState() {
+        return {
+          currentStep: 0,
+          s1_objective: "",
+          s2_delegated: "",
+          s2_human: "",
+          s3_context: "",
+          s3_changes: "",
+          s3_tool: "",
+          s3_prompt: "",
+          claims: [createEmptyClaim()],
+          s5_pending: "",
+          s5_next_who: "",
+          s5_reflection: ""
+        };
+      }
+
+      let state = loadState();
+      let lastFocusedBeforeModal = null;
+
+      /* ========================================================================
+         PERSISTENCIA SEGURA Y VALIDACIÓN DE DATOS EN LOCALSTORAGE
+         ======================================================================== */
+      function sanitizeString(val, maxLen) {
+        if (typeof val !== "string") return "";
+        return val.slice(0, maxLen || 3000);
+      }
+
+      function loadState() {
+        const fallback = createDefaultState();
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return fallback;
+          const parsed = JSON.parse(raw);
+          if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+            return fallback;
+          }
+
+          const clean = createDefaultState();
+          const stringKeys = [
+            "s1_objective",
+            "s2_delegated",
+            "s2_human",
+            "s3_context",
+            "s3_changes",
+            "s3_tool",
+            "s3_prompt",
+            "s5_pending",
+            "s5_next_who",
+            "s5_reflection"
+          ];
+
+          stringKeys.forEach(function (k) {
+            if (typeof parsed[k] === "string") {
+              clean[k] = sanitizeString(parsed[k], 3000);
+            }
+          });
+
+          if (Number.isInteger(parsed.currentStep) && parsed.currentStep >= 0 && parsed.currentStep <= 4) {
+            clean.currentStep = parsed.currentStep;
+          }
+
+          if (Array.isArray(parsed.claims) && parsed.claims.length > 0) {
+            clean.claims = parsed.claims.slice(0, 3).map(function (c) {
+              const base = createEmptyClaim();
+              if (!c || typeof c !== "object" || Array.isArray(c)) return base;
+
+              if (typeof c.statement === "string") {
+                base.statement = sanitizeString(c.statement, 1500);
+              }
+              if (Object.prototype.hasOwnProperty.call(CHECK_TYPE_LABELS, c.checkType)) {
+                base.checkType = c.checkType;
+              }
+              if (typeof c.evidence === "string") {
+                base.evidence = sanitizeString(c.evidence, 1500);
+              }
+              if (Object.prototype.hasOwnProperty.call(STATUS_LABELS, c.status)) {
+                base.status = c.status;
+              }
+              return base;
+            });
+          }
+
+          return clean;
+        } catch (err) {
+          return fallback;
+        }
+      }
+
+      let saveTimer = null;
+      function saveState() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+          const statusText = document.getElementById("saveStatusText");
+          if (statusText) {
+            statusText.textContent = "Guardando...";
+            clearTimeout(saveTimer);
+            saveTimer = setTimeout(function () {
+              statusText.textContent = "Guardado local";
+            }, 400);
+          }
+        } catch (err) {
+          const statusText = document.getElementById("saveStatusText");
+          if (statusText) statusText.textContent = "Sin guardado local";
+        }
+      }
+
+      /* ========================================================================
+         NOTIFICACIONES ACCESIBLES (SIN ALERT/CONFIRM NATIVOS)
+         ======================================================================== */
+      function showToast(message) {
+        const region = document.getElementById("toastRegion");
+        if (!region) return;
+        const item = document.createElement("div");
+        item.className = "toast-msg";
+        item.textContent = message;
+        region.appendChild(item);
+        setTimeout(function () {
+          if (item.parentNode) {
+            item.parentNode.removeChild(item);
+          }
+        }, 3200);
+      }
+
+      /* ========================================================================
+         NAVEGACIÓN ENTRE ESTACIONES
+         ======================================================================== */
+      function setActiveStep(stepIndex) {
+        if (!Number.isInteger(stepIndex) || stepIndex < 0 || stepIndex > 4) return;
+        state.currentStep = stepIndex;
+        saveState();
+
+        const tabs = document.querySelectorAll(".tab-btn");
+        const panels = document.querySelectorAll(".station-panel");
+
+        tabs.forEach(function (tab, idx) {
+          const selected = idx === stepIndex;
+          tab.setAttribute("aria-selected", selected ? "true" : "false");
+          tab.setAttribute("tabindex", selected ? "0" : "-1");
+        });
+
+        panels.forEach(function (panel, idx) {
+          panel.hidden = idx !== stepIndex;
+        });
+
+        if (stepIndex === 4) {
+          updateMarkdownPreview();
+        }
+      }
+
+      function setupNavigation() {
+        const tabList = document.querySelector('[role="tablist"]');
+        const tabs = Array.from(document.querySelectorAll(".tab-btn"));
+
+        tabs.forEach(function (tab) {
+          tab.addEventListener("click", function () {
+            const idx = parseInt(tab.getAttribute("data-step"), 10);
+            setActiveStep(idx);
+          });
+        });
+
+        if (tabList) {
+          tabList.addEventListener("keydown", function (e) {
+            const current = state.currentStep;
+            let next = null;
+            if (e.key === "ArrowRight") next = (current + 1) % 5;
+            if (e.key === "ArrowLeft") next = (current + 4) % 5;
+            if (e.key === "Home") next = 0;
+            if (e.key === "End") next = 4;
+
+            if (next !== null) {
+              e.preventDefault();
+              setActiveStep(next);
+              tabs[next].focus();
+            }
+          });
+        }
+
+        document.querySelectorAll("[data-nav]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            const target = parseInt(btn.getAttribute("data-nav"), 10);
+            setActiveStep(target);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        });
+      }
+
+      /* ========================================================================
+         CAMPOS SIMPLES: SINCRONIZACIÓN Y ENLACE ÚNICO DE EVENTOS
+         ======================================================================== */
+      function syncSimpleFieldsFromState() {
+        document.querySelectorAll("[data-field]").forEach(function (el) {
+          const key = el.getAttribute("data-field");
+          el.value = typeof state[key] === "string" ? state[key] : "";
+        });
+      }
+
+      function initSimpleFieldsListeners() {
+        document.querySelectorAll("[data-field]").forEach(function (el) {
+          const key = el.getAttribute("data-field");
+          el.addEventListener("input", function () {
+            state[key] = el.value;
+            saveState();
+            if (state.currentStep === 4) {
+              updateMarkdownPreview();
+            }
+          });
+        });
+      }
+
+      /* ========================================================================
+         ESTACIÓN 4: DISCERNMENT (4 CAMPOS POR AFIRMACIÓN Y VALIDACIÓN DE COHERENCIA)
+         ======================================================================== */
+      function getClaimLimitations(claim) {
+        const limitations = [];
+        const isConclusiveStatus = claim.status === "respaldado" || claim.status === "contradicho";
+        const isIndependentCheck = claim.checkType === "fuente_independiente";
+        const hasEvidenceText = (claim.evidence || "").trim().length > 0;
+
+        if (isConclusiveStatus && !isIndependentCheck) {
+          limitations.push(
+            "Seleccionaste «" + STATUS_LABELS[claim.status] + "» sin registrar una comprobación independiente (nivel 3). La afirmación no se considera verificada con evidencia independiente."
+          );
+        }
+
+        if (isIndependentCheck && !hasEvidenceText) {
+          limitations.push(
+            "Seleccionaste «Comprobación independiente», pero el campo de evidencia está vacío. Identifica qué fuente, celda o dato examinaste."
+          );
+        }
+
+        return limitations;
+      }
+
+      function renderClaims() {
+        const container = document.getElementById("claimsContainer");
+        if (!container) return;
+        container.innerHTML = "";
+
+        state.claims.forEach(function (claim, index) {
+          const card = document.createElement("article");
+          card.className = "claim-card";
+          card.setAttribute("aria-label", "Afirmación " + (index + 1));
+
+          // Encabezado
+          const header = document.createElement("div");
+          header.className = "claim-card-header";
+
+          const titleSpan = document.createElement("span");
+          titleSpan.className = "claim-number";
+          titleSpan.textContent = "Afirmación #" + (index + 1);
+
+          const actionsDiv = document.createElement("div");
+          actionsDiv.className = "claim-actions";
+
+          const pill = document.createElement("span");
+          pill.className = "status-pill";
+          pill.setAttribute("data-status", claim.status);
+          pill.textContent = "Estado: " + (STATUS_LABELS[claim.status] || "Pendiente");
+          actionsDiv.appendChild(pill);
+
+          if (state.claims.length > 1) {
+            const btnRemove = document.createElement("button");
+            btnRemove.type = "button";
+            btnRemove.className = "btn btn-secondary btn-sm";
+            btnRemove.textContent = "Quitar";
+            btnRemove.setAttribute("aria-label", "Quitar afirmación " + (index + 1));
+            btnRemove.addEventListener("click", function () {
+              state.claims.splice(index, 1);
+              saveState();
+              renderClaims();
+            });
+            actionsDiv.appendChild(btnRemove);
+          }
+
+          header.appendChild(titleSpan);
+          header.appendChild(actionsDiv);
+          card.appendChild(header);
+
+          // 1. Qué afirmación examinó
+          const g1 = document.createElement("div");
+          g1.className = "form-group";
+          const l1 = document.createElement("label");
+          l1.className = "field-label";
+          l1.setAttribute("for", "claim_stmt_" + index);
+          l1.textContent = "1. ¿Qué afirmación examinaste?";
+          const t1 = document.createElement("textarea");
+          t1.id = "claim_stmt_" + index;
+          t1.rows = 2;
+          t1.placeholder = "Ej. La unidad de expresión no está documentada / El número de réplicas no aparece en el archivo.";
+          t1.value = claim.statement;
+          t1.addEventListener("input", function () {
+            state.claims[index].statement = t1.value;
+            saveState();
+          });
+          g1.appendChild(l1);
+          g1.appendChild(t1);
+          card.appendChild(g1);
+
+          // Fila de 2 columnas: 2. Cómo intentó comprobarla y 4. Estado final
+          const row = document.createElement("div");
+          row.className = "grid-2-cols";
+
+          const gType = document.createElement("div");
+          gType.className = "form-group";
+          const lType = document.createElement("label");
+          lType.className = "field-label";
+          lType.setAttribute("for", "claim_type_" + index);
+          lType.textContent = "2. ¿Cómo intentaste comprobarla?";
+          const sType = document.createElement("select");
+          sType.id = "claim_type_" + index;
+          Object.keys(CHECK_TYPE_LABELS).forEach(function (val) {
+            const opt = document.createElement("option");
+            opt.value = val;
+            opt.textContent = CHECK_TYPE_LABELS[val];
+            if (claim.checkType === val) opt.selected = true;
+            sType.appendChild(opt);
+          });
+          sType.addEventListener("change", function () {
+            state.claims[index].checkType = sType.value;
+            saveState();
+            updateClaimWarning(card, state.claims[index]);
+          });
+          gType.appendChild(lType);
+          gType.appendChild(sType);
+          row.appendChild(gType);
+
+          const gStatus = document.createElement("div");
+          gStatus.className = "form-group";
+          const lStatus = document.createElement("label");
+          lStatus.className = "field-label";
+          lStatus.setAttribute("for", "claim_status_" + index);
+          lStatus.textContent = "4. Estado final";
+          const sStatus = document.createElement("select");
+          sStatus.id = "claim_status_" + index;
+          Object.keys(STATUS_LABELS).forEach(function (val) {
+            const opt = document.createElement("option");
+            opt.value = val;
+            opt.textContent = STATUS_LABELS[val];
+            if (claim.status === val) opt.selected = true;
+            sStatus.appendChild(opt);
+          });
+          sStatus.addEventListener("change", function () {
+            state.claims[index].status = sStatus.value;
+            pill.setAttribute("data-status", sStatus.value);
+            pill.textContent = "Estado: " + STATUS_LABELS[sStatus.value];
+            saveState();
+            updateClaimWarning(card, state.claims[index]);
+          });
+          gStatus.appendChild(lStatus);
+          gStatus.appendChild(sStatus);
+          row.appendChild(gStatus);
+
+          card.appendChild(row);
+
+          // 3. Qué evidencia encontró o qué quedó pendiente
+          const gEv = document.createElement("div");
+          gEv.className = "form-group";
+          gEv.style.marginBottom = "0";
+          const lEv = document.createElement("label");
+          lEv.className = "field-label";
+          lEv.setAttribute("for", "claim_ev_" + index);
+          lEv.textContent = "3. ¿Qué evidencia encontraste o qué quedó pendiente?";
+          const tEv = document.createElement("textarea");
+          tEv.id = "claim_ev_" + index;
+          tEv.rows = 2;
+          tEv.placeholder = "Ej. Revisé los encabezados y notas del Excel: no se indica si los valores son conteos crudos o normalizados; queda pendiente consultar al responsable.";
+          tEv.value = claim.evidence;
+          tEv.addEventListener("input", function () {
+            state.claims[index].evidence = tEv.value;
+            saveState();
+            updateClaimWarning(card, state.claims[index]);
+          });
+          gEv.appendChild(lEv);
+          gEv.appendChild(tEv);
+          card.appendChild(gEv);
+
+          // Advertencias orientadoras según coherencia entre método, evidencia y estado
+          updateClaimWarning(card, claim);
+
+          container.appendChild(card);
+        });
+
+        const btnAdd = document.getElementById("btnAddClaim");
+        if (btnAdd) {
+          btnAdd.disabled = state.claims.length >= 3;
+          btnAdd.textContent = state.claims.length >= 3
+            ? "Máximo alcanzado (3/3 afirmaciones)"
+            : "+ Agregar otra afirmación (" + state.claims.length + "/3)";
+        }
+      }
+
+      function updateClaimWarning(cardEl, claim) {
+        const existing = cardEl.querySelector(".claim-warning");
+        if (existing) {
+          existing.parentNode.removeChild(existing);
+        }
+
+        const limitations = getClaimLimitations(claim);
+        if (limitations.length > 0) {
+          const warn = document.createElement("div");
+          warn.className = "claim-warning";
+          warn.setAttribute("role", "alert");
+
+          limitations.forEach(function (msg, i) {
+            const p = document.createElement("p");
+            p.style.margin = i === limitations.length - 1 ? "0" : "0 0 0.4rem 0";
+            p.textContent = "Orientación: " + msg;
+            warn.appendChild(p);
+          });
+
+          cardEl.appendChild(warn);
+        }
+      }
+
+      /* ========================================================================
+         GENERACIÓN DEL REPORTE EN MARKDOWN (FIEL A LAS RESPUESTAS VISIBLES)
+         ======================================================================== */
+      function valOrPending(str) {
+        const clean = (str || "").trim();
+        return clean.length > 0 ? clean : "_No registrado / Pendiente._";
+      }
+
+      function generateMarkdown() {
+        const today = new Date().toISOString().slice(0, 10);
+        const lines = [];
+
+        lines.push("# Bitácora mínima 4D — Registro de colaboración con IA");
+        lines.push("");
+        lines.push("> **Nota de alcance:** Este documento es un **registro elaborado por el participante** para documentar decisiones y comprobaciones durante la actividad. No constituye una validación científica ni certifica cumplimiento FAIR.");
+        lines.push("");
+
+        // 1. Mi actividad
+        lines.push("## 1. Mi actividad");
+        lines.push("- **Actividad de referencia:** Diagnóstico FAIR preliminar (Excel simulado de expresión génica)");
+        lines.push("- **Fecha de registro:** " + today);
+        lines.push("- **Objetivo o descripción breve:** " + valOrPending(state.s1_objective));
+        lines.push("");
+
+        // 2. Delegation
+        lines.push("## 2. Delegation — Tareas delegadas y responsabilidad humana");
+        lines.push("- **Qué encargué a la IA:** " + valOrPending(state.s2_delegated));
+        lines.push("- **Qué decisiones mantuve bajo mi responsabilidad:** " + valOrPending(state.s2_human));
+        lines.push("");
+
+        // 3. Description
+        lines.push("## 3. Description — Contexto, instrucciones y ajustes");
+        lines.push("- **Contexto o instrucciones importantes:** " + valOrPending(state.s3_context));
+        lines.push("- **¿Tuve que ajustar alguna instrucción? ¿Por qué?:** " + valOrPending(state.s3_changes));
+        if (state.s3_tool.trim()) {
+          lines.push("- **Herramienta utilizada (opcional):** " + state.s3_tool.trim());
+        }
+        if (state.s3_prompt.trim()) {
+          lines.push("- **Prompt representativo (opcional):**");
+          lines.push("  ```text");
+          lines.push("  " + state.s3_prompt.trim().replace(/\n/g, "\n  "));
+          lines.push("  ```");
+        }
+        lines.push("");
+
+        // 4. Discernment
+        lines.push("## 4. Discernment — Contrastación con evidencia");
+        const activeClaims = state.claims.filter(function (c) {
+          return c.statement.trim() || c.evidence.trim() || c.checkType !== "sin_comprobar" || c.status !== "pendiente";
+        });
+
+        if (activeClaims.length === 0) {
+          lines.push("_No se registraron afirmaciones específicas en esta sesión._");
+          lines.push("");
+        } else {
+          activeClaims.forEach(function (c, idx) {
+            const isConclusiveStatus = c.status === "respaldado" || c.status === "contradicho";
+            const isIndependentCheck = c.checkType === "fuente_independiente";
+            const hasEvidenceText = (c.evidence || "").trim().length > 0;
+            const statusLabel = STATUS_LABELS[c.status] || "Pendiente";
+
+            lines.push("### Afirmación " + (idx + 1));
+            lines.push("- **Afirmación examinada:** " + valOrPending(c.statement));
+            lines.push("- **Cómo se intentó comprobar:** " + (CHECK_TYPE_LABELS[c.checkType] || "Aún sin comprobar (pendiente)"));
+            lines.push("- **Evidencia encontrada o pendiente:** " + valOrPending(c.evidence));
+            lines.push("- **Estado elegido por el participante:** **" + statusLabel + "**");
+
+            if (isConclusiveStatus && !isIndependentCheck) {
+              lines.push("- **Limitación metodológica:** El participante marcó «" + statusLabel + "» sin realizar una comprobación independiente (nivel 3); esta afirmación no se considera verificada con evidencia independiente.");
+            }
+            if (isIndependentCheck && !hasEvidenceText) {
+              lines.push("- **Limitación metodológica:** Se indicó «Comprobación independiente», pero no se especificó la fuente, celda o dato examinado.");
+            }
+            lines.push("");
+          });
+        }
+
+        // 5. Diligence y reflexión
+        lines.push("## 5. Diligence — Incertidumbres y responsabilidad");
+        lines.push("- **Qué quedó pendiente:** " + valOrPending(state.s5_pending));
+        lines.push("- **Qué haría después y quién debe confirmarlo:** " + valOrPending(state.s5_next_who));
+        if (state.s5_reflection.trim()) {
+          lines.push("- **Reflexión final (¿Qué aprendí sobre colaborar responsablemente con IA?):** " + state.s5_reflection.trim());
+        }
+
+        return lines.join("\n");
+      }
+
+      function updateMarkdownPreview() {
+        const preview = document.getElementById("markdownPreview");
+        if (preview) {
+          preview.textContent = generateMarkdown();
+        }
+      }
+
+      /* ========================================================================
+         COPIAR Y DESCARGAR MARKDOWN (COMPATIBLE CON IFRAME QUARTO)
+         ======================================================================== */
+      function copyMarkdownToClipboard() {
+        const md = generateMarkdown();
+        const textarea = document.createElement("textarea");
+        textarea.value = md;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.top = "-9999px";
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        let copied = false;
+        try {
+          copied = document.execCommand("copy");
+        } catch (err) {
+          copied = false;
+        }
+        document.body.removeChild(textarea);
+
+        if (copied) {
+          showToast("Bitácora copiada en formato Markdown.");
+        } else {
+          showToast("No se pudo copiar automáticamente. Usa el botón Descargar .md.");
+        }
+      }
+
+      function downloadMarkdownFile() {
+        const md = generateMarkdown();
+        const blob = new Blob([md], { type: "text/markdown;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        const dateStr = new Date().toISOString().slice(0, 10);
+
+        link.href = url;
+        link.download = "bitacora_minima_4d_" + dateStr + ".md";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(function () {
+          URL.revokeObjectURL(url);
+        }, 1000);
+
+        showToast("Descargando archivo Markdown...");
+      }
+
+      /* ========================================================================
+         REINICIO CON CONFIRMACIÓN Y GESTIÓN DE FOCO ACCESIBLE
+         ======================================================================== */
+      function setupResetModal() {
+        const modal = document.getElementById("resetModal");
+        const btnOpen = document.getElementById("btnOpenReset");
+        const btnCancel = document.getElementById("btnCancelReset");
+        const btnConfirm = document.getElementById("btnConfirmReset");
+
+        if (!modal || !btnOpen || !btnCancel || !btnConfirm) return;
+
+        function openModal() {
+          lastFocusedBeforeModal = document.activeElement;
+          modal.hidden = false;
+          btnCancel.focus();
+        }
+
+        function closeModal() {
+          modal.hidden = true;
+          if (lastFocusedBeforeModal && typeof lastFocusedBeforeModal.focus === "function") {
+            lastFocusedBeforeModal.focus();
+          } else {
+            btnOpen.focus();
+          }
+        }
+
+        btnOpen.addEventListener("click", openModal);
+        btnCancel.addEventListener("click", closeModal);
+
+        btnConfirm.addEventListener("click", function () {
+          try {
+            localStorage.removeItem(STORAGE_KEY);
+          } catch (err) {
+            // Ignorar si localStorage no está disponible
+          }
+          state = createDefaultState();
+          saveState();
+          syncSimpleFieldsFromState();
+          renderClaims();
+          setActiveStep(0);
+          closeModal();
+          showToast("Bitácora reiniciada.");
+        });
+
+        modal.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            e.preventDefault();
+            closeModal();
+            return;
+          }
+          if (e.key === "Tab") {
+            const focusables = [btnCancel, btnConfirm];
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+        });
+      }
+
+      /* ========================================================================
+         INICIALIZACIÓN DE LA APLICACIÓN (UNA SOLA VEZ)
+         ======================================================================== */
+      function init() {
+        setupNavigation();
+        initSimpleFieldsListeners();
+        syncSimpleFieldsFromState();
+        renderClaims();
+        setupResetModal();
+
+        const btnAddClaim = document.getElementById("btnAddClaim");
+        if (btnAddClaim) {
+          btnAddClaim.addEventListener("click", function () {
+            if (state.claims.length < 3) {
+              state.claims.push(createEmptyClaim());
+              saveState();
+              renderClaims();
+            }
+          });
+        }
+
+        const btnCopy = document.getElementById("btnCopyMarkdown");
+        if (btnCopy) btnCopy.addEventListener("click", copyMarkdownToClipboard);
+
+        const btnDownload = document.getElementById("btnDownloadMarkdown");
+        if (btnDownload) btnDownload.addEventListener("click", downloadMarkdownFile);
+
+        const btnBottomDownload = document.getElementById("btnBottomDownload");
+        if (btnBottomDownload) btnBottomDownload.addEventListener("click", downloadMarkdownFile);
+
+        setActiveStep(state.currentStep);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+</body>
+</html>

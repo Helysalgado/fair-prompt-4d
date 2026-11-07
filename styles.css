@@ -79,3 +79,15 @@ main.content figure img {
   display: block;
   margin: 1rem auto 0.35rem;
 }
+
+/* Conceptos introductorios (02-ejemplos): tres tablas con columnas alineadas */
+main.content .tabla-conceptos table {
+  table-layout: fixed;
+}
+main.content .tabla-conceptos th:nth-child(1) { width: 22%; }
+main.content .tabla-conceptos th:nth-child(2) { width: 42%; }
+main.content .tabla-conceptos th:nth-child(3) { width: 36%; }
+main.content .tabla-conceptos td:first-child { color: #123b69; }
+@media (max-width: 576px) {
+  main.content .tabla-conceptos table { table-layout: auto; }
+}

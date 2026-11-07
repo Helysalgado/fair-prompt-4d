@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Qué dice y qué no dice una tabla pequeña de expresión génica">
+<meta name="description" content="Qué se pide, qué dicen los datos y qué resultado vas a producir, antes de pedir ayuda a la IA">
 
-<title>Caso integrador: un Excel de expresión génica – Antes del prompt</title>
+<title>Caso de estudio: un Excel que debe «seguir FAIR» – Antes del prompt</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../contenido/05-practica.html" rel="next">
-<link href="../contenido/03b-estructura-prompt.html" rel="prev">
+<link href="../contenido/interactivos/que-puedo-aceptar.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c06d6e174cfa7b6d09782cdbecc7f54e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5852d7353255d58dcfac19ab8ea79984.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,61 +102,84 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Antes del taller</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fundamentos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Fundamentos</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-comprender-el-problema" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Comprender el problema</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-fundamentos">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-comprender-el-problema">    
         <li>
     <a class="dropdown-item" href="../contenido/01-contexto.html">
- <span class="dropdown-text">Sentido y objetivos</span></a>
+ <span class="dropdown-text">1 — Introducción</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../contenido/02-ejemplos.html">
- <span class="dropdown-text">Tres situaciones</span></a>
+ <span class="dropdown-text">2 — Tres situaciones</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../contenido/03-metodo.html">
- <span class="dropdown-text">Seis etapas y 4D</span></a>
+ <span class="dropdown-text">3 — Seis etapas y 4D</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../contenido/03b-estructura-prompt.html">
- <span class="dropdown-text">Del problema al prompt</span></a>
+    <a class="dropdown-item" href="../contenido/interactivos/que-falta-por-definir.html">
+ <span class="dropdown-text">4 — ¿Qué falta por definir?</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-taller-fair" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Taller FAIR</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-construir-una-solicitud" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Construir una solicitud</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-taller-fair">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-construir-una-solicitud">    
         <li>
-    <a class="dropdown-item" href="../contenido/04-caso-fair.html">
- <span class="dropdown-text">Caso integrador</span></a>
+    <a class="dropdown-item" href="../contenido/03b-estructura-prompt.html">
+ <span class="dropdown-text">5 — Del problema al prompt</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../contenido/05-practica.html">
- <span class="dropdown-text">Práctica guiada</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../contenido/06-verificacion.html">
- <span class="dropdown-text">Verificación independiente</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../contenido/07-bitacora.html">
- <span class="dropdown-text">Bitácora</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../contenido/tarjeta-practica.html">
- <span class="dropdown-text">Tarjeta de práctica (imprimible)</span></a>
+    <a class="dropdown-item" href="../contenido/interactivos/de-la-solicitud-al-prompt.html">
+ <span class="dropdown-text">6 — De la solicitud al prompt</span></a>
   </li>  
     </ul>
   </li>
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../contenido/08-referencias.html"> 
-<span class="menu-text">Fuentes</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-evaluar-respuestas" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Evaluar respuestas</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-evaluar-respuestas">    
+        <li>
+    <a class="dropdown-item" href="../contenido/interactivos/que-puedo-aceptar.html">
+ <span class="dropdown-text">7 — ¿Qué puedo aceptar?</span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-caso-de-estudio" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Caso de estudio</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-caso-de-estudio">    
+        <li>
+    <a class="dropdown-item" href="../contenido/04-caso-fair.html">
+ <span class="dropdown-text">8 — Caso de estudio FAIR</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/05-practica.html">
+ <span class="dropdown-text">9 — Práctica guiada con IA</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-recursos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Recursos</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-recursos">    
+        <li>
+    <a class="dropdown-item" href="../contenido/tarjeta-practica.html">
+ <span class="dropdown-text">Tarjeta de práctica</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/08-referencias.html">
+ <span class="dropdown-text">Fuentes y continuidad</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -173,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/04-caso-fair.html">Taller FAIR</a></li><li class="breadcrumb-item"><a href="../contenido/04-caso-fair.html">4 — Caso integrador</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/04-caso-fair.html">Aplicar a un caso de estudio</a></li><li class="breadcrumb-item"><a href="../contenido/04-caso-fair.html">8 — Caso de estudio FAIR</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -202,13 +225,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/00-preparacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">0 — Antes del taller</span></a>
+ <span class="menu-text">Antes del taller</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">Fundamentos</span></a>
+ <span class="menu-text">Comprender el problema</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -217,7 +240,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/01-contexto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1 — Sentido y objetivos</span></a>
+ <span class="menu-text">1 — Introducción</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -234,59 +257,98 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/03b-estructura-prompt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3b — Del problema al prompt</span></a>
+  <a href="../contenido/interactivos/que-falta-por-definir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4 — ¿Qué falta por definir?</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Taller FAIR</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Construir una solicitud</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/03b-estructura-prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5 — Del problema al prompt</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/interactivos/de-la-solicitud-al-prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6 — De la solicitud al prompt</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Evaluar respuestas de IA</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/interactivos/que-puedo-aceptar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7 — ¿Qué puedo aceptar?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Aplicar a un caso de estudio</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/04-caso-fair.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">4 — Caso integrador</span></a>
+ <span class="menu-text">8 — Caso de estudio FAIR</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/05-practica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5 — Práctica guiada</span></a>
+ <span class="menu-text">9 — Práctica guiada con IA</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../contenido/06-verificacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6 — Verificación</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../contenido/07-bitacora.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7 — Bitácora</span></a>
-  </div>
-</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Recursos y continuidad</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/tarjeta-practica.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tarjeta de práctica</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/08-referencias.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fuentes y continuidad</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -297,24 +359,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#escenario" id="toc-escenario" class="nav-link active" data-scroll-target="#escenario">Escenario</a></li>
-  <li><a href="#qué-observar-sin-inventar" id="toc-qué-observar-sin-inventar" class="nav-link" data-scroll-target="#qué-observar-sin-inventar">Qué observar sin inventar</a></li>
-  <li><a href="#fair-como-contexto-no-como-certificado" id="toc-fair-como-contexto-no-como-certificado" class="nav-link" data-scroll-target="#fair-como-contexto-no-como-certificado">FAIR como contexto, no como certificado</a></li>
-  <li><a href="#producto-esperado" id="toc-producto-esperado" class="nav-link" data-scroll-target="#producto-esperado">Producto esperado</a></li>
+  <li><a href="#el-encargo" id="toc-el-encargo" class="nav-link active" data-scroll-target="#el-encargo">El encargo</a></li>
+  <li><a href="#los-datos-qué-dice-y-qué-no-dice-el-archivo" id="toc-los-datos-qué-dice-y-qué-no-dice-el-archivo" class="nav-link" data-scroll-target="#los-datos-qué-dice-y-qué-no-dice-el-archivo">Los datos: qué dice y qué no dice el archivo</a></li>
+  <li><a href="#qué-pide-fair-aplicado-a-este-archivo" id="toc-qué-pide-fair-aplicado-a-este-archivo" class="nav-link" data-scroll-target="#qué-pide-fair-aplicado-a-este-archivo">Qué pide FAIR, aplicado a este archivo</a></li>
+  <li><a href="#qué-vas-a-producir" id="toc-qué-vas-a-producir" class="nav-link" data-scroll-target="#qué-vas-a-producir">Qué vas a producir</a></li>
+  <li><a href="#cómo-se-trabaja" id="toc-cómo-se-trabaja" class="nav-link" data-scroll-target="#cómo-se-trabaja">Cómo se trabaja</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Helysalgado/fair-prompt-4d/edit/main/contenido/04-caso-fair.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Helysalgado/fair-prompt-4d/issues/new" class="toc-action"><i class="bi empty"></i>Informar sobre problema</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/04-caso-fair.html">Taller FAIR</a></li><li class="breadcrumb-item"><a href="../contenido/04-caso-fair.html">4 — Caso integrador</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/04-caso-fair.html">Aplicar a un caso de estudio</a></li><li class="breadcrumb-item"><a href="../contenido/04-caso-fair.html">8 — Caso de estudio FAIR</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Caso integrador: un Excel de expresión génica</h1>
+<h1 class="title">Caso de estudio: un Excel que debe «seguir FAIR»</h1>
 </div>
 
 <div>
   <div class="description">
-    Qué dice y qué no dice una tabla pequeña de expresión génica
+    Qué se pide, qué dicen los datos y qué resultado vas a producir, antes de pedir ayuda a la IA
   </div>
 </div>
 
@@ -332,19 +395,33 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="etiqueta-pagina antes">
-<p>Antes o durante el taller · lectura de 3 min</p>
+<p>Antes o durante el taller</p>
 </div>
 <div class="en-un-minuto">
 <ul>
 <li>Una investigadora debe preparar un Excel de expresión génica «siguiendo FAIR», pero faltan datos de contexto.</li>
-<li>La tarea es <strong>distinguir lo que el archivo muestra de lo que hay que confirmar</strong>, sin inventar.</li>
-<li>El producto es un diagnóstico de cuatro asuntos.</li>
+<li>Antes de pedir ayuda a la IA, <strong>mira el archivo por tu cuenta</strong> y anota lo que no puedes saber con él.</li>
+<li>El producto es un diagnóstico de lo que falta saber sobre <strong>unidades, condiciones, réplicas y la celda vacía</strong>.</li>
 </ul>
 </div>
-<section id="escenario" class="level2">
-<h2 class="anchored" data-anchor-id="escenario">Escenario</h2>
-<p>Una investigadora prepara un artículo y recibe una solicitud: «Los datos de expresión génica deben seguir los principios FAIR». Tiene una tabla pequeña con cinco filas de genes y tres columnas de condiciones, pero le faltan datos esenciales de contexto experimental.</p>
-<p><strong>Nuestra tarea no es fabricar metadatos para completar una tabla.</strong> Es reconocer qué información está disponible, cuál falta, quién podría confirmarla y qué principios o documentación externa ayudan a organizar el trabajo.</p>
+<section id="el-encargo" class="level2">
+<h2 class="anchored" data-anchor-id="el-encargo">El encargo</h2>
+<p>Ya conoces este archivo: en el <a href="../contenido/02-ejemplos.html">ejemplo 3</a> una IA le inventaba metadatos, y en <a href="../contenido/03b-estructura-prompt.html">Del problema al prompt</a> sirvió para comparar dos solicitudes. Ahora lo trabajas tú.</p>
+<p>Una investigadora prepara un artículo y recibe esta solicitud:</p>
+<div class="prompt" data-label="Encargo" data-meta="lo que recibe la investigadora" data-copy="no">
+<p>Los datos de expresión génica deben seguir los principios FAIR.</p>
+</div>
+<p>Tiene una tabla pequeña con cinco filas de genes y tres columnas de condiciones, pero le faltan datos esenciales de contexto experimental.</p>
+<p>«Seguir FAIR» suena a una sola tarea, pero no lo es. Antes de empezar conviene preguntarse:</p>
+<ul>
+<li>¿Qué significa, en concreto, que estos datos «sigan FAIR»? Lo vemos más abajo, aplicado al archivo.</li>
+<li>¿Quién lo pide y qué espera recibir: un depósito en un repositorio, una tabla documentada, una declaración de disponibilidad de datos?</li>
+<li>¿Qué se puede hacer con la información que ya hay y qué depende de otras personas?</li>
+</ul>
+<p><strong>La tarea no es fabricar metadatos para completar la tabla.</strong> Es reconocer qué información está disponible, cuál falta y quién podría confirmarla.</p>
+</section>
+<section id="los-datos-qué-dice-y-qué-no-dice-el-archivo" class="level2">
+<h2 class="anchored" data-anchor-id="los-datos-qué-dice-y-qué-no-dice-el-archivo">Los datos: qué dice y qué no dice el archivo</h2>
 <p>Descarga el <a href="../descargas/expresion_genica_caso_simulado.xlsx">Excel simulado</a>. Tiene dos hojas: los datos y unas notas experimentales parciales. Una nota visible indica que los datos son ficticios. Si tu asistente no acepta archivos, usa la <a href="../descargas/expresion_genica_caso_simulado.txt">versión en texto</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -352,9 +429,19 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Las dos hojas del Excel simulado</figcaption>
 </figure>
 </div>
-</section>
-<section id="qué-observar-sin-inventar" class="level2">
-<h2 class="anchored" data-anchor-id="qué-observar-sin-inventar">Qué observar sin inventar</h2>
+<p>Antes de seguir leyendo, mira el archivo por tu cuenta, en Excel o en el <a href="../interactivos/explorador_fair.html" target="_blank">Explorador FAIR</a>, que muestra las dos hojas en el navegador. <strong>Anota tres cosas que no puedes saber solo con este archivo.</strong> Después abre la caja y compara. Guarda tu lista: en la práctica la contrastarás con lo que diga la IA.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Compara con tu lista (ábrela después de anotar la tuya)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -397,41 +484,74 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Sobre la identidad génica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>No asumas equivalencias entre <code>b0014</code> y otro símbolo génico sin confirmar cepa, ensamblaje y anotación. La coincidencia biológica sugerente no es una comprobación documental.</p>
-</div>
-</div>
+<p><strong>Sobre la identidad génica.</strong> En la anotación de <em>E. coli</em> K-12, <code>b0014</code> es el identificador de locus de <em>dnaK</em>. La tabla tiene los dos, con valores distintos (200 y 190 en Control). ¿Es el mismo gen medido dos veces, o dos genes en otra anotación? Sin la cepa y la referencia genómica, el archivo no permite saberlo: una coincidencia sugerente no es una comprobación documental.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../recursos/datos-y-metadatos.svg" class="img-fluid figure-img" alt="Dos paneles. Observable: cinco filas con identificadores de gen, tres columnas de condiciones, una celda vacía, una hoja de notas parciales y el aviso de datos ficticios. Requiere confirmación: unidades y técnica, significado de Estrés A, Estrés B y prom., réplicas, cepa y procesamiento, sistema de identificadores y motivo de la celda vacía. Regla: no convertir la ausencia de metadatos en hechos inventados."></p>
 <figcaption>Lo observable en el archivo frente a lo que requiere confirmación</figcaption>
 </figure>
 </div>
+</div>
+</div>
+</div>
 </section>
-<section id="fair-como-contexto-no-como-certificado" class="level2">
-<h2 class="anchored" data-anchor-id="fair-como-contexto-no-como-certificado">FAIR como contexto, no como certificado</h2>
-<p>Según Wilkinson et al.&nbsp;(2016) [R5], los principios FAIR plantean cuatro preguntas:</p>
+<section id="qué-pide-fair-aplicado-a-este-archivo" class="level2">
+<h2 class="anchored" data-anchor-id="qué-pide-fair-aplicado-a-este-archivo">Qué pide FAIR, aplicado a este archivo</h2>
+<p>FAIR es el vocabulario clave del encargo. Lo que sigue es una descripción breve para orientarte: en la <a href="../contenido/05-practica.html">práctica guiada</a>, con P1, le pedirás a la IA que te explique con más detalle los conceptos que necesitas, y podrás contrastar su explicación con esta. En otras sesiones del programa FAIR se estudia a fondo; aquí lo aplicamos a un caso concreto.</p>
+<p><strong>Qué es.</strong> FAIR son cuatro principios para que los datos científicos sean <em>Findable</em> (localizables), <em>Accessible</em> (accesibles), <em>Interoperable</em> (interoperables) y <em>Reusable</em> (reutilizables). Wilkinson et al.&nbsp;(2016) [<a href="../contenido/08-referencias.html#r5">R5</a>] los propusieron pensando en las personas y también en los programas: que una computadora pueda encontrar y usar los datos con poca intervención humana.</p>
+<p><strong>Por qué se pide.</strong> Revistas y agencias de financiamiento piden cada vez más que los datos de una publicación se compartan siguiendo estos principios, para que otras personas puedan comprobar los resultados o reutilizar los datos.</p>
+<p><strong>Qué se espera de un archivo.</strong> En la práctica, que otra persona, sin preguntarle nada a la investigadora, pueda encontrar los datos, obtenerlos, entender qué significa cada columna y saber en qué condiciones puede reutilizarlos. FAIR no es un sí o un no: un conjunto de datos puede ser más o menos FAIR, y ningún formato por sí solo lo garantiza.</p>
+<p>Las cuatro letras se pueden leer como cuatro preguntas:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Principio</th>
+<th>Pregunta</th>
+<th>En este Excel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>F — Findable</strong> (localizable)</td>
+<td>¿Cómo encontraría y citaría alguien estos datos?</td>
+<td>Es un archivo suelto, sin identificador ni descripción que permita encontrarlo o citarlo.</td>
+</tr>
+<tr class="even">
+<td><strong>A — Accessible</strong> (accesible)</td>
+<td>Una vez encontrados, ¿cómo se obtienen y quién puede consultarlos?</td>
+<td>No se indica dónde se depositará ni quién podrá consultarlo.</td>
+</tr>
+<tr class="odd">
+<td><strong>I — Interoperable</strong> (interoperable)</td>
+<td>¿Otras personas y programas pueden interpretar los identificadores, los términos y las columnas?</td>
+<td><code>b0014</code> y <code>dnaK</code> podrían usar sistemas distintos; «Estrés A» y «prom.» no tienen definición.</td>
+</tr>
+<tr class="even">
+<td><strong>R — Reusable</strong> (reutilizable)</td>
+<td>¿Se sabe lo suficiente sobre su origen, el método y la licencia para volver a usarlos?</td>
+<td>Faltan unidades, réplicas, procesamiento documentado y licencia.</td>
+</tr>
+</tbody>
+</table>
+<p>Aquí usamos FAIR para <strong>ordenar lo que falta</strong>, no para declarar que el archivo cumple. Convertir el Excel a CSV o añadirle un archivo README no lo vuelve FAIR por sí solo: lo que importa es que contengan la información que falta. Y esa información, como los tratamientos o las réplicas, solo puede darla quien hizo el experimento; ninguna fuente externa, ni la IA, puede reconstruirla.</p>
+</section>
+<section id="qué-vas-a-producir" class="level2">
+<h2 class="anchored" data-anchor-id="qué-vas-a-producir">Qué vas a producir</h2>
+<p>La sesión cierra con dos productos:</p>
 <ul>
-<li><strong>F — Findable:</strong> ¿cómo se descubrirían y citarían los datos?</li>
-<li><strong>A — Accessible:</strong> ¿qué protocolos y condiciones regulan el acceso? FAIR no significa necesariamente acceso abierto irrestricto.</li>
-<li><strong>I — Interoperable:</strong> ¿son interpretables los identificadores, términos, variables y formatos?</li>
-<li><strong>R — Reusable:</strong> ¿se conoce suficiente sobre procedencia, método, contexto y licencias para reutilizarlos?</li>
+<li>Un <strong>diagnóstico</strong> elaborado en tu asistente, limitado a cuatro asuntos: las unidades de los valores, la definición de las condiciones, las réplicas y la celda vacía. Incluye tres preguntas prioritarias para la persona responsable del experimento.</li>
+<li>Tu <strong><a href="../contenido/07-bitacora.html">Bitácora mínima 4D</a></strong>, un archivo Markdown que completas paso a paso durante la práctica, donde registras también la comprobación con una fuente primaria que harás tú.</li>
 </ul>
-<p>La existencia de un CSV o de un README no prueba conformidad FAIR. Una fuente externa puede explicar un estándar; <strong>no puede reconstruir tratamientos y réplicas que faltan en los registros experimentales</strong>.</p>
+<p>Los identificadores, el procesamiento, la cepa y la persona responsable quedan <strong>fuera del alcance del diagnóstico</strong> por el tiempo de la práctica, no porque sean menos importantes. Regístralos como exclusiones en la bitácora.</p>
 </section>
-<section id="producto-esperado" class="level2">
-<h2 class="anchored" data-anchor-id="producto-esperado">Producto esperado</h2>
-<p>Una tabla de diagnóstico limitada a cuatro asuntos (unidades, condiciones, réplicas y celda faltante), tres preguntas prioritarias, una comprobación documental externa y una bitácora de decisiones.</p>
-<p>Los identificadores, el procesamiento, la cepa y la responsabilidad quedan <strong>fuera del alcance de P5</strong> por tiempo, no porque sean menos importantes. Regístralos como <em>exclusiones</em> en la <a href="../contenido/07-bitacora.html">bitácora</a>.</p>
+<section id="cómo-se-trabaja" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-se-trabaja">Cómo se trabaja</h2>
+<p>En la <a href="../contenido/05-practica.html">práctica guiada</a> recorrerás las seis etapas del <a href="../contenido/03-metodo.html">método</a> con la IA, en un solo chat, y ejercitarás las cuatro competencias 4D. La práctica incluye la verificación con una fuente primaria y termina con tu <a href="../contenido/07-bitacora.html">Bitácora mínima 4D</a>. Lleva contigo la lista que anotaste.</p>
 
 
 </section>
@@ -875,13 +995,13 @@ document.addEventListener("DOMContentLoaded", function () {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../contenido/03b-estructura-prompt.html" class="pagination-link" aria-label="3b — Del problema al prompt">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">3b — Del problema al prompt</span>
+      <a href="../contenido/interactivos/que-puedo-aceptar.html" class="pagination-link" aria-label="7 — ¿Qué puedo aceptar?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">7 — ¿Qué puedo aceptar?</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../contenido/05-practica.html" class="pagination-link" aria-label="5 — Práctica guiada">
-        <span class="nav-page-text">5 — Práctica guiada</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../contenido/05-practica.html" class="pagination-link" aria-label="9 — Práctica guiada con IA">
+        <span class="nav-page-text">9 — Práctica guiada con IA</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

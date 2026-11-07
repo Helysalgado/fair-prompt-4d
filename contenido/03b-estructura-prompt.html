@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Rol, contexto, objetivo, tarea, salida, restricciones y verificación; efectos esperados y ejercicio FAIR">
+<meta name="description" content="Rol, contexto, objetivo, tarea, salida, restricciones y verificación; efectos esperados y un ejemplo resuelto con el caso FAIR">
 
 <title>Del problema al prompt: cómo construir instrucciones claras – Antes del prompt</title>
 <style>
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../contenido/04-caso-fair.html" rel="next">
-<link href="../contenido/03-metodo.html" rel="prev">
+<link href="../contenido/interactivos/de-la-solicitud-al-prompt.html" rel="next">
+<link href="../contenido/interactivos/que-falta-por-definir.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c06d6e174cfa7b6d09782cdbecc7f54e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5852d7353255d58dcfac19ab8ea79984.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,61 +102,84 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Antes del taller</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fundamentos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Fundamentos</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-comprender-el-problema" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Comprender el problema</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-fundamentos">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-comprender-el-problema">    
         <li>
     <a class="dropdown-item" href="../contenido/01-contexto.html">
- <span class="dropdown-text">Sentido y objetivos</span></a>
+ <span class="dropdown-text">1 — Introducción</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../contenido/02-ejemplos.html">
- <span class="dropdown-text">Tres situaciones</span></a>
+ <span class="dropdown-text">2 — Tres situaciones</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../contenido/03-metodo.html">
- <span class="dropdown-text">Seis etapas y 4D</span></a>
+ <span class="dropdown-text">3 — Seis etapas y 4D</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../contenido/03b-estructura-prompt.html">
- <span class="dropdown-text">Del problema al prompt</span></a>
+    <a class="dropdown-item" href="../contenido/interactivos/que-falta-por-definir.html">
+ <span class="dropdown-text">4 — ¿Qué falta por definir?</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-taller-fair" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Taller FAIR</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-construir-una-solicitud" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Construir una solicitud</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-taller-fair">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-construir-una-solicitud">    
         <li>
-    <a class="dropdown-item" href="../contenido/04-caso-fair.html">
- <span class="dropdown-text">Caso integrador</span></a>
+    <a class="dropdown-item" href="../contenido/03b-estructura-prompt.html">
+ <span class="dropdown-text">5 — Del problema al prompt</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../contenido/05-practica.html">
- <span class="dropdown-text">Práctica guiada</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../contenido/06-verificacion.html">
- <span class="dropdown-text">Verificación independiente</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../contenido/07-bitacora.html">
- <span class="dropdown-text">Bitácora</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../contenido/tarjeta-practica.html">
- <span class="dropdown-text">Tarjeta de práctica (imprimible)</span></a>
+    <a class="dropdown-item" href="../contenido/interactivos/de-la-solicitud-al-prompt.html">
+ <span class="dropdown-text">6 — De la solicitud al prompt</span></a>
   </li>  
     </ul>
   </li>
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../contenido/08-referencias.html"> 
-<span class="menu-text">Fuentes</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-evaluar-respuestas" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Evaluar respuestas</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-evaluar-respuestas">    
+        <li>
+    <a class="dropdown-item" href="../contenido/interactivos/que-puedo-aceptar.html">
+ <span class="dropdown-text">7 — ¿Qué puedo aceptar?</span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-caso-de-estudio" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Caso de estudio</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-caso-de-estudio">    
+        <li>
+    <a class="dropdown-item" href="../contenido/04-caso-fair.html">
+ <span class="dropdown-text">8 — Caso de estudio FAIR</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/05-practica.html">
+ <span class="dropdown-text">9 — Práctica guiada con IA</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-recursos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Recursos</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-recursos">    
+        <li>
+    <a class="dropdown-item" href="../contenido/tarjeta-practica.html">
+ <span class="dropdown-text">Tarjeta de práctica</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../contenido/08-referencias.html">
+ <span class="dropdown-text">Fuentes y continuidad</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -173,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/01-contexto.html">Fundamentos</a></li><li class="breadcrumb-item"><a href="../contenido/03b-estructura-prompt.html">3b — Del problema al prompt</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/03b-estructura-prompt.html">Construir una solicitud</a></li><li class="breadcrumb-item"><a href="../contenido/03b-estructura-prompt.html">5 — Del problema al prompt</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -202,22 +225,22 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/00-preparacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">0 — Antes del taller</span></a>
+ <span class="menu-text">Antes del taller</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Fundamentos</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Comprender el problema</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/01-contexto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1 — Sentido y objetivos</span></a>
+ <span class="menu-text">1 — Introducción</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -234,59 +257,98 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/03b-estructura-prompt.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">3b — Del problema al prompt</span></a>
+  <a href="../contenido/interactivos/que-falta-por-definir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4 — ¿Qué falta por definir?</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Taller FAIR</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Construir una solicitud</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/03b-estructura-prompt.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">5 — Del problema al prompt</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/interactivos/de-la-solicitud-al-prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6 — De la solicitud al prompt</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Evaluar respuestas de IA</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/interactivos/que-puedo-aceptar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7 — ¿Qué puedo aceptar?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Aplicar a un caso de estudio</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/04-caso-fair.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4 — Caso integrador</span></a>
+ <span class="menu-text">8 — Caso de estudio FAIR</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/05-practica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5 — Práctica guiada</span></a>
+ <span class="menu-text">9 — Práctica guiada con IA</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../contenido/06-verificacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6 — Verificación</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../contenido/07-bitacora.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7 — Bitácora</span></a>
-  </div>
-</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Recursos y continuidad</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/tarjeta-practica.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tarjeta de práctica</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/08-referencias.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fuentes y continuidad</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -304,24 +366,25 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#a.-solicitud-abierta-p0" id="toc-a.-solicitud-abierta-p0" class="nav-link" data-scroll-target="#a.-solicitud-abierta-p0">A. Solicitud abierta (P0)</a></li>
   <li><a href="#b.-solicitud-delimitada" id="toc-b.-solicitud-delimitada" class="nav-link" data-scroll-target="#b.-solicitud-delimitada">B. Solicitud delimitada</a></li>
   </ul></li>
-  <li><a href="#cómo-aislar-los-efectos-de-algunos-componentes" id="toc-cómo-aislar-los-efectos-de-algunos-componentes" class="nav-link" data-scroll-target="#cómo-aislar-los-efectos-de-algunos-componentes">Cómo aislar los efectos de algunos componentes</a></li>
-  <li><a href="#actividad-breve-57-minutos" id="toc-actividad-breve-57-minutos" class="nav-link" data-scroll-target="#actividad-breve-57-minutos">Actividad breve · 5–7 minutos</a></li>
+  <li><a href="#qué-cambia-al-añadir-cada-componente" id="toc-qué-cambia-al-añadir-cada-componente" class="nav-link" data-scroll-target="#qué-cambia-al-añadir-cada-componente">Qué cambia al añadir cada componente</a></li>
   <li><a href="#errores-frecuentes" id="toc-errores-frecuentes" class="nav-link" data-scroll-target="#errores-frecuentes">Errores frecuentes</a></li>
   <li><a href="#conexión-con-ai-fluency-4d" id="toc-conexión-con-ai-fluency-4d" class="nav-link" data-scroll-target="#conexión-con-ai-fluency-4d">Conexión con AI Fluency 4D</a></li>
+  <li><a href="#para-pensar" id="toc-para-pensar" class="nav-link" data-scroll-target="#para-pensar">Para pensar</a></li>
+  <li><a href="#de-los-siete-componentes-a-la-herramienta" id="toc-de-los-siete-componentes-a-la-herramienta" class="nav-link" data-scroll-target="#de-los-siete-componentes-a-la-herramienta">De los siete componentes a la herramienta</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Helysalgado/fair-prompt-4d/edit/main/contenido/03b-estructura-prompt.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/Helysalgado/fair-prompt-4d/issues/new" class="toc-action"><i class="bi empty"></i>Informar sobre problema</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/01-contexto.html">Fundamentos</a></li><li class="breadcrumb-item"><a href="../contenido/03b-estructura-prompt.html">3b — Del problema al prompt</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/03b-estructura-prompt.html">Construir una solicitud</a></li><li class="breadcrumb-item"><a href="../contenido/03b-estructura-prompt.html">5 — Del problema al prompt</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Del problema al prompt: cómo construir instrucciones claras</h1>
 </div>
 
 <div>
   <div class="description">
-    Rol, contexto, objetivo, tarea, salida, restricciones y verificación; efectos esperados y ejercicio FAIR
+    Rol, contexto, objetivo, tarea, salida, restricciones y verificación; efectos esperados y un ejemplo resuelto con el caso FAIR
   </div>
 </div>
 
@@ -339,7 +402,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="etiqueta-pagina durante">
-<p>Durante el taller · lectura de 6 min · actividad de 5–7 min</p>
+<p>Durante el taller</p>
 </div>
 <div class="en-un-minuto">
 <ul>
@@ -350,8 +413,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="por-qué-hablar-de-prompting-en-este-taller" class="level2">
 <h2 class="anchored" data-anchor-id="por-qué-hablar-de-prompting-en-este-taller">¿Por qué hablar de prompting en este taller?</h2>
-<p>En la <a href="../contenido/03-metodo.html">etapa 3</a> decidimos qué resultado necesitamos. En la etapa 4 decidimos cómo colaborar con la IA. <strong>La estructura del prompt es el puente entre ambas</strong>: convierte una necesidad definida en un encargo concreto. No constituye una séptima etapa ni pretende sustituir un curso especializado de prompting científico.</p>
-<p>No existe una plantilla universal obligatoria, ni todos sus elementos tienen que aparecer en cualquier consulta. Esta es una <strong>herramienta pedagógica flexible</strong>, útil cuando una tarea científica tiene incertidumbres, datos propios o consecuencias de publicación.</p>
+<p>En <a href="../contenido/interactivos/que-falta-por-definir.html">¿Qué falta por definir?</a> reformulaste una solicitud y anotaste lo que faltaba decidir (<a href="../contenido/03-metodo.html">etapas 1 a 3</a>). Ahora toca traducirla en instrucciones para la IA (etapa 4). <strong>La estructura del prompt es el puente entre la especificación y la colaboración</strong>: convierte una necesidad definida en un encargo concreto. No existe una plantilla universal obligatoria, ni todos sus elementos tienen que aparecer en cualquier consulta. Esta es una <strong>herramienta pedagógica flexible</strong>, útil cuando una tarea científica tiene incertidumbres, datos propios o consecuencias de publicación.</p>
 </section>
 <section id="siete-componentes-y-su-efecto-esperado" class="level2">
 <h2 class="anchored" data-anchor-id="siete-componentes-y-su-efecto-esperado">Siete componentes y su efecto esperado</h2>
@@ -437,7 +499,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="un-mismo-caso-dos-solicitudes" class="level2">
 <h2 class="anchored" data-anchor-id="un-mismo-caso-dos-solicitudes">Un mismo caso: dos solicitudes</h2>
-<p>Trabajaremos con el <a href="../descargas/expresion_genica_caso_simulado.xlsx">Excel simulado de expresión génica</a>. Tiene dos hojas (los datos y unas notas experimentales parciales), cinco filas de genes, tres columnas de condiciones y una celda vacía; <strong>no hay suficiente información para establecer las unidades, el método, las réplicas ni las condiciones experimentales exactas</strong>.</p>
+<p>Como ejemplo resuelto usamos el <a href="../descargas/expresion_genica_caso_simulado.xlsx">Excel simulado de expresión génica</a> del <a href="../contenido/04-caso-fair.html">caso de estudio</a>, con el que trabajarás al final del taller. Tiene dos hojas (los datos y unas notas experimentales parciales), cinco filas de genes, tres columnas de condiciones y una celda vacía; <strong>no hay suficiente información para establecer las unidades, el método, las réplicas ni las condiciones experimentales exactas</strong>.</p>
 <section id="a.-solicitud-abierta-p0" class="level3">
 <h3 class="anchored" data-anchor-id="a.-solicitud-abierta-p0">A. Solicitud abierta (P0)</h3>
 <div class="prompt" data-label="P0" data-meta="solicitud abierta">
@@ -447,6 +509,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="b.-solicitud-delimitada" class="level3">
 <h3 class="anchored" data-anchor-id="b.-solicitud-delimitada">B. Solicitud delimitada</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Con etiquetas</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">De corrido</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="prompt estructurado" data-label="Versión B" data-meta="solicitud delimitada">
 <p><strong>Rol (opcional):</strong> Ayúdame desde la perspectiva de gestión de datos científicos.</p>
 <p><strong>Contexto:</strong> Tengo un Excel simulado de expresión génica con cinco filas de genes y tres condiciones, destinado a un ejercicio sobre FAIR.</p>
@@ -456,71 +522,58 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Restricciones:</strong> No inventes unidades, tratamientos, cepa, métodos, réplicas ni el significado de «prom.». No sustituyas celdas vacías por cero ni modifiques los datos.</p>
 <p><strong>Verificación:</strong> Separa lo observado de las inferencias y de lo que requiere consulta externa. Indica qué habría que verificar y dónde; no declares una verificación que no realizaste.</p>
 </div>
-<p>La segunda versión <strong>no es una respuesta al problema</strong>: es una mejor delimitación del encargo. Esperamos una salida más fácil de revisar, <strong>no necesariamente más verdadera</strong>. Comparar dos ejecuciones ilustra diferencias, pero no es una prueba controlada de causalidad.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="prompt" data-label="Versión B" data-meta="la misma solicitud, sin etiquetas">
+<p>Ayúdame, desde la perspectiva de gestión de datos científicos, a revisar un Excel simulado de expresión génica con cinco filas de genes y tres condiciones, destinado a un ejercicio sobre FAIR. Antes de preparar un depósito o afirmar cumplimiento FAIR, necesito identificar la información que falta. Revisa encabezados, valores y notas, e identifica las incertidumbres sobre unidades, condiciones, réplicas y la celda vacía. Entrégame una tabla con el asunto, la evidencia localizable en hoja y celda, la información por confirmar, la siguiente acción y el responsable propuesto. No inventes unidades, tratamientos, cepa, métodos, réplicas ni el significado de «prom.»; no sustituyas celdas vacías por cero ni modifiques los datos. Separa lo observado de las inferencias y de lo que requiere consulta externa, e indica qué habría que verificar y dónde, sin declarar una verificación que no realizaste.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Las etiquetas no son obligatorias: la IA entiende igual la versión de corrido. Sirven para comprobar que no falta ningún componente; úsalas mientras aprendes o cuando el encargo es largo.</p>
+<p>La segunda versión <strong>no es una respuesta al problema</strong>: es una mejor delimitación del encargo. Esperamos una salida más fácil de revisar, <strong>no necesariamente más verdadera</strong>.</p>
 </section>
 </section>
-<section id="cómo-aislar-los-efectos-de-algunos-componentes" class="level2">
-<h2 class="anchored" data-anchor-id="cómo-aislar-los-efectos-de-algunos-componentes">Cómo aislar los efectos de algunos componentes</h2>
-<p>Imagina que ya proporcionaste el Excel y una tarea breve: «Revisa los datos y dime qué falta».</p>
+<section id="qué-cambia-al-añadir-cada-componente" class="level2">
+<h2 class="anchored" data-anchor-id="qué-cambia-al-añadir-cada-componente">Qué cambia al añadir cada componente</h2>
+<p>Imagina que ya proporcionaste el Excel y una tarea breve: «Revisa los datos y dime qué falta». Esto es lo que suele cambiar al añadir algunos componentes:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Cambio en la instrucción</th>
-<th>Cambio que buscarías al comparar las respuestas</th>
+<th>Si añades…</th>
+<th>Sin él, es frecuente que la IA…</th>
+<th>Con él, deberías notar que…</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Añadir <strong>objetivo</strong> («necesito un diagnóstico preliminar, no archivos para publicar»)</td>
-<td>¿La IA evita entregar un supuesto paquete de publicación?</td>
+<td><strong>Objetivo</strong> («necesito un diagnóstico preliminar, no archivos para publicar»)</td>
+<td>proponga README, CSV y metadatos como si fueras a publicar</td>
+<td>se limita a un diagnóstico preliminar</td>
 </tr>
 <tr class="even">
-<td>Añadir <strong>salida</strong> («tabla de cuatro asuntos con evidencia»)</td>
-<td>¿Se vuelve más sencillo revisar cada afirmación?</td>
+<td><strong>Salida</strong> («tabla de cuatro asuntos con evidencia»)</td>
+<td>responda en párrafos difíciles de revisar</td>
+<td>entrega una tabla en la que cada afirmación se revisa por separado</td>
 </tr>
 <tr class="odd">
-<td>Añadir <strong>restricciones</strong> («no inventes unidades ni réplicas»)</td>
-<td>¿Distingue lo conocido de lo pendiente?</td>
+<td><strong>Restricciones</strong> («no inventes unidades ni réplicas»)</td>
+<td>complete unidades o réplicas «razonables»</td>
+<td>marca esos datos como pendientes</td>
 </tr>
 <tr class="even">
-<td>Añadir <strong>verificación</strong> («indica celdas y fuentes aún no consultadas»)</td>
-<td>¿Es más claro qué observó y qué habría que contrastar externamente?</td>
+<td><strong>Verificación</strong> («indica celdas y fuentes aún no consultadas»)</td>
+<td>mezcle lo observado con lo supuesto</td>
+<td>separa lo observado, lo inferido y lo que falta consultar</td>
 </tr>
 </tbody>
 </table>
-<p>Estos son <strong>efectos esperados que debemos observar</strong>, no resultados garantizados. Las respuestas pueden variar entre ejecuciones y modelos.</p>
-</section>
-<section id="actividad-breve-57-minutos" class="level2">
-<h2 class="anchored" data-anchor-id="actividad-breve-57-minutos">Actividad breve · 5–7 minutos</h2>
-<p><strong>Propósito:</strong> reconocer cómo una instrucción hace visible la intención científica y facilita evaluar el trabajo de la IA. <strong>No necesitas ejecutar siete prompts</strong>.</p>
-<ol type="1">
-<li>Relee P0 e identifica los elementos que ya contiene, aunque no tengan etiquetas.</li>
-<li>En parejas (<em>en línea:</em> en sala separada o por el chat de la reunión), escribe una versión mejorada con <strong>objetivo + tarea + salida + una restricción + un criterio de verificación</strong>. Decide si necesitas añadir un rol; justifica por qué.</li>
-<li>Subraya qué información proviene del Excel y cuál debe obtenerse de una persona o una fuente primaria.</li>
-<li>Compara tu texto con la versión B. Probarlo en un chat nuevo queda para el final de la práctica, <a href="../contenido/05-practica.html#si-sobra-tiempo">si sobra tiempo</a>.</li>
-<li>En tu <a href="../contenido/07-bitacora.html">bitácora</a> anota <strong>una decisión de Description</strong>, una de <strong>Delegation</strong> y un criterio de <strong>Discernment</strong>.</li>
-</ol>
-<p><strong>Pregunta para discutir:</strong> si un prompt solicita «una tabla con citas», ¿qué responsabilidad científica conserva la persona que la utilizará?</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Respuesta orientadora (ábrela después de discutir)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Comprobar la correspondencia entre cada afirmación, su evidencia y la fuente efectiva, y mantener la responsabilidad sobre los datos y su publicación.</p>
-</div>
-</div>
-</div>
+<p>Son patrones frecuentes, no resultados garantizados. Una misma instrucción puede dar respuestas distintas cada vez, así que comparar dos versiones muestra diferencias, pero no prueba que las causó el cambio en el prompt.</p>
 </section>
 <section id="errores-frecuentes" class="level2">
 <h2 class="anchored" data-anchor-id="errores-frecuentes">Errores frecuentes</h2>
@@ -535,6 +588,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="conexión-con-ai-fluency-4d" class="level2">
 <h2 class="anchored" data-anchor-id="conexión-con-ai-fluency-4d">Conexión con AI Fluency 4D</h2>
+<p>Escribir un prompt es sobre todo <strong>Description (descripción)</strong>, pero las otras tres competencias también intervienen: decides qué delegas, anticipas cómo revisarás la respuesta y te haces responsable de lo que uses. Estas preguntas sirven para revisar tu prompt antes de enviarlo.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -543,29 +597,132 @@ ul.task-list li input[type="checkbox"] {
 <thead>
 <tr class="header">
 <th>Competencia</th>
-<th>Pregunta práctica en este ejercicio</th>
+<th>Pregunta práctica al escribir un prompt</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Delegation</strong></td>
-<td>¿Qué puede hacer la IA y qué información debe confirmar la investigadora?</td>
+<td><strong>Delegation</strong> (delegación)</td>
+<td>¿Qué puede hacer la IA y qué información debo confirmar yo o la persona responsable de los datos?</td>
 </tr>
 <tr class="even">
-<td><strong>Description</strong></td>
+<td><strong>Description</strong> (descripción)</td>
 <td>¿Expresé contexto, objetivo, tarea, salida y límites de forma suficiente?</td>
 </tr>
 <tr class="odd">
-<td><strong>Discernment</strong></td>
+<td><strong>Discernment</strong> (discernimiento)</td>
 <td>¿Puedo revisar la evidencia y detectar afirmaciones injustificadas?</td>
 </tr>
 <tr class="even">
-<td><strong>Diligence</strong></td>
+<td><strong>Diligence</strong> (diligencia)</td>
 <td>¿Conservo datos originales, registro decisiones y no presento como verificado lo pendiente?</td>
 </tr>
 </tbody>
 </table>
-<p>Continúa con el <a href="../contenido/04-caso-fair.html">caso FAIR</a> y la <a href="../contenido/05-practica.html">práctica guiada</a>. Las técnicas de prompting se tratan con más detalle en el curso <a href="https://helysalgado.github.io/prompting-cientifico/"><em>Prompting científico con inteligencia artificial</em></a> [R9]: aquí nos concentramos en <strong>especificar bien una necesidad científica y comprobar la respuesta</strong>.</p>
+</section>
+<section id="para-pensar" class="level2">
+<h2 class="anchored" data-anchor-id="para-pensar">Para pensar</h2>
+<p>Cuatro situaciones frecuentes al trabajar con IA. Piensa tu respuesta antes de abrir la orientación.</p>
+<p><strong>1. La tabla con citas.</strong> Si un prompt pide «una tabla con citas», ¿qué responsabilidad científica conserva la persona que la utilizará?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Respuesta orientadora
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Comprobar la correspondencia entre cada afirmación, su evidencia y la fuente efectiva, y mantener la responsabilidad sobre los datos y su publicación.</p>
+</div>
+</div>
+</div>
+<p><strong>2. Extraer datos de artículos.</strong> Le pides a la IA que extraiga de veinte artículos el organismo, la condición experimental y los genes reportados, y te entrega una tabla completa. ¿Cómo sabes si puedes usarla?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Respuesta orientadora
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Una tabla completa no garantiza una extracción correcta: la IA puede rellenar campos que el artículo no reporta, mezclar datos de dos artículos o quedarse con lo que dice el resumen. Pide desde el prompt que indique la sección o el pasaje de donde sale cada dato y que escriba «no reportado» en lugar de inferir. Después revisa una muestra de filas contra el texto original.</p>
+</div>
+</div>
+</div>
+<p><strong>3. Mejorar la redacción.</strong> Pides «mejora la redacción de este párrafo». ¿Qué revisas antes de aceptar el cambio?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Respuesta orientadora
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Que no haya cambiado lo que afirmas. Un «sugiere» puede convertirse en «demuestra», o puede desaparecer una limitación. Compara afirmación por afirmación, no solo el estilo.</p>
+</div>
+</div>
+</div>
+<p><strong>4. El script que corre.</strong> La IA te da un script que se ejecuta sin errores. ¿Ya está listo?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Respuesta orientadora
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Que corra no significa que calcule lo correcto. Pruébalo con un caso pequeño cuyo resultado conozcas y revisa casos límite, como valores vacíos o caracteres inesperados.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="de-los-siete-componentes-a-la-herramienta" class="level2">
+<h2 class="anchored" data-anchor-id="de-los-siete-componentes-a-la-herramienta">De los siete componentes a la herramienta</h2>
+<p>Practicarás estos componentes en <a href="../contenido/interactivos/de-la-solicitud-al-prompt.html">De la solicitud al prompt</a>. La herramienta los agrupa en cuatro bloques:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Bloque en la herramienta</th>
+<th>Componentes de esta página</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tarea</td>
+<td>Tarea</td>
+</tr>
+<tr class="even">
+<td>Contexto y objetivo</td>
+<td>Contexto, objetivo</td>
+</tr>
+<tr class="odd">
+<td>Condiciones y límites</td>
+<td>Restricciones</td>
+</tr>
+<tr class="even">
+<td>Resultado esperado y verificación</td>
+<td>Salida, verificación</td>
+</tr>
+</tbody>
+</table>
+<p>El rol no aparece porque es opcional: si lo necesitas, inclúyelo en «Contexto y objetivo».</p>
+<p>Después recorrerás <a href="../contenido/interactivos/que-puedo-aceptar.html">¿Qué puedo aceptar?</a> y, al llegar al caso, la <a href="../contenido/05-practica.html">práctica guiada</a>. Las técnicas de prompting se tratan con más detalle en el curso <a href="https://helysalgado.github.io/prompting-cientifico/"><em>Prompting científico con inteligencia artificial</em></a> [<a href="../contenido/08-referencias.html#r9">R9</a>]: aquí nos concentramos en <strong>especificar bien una necesidad científica y comprobar la respuesta</strong>.</p>
 
 
 </section>
@@ -1009,13 +1166,13 @@ document.addEventListener("DOMContentLoaded", function () {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../contenido/03-metodo.html" class="pagination-link" aria-label="3 — Seis etapas y 4D">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">3 — Seis etapas y 4D</span>
+      <a href="../contenido/interactivos/que-falta-por-definir.html" class="pagination-link" aria-label="4 — ¿Qué falta por definir?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">4 — ¿Qué falta por definir?</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../contenido/04-caso-fair.html" class="pagination-link" aria-label="4 — Caso integrador">
-        <span class="nav-page-text">4 — Caso integrador</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../contenido/interactivos/de-la-solicitud-al-prompt.html" class="pagination-link" aria-label="6 — De la solicitud al prompt">
+        <span class="nav-page-text">6 — De la solicitud al prompt</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
