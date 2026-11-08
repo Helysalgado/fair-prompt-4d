@@ -32,7 +32,7 @@ Para probar tus versiones, ten abierto en otra pestaña el asistente de IA que p
 
 La herramienta tiene cuatro pasos:
 
-1. **¿Qué voy a delegar?** Elige el tipo de ayuda que pedirás. En el caso A, por ejemplo: que la IA te explique cómo hacer el análisis, escriba un script, analice los datos o revise resultados que ya tienes. Una misma necesidad puede dar lugar a tareas distintas.
+1. **¿Qué voy a delegar?** Elige el tipo de ayuda que pedirás. En el caso A, por ejemplo: que la IA te explique cómo hacer el análisis, escriba un script, analice los datos o revise resultados que ya tienes. Una misma necesidad puede dar lugar a tareas distintas; para elegir, usa las cuatro preguntas de [Decidir qué delegar](../03a-decidir-que-delegar.qmd#cuatro-preguntas-para-cada-subtarea).
 2. **Construir y probar.** Parte de la instrucción básica y añade bloques: precisar la tarea, contexto y objetivo, condiciones y límites, resultado esperado y verificación. En [Del problema al prompt](../03b-estructura-prompt.qmd#de-los-siete-componentes-a-la-herramienta) está la equivalencia con los siete componentes. Copia el prompt, pégalo en una conversación nueva de tu asistente y guarda la versión. Puedes guardar hasta tres.
 3. **Comparar y reflexionar.** Anota qué observaste en cada respuesta y qué diferencias podrían deberse a tus cambios. Dos versiones bastan; la tercera es opcional.
 4. **Reporte.** Revisa el resumen y descarga el Markdown: `reporte_del_prompt_caso_A.md` o `reporte_del_prompt_caso_B.md`. Podrás consultarlo en la [práctica guiada](../05-practica.qmd).

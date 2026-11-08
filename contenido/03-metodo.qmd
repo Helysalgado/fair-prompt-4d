@@ -23,8 +23,8 @@ Cada etapa responde a una pregunta. Entre paréntesis, el nombre corto que usamo
 
 1. **Expreso lo que necesito, aunque todavía no sea preciso** (Necesidad). ¿Qué quiero lograr?
 2. **Identifico lo que desconozco y aprendo el vocabulario necesario** (Vocabulario). ¿Qué debo comprender antes de tomar decisiones?
-3. **Delimito el problema y establezco qué resultado necesito** (Especificación). ¿Qué entradas, alcance, entregable y criterios necesito?
-4. **Decido cómo colaborar con la IA** (Colaboración). ¿Qué delego y qué superviso?
+3. **Delimito el problema y establezco qué resultado necesito** (Especificación). ¿En qué subtareas se divide, qué entradas, alcance, entregable y criterios necesito?
+4. **Decido cómo colaborar con la IA** (Colaboración). ¿Qué delego, qué superviso y qué me corresponde a mí?
 5. **Obtengo un resultado, lo contrasto y corrijo sus limitaciones** (Verificación). ¿Qué evidencia permite aceptarlo?
 6. **Documento cómo llegué a él y qué decisiones tomé** (Registro). ¿Cómo lo entenderá o revisará otra persona?
 

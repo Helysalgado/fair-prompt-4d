@@ -62,7 +62,7 @@ El éxito es que comprendas mejor el encargo y puedas justificar tu plan y los l
 **Durante el taller**
 
 3. **Comprender el problema.** Recorre [la introducción](contenido/01-contexto.qmd), [las tres situaciones](contenido/02-ejemplos.qmd) y [las seis etapas](contenido/03-metodo.qmd), y practica en [¿Qué falta por definir?](contenido/interactivos/que-falta-por-definir.qmd).
-4. **Construir una solicitud.** Aprende a pasar [del problema al prompt](contenido/03b-estructura-prompt.qmd) y construye una instrucción en [De la solicitud al prompt](contenido/interactivos/de-la-solicitud-al-prompt.qmd).
+4. **Construir una solicitud.** [Decide qué delegar](contenido/03a-decidir-que-delegar.qmd), aprende a pasar [del problema al prompt](contenido/03b-estructura-prompt.qmd) y construye una instrucción en [De la solicitud al prompt](contenido/interactivos/de-la-solicitud-al-prompt.qmd).
 5. **Evaluar respuestas.** Practica en [¿Qué puedo aceptar?](contenido/interactivos/que-puedo-aceptar.qmd).
 6. **Caso de estudio.** Con el [Excel simulado](descargas/expresion_genica_caso_simulado.xlsx), haz el [caso](contenido/04-caso-fair.qmd) y la [práctica guiada](contenido/05-practica.qmd), que incluye la verificación con la fuente.
 7. **Registro.** Cierra en la [Bitácora mínima 4D](contenido/07-bitacora.qmd).

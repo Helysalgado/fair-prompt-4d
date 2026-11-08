@@ -16,7 +16,7 @@ El taller forma parte del programa ELIXIR-México 2026 como sesión «Instruccio
 |---|---|
 | Antes del taller | `00-preparacion` (requisitos y prueba de 2 minutos) |
 | Comprender el problema | `01-contexto` · `02-ejemplos` · `03-metodo` · `que-falta-por-definir` |
-| Construir una solicitud | `03b-estructura-prompt` · `de-la-solicitud-al-prompt` |
+| Construir una solicitud | `03a-decidir-que-delegar` · `03b-estructura-prompt` · `de-la-solicitud-al-prompt` |
 | Evaluar respuestas | `que-puedo-aceptar` |
 | Caso de estudio | `04-caso-fair` · `05-practica` · `07-bitacora` |
 | Recursos | `tarjeta-practica` · `08-referencias` |

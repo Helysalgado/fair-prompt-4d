@@ -15,7 +15,7 @@ Durante el taller
 
 ## ¿Por qué hablar de prompting en este taller?
 
-En [¿Qué falta por definir?](interactivos/que-falta-por-definir.qmd) reformulaste una solicitud y anotaste lo que faltaba decidir ([etapas 1 a 3](03-metodo.qmd)). Ahora toca traducirla en instrucciones para la IA (etapa 4). **La estructura del prompt es el puente entre la especificación y la colaboración**: convierte una necesidad definida en un encargo concreto. No existe una plantilla universal obligatoria, ni todos sus elementos tienen que aparecer en cualquier consulta. Esta es una **herramienta pedagógica flexible**, útil cuando una tarea científica tiene incertidumbres, datos propios o consecuencias de publicación.
+En [¿Qué falta por definir?](interactivos/que-falta-por-definir.qmd) reformulaste una solicitud ([etapas 1 a 3](03-metodo.qmd)) y en [Decidir qué delegar](03a-decidir-que-delegar.qmd) elegiste qué subtareas encargar a la IA. Ahora toca traducir eso en instrucciones (etapa 4). **La estructura del prompt es el puente entre la especificación y la colaboración**: convierte una necesidad definida en un encargo concreto. No existe una plantilla universal obligatoria, ni todos sus elementos tienen que aparecer en cualquier consulta. Esta es una **herramienta pedagógica flexible**, útil cuando una tarea científica tiene incertidumbres, datos propios o consecuencias de publicación.
 
 ## Siete componentes y su efecto esperado
 

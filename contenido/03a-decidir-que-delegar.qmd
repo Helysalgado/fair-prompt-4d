@@ -1,0 +1,50 @@
+---
+title: "Decidir qué delegar"
+description: "Dividir el problema en subtareas y decidir cuáles encarga a la IA, cuáles se hacen en colaboración y cuáles te corresponden"
+---
+
+::: {.etiqueta-pagina .durante}
+Durante el taller
+:::
+
+::: {.en-un-minuto}
+- Un encargo complejo no es una sola tarea: primero se divide en subtareas.
+- Cuatro preguntas ayudan a decidir cuáles hace la IA, cuáles se hacen en colaboración y cuáles te corresponden.
+- No es una etapa nueva: ocurre entre las etapas 3 y 4 del [método](03-metodo.qmd).
+:::
+
+## Del problema a las subtareas
+
+En [¿Qué falta por definir?](interactivos/que-falta-por-definir.qmd) descubriste que una solicitud que parecía clara escondía varias decisiones. Lo mismo pasa con un encargo como «prepara estos datos siguiendo FAIR»: no es una sola tarea, sino varias. Antes de escribir el prompt conviene seguir esta secuencia:
+
+**comprender el problema** (etapas 1–2) → **dividirlo en subtareas** (etapa 3) → **decidir qué delegar** (etapa 4) → **redactar la solicitud** (etapa 4) → **verificar** (etapa 5)
+
+::: {.destacado}
+No dividimos el problema solo para que la IA trabaje mejor. Lo dividimos para decidir qué tiene sentido delegar, qué necesitamos aprender y qué responsabilidad científica debemos conservar.
+:::
+
+## Cuatro preguntas para cada subtarea
+
+Es la competencia **[Delegation (delegación)](03-metodo.qmd#ai-fluency-4d-marco-de-competencias)** en la práctica:
+
+1. **¿Está bien definida?** Si no sabes qué resultado esperas, todavía no la puedes delegar.
+2. **¿Cuenta la IA con la información necesaria?** Si el dato no está en el archivo ni en una fuente disponible, la IA solo podrá suponerlo.
+3. **¿Podemos verificar el resultado?** Si no hay forma de comprobarlo, no lo aceptes como hecho.
+4. **¿Qué responsabilidad científica debemos conservar?** Interpretar el experimento, decidir qué se publica y responder por ello no se delega.
+
+## Un ejemplo con el caso de estudio
+
+Para el Excel de expresión génica del [caso de estudio](04-caso-fair.qmd), algunas subtareas y su decisión. **IA:** la IA lo hace y tú lo revisas. **Ambos:** la IA propone y tú decides o completas. **Persona:** no se delega.
+
+| Subtarea | ¿Quién? | Por qué | Cómo se verifica |
+|---|---|---|---|
+| Identificar hojas, columnas y celdas vacías | IA | La información está en el archivo | Comparar con el Excel original |
+| Explicar los conceptos FAIR relevantes | IA | Es una tarea bien definida | Contrastar con la fuente primaria |
+| Identificar qué metadatos podrían faltar | Ambos | La IA propone; la pertinencia depende del experimento | Confirmar con la persona responsable |
+| Redactar el diagnóstico preliminar | Ambos | Se puede revisar afirmación por afirmación | Revisar etiquetas, evidencia y limitaciones |
+| Establecer qué significan las condiciones experimentales | Persona | La IA no tiene esa información: solo podría suponerla | Protocolo y persona responsable |
+| Decidir qué metadatos completar y qué se publica | Persona | Es responsabilidad científica | No aplica: es una decisión, no un resultado |
+
+En la [práctica guiada](05-practica.qmd) delegarás las filas marcadas como IA y Ambos; las de Persona son las que confirmas tú en la parte B de tu especificación.
+
+**Siguiente:** en [Del problema al prompt](03b-estructura-prompt.qmd) traducirás lo que decidiste delegar en instrucciones claras.

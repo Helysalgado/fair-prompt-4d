@@ -95,7 +95,7 @@ El resultado y el alcance ya los conoces por [Qué vas a producir](04-caso-fair.
 - Resultado buscado: **diagnóstico documental**, no depósito ni certificación.
 - Alcance: **unidades, condiciones, réplicas y celda vacía**.
 - Evidencia aceptable: celda o nota del archivo, o fuente primaria externa, indicando qué se consultó.
-- Qué delegas: inventariar evidencia y preguntas, organizar una tabla y proponer próximos pasos.
+- Qué delegas: inventariar evidencia y preguntas, organizar una tabla y proponer próximos pasos. Para decidirlo, usa las cuatro preguntas de [Decidir qué delegar](03a-decidir-que-delegar.qmd#cuatro-preguntas-para-cada-subtarea).
 - Límites: no completar vacíos con cero, no inventar metadatos, no suponer que «prom.» es promedio.
 
 **B. Lo que te guardas para evaluar** (no se pega; lo usas en el paso 4 para revisar lo que responda la IA):
