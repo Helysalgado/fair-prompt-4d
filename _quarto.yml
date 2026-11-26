@@ -8,8 +8,13 @@ project:
     - contenido/interactivos/que-falta-por-definir.qmd
     - contenido/interactivos/de-la-solicitud-al-prompt.qmd
     - contenido/interactivos/que-puedo-aceptar.qmd
+  # Lista explícita: descargas/** también copiaría temporales (~$ y tmp/).
   resources:
-    - descargas/**
+    - descargas/bitacora-minima-4d.md
+    - descargas/bitacora-plantilla.md
+    - descargas/bitacora-plantilla.docx
+    - descargas/expresion_genica_caso_simulado.txt
+    - descargas/expresion_genica_caso_simulado.xlsx
     - recursos/**
     - interactivos/**
 
