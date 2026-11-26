@@ -10,7 +10,7 @@ Durante el taller
 ::: {.en-un-minuto}
 - Una solicitud puede entenderse y, aun así, admitir varias interpretaciones.
 - Eliges un caso, anotas qué aclararías, exploras pistas y reformulas la solicitud.
-- Todavía no se escribe el prompt: eso viene en [Del problema al prompt](../03b-estructura-prompt.qmd).
+- Todavía no se escribe el prompt: antes decidirás qué delegar.
 :::
 
 ## Para qué sirve
@@ -34,6 +34,8 @@ La herramienta tiene cuatro pasos:
 2. **Explorar** (etapa 2, Vocabulario). Abre las pistas una por una: tres pistas y dos orientaciones adicionales, cada una con un término de vocabulario. Consultarlas es opcional y no equivale a tomar una decisión.
 3. **Reformular** (etapa 3, Especificación). Reescribe la solicitud para que otra persona o una IA entienda mejor lo que necesitas, y anota qué decisiones siguen pendientes.
 4. **Reporte.** Revisa el resumen y descarga el Markdown: `reporte_que_falta_por_definir_caso_A.md` o `reporte_que_falta_por_definir_caso_B.md`. Podrás consultarlo en la [práctica guiada](../05-practica.qmd).
+
+Cuando ya sabes qué falta definir, el paso siguiente es dividir el problema en subtareas y decidir cuáles delegar: lo verás en [Decidir qué delegar](../03a-decidir-que-delegar.qmd).
 
 No hay respuestas correctas ni calificación. Lo que escribes se guarda en este navegador, por separado para cada caso. Si usas un equipo compartido, descarga el reporte y después pulsa **Reiniciar caso activo**.
 
